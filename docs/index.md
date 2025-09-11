@@ -7,4 +7,4 @@ Dobrodošli v bazi znanja za Optima Prevent. Tukaj boste našli navodila, pogost
 - Našli napako? Oddajte **[prijavo napake](https://github.com/a1info/support/issues/new?template=bug_report.yml)**.
 - Želite funkcijo? Oddajte **[zahtevo funkcije](https://github.com/a1info/support/issues/new?template=feature_request.yml)**.
 
-> Nasvet: uporabite iskanje v zgornjem desnem kotu.
+> Nasvet: uporabite iskanje v zgornjem desnem kotu. 
