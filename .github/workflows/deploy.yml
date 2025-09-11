@@ -1,4 +1,4 @@
-name: Deploy KB to GitHub Pages
+name: Deploy KB to GitHub Pages 
 
 on:
   push:
