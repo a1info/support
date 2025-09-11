@@ -13,11 +13,16 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # Set a default working directory for all steps in this job
+    defaults:
+      run:
+        working-directory: ./
+        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Needed for git-revision-date-localized-plugin
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -27,13 +32,21 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # --- NEW DEBUGGING STEPS ---
+      - name: Show Current Directory and List Files
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "---"
+          echo "Listing all files and folders:"
+          ls -laR
+
       - name: Build MkDocs site
-        run: mkdocs build
+        run: mkdocs build --verbose
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          # This CNAME is crucial for your custom domain to work
           cname: support.optima-prevent.eu
