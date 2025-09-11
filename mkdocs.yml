@@ -4,6 +4,20 @@ site_url: https://support.optima-prevent.eu
 site_author: A1 Informatika d.o.o.
 site_description: Baza znanja in podpora za programsko opremo Optima Prevent.
 
+# Site Information
+site_name: Optima Prevent – Baza Znanja
+site_url: https://support.optima-prevent.eu
+site_author: A1 Informatika d.o.o.
+site_description: Baza znanja in podpora za programsko opremo Optima Prevent.
+
+# Explicitly set the documentation directory
+docs_dir: docs
+
+# Repository
+repo_url: https://github.com/a1info/support
+repo_name: a1info/support
+edit_uri: edit/main/docs/
+
 # Repository
 repo_url: https://github.com/a1info/support
 repo_name: a1info/support
