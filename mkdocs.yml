@@ -43,10 +43,9 @@ plugins:
   - git-revision-date-localized:
       type: timeago
   - i18n:
-      default_language: sl
       languages:
-        - locale: sl
-          name: Slovenščina
+        - code: sl
+          name: Slovenian
         - locale: en
           name: English
       docs_structure: suffix
