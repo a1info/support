@@ -18,14 +18,12 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    # Light mode
     - scheme: default
       primary: indigo
       accent: blue grey
       toggle:
         icon: material/brightness-7
         name: Preklopi v temni način
-    # Dark mode
     - scheme: slate
       primary: blue grey
       accent: indigo
@@ -33,26 +31,19 @@ theme:
         icon: material/brightness-4
         name: Preklopi v svetli način
   features:
-    # Navigation and TOC
     - navigation.instant
     - navigation.sections
     - navigation.expand
     - navigation.top
     - toc.integrate
-    # Search and content UX
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.tooltips
 
-# Extra CSS (full width, sidebar styling, hide sidebar title)
-extra_css:
-  - assets/overrides.css
-
 # Plugins
 plugins:
-  - search:
-      lang: sl
+  - search            # remove lang: sl to silence the warning (lunr has no 'sl' stemmer)
   - git-revision-date-localized:
       type: timeago
   - i18n:
@@ -60,6 +51,8 @@ plugins:
       languages:
         sl: Slovenščina
         en: English
+      docs_structure: suffix
+      enable_search: true
       nav_translations:
         en:
           Domov: Home
@@ -69,9 +62,6 @@ plugins:
           "Uvod in zahteve": "Introduction and requirements"
           "Namestitev": "Installation"
           "Pogosta vprašanja (FAQ)": "FAQ"
-      # Optional: serve each language under / and /en/
-      docs_structure: suffix
-      enable_search: true
 
 # Markdown Extensions
 markdown_extensions:
@@ -81,9 +71,9 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      toc_depth: "2-3"  # show H2–H3 in the (integrated) left nav
+      toc_depth: "2-3"
 
-# Navigation Menu
+# Navigation
 nav:
   - Domov: index.md
   - Dokumentacija:
