@@ -5,7 +5,7 @@
   <h2>Celovita rešitev za VZD, PV in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese in analitiko.</p>
   <p class="op-cta">
-    <a class="md-button md-button--primary" href="manual-sl.md">Odpri dokumentacijo</a>
+    <a class="md-button md-button--primary" href="manual-sl/">Odpri dokumentacijo</a>
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
   </p>
 </div>
@@ -19,7 +19,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Uvod in pregled</h3>
     <p>Spoznajte glavne koncepte in arhitekturo sistema.</p>
     <ul>
-      <li><a href="manual/introduction.md">Začnite tukaj</a></li>
+      <li><a href="manual/introduction/">Začnite tukaj</a></li>
       <li>Ključne funkcionalnosti</li>
       <li>Sistemska arhitektura</li>
     </ul>
@@ -28,7 +28,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Namestitev in konfiguracija</h3>
     <p>Tehnična navodila za vzpostavitev okolja in začetno nastavitev.</p>
     <ul>
-      <li><a href="manual/installation.md">Navodila za namestitev</a></li>
+      <li><a href="manual/installation/">Navodila za namestitev</a></li>
       <li>Migracija podatkov</li>
       <li>Varnost in dostop</li>
     </ul>
@@ -37,7 +37,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Uporabniški priročnik</h3>
     <p>Podrobna navodila za delo z moduli in evidencami.</p>
     <ul>
-      <li><a href="manual-sl.md">Priročnik za uporabo</a></li>
+      <li><a href="manual-sl/">Priročnik za uporabo</a></li>
       <li>Upravljanje uporabnikov</li>
       <li>Analitika in poročila</li>
     </ul>
@@ -46,14 +46,13 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Celotni priročnik</h3>
     <p>Polna referenčna dokumentacija za tisk ali offline.</p>
     <ul>
-      <li><a href="manual-sl.md">Odpri celotni priročnik</a></li>
-      <li><a href="CHANGELOG.md">Dnevnik sprememb</a></li>
+      <li><a href="manual-sl/">Odpri celotni priročnik</a></li>
+      <li><a href="CHANGELOG/">Dnevnik sprememb</a></li>
     </ul>
   </div>
 </div>
 
 ## Podpora
-<div id="podpora"></div>
 
 Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
 
@@ -74,7 +73,7 @@ Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
     <h3>Pogosta vprašanja (FAQ)</h3>
     <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
     <ul>
-      <li><a href="manual/faq.md">FAQ in reševanje težav</a></li>
+      <li><a href="manual/faq/">FAQ in reševanje težav</a></li>
       <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
     </ul>
   </div>
