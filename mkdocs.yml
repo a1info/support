@@ -1,4 +1,4 @@
-site_name: Optima Prevent · Dokumentacija in podpora
+site_name: Optima Prevent · Podpora
 site_url: https://support.optima-prevent.eu
 site_author: A1 Informatika d.o.o.
 site_description: Dokumentacija in podpora za programsko opremo Optima Prevent (VZD, PV, EHS)
@@ -58,7 +58,6 @@ nav:
   - Dokumentacija:
     - Priročnik (celotni): manual-sl.md
     - Uvod in zahteve: manual/introduction.md
-    - Namestitev: manual/installation.md
     - Pogosta vprašanja (FAQ): manual/faq.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
