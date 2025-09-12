@@ -43,16 +43,19 @@ theme:
 
 # Plugins
 plugins:
-  - search            # remove lang: sl to silence the warning (lunr has no 'sl' stemmer)
+  # Remove unsupported 'lang: sl' to avoid the warning
+  - search
   - git-revision-date-localized:
       type: timeago
   - i18n:
       default_language: sl
+      # Use a list for languages (not a dict)
       languages:
-        sl: Slovenščina
-        en: English
+        - sl
+        - en
+      # Optional: suffix strategy means translated files use filename.en.md
       docs_structure: suffix
-      enable_search: true
+      # Show translations for nav labels
       nav_translations:
         en:
           Domov: Home
@@ -62,6 +65,8 @@ plugins:
           "Uvod in zahteve": "Introduction and requirements"
           "Namestitev": "Installation"
           "Pogosta vprašanja (FAQ)": "FAQ"
+      # Gracefully serve default language if translation is missing
+      fallback_to_default: true
 
 # Markdown Extensions
 markdown_extensions:
