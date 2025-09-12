@@ -40,27 +40,6 @@ theme:
 
 plugins:
   - search
-  - git-revision-date-localized:
-      type: timeago
-  - i18n:
-      languages:
-        sl:
-          name: Slovenian
-          locale: sl_SI
-        en:
-          name: English
-          locale: en_US
-      docs_structure: suffix
-      fallback_to_default: true
-      nav_translations:
-        en:
-          Domov: Home
-          Dokumentacija: Documentation
-          Podpora: Support
-          "Priročnik (celotni)": "Full manual"
-          "Uvod in zahteve": "Introduction and requirements"
-          "Namestitev": "Installation"
-          "Pogosta vprašanja (FAQ)": "FAQ"
 
 markdown_extensions:
   - admonition
