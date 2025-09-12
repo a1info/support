@@ -10,23 +10,23 @@
   --op-grey-2:#e6e9ef;      /* ui border grey */
   --op-text:#1f2937;        /* neutral text */
 }
-.op-container{max-width:1100px;margin:0 auto;}
+
+/* local container - full width with mild padding */
+.op-container{max-width:100%;margin:0 auto;padding:0 16px;}
 .op-hero{
   background:linear-gradient(180deg,var(--op-primary) 0%,var(--op-primary-2) 100%);
   color:#fff;border-radius:14px;padding:48px 28px;margin:12px 0 28px 0;text-align:center;
 }
 .op-hero img{height:64px;margin-bottom:12px;filter:none;}
 .op-hero h2{margin:8px 0 6px 0;font-weight:700;}
-.op-hero p{margin:8px auto 18px auto;max-width:800px;opacity:.95}
+.op-hero p{margin:8px auto 18px auto;max-width:1000px;opacity:.95}
 .op-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
 .op-btn{
   display:inline-block;padding:12px 18px;border-radius:8px;border:1px solid transparent;
   text-decoration:none;font-weight:600
 }
-.op-btn--primary{background:#ffffff;color:var(--op-primary)}
+.op-btn--primary{background:#ffffff;color:var(--op-primary);border-color:#ffffff}
 .op-btn--primary:hover{background:#eef3fb}
-.op-btn--secondary{background:transparent;color:#ffffff;border-color:#ffffff}
-.op-btn--secondary:hover{background:rgba(255,255,255,.08)}
 .op-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:16px;margin:18px 0;
@@ -55,8 +55,8 @@
   <h2>Celovita rešitev za VZD, PV in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese in analitiko.</p>
   <div class="op-cta">
-    <a class="op-btn op-btn--primary" href="#dokumentacija">Odpri dokumentacijo</a>
-    <a class="op-btn op-btn--secondary" href="#podpora">Potrebujem podporo</a>
+    <a class="op-btn op-btn--primary" href="manual-sl.md">Odpri dokumentacijo</a>
+    <a class="op-btn op-btn--primary" href="#podpora">Potrebujem podporo</a>
   </div>
 </div>
 
@@ -69,7 +69,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Uvod in pregled</h3>
     <p>Spoznajte glavne koncepte in arhitekturo sistema.</p>
     <ul class="op-list">
-      <li><a href="sl/">Začnite tukaj</a></li>
+      <li><a href="manual/introduction.md">Začnite tukaj</a></li>
       <li>Ključne funkcionalnosti</li>
       <li>Sistemska arhitektura</li>
     </ul>
@@ -78,7 +78,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Namestitev in konfiguracija</h3>
     <p>Tehnična navodila za vzpostavitev okolja in začetno nastavitev.</p>
     <ul class="op-list">
-      <li><a href="sl/namestitev/">Navodila za namestitev</a></li>
+      <li><a href="manual/installation.md">Navodila za namestitev</a></li>
       <li>Migracija podatkov</li>
       <li>Varnost in dostop</li>
     </ul>
@@ -87,16 +87,16 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Uporabniški priročnik</h3>
     <p>Podrobna navodila za delo z moduli in evidencami.</p>
     <ul class="op-list">
-      <li><a href="sl/uporaba/">Priročnik za uporabo</a></li>
+      <li><a href="manual-sl.md">Priročnik za uporabo</a></li>
       <li>Upravljanje uporabnikov</li>
       <li>Analitika in poročila</li>
     </ul>
   </div>
   <div class="op-card">
-    <h3>Celotni priročnik (PDF/DOCX)</h3>
+    <h3>Celotni priročnik</h3>
     <p>Polna referenčna dokumentacija za tisk ali offline.</p>
     <ul class="op-list">
-      <li><a href="manual-sl.md">Prenesi celotni priročnik</a></li>
+      <li><a href="manual-sl.md">Odpri celotni priročnik</a></li>
       <li><a href="CHANGELOG.md">Dnevnik sprememb</a></li>
     </ul>
   </div>
@@ -110,20 +110,20 @@ Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
   <div class="op-card">
     <h3>Prijava napake</h3>
     <p>Opazili ste težavo ali napako v delovanju?</p>
-    <p><a class="op-btn op-btn--primary" href="https://github.com/a1info/support/issues/new?template=bug_report.md">Odpri prijavo napake</a></p>
+    <p><a class="op-btn op-btn--primary" href="https://github.com/a1info/support/issues/new?template=bug_report.yml">Odpri prijavo napake</a></p>
     <p class="op-muted">Za hitrejšo obravnavo priložite korake za ponovitev, posnetek zaslona in verzijo sistema.</p>
   </div>
   <div class="op-card">
     <h3>Predlog funkcionalnosti</h3>
     <p>Manjka vam funkcija ali izboljšava?</p>
-    <p><a class="op-btn op-btn--primary" href="https://github.com/a1info/support/issues/new?template=feature_request.md">Predlagaj funkcijo</a></p>
+    <p><a class="op-btn op-btn--primary" href="https://github.com/a1info/support/issues/new?template=feature_request.yml">Predlagaj funkcijo</a></p>
     <p class="op-muted">Navedite poslovni primer, pričakovano vedenje in prednost.</p>
   </div>
   <div class="op-card">
     <h3>Pogosta vprašanja (FAQ)</h3>
     <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
     <ul class="op-list">
-      <li><a href="sl/podpora/">FAQ in reševanje težav</a></li>
+      <li><a href="manual/faq.md">FAQ in reševanje težav</a></li>
       <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
     </ul>
   </div>
@@ -185,10 +185,10 @@ Strnjeni nabor modulov za celovito upravljanje:
   </div>
   <div class="op-card">
     <h3>GitHub</h3>
-    <p><a href="https://github.com/a1info/support">Repozitorij OP5</a></p>
+    <p><a href="https://github.com/a1info/support">Repozitorij podpore</a></p>
     <div class="op-kpis">
-      <div class="op-kpi"><strong>Podpora</strong><br><a href="https://github.com/a1info/support/issues/new?template=bug_report.md">Prijava napake</a></div>
-      <div class="op-kpi"><strong>Razvoj</strong><br><a href="https://github.com/a1info/support/issues/new?template=feature_request.md">Predlog funkcije</a></div>
+      <div class="op-kpi"><strong>Podpora</strong><br><a href="https://github.com/a1info/support/issues/new?template=bug_report.yml">Prijava napake</a></div>
+      <div class="op-kpi"><strong>Razvoj</strong><br><a href="https://github.com/a1info/support/issues/new?template=feature_request.yml">Predlog funkcije</a></div>
     </div>
   </div>
 </div>
