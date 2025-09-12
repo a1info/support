@@ -1,0 +1,71 @@
+/* Minimal, MkDocs-friendly styling for the landing page */
+
+:root{
+  --op-primary:#0e3a66;     /* dark blue */
+  --op-primary-2:#0a2b4d;   /* darker */
+  --op-grey-0:#ffffff;
+  --op-grey-1:#f5f7fa;      /* light grey */
+  --op-grey-2:#e6e9ef;      /* ui border grey */
+  --op-text:#1f2937;        /* neutral text */
+}
+
+/* Hero */
+.op-hero{
+  background:linear-gradient(180deg,var(--op-primary) 0%,var(--op-primary-2) 100%);
+  color:#fff;
+  border-radius:14px;
+  padding:48px 28px;
+  margin:12px 0 28px 0;
+  text-align:center;
+}
+.op-hero img{
+  height:64px;
+  margin-bottom:12px;
+}
+.op-hero h2{
+  margin:8px 0 6px 0;
+  font-weight:700;
+}
+.op-hero p{
+  margin:8px auto 18px auto;
+  max-width:1000px;
+  opacity:.95;
+}
+.op-hero .op-cta .md-button{
+  margin:6px 8px 0 8px;
+}
+
+/* Simple card grid */
+.op-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+  margin:18px 0;
+}
+.op-card{
+  background:var(--op-grey-1);
+  border:1px solid var(--op-grey-2);
+  border-radius:10px;
+  padding:18px;
+}
+.op-card h3{
+  margin-top:0;
+  color:#0e3a66;
+}
+.op-card p{
+  margin:8px 0 12px 0;
+}
+.op-muted{ color:#4b5563; }
+
+/* Make tables look good inside cards or sections (use theme defaults mostly) */
+.op-card table{
+  display:block;
+  width:100%;
+  overflow:auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px){
+  .op-hero img{ height:48px; }
+  .op-hero{ padding:32px 18px; }
+}
