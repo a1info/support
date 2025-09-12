@@ -49,8 +49,10 @@ plugins:
   - i18n:
       default_language: sl
       languages:
-        - sl
-        - en
+        - locale: sl
+          name: Slovenščina
+        - locale: en
+          name: English
       docs_structure: suffix
       fallback_to_default: true
       nav_translations:
