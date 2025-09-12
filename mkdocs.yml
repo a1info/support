@@ -48,11 +48,9 @@ plugins:
       type: timeago
   - i18n:
       default_language: sl
-      languages:
-        - locale: sl
-          name: Slovenščina
-        - locale: en
-          name: English
+      languages: 
+        - sl
+        - en
       docs_structure: suffix
       fallback_to_default: true
       nav_translations:
