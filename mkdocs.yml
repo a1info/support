@@ -1,5 +1,5 @@
 # Site Information
-site_name: Optima Prevent – Dokumentacija in podpora
+site_name: Optima Prevent · Dokumentacija in podpora
 site_url: https://support.optima-prevent.eu
 site_author: A1 Informatika d.o.o.
 site_description: Dokumentacija in podpora za programsko opremo Optima Prevent (VZD, PV, EHS).
@@ -45,12 +45,33 @@ theme:
     - content.code.copy
     - content.tooltips
 
+# Extra CSS (full width, sidebar styling, hide sidebar title)
+extra_css:
+  - assets/overrides.css
+
 # Plugins
 plugins:
   - search:
       lang: sl
   - git-revision-date-localized:
       type: timeago
+  - i18n:
+      default_language: sl
+      languages:
+        sl: Slovenščina
+        en: English
+      nav_translations:
+        en:
+          Domov: Home
+          Dokumentacija: Documentation
+          Podpora: Support
+          "Priročnik (celotni)": "Full manual"
+          "Uvod in zahteve": "Introduction and requirements"
+          "Namestitev": "Installation"
+          "Pogosta vprašanja (FAQ)": "FAQ"
+      # Optional: serve each language under / and /en/
+      docs_structure: suffix
+      enable_search: true
 
 # Markdown Extensions
 markdown_extensions:
@@ -62,7 +83,7 @@ markdown_extensions:
       permalink: true
       toc_depth: "2-3"  # show H2–H3 in the (integrated) left nav
 
-# Navigation Menu (prioritize Dokumentacija and Podpora)
+# Navigation Menu
 nav:
   - Domov: index.md
   - Dokumentacija:
