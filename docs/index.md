@@ -28,7 +28,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     <h3>Namestitev in konfiguracija</h3>
     <p>Tehnična navodila za vzpostavitev okolja in začetno nastavitev.</p>
     <ul>
-      <li><a href="manual/installation/">Navodila za namestitev</a></li>
+      <li><a href="manual/introduction/#namestitev">Navodila za namestitev</a></li>
       <li>Migracija podatkov</li>
       <li>Varnost in dostop</li>
     </ul>
@@ -43,10 +43,10 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
     </ul>
   </div>
   <div class="op-card">
-    <h3>Celotni priročnik</h3>
-    <p>Polna referenčna dokumentacija za tisk ali offline.</p>
+    <h3>Pogosta vprašanja</h3>
+    <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
     <ul>
-      <li><a href="manual-sl/">Odpri celotni priročnik</a></li>
+      <li><a href="manual/faq/">Odpri FAQ</a></li>
       <li><a href="CHANGELOG/">Dnevnik sprememb</a></li>
     </ul>
   </div>
@@ -56,7 +56,7 @@ Vsa navodila, vodiči in referenčna vsebina na enem mestu.
 
 Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
 
-<div class="op-grid">
+<div class="op-grid" id="podpora">
   <div class="op-card">
     <h3>Prijava napake</h3>
     <p>Opazili ste težavo ali napako v delovanju?</p>
@@ -107,16 +107,6 @@ Optima Prevent je celovita EHS platforma za varnost in zdravje pri delu (VZD), p
 - Požarna varnost (evidence, vaje evakuacije)
 - Zdravniški pregledi, osebna varovalna oprema, delovne nezgode
 - Analitika (periodika, realizacija, izdani dokumenti), CRM
-
-### Sistemske zahteve
-
-| Komponenta | Zahteva |
-| --- | --- |
-| PHP | 8.0 ali novejši |
-| Framework | Laravel 9.x (MVC), Livewire, jQuery 2 |
-| Podatkovna baza | PostgreSQL ali Oracle |
-| Varnost | SSL/VPN, šifriranje podatkov, GDPR skladnost |
-| Brskalnik | Posodobljeni Chrome/Edge/Firefox; min. 1024×768 |
 
 ## Kontakt
 
