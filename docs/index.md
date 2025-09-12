@@ -124,7 +124,7 @@ Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
     <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
     <ul class="op-list">
       <li><a href="sl/podpora/">FAQ in reševanje težav</a></li>
-      <li>Kontakt za podporo: <a href="mailto:podpora@a1info.si">podpora@a1info.si</a></li>
+      <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
     </ul>
   </div>
 </div>
