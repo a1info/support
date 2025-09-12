@@ -56,7 +56,7 @@ markdown_extensions:
 nav:
   - Domov: index.md
   - Dokumentacija:
-    - Priročnik (celotni): manual-sl.md
+    - Priročnik: manual-sl.md
     - Uvod in zahteve: manual/introduction.md
     - Pogosta vprašanja (FAQ): manual/faq.md
   - Podpora:
