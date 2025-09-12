@@ -38,6 +38,9 @@ theme:
     - content.code.copy
     - content.tooltips
 
+extra_css:
+  - assets/index.css
+
 plugins:
   - search
 
