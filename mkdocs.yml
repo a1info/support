@@ -44,10 +44,12 @@ plugins:
       type: timeago
   - i18n:
       languages:
-        - code: sl
+        sl:
           name: Slovenian
-        - locale: en
+          locale: sl_SI
+        en:
           name: English
+          locale: en_US
       docs_structure: suffix
       fallback_to_default: true
       nav_translations:
