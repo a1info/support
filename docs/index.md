@@ -1,181 +1,202 @@
-# Optima Prevent - Portal podpore in znanja
+# Optima Prevent — Portal dokumentacije in podpore
 
-<div align="center">
+<style>
+:root{
+  --op-primary:#0e3a66;     /* dark blue */
+  --op-primary-2:#0a2b4d;   /* darker */
+  --op-accent:#1b4f8a;      /* mid blue */
+  --op-grey-0:#ffffff;
+  --op-grey-1:#f5f7fa;      /* light grey */
+  --op-grey-2:#e6e9ef;      /* ui border grey */
+  --op-text:#1f2937;        /* neutral text */
+}
+.op-container{max-width:1100px;margin:0 auto;}
+.op-hero{
+  background:linear-gradient(180deg,var(--op-primary) 0%,var(--op-primary-2) 100%);
+  color:#fff;border-radius:14px;padding:48px 28px;margin:12px 0 28px 0;text-align:center;
+}
+.op-hero img{height:64px;margin-bottom:12px;filter:none;}
+.op-hero h2{margin:8px 0 6px 0;font-weight:700;}
+.op-hero p{margin:8px auto 18px auto;max-width:800px;opacity:.95}
+.op-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.op-btn{
+  display:inline-block;padding:12px 18px;border-radius:8px;border:1px solid transparent;
+  text-decoration:none;font-weight:600
+}
+.op-btn--primary{background:#ffffff;color:var(--op-primary)}
+.op-btn--primary:hover{background:#eef3fb}
+.op-btn--secondary{background:transparent;color:#ffffff;border-color:#ffffff}
+.op-btn--secondary:hover{background:rgba(255,255,255,.08)}
+.op-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;margin:18px 0;
+}
+.op-card{
+  background:var(--op-grey-1);border:1px solid var(--op-grey-2);
+  border-radius:10px;padding:18px
+}
+.op-card h3{margin-top:0;color:var(--op-primary)}
+.op-card p{margin:8px 0 12px 0}
+.op-list{margin:0;padding-left:18px}
+.op-section{margin:28px 0}
+.op-section h2{color:var(--op-primary);margin-bottom:8px}
+.op-muted{color:#4b5563}
+.op-table{border-collapse:collapse;width:100%;background:var(--op-grey-0);border:1px solid var(--op-grey-2);border-radius:10px;overflow:hidden}
+.op-table th,.op-table td{padding:10px 12px;border-bottom:1px solid var(--op-grey-2);text-align:left}
+.op-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:14px 0}
+.op-kpi{background:var(--op-grey-1);border:1px solid var(--op-grey-2);border-radius:10px;padding:14px}
+.op-kpi strong{color:var(--op-primary)}
+</style>
 
-![Optima Prevent Logo](media/image1.png)
+<div class="op-container">
 
-**Celovita rešitev za upravljanje varstva in zdravja pri delu (VZD), požarne varnosti (PV) in varstva okolja**
-
-[![Version](https://img.shields.io/badge/version-5.1-blue.svg)](https://github.com/a1info/OP5)
-[![Language](https://img.shields.io/badge/language-Slovenščina-green.svg)](#)
-[![License](https://img.shields.io/badge/license-A1Info-orange.svg)](#)
-
+<div class="op-hero">
+  <img src="media/logos/op-logo.png" alt="Optima Prevent logo">
+  <h2>Celovita rešitev za VZD, PV in varstvo okolja</h2>
+  <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese in analitiko.</p>
+  <div class="op-cta">
+    <a class="op-btn op-btn--primary" href="#dokumentacija">Odpri dokumentacijo</a>
+    <a class="op-btn op-btn--secondary" href="#podpora">Potrebujem podporo</a>
+  </div>
 </div>
 
----
+## Dokumentacija
 
-## 🏢 Dobrodošli v podpornem portalu Optima Prevent
+Vsa navodila, vodiči in referenčna vsebina na enem mestu.
 
-**Optima Prevent** je napredni EHS (Environmental Health and Safety) sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OSHAS, ISO). Sistem omogoča družbam in službam celovito in enostavno vodenje varnostnega dela s popolno kontrolo nad kompleksnimi procesi.
-
-### ✨ Ključne prednosti
-
-- **🏛️ Slovenska zakonodaja**: Popolnoma prilagojen zakonodaji Republike Slovenije
-- **🌍 Mednarodni standardi**: Upošteva OSHAS in ISO standarde
-- **🧩 Modularna arhitektura**: Prilagodljiva vsem vrstam in velikostim podjetij
-- **🔗 Povezani moduli**: Vse spremembe so takoj vidne v povezanih modulih
-- **⚡ EAV tehnologija**: Dodajanje atributov po meri za maksimalno fleksibilnost
-- **👥 Multi-user dostop**: Klient/Server arhitektura z transakcijskim SQL-jem
-- **🔐 Varnost**: Šifrirano na vseh nivojih - baza, datotečni sistem, mrežni prenos
-
----
-
-## 🚀 Hitra navigacija
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
-
-<div style="border: 1px solid #e1e5e9; border-radius: 8px; padding: 20px; background-color: #f8f9fa;">
-
-### 📖 **Uvod in pregled**
-Spoznajte Optima Prevent in njegove module
-
-**[👉 Začnite tukaj](sl/)**
-
-- Kaj je Optima Prevent
-- Ključne funkcionalnosti  
-- Sistemska arhitektura
-- Podpore tehnologije
-
+<div class="op-grid">
+  <div class="op-card">
+    <h3>Uvod in pregled</h3>
+    <p>Spoznajte glavne koncepte in arhitekturo sistema.</p>
+    <ul class="op-list">
+      <li><a href="sl/">Začnite tukaj</a></li>
+      <li>Ključne funkcionalnosti</li>
+      <li>Sistemska arhitektura</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Namestitev in konfiguracija</h3>
+    <p>Tehnična navodila za vzpostavitev okolja in začetno nastavitev.</p>
+    <ul class="op-list">
+      <li><a href="sl/namestitev/">Navodila za namestitev</a></li>
+      <li>Migracija podatkov</li>
+      <li>Varnost in dostop</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Uporabniški priročnik</h3>
+    <p>Podrobna navodila za delo z moduli in evidencami.</p>
+    <ul class="op-list">
+      <li><a href="sl/uporaba/">Priročnik za uporabo</a></li>
+      <li>Upravljanje uporabnikov</li>
+      <li>Analitika in poročila</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Celotni priročnik (PDF/DOCX)</h3>
+    <p>Polna referenčna dokumentacija za tisk ali offline.</p>
+    <ul class="op-list">
+      <li><a href="manual-sl.md">Prenesi celotni priročnik</a></li>
+      <li><a href="CHANGELOG.md">Dnevnik sprememb</a></li>
+    </ul>
+  </div>
 </div>
 
-<div style="border: 1px solid #e1e5e9; border-radius: 8px; padding: 20px; background-color: #f8f9fa;">
+## Podpora
 
-### ⚙️ **Namestitev in konfiguracija**
-Tehnična navodila za namestitev
+Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
 
-**[🔧 Navodila za namestitev](sl/namestitev/)**
-
-- Sistemske zahteve
-- Namestitveni proces
-- Konfiguracija sistema
-- Migracija podatkov
-
+<div class="op-grid" id="podpora">
+  <div class="op-card">
+    <h3>Prijava napake</h3>
+    <p>Opazili ste težavo ali napako v delovanju?</p>
+    <p><a class="op-btn op-btn--primary" href="https://github.com/a1info/support/issues/new?template=bug_report.md">Odpri prijavo napake</a></p>
+    <p class="op-muted">Za hitrejšo obravnavo priložite korake za ponovitev, posnetek zaslona in verzijo sistema.</p>
+  </div>
+  <div class="op-card">
+    <h3>Predlog funkcionalnosti</h3>
+    <p>Manjka vam funkcija ali izboljšava?</p>
+    <p><a class="op-btn op-btn--primary" href="https://github.com/a1info/support/issues/new?template=feature_request.md">Predlagaj funkcijo</a></p>
+    <p class="op-muted">Navedite poslovni primer, pričakovano vedenje in prednost.</p>
+  </div>
+  <div class="op-card">
+    <h3>Pogosta vprašanja (FAQ)</h3>
+    <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
+    <ul class="op-list">
+      <li><a href="sl/podpora/">FAQ in reševanje težav</a></li>
+      <li>Kontakt za podporo: <a href="mailto:podpora@a1info.si">podpora@a1info.si</a></li>
+    </ul>
+  </div>
 </div>
 
-<div style="border: 1px solid #e1e5e9; border-radius: 8px; padding: 20px; background-color: #f8f9fa;">
+## O rešitvi
 
-### 👤 **Uporabniški priročnik**
-Podrobna navodila za uporabo vseh modulov
+Kratek pregled aplikacije, prednosti, moduli in sistemske zahteve.
 
-**[📚 Priročnik za uporabo](sl/uporaba/)**
+### Kaj je Optima Prevent
 
-- Osnovni moduli
-- Upravljanje uporabnikov
-- Delo s strankami
-- Analitika in poročila
+Optima Prevent je celovita EHS platforma za varnost in zdravje pri delu (VZD), požarno varnost (PV) in varstvo okolja. Upošteva slovensko zakonodajo in mednarodne standarde (OHSAS, ISO) ter omogoča obvladovanje procesov, dokumentacije in periodike.
 
+### Prednosti
+
+- Prilagoditev slovenski zakonodaji in standardom (OHSAS/ISO)
+- Modularna arhitektura in povezani moduli
+- EAV model za polja po meri in fleksibilnost podatkov
+- Transakcijski SQL, večuporabniški sočasni dostop
+- Šifriranje na vseh nivojih (baza, datotečni sistem, prenos)
+- Avtomatsko digitalno podpisovanje PDF (P12)
+- Analitika in koledarski pregled periodike
+
+### Moduli
+
+Strnjeni nabor modulov za celovito upravljanje:
+- Sistemske nastavitve, uporabniki, stranke, poslovne enote
+- Zaposleni, usposabljanja (tečaji, zapisniki, e-test)
+- Delovna oprema (evidenca, pregledi, zapisniki, QR/ROA)
+- Ocene tveganj (TDM, tveganja, OTV dokumenti)
+- VZD/EKO meritve (okolje, hrup, elektrika, strelovod …)
+- Požarna varnost (evidence, vaje evakuacije)
+- Zdravniški pregledi, osebna varovalna oprema, delovne nezgode
+- Analitika (periodika, realizacija, izdani dokumenti), CRM
+
+### Sistemske zahteve
+
+<table class="op-table">
+  <thead>
+    <tr><th>Komponenta</th><th>Zahteva</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>PHP</td><td>8.0 ali novejši</td></tr>
+    <tr><td>Framework</td><td>Laravel 9.x (MVC), Livewire, jQuery 2</td></tr>
+    <tr><td>Podatkovna baza</td><td>PostgreSQL ali Oracle</td></tr>
+    <tr><td>Varnost</td><td>SSL/VPN, šifriranje podatkov, GDPR skladnost</td></tr>
+    <tr><td>Brskalnik</td><td>Posodobljeni Chrome/Edge/Firefox; min. 1024×768</td></tr>
+  </tbody>
+</table>
+
+## Kontakt
+
+<div class="op-grid">
+  <div class="op-card">
+    <h3>A1 Informatika d.o.o.</h3>
+    <p class="op-muted">Slovenija</p>
+    <p>E-pošta: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a><br>
+       Splet: <a href="https://optima-prevent.eu">optima-prevent.eu</a></p>
+  </div>
+  <div class="op-card">
+    <h3>GitHub</h3>
+    <p><a href="https://github.com/a1info/support">Repozitorij OP5</a></p>
+    <div class="op-kpis">
+      <div class="op-kpi"><strong>Podpora</strong><br><a href="https://github.com/a1info/support/issues/new?template=bug_report.md">Prijava napake</a></div>
+      <div class="op-kpi"><strong>Razvoj</strong><br><a href="https://github.com/a1info/support/issues/new?template=feature_request.md">Predlog funkcije</a></div>
+    </div>
+  </div>
 </div>
 
-<div style="border: 1px solid #e1e5e9; border-radius: 8px; padding: 20px; background-color: #f8f9fa;">
+<hr>
 
-### 🆘 **Podpora in pomoč**
-Pogoste težave, FAQ in kontakt
-
-**[💬 Potrebujem pomoč](sl/podpora/)**
-
-- Pogosta vprašanja
-- Reševanje težav
-- Kontakt za podporo
-- Prijava napak
-
+<div class="op-muted" style="text-align:center">
+  © 2025 A1 Informatika d.o.o. · Optima Prevent v5.2 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
 </div>
-
-</div>
-
----
-
-## 🌐 Jezik / Language
-
-| Jezik | Status | Povezava |
-|-------|--------|----------|
-| 🇸🇮 **Slovenščina** | ✅ Popolno | [Slovenska dokumentacija](sl/) |
-| 🇬🇧 **English** | 🚧 V pripravi | [English Documentation](en/) |
-
----
-
-## 🏗️ Moduli sistema
-
-**Optima Prevent** je sestavljen iz povezanih modulov, ki omogočajo celovito upravljanje:
-
-| Modul | Opis | Status |
-|-------|------|--------|
-| **Sistemske nastavitve** | Osnovne nastavitve matičnega podjetja | ✅ |
-| **Uporabniki** | Upravljanje sistemskih uporabnikov in strank | ✅ |
-| **Stranke** | Evidenca strank in poslovnih enot | ✅ |
-| **Zaposleni** | Modol za upravljanje zaposlenih strank | ✅ |
-| **CRM** | Organizacija nalog in projektov | ✅ |
-| **Usposabljanje** | Tečaji, zapisniki in oddaljeno usposabljanje | ✅ |
-| **Delovna oprema** | Evidenca, pregledi in zapisniki | ✅ |
-| **QR kode** | Oddaljeni dostop do objektov (ROA) | ✅ |
-| **Ocene tveganj** | Upravljanje tveganj in tipična delovna mesta | ✅ |
-| **VZD/EKO meritve** | Fizikalne meritve delovnega okolja | ✅ |
-| **Požarna varnost** | Evidence požarne varnosti | ✅ |
-| **Zdravniški pregledi** | Spremljanje zdravniških pregledov | ✅ |
-| **Delovne nezgode** | Prijave in evidenca nesreč | ✅ |
-| **Osebna varovalna oprema** | Izdaja in spremljanje OVO | ✅ |
-| **Analitika** | Periodika, realizacija, dokumenti | ✅ |
-
----
-
-## 🔧 Tehnične informacije
-
-- **Framework**: Laravel 9.x z Livewire/JQuery2
-- **PHP**: 8.0+
-- **Podpore baze**: PostgreSQL, Oracle
-- **Varnost**: SSL/VPN, GDPR skladnost
-- **Licenca**: A1 Informatika d.o.o. (030/19)
-
----
-
-## 📞 Kontakt in podpora
-
-<div style="display: flex; gap: 20px; margin: 20px 0;">
-
-<div>
-
-### 🏢 A1 Informatika d.o.o.
-**Naslov**: Ljubljana, Slovenija  
-**Telefon**: +386 XXX XXX XXX  
-**E-pošta**: info@a1info.si  
-**Splet**: [www.a1info.si](https://www.a1info.si)
-
-</div>
-
-<div>
-
-### 🆘 Tehnična podpora
-- 🐛 [Prijavite hrošča](https://github.com/a1info/OP5/issues/new?template=bug_report.md)
-- 💡 [Predlagajte funkcijo](https://github.com/a1info/OP5/issues/new?template=feature_request.md)
-- 📧 **Hitri kontakt**: podpor@a1info.si
-
-</div>
-
-</div>
-
----
-
-## 📄 Dodatne informacije
-
-- **[📋 Celotni priročnik](manual.md)** - Originalna obsežna dokumentacija
-- **[📝 Dnevnik sprememb](CHANGELOG.md)** - Zgodovina verzij in posodobitev
-- **[🔗 GitHub repozitorij](https://github.com/a1info/OP5)** - Izvorna koda in issues
-
----
-
-<div align="center">
-
-**© 2024 A1 Informatika d.o.o. | Optima Prevent v5.1**
-
-*Blagovna znamka registrirana v Avtorski agenciji RS pod številko 030/19*
 
 </div>
