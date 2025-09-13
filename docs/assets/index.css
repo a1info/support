@@ -11,6 +11,21 @@
   --op-bg: #ffffff;          /* background color */
 }
 
+/* Hide site name in header */
+.md-header__title {
+  visibility: hidden;
+  position: relative;
+  width: 0;
+}
+
+.md-header__title::after {
+  content: "";
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* Full width layout */
 .md-grid {
   max-width: 100%;
@@ -20,7 +35,7 @@
 .md-sidebar--primary {
   background-color: var(--op-grey-1);
   border-right: 1px solid var(--op-grey-2);
-  width: 280px; /* Make sidebar wider */
+  width: 320px; /* Make sidebar even wider */
 }
 
 .md-sidebar--primary .md-sidebar__scrollwrap {
@@ -30,10 +45,10 @@
 /* Adjust content margin to account for wider sidebar */
 @media screen and (min-width: 76.25em) {
   .md-sidebar--primary ~ .md-content {
-    margin-left: 280px; /* Match sidebar width */
+    margin-left: 320px; /* Match sidebar width */
   }
   .md-sidebar--primary ~ .md-header-nav__button.md-icon {
-    margin-left: 280px; /* Match sidebar width */
+    margin-left: 320px; /* Match sidebar width */
   }
 }
 
@@ -67,9 +82,9 @@
   font-weight: 600;
 }
 
-/* Simplified submenu styling */
+/* Simplified submenu styling with less indentation */
 .md-nav--primary .md-nav__list .md-nav {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 /* Improve content readability */
@@ -84,7 +99,7 @@
   color: white;
 }
 
-/* Hero section - with cohesive colors */
+/* Hero section - with cohesive colors and improved text visibility */
 .op-hero {
   background: linear-gradient(135deg, var(--op-primary) 0%, var(--op-primary-dark) 100%);
   color: #fff;
@@ -102,14 +117,18 @@
 
 .op-hero h2 { 
   margin: 8px 0 12px 0; 
-  font-weight: 700; 
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Improve text visibility */
 }
 
 .op-hero p { 
   margin: 8px auto 24px auto; 
   max-width: 1000px; 
-  opacity: .95; 
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 500; /* Make text more visible */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Improve text visibility */
 }
 
 /* Improved button styling */
