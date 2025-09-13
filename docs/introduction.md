@@ -100,7 +100,7 @@ Uporabniki strank dostopajo do sistema preko posebnega URL naslova in imajo pril
 
 Za dodatno podporo in pomoč pri uporabi sistema Optima Prevent imate na voljo:
 
-- [Priročnik za uporabo](../manual-sl/)
-- [Pogosta vprašanja (FAQ)](../faq/)
+- [Priročnik za uporabo](manual-sl/)
+- [Pogosta vprašanja (FAQ)](manual/faq/)
 - [Kontakt za podporo](mailto:svetovanje@optima-prevent.eu)
 - [Prijava napake](https://github.com/a1info/support/issues/new?template=bug_report.yml)
