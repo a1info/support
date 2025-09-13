@@ -20,7 +20,7 @@
 
 /* Layout: widen sidebar and eliminate content constraints */
 .md-sidebar--primary {
-  width: 22rem !important;
+  width: 20rem !important;
   background: var(--op-grey-1);
   border-right: 1px solid var(--op-grey-2);
 }
