@@ -5,8 +5,35 @@
   <h2>Celovita rešitev za VZD, PV in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese in analitiko.</p>
   <div class="op-cta">
-    <a class="md-button md-button--primary" href="manual-sl/">Odpri priročnik</a>
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
+    <a class="md-button" href="manual-sl/">Odpri dokumentacijo</a>
+  </div>
+</div>
+
+## Podpora
+
+Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
+
+<div class="op-grid" id="podpora">
+  <div class="op-card">
+    <h3>Prijava napake</h3>
+    <p>Opazili ste težavo ali napako v delovanju?</p>
+    <p><a class="md-button md-button--primary" href="https://github.com/a1info/support/issues/new?template=bug_report.yml">Odpri prijavo napake</a></p>
+    <p class="op-muted">Za hitrejšo obravnavo priložite korake za ponovitev, posnetek zaslona in verzijo sistema.</p>
+  </div>
+  <div class="op-card">
+    <h3>Predlog funkcionalnosti</h3>
+    <p>Manjka vam funkcija ali izboljšava?</p>
+    <p><a class="md-button md-button--primary" href="https://github.com/a1info/support/issues/new?template=feature_request.yml">Predlagaj funkcijo</a></p>
+    <p class="op-muted">Navedite poslovni primer, pričakovano vedenje in prednost.</p>
+  </div>
+  <div class="op-card">
+    <h3>Pogosta vprašanja (FAQ)</h3>
+    <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
+    <ul>
+      <li><a href="manual/faq/">FAQ in reševanje težav</a></li>
+      <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
+    </ul>
   </div>
 </div>
 
@@ -73,33 +100,6 @@ Sistem Optima Prevent vključuje naslednje glavne module:
       <li>Pregled realizacije</li>
       <li>Izdani dokumenti</li>
       <li>Poročila po dejavnosti</li>
-    </ul>
-  </div>
-</div>
-
-## Podpora
-
-Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
-
-<div class="op-grid" id="podpora">
-  <div class="op-card">
-    <h3>Prijava napake</h3>
-    <p>Opazili ste težavo ali napako v delovanju?</p>
-    <p><a class="md-button md-button--primary" href="https://github.com/a1info/support/issues/new?template=bug_report.yml">Odpri prijavo napake</a></p>
-    <p class="op-muted">Za hitrejšo obravnavo priložite korake za ponovitev, posnetek zaslona in verzijo sistema.</p>
-  </div>
-  <div class="op-card">
-    <h3>Predlog funkcionalnosti</h3>
-    <p>Manjka vam funkcija ali izboljšava?</p>
-    <p><a class="md-button md-button--primary" href="https://github.com/a1info/support/issues/new?template=feature_request.yml">Predlagaj funkcijo</a></p>
-    <p class="op-muted">Navedite poslovni primer, pričakovano vedenje in prednost.</p>
-  </div>
-  <div class="op-card">
-    <h3>Pogosta vprašanja (FAQ)</h3>
-    <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
-    <ul>
-      <li><a href="manual/faq/">FAQ in reševanje težav</a></li>
-      <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
     </ul>
   </div>
 </div>
