@@ -37,6 +37,9 @@ theme:
     - search.highlight
     - content.code.copy
     - content.tooltips
+    - navigation.indexes
+    - navigation.footer
+    - navigation.collapse
 
 extra_css:
   - assets/index.css
@@ -55,10 +58,16 @@ markdown_extensions:
 
 nav:
   - Domov: index.md
-  - Dokumentacija:
-    - Priročnik: manual-sl.md
-    - Uvod in zahteve: introduction.md
-    - Pogosta vprašanja (FAQ): faq.md
+  - Priročnik: manual-sl.md
+  - Moduli:
+    - Uvod: manual/introduction.md
+    - Zaposleni in usposabljanja: manual/employees.md
+    - Delovna oprema: manual/equipment.md
+    - Ocene tveganj: manual/risk-assessment.md
+    - VZD/EKO meritve: manual/measurements.md
+    - Požarna varnost: manual/fire-safety.md
+    - Analitika: manual/analytics.md
+  - Pogosta vprašanja (FAQ): manual/faq.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
     - Predlagaj izboljšavo: https://github.com/a1info/support/issues/new?template=feature_request.yml
