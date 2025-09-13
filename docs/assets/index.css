@@ -10,9 +10,6 @@
   --op-text: #1f2a37;
   --op-text-light: #5a6a7e;
 
-  /* Material theme layout variables (if supported by your version) */
-  --md-sidebar-width: 22rem;   /* widen left menu */
-  --md-content-width: none;    /* remove content max width */
 }
 
 /* Remove site title from left menu (prevents duplication) */
