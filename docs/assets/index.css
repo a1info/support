@@ -154,8 +154,3 @@
   .op-hero .op-cta { flex-direction: column !important; }
   .op-hero .op-cta .md-button { width: 100% !important; }
 }
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary ~ .md-content {
-    margin-left: 30px;
-  }
-}
