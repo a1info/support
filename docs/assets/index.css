@@ -1,8 +1,8 @@
 /* Optima Prevent Styling */
 
 :root {
-  --op-primary: #2e5eaa;     /* primary blue - more vibrant and cohesive */
-  --op-primary-dark: #1a4080; /* darker primary for gradients */
+  --op-primary: #2e5eaa;     /* primary blue */
+  --op-primary-dark: #1a4080; /* darker primary */
   --op-accent: #4b7cc7;      /* lighter blue accent */
   --op-grey-1: #f6f8fa;      /* light grey */
   --op-grey-2: #e1e5eb;      /* border grey */
@@ -13,17 +13,7 @@
 
 /* Hide site name in header */
 .md-header__title {
-  visibility: hidden;
-  position: relative;
-  width: 0;
-}
-
-.md-header__title::after {
-  content: "";
-  visibility: visible;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: none;
 }
 
 /* Hide site name in sidebar */
@@ -31,35 +21,39 @@
   display: none;
 }
 
-/* Full width layout */
-.md-grid {
-  max-width: 100%;
-}
+/* --- LAYOUT FIXES --- */
 
-/* Left sidebar styling with grey background and wider width */
+/* 1. Widen the sidebar */
 .md-sidebar--primary {
+  width: 350px;
   background-color: var(--op-grey-1);
   border-right: 1px solid var(--op-grey-2);
-  width: 350px; /* Make sidebar wider */
 }
 
 .md-sidebar--primary .md-sidebar__scrollwrap {
   background-color: var(--op-grey-1);
 }
 
-/* Remove margin-left constraint for content - let it fill available space */
+/* 2. Remove all width and margin constraints from the main content area */
+.md-main__inner {
+  margin: 0 !important; /* Force remove margins */
+  max-width: none !important; /* Force remove max-width */
+  padding: 1.5rem;
+}
+
+.md-content {
+  max-width: none !important; /* Also force remove max-width here */
+}
+
+/* 3. Adjust main content position to account for the wide sidebar */
 @media screen and (min-width: 76.25em) {
-  .md-sidebar--primary ~ .md-header-nav__button.md-icon {
-    margin-left: 350px; /* Match sidebar width */
-  }
-  
-  /* Remove margin-left for content */
-  .md-sidebar--primary ~ .md-content {
-    margin-left: 0;
+  .md-main {
+    padding-left: 350px; /* Use padding on the main container to push content over */
   }
 }
 
-/* Navigation menu styling - smaller and nicer fonts */
+/* --- MENU STYLING --- */
+
 .md-nav {
   font-size: 0.8rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -70,10 +64,9 @@
   padding: 0;
 }
 
-/* Reduce spacing between menu items */
 .md-nav--primary .md-nav__link {
   margin: 0;
-  padding: 0.35rem 0.8rem; /* Reduced vertical padding */
+  padding: 0.35rem 0.8rem;
   border-radius: 4px;
   color: var(--op-text);
   transition: background-color 0.15s, color 0.15s;
@@ -90,28 +83,14 @@
   font-weight: 600;
 }
 
-/* Simplified submenu styling with less indentation */
 .md-nav--primary .md-nav__list .md-nav {
   margin-left: 0.5rem;
 }
 
-/* Remove max-width constraint for content */
-.md-content {
-  max-width: none;
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
-/* Header styling */
-.md-header {
-  background-color: var(--op-primary);
-  color: white;
-}
-
-/* Hero section - with improved text visibility */
+/* --- HERO SECTION VISIBILITY FIX --- */
 .op-hero {
-  background: linear-gradient(135deg, rgba(46, 94, 170, 0.9) 0%, rgba(26, 64, 128, 0.95) 100%);
-  color: #fff;
+  background: linear-gradient(135deg, rgba(46, 94, 170, 0.95) 0%, rgba(26, 64, 128, 1) 100%);
+  color: #ffffff;
   border-radius: 10px;
   padding: 48px 28px;
   margin: 12px 0 28px 0;
@@ -124,70 +103,67 @@
   margin-bottom: 12px; 
 }
 
-.op-hero h2 { 
-  margin: 8px 0 12px 0; 
-  font-weight: 800; /* Extra bold */
-  font-size: 2rem; /* Larger font */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-  color: #ffffff; /* Pure white */
-  letter-spacing: 0.5px; /* Slightly spaced letters */
+.op-hero h2, .op-hero p {
+  color: #ffffff !important; /* Force pure white color */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Stronger text shadow */
+  font-weight: 700;
 }
 
-.op-hero p { 
-  margin: 8px auto 24px auto; 
-  max-width: 1000px; 
-  font-size: 1.25rem; /* Larger font */
+.op-hero h2 {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.op-hero p {
+  font-size: 1.25rem;
   line-height: 1.5;
-  font-weight: 600; /* Bolder */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-  color: #ffffff; /* Pure white */
-  letter-spacing: 0.3px; /* Slightly spaced letters */
+  max-width: 900px;
 }
 
-/* Improved button styling */
 .op-hero .op-cta {
   display: flex;
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .op-hero .op-cta .md-button { 
   margin: 0;
   padding: 12px 28px;
-  font-weight: 600;
+  font-weight: 700;
   transition: transform 0.2s, box-shadow 0.2s;
   font-size: 1.1rem;
   letter-spacing: 0.3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .op-hero .op-cta .md-button:hover { 
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* First button (Support) styling */
 .op-hero .md-button:first-child {
   background-color: #ffffff;
   color: var(--op-primary);
   border-color: #ffffff;
 }
 
-/* Second button (Documentation) styling */
 .op-hero .md-button:nth-child(2) {
-  background-color: rgba(255, 255, 255, 0.25); /* More visible */
-  border-color: rgba(255, 255, 255, 0.6); /* More visible border */
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
   color: #ffffff;
 }
 
-/* Section styling */
+/* --- GENERAL STYLING --- */
+.md-header {
+  background-color: var(--op-primary);
+  color: white;
+}
+
 .md-typeset h1, .md-typeset h2 {
   color: var(--op-primary);
   font-weight: 600;
-}
-
-.md-typeset h2 {
   border-bottom: 1px solid var(--op-grey-2);
   padding-bottom: 0.3rem;
 }
@@ -196,7 +172,6 @@
   color: var(--op-primary-dark);
 }
 
-/* Simple card grid */
 .op-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -223,24 +198,6 @@
   font-weight: 600;
 }
 
-.op-card p { 
-  margin: 10px 0 14px 0; 
-  color: var(--op-text);
-}
-
-.op-card ul {
-  padding-left: 1.2rem;
-}
-
-.op-card li {
-  margin-bottom: 6px;
-}
-
-.op-muted { 
-  color: var(--op-text-light); 
-}
-
-/* Main content links */
 .md-content a {
   color: var(--op-primary);
 }
@@ -250,11 +207,7 @@
   text-decoration: underline;
 }
 
-/* Responsive tweaks */
 @media (max-width: 480px) {
-  .op-hero img { height: 48px; }
-  .op-hero { padding: 32px 18px; }
-  .op-hero h2 { font-size: 1.6rem; }
   .op-hero .op-cta { flex-direction: column; }
   .op-hero .op-cta .md-button { width: 100%; }
 }
