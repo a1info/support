@@ -58,7 +58,7 @@ nav:
   - Domov: index.md
   - Priročnik: manual-sl.md
   - Uvod: introduction.md
-  - Pogosta vprašanja (FAQ): manual/faq.md
+  - Pogosta vprašanja (FAQ): faq.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
     - Predlagaj izboljšavo: https://github.com/a1info/support/issues/new?template=feature_request.yml
