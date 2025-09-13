@@ -47,7 +47,7 @@
 /* Left menu: smaller/nicer font, tighter spacing, less child indent */
 .md-nav {
   font-size: 0.82rem !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 .md-nav--primary .md-nav__item { margin: 0 !important; padding: 0 !important; }
