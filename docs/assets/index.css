@@ -64,7 +64,7 @@
 }
 
 .md-nav--primary .md-nav__link--active {
-  background: rgba(46, 94, 170, 0.10) !important;
+  background: var(--op-grey-1) !important;
   color: var(--op-primary) !important;
   font-weight: 600 !important;
 }
