@@ -40,20 +40,22 @@
 .md-sidebar--primary {
   background-color: var(--op-grey-1);
   border-right: 1px solid var(--op-grey-2);
-  width: 350px; /* Make sidebar even wider */
+  width: 350px; /* Make sidebar wider */
 }
 
 .md-sidebar--primary .md-sidebar__scrollwrap {
   background-color: var(--op-grey-1);
 }
 
-/* Adjust content margin to account for wider sidebar - but less than sidebar width */
+/* Remove margin-left constraint for content - let it fill available space */
 @media screen and (min-width: 76.25em) {
-  .md-sidebar--primary ~ .md-content {
-    margin-left: 330px; /* Less than sidebar width to reduce margin */
-  }
   .md-sidebar--primary ~ .md-header-nav__button.md-icon {
     margin-left: 350px; /* Match sidebar width */
+  }
+  
+  /* Remove margin-left for content */
+  .md-sidebar--primary ~ .md-content {
+    margin-left: 0;
   }
 }
 
@@ -93,10 +95,11 @@
   margin-left: 0.5rem;
 }
 
-/* Improve content readability */
+/* Remove max-width constraint for content */
 .md-content {
-  max-width: 1200px;
+  max-width: none;
   margin: 0 auto;
+  padding: 0 25px;
 }
 
 /* Header styling */
@@ -105,9 +108,9 @@
   color: white;
 }
 
-/* Hero section - with cohesive colors and improved text visibility */
+/* Hero section - with improved text visibility */
 .op-hero {
-  background: linear-gradient(135deg, var(--op-primary) 0%, var(--op-primary-dark) 100%);
+  background: linear-gradient(135deg, rgba(46, 94, 170, 0.9) 0%, rgba(26, 64, 128, 0.95) 100%);
   color: #fff;
   border-radius: 10px;
   padding: 48px 28px;
@@ -123,18 +126,22 @@
 
 .op-hero h2 { 
   margin: 8px 0 12px 0; 
-  font-weight: 700;
-  font-size: 1.8rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Improve text visibility */
+  font-weight: 800; /* Extra bold */
+  font-size: 2rem; /* Larger font */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  color: #ffffff; /* Pure white */
+  letter-spacing: 0.5px; /* Slightly spaced letters */
 }
 
 .op-hero p { 
   margin: 8px auto 24px auto; 
   max-width: 1000px; 
-  font-size: 1.2rem;
+  font-size: 1.25rem; /* Larger font */
   line-height: 1.5;
-  font-weight: 500; /* Make text more visible */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Improve text visibility */
+  font-weight: 600; /* Bolder */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  color: #ffffff; /* Pure white */
+  letter-spacing: 0.3px; /* Slightly spaced letters */
 }
 
 /* Improved button styling */
@@ -143,19 +150,21 @@
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .op-hero .op-cta .md-button { 
   margin: 0;
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-weight: 600;
   transition: transform 0.2s, box-shadow 0.2s;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
 }
 
 .op-hero .op-cta .md-button:hover { 
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* First button (Support) styling */
@@ -167,8 +176,8 @@
 
 /* Second button (Documentation) styling */
 .op-hero .md-button:nth-child(2) {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.25); /* More visible */
+  border-color: rgba(255, 255, 255, 0.6); /* More visible border */
   color: #ffffff;
 }
 
