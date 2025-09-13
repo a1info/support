@@ -37,7 +37,6 @@ theme:
     - search.highlight
     - content.code.copy
     - content.tooltips
-    - navigation.footer
     - navigation.collapse
 
 extra_css:
@@ -57,7 +56,7 @@ markdown_extensions:
 
 nav:
   - Domov: index.md
-  - Priročnik: manual-sl.md
+  - Dokumentacija: manual-sl.md
   - Uvod: manual/introduction.md
   - Pogosta vprašanja (FAQ): manual/faq.md
   - Podpora:
