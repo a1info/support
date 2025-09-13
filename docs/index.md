@@ -4,50 +4,75 @@
   <img src="media/logos/op-logo.png" alt="Optima Prevent logo" />
   <h2>Celovita rešitev za VZD, PV in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese in analitiko.</p>
-  <p class="op-cta">
-    <a class="md-button md-button--primary" href="manual-sl/">Odpri dokumentacijo</a>
+  <div class="op-cta">
+    <a class="md-button md-button--primary" href="manual-sl/">Odpri priročnik</a>
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
-  </p>
+  </div>
 </div>
 
-## Dokumentacija
+## Moduli sistema Optima Prevent
 
-Vsa navodila, vodiči in referenčna vsebina na enem mestu.
+Sistem Optima Prevent vključuje naslednje glavne module:
 
 <div class="op-grid">
   <div class="op-card">
-    <h3>Uvod in pregled</h3>
-    <p>Spoznajte glavne koncepte in arhitekturo sistema.</p>
+    <h3>Zaposleni in usposabljanja</h3>
+    <p>Upravljanje kadrov, tečajev in preverjanja znanja.</p>
     <ul>
-      <li><a href="manual/introduction/">Začnite tukaj</a></li>
-      <li>Ključne funkcionalnosti</li>
-      <li>Sistemska arhitektura</li>
+      <li>Evidenca zaposlenih</li>
+      <li>Organizacija usposabljanj</li>
+      <li>E-testi in oddaljeno usposabljanje</li>
+      <li>Avtomatska potrdila in zapisniki</li>
     </ul>
   </div>
   <div class="op-card">
-    <h3>Namestitev in konfiguracija</h3>
-    <p>Tehnična navodila za vzpostavitev okolja in začetno nastavitev.</p>
+    <h3>Delovna oprema</h3>
+    <p>Evidenca in pregledi delovne opreme.</p>
     <ul>
-      <li><a href="manual/introduction/#namestitev">Navodila za namestitev</a></li>
-      <li>Migracija podatkov</li>
-      <li>Varnost in dostop</li>
+      <li>Evidenca opreme in inventarja</li>
+      <li>Periodični pregledi</li>
+      <li>QR kode za mobilni dostop</li>
+      <li>Digitalno podpisani zapisniki</li>
     </ul>
   </div>
   <div class="op-card">
-    <h3>Uporabniški priročnik</h3>
-    <p>Podrobna navodila za delo z moduli in evidencami.</p>
+    <h3>Ocene tveganj</h3>
+    <p>Ocenjevanje in dokumentiranje tveganj.</p>
     <ul>
-      <li><a href="manual-sl/">Priročnik za uporabo</a></li>
-      <li>Upravljanje uporabnikov</li>
-      <li>Analitika in poročila</li>
+      <li>Tipična delovna mesta (TDM)</li>
+      <li>Metodologija ocenjevanja</li>
+      <li>Ukrepi in odgovorne osebe</li>
+      <li>Digitalno podpisani dokumenti</li>
     </ul>
   </div>
   <div class="op-card">
-    <h3>Pogosta vprašanja</h3>
-    <p>Odgovori na najpogostejša vprašanja in reševanje težav.</p>
+    <h3>VZD/EKO meritve</h3>
+    <p>Meritve delovnega okolja in ostale meritve.</p>
     <ul>
-      <li><a href="manual/faq/">Odpri FAQ</a></li>
-      <li><a href="CHANGELOG/">Dnevnik sprememb</a></li>
+      <li>Meritve delovnega okolja</li>
+      <li>Meritve hrupa</li>
+      <li>Električne meritve</li>
+      <li>Strelovodi in druge meritve</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Požarna varnost</h3>
+    <p>Evidence in dokumenti požarne varnosti.</p>
+    <ul>
+      <li>Evidence požarne zaščite</li>
+      <li>Gasilna oprema</li>
+      <li>Vaje evakuacije</li>
+      <li>Odgovorne osebe za PV</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Analitika</h3>
+    <p>Pregledi in poročila poslovanja.</p>
+    <ul>
+      <li>Koledar periodike</li>
+      <li>Pregled realizacije</li>
+      <li>Izdani dokumenti</li>
+      <li>Poročila po dejavnosti</li>
     </ul>
   </div>
 </div>
@@ -81,7 +106,7 @@ Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
 
 ## O rešitvi
 
-Kratek pregled aplikacije, prednosti, moduli in sistemske zahteve.
+Kratek pregled aplikacije, prednosti in modulov.
 
 ### Kaj je Optima Prevent
 
@@ -96,17 +121,6 @@ Optima Prevent je celovita EHS platforma za varnost in zdravje pri delu (VZD), p
 - Šifriranje na vseh nivojih (baza, datotečni sistem, prenos)
 - Avtomatsko digitalno podpisovanje PDF (P12)
 - Analitika in koledarski pregled periodike
-
-### Moduli
-
-- Sistemske nastavitve, uporabniki, stranke, poslovne enote
-- Zaposleni, usposabljanja (tečaji, zapisniki, e-test)
-- Delovna oprema (evidenca, pregledi, zapisniki, QR/ROA)
-- Ocene tveganj (TDM, tveganja, OTV dokumenti)
-- VZD/EKO meritve (okolje, hrup, elektrika, strelovod …)
-- Požarna varnost (evidence, vaje evakuacije)
-- Zdravniški pregledi, osebna varovalna oprema, delovne nezgode
-- Analitika (periodika, realizacija, izdani dokumenti), CRM
 
 ## Kontakt
 
