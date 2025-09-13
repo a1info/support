@@ -141,6 +141,72 @@
   color: var(--op-primary) !important;
 }
 
+/* Card styling (ensure cards are properly displayed) */
+.op-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 24px 0 !important;
+}
+
+.op-card {
+  background: var(--op-grey-1) !important;
+  border: 1px solid var(--op-grey-2) !important;
+  border-radius: 10px !important;
+  padding: 22px !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.op-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.op-card h3 { 
+  margin-top: 0 !important; 
+  color: var(--op-primary) !important;
+  font-weight: 600 !important;
+}
+
+.op-card p { 
+  margin: 10px 0 14px 0 !important; 
+  color: var(--op-text) !important;
+}
+
+.op-card ul {
+  padding-left: 1.2rem !important;
+}
+
+.op-card li {
+  margin-bottom: 6px !important;
+}
+
+/* Fix button text visibility in cards */
+.md-button, 
+.md-button--primary,
+.op-card .md-button,
+.op-card .md-button--primary {
+  background-color: var(--op-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--op-primary-dark) !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  padding: 8px 16px !important;
+  display: inline-block !important;
+  text-align: center !important;
+}
+
+.md-button:hover,
+.md-button--primary:hover,
+.op-card .md-button:hover,
+.op-card .md-button--primary:hover {
+  background-color: var(--op-primary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  text-decoration: none !important;
+}
+
 /* Content headings color harmony */
 .md-typeset h1, .md-typeset h2 { color: var(--op-primary) !important; font-weight: 700 !important; }
 .md-typeset h3 { color: var(--op-primary-dark) !important; }
@@ -148,6 +214,10 @@
 /* Links */
 .md-content a { color: var(--op-primary) !important; }
 .md-content a:hover { color: var(--op-accent) !important; text-decoration: underline !important; }
+
+.op-muted { 
+  color: var(--op-text-light) !important; 
+}
 
 /* Small screens: full-width hero buttons stacked */
 @media (max-width: 480px) {
