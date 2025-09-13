@@ -1,4 +1,4 @@
-# Navodila za uporabo — Optima Prevent v5.1
+# Navodila za uporabo — Optima Prevent v5.2
 
 ## Uvod
 
