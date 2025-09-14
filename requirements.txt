@@ -3,6 +3,7 @@ mkdocs-material>=9.5.18
 mkdocs-ivory>=0.4.6
 mkdocs-gitbook
 mkdocs-cluster
+mkdocs-rtd-dropdown
 mkdocs-static-i18n>=1.2.3
 mkdocs-git-revision-date-localized-plugin>=1.2.4
 pymdown-extensions>=10.7
