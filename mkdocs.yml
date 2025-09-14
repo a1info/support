@@ -32,7 +32,7 @@ theme:
     - navigation.footer
 
 extra_css:
-#  - assets/index.css
+  - assets/index.css
 
 plugins:
   - search
