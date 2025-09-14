@@ -8,7 +8,7 @@ repo_name: a1info/support
 edit_uri: edit/main/docs/
 
 theme:
-  name: ivory
+  name: gitbook
   language: sl
   logo: media/logos/op-logo.png
   favicon: media/logos/op-logo.png
