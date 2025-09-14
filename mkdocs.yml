@@ -8,7 +8,7 @@ repo_name: a1info/support
 edit_uri: edit/main/docs/
 
 theme:
-  name: material
+  name: ivory
   language: sl
   logo: media/logos/op-logo.png
   favicon: media/logos/op-logo.png
@@ -18,15 +18,7 @@ theme:
     - scheme: default
       primary: indigo
       accent: blue grey
-      toggle:
-        icon: material/brightness-7
-        name: Preklopi v temni način
-    - scheme: slate
-      primary: blue grey
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Preklopi v svetli način
+
   features:
     - navigation.instant
     - navigation.sections
@@ -40,7 +32,7 @@ theme:
     - navigation.footer
 
 extra_css:
-  - assets/index.css
+#  - assets/index.css
 
 plugins:
   - search
