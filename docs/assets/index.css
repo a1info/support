@@ -18,7 +18,6 @@
 /* Layout: widen sidebar and eliminate content constraints */
 .md-sidebar--primary {
   width: 18rem !important;
-  background: var(--op-grey-1);
   border-right: 1px solid var(--op-grey-2);
 }
 
@@ -30,13 +29,6 @@
 .md-content__inner {
   max-width: none !important;
   margin: 0 !important;
-}
-
-/* Important: remove any margin-left the theme adds on wide screens */
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary ~ .md-content {
-    margin-left: 0 !important;
-  }
 }
 
 /* Give content a little breathing room without restricting width */
