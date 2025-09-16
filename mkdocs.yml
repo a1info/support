@@ -39,6 +39,9 @@ plugins:
 
 extra:
   alternate:
+    - name: Slovenščina
+      link: /
+      lang: sl
     - name: English
       link: /en/ 
       lang: en
