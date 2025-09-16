@@ -12,14 +12,6 @@
 
 }
 
-/* Remove site title from left menu (prevents duplication) */
-.md-sidebar__inner .md-nav--primary > .md-nav__title { display: none !important; }
-
-/* Layout: widen sidebar and eliminate content constraints */
-.md-sidebar--primary {
-  width: 18rem !important;
-  border-right: 1px solid var(--op-grey-2);
-}
 
 /* Completely remove content max-width and auto margins at any breakpoint */
 .md-grid,
