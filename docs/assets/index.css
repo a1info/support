@@ -31,35 +31,6 @@
   margin: 0 !important;
 }
 
-/* Give content a little breathing room without restricting width */
-.md-content__inner {
-  padding: 0 24px 24px 24px !important;
-}
-
-
-.md-nav--primary .md-nav__item { margin: 0 !important; padding: 0 !important; }
-
-.md-nav--primary .md-nav__link {
-  padding: 0.3rem 0.8rem !important;  /* tighter vertical spacing */
-  line-height: 1.25 !important;
-  border-radius: 4px;
-  color: var(--op-text) !important;
-}
-
-.md-nav--primary .md-nav__link:hover {
-  background: rgba(0,0,0,0.05) !important;
-}
-
-.md-nav--primary .md-nav__link--active {
-  background: rgba(46, 94, 170, 0.10) !important;
-  color: var(--op-primary) !important;
-  font-weight: 600 !important;
-}
-
-/* Child list indent reduced */
-.md-nav--primary .md-nav__list .md-nav {
-  margin-left: 0.4rem !important;
-}
 
 
 /* HERO: switch to light background and dark text for better visibility */
