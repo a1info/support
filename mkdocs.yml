@@ -58,8 +58,8 @@ markdown_extensions:
 
 nav:
   - Domov: index.md
-  - Priročnik: manual-sl.md
   - Uvod: introduction.md
+  - Dokumentacija: manual-sl.md
   - Pogosta vprašanja (FAQ): faq.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
