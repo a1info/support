@@ -74,11 +74,6 @@
   margin-left: 0.4rem !important;
 }
 
-/* Header background aligned with palette */
-.md-header {
-  background: var(--op-primary) !important;
-  color: #fff !important;
-}
 
 /* HERO: switch to light background and dark text for better visibility */
 .op-hero {
