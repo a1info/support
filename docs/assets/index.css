@@ -17,7 +17,7 @@
 
 /* Layout: widen sidebar and eliminate content constraints */
 .md-sidebar--primary {
-  width: 20rem !important;
+  width: 18rem !important;
   background: var(--op-grey-1);
   border-right: 1px solid var(--op-grey-2);
 }
@@ -44,11 +44,6 @@
   padding: 0 24px 24px 24px !important;
 }
 
-/* Left menu: smaller/nicer font, tighter spacing, less child indent */
-.md-nav {
-  font-size: 0.82rem !important;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-}
 
 .md-nav--primary .md-nav__item { margin: 0 !important; padding: 0 !important; }
 
