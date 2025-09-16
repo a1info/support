@@ -37,6 +37,13 @@ extra_css:
 plugins:
   - search
 
+extra:
+  alternate:
+    - name: English
+      link: /en/ 
+      lang: en
+
+
 markdown_extensions:
   - admonition
   - pymdownx.details
