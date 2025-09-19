@@ -136,7 +136,7 @@ Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo 
 
 ## Podpora
 
-### Kanal za prijavo napak in predlogov ter hiter kontakt s podporo.
+### Prijava napak in predlogov
 
 <div class="op-grid" id="podpora">
   <div class="op-card">
