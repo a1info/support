@@ -1,0 +1,77 @@
+name: "Predlog funkcionalnosti"
+description: "Predlagajte novo funkcijo ali izboljšavo."
+title: "[PREDLOG] Kratek opis funkcionalnosti"
+labels:
+  - enhancement
+  - ideas
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hvala za predlog. Osredotočite se na poslovno vrednost in pričakovani rezultat.
+  - type: input
+    id: kontakt
+    attributes:
+      label: Kontaktni e‑mail
+      description: "Za pojasnila glede potrebe."
+      placeholder: "ime.priimek@primer.si"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Opis problema / potrebe
+      description: "Kaj je težava ali priložnost, ki jo želite rešiti?"
+      placeholder: "Trenutno moramo ... kar povzroča ..."
+    validations:
+      required: true
+  - type: textarea
+    id: predlagana_resitev
+    attributes:
+      label: Predlagana rešitev
+      description: "Kako si predstavljate delovanje ali spremembo?"
+      placeholder: "Dodati gumb ... ki omogoča ..."
+    validations:
+      required: true
+  - type: textarea
+    id: poslovna_vrednost
+    attributes:
+      label: Poslovna vrednost / korist
+      description: "Kako izboljša učinkovitost, skladnost, varnost ali uporabniško izkušnjo?"
+      placeholder: "Prihranek časa pri ..., manj napak pri ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: prioritetna_ocena
+    attributes:
+      label: Predlagana prioriteta
+      options:
+        - Nizka
+        - Srednja
+        - Visoka
+        - Kritična
+    validations:
+      required: true
+  - type: textarea
+    id: alternativa
+    attributes:
+      label: Alternative / obvozi
+      description: "Kako trenutno rešujete primer?"
+      placeholder: "Trenutno izvajamo ročno ..."
+    validations:
+      required: false
+  - type: textarea
+    id: dodatno
+    attributes:
+      label: Dodatne informacije
+      description: "Priloge, primeri iz drugih sistemov, povezave."
+    validations:
+      required: false
+  - type: checkboxes
+    id: preverjanje
+    attributes:
+      label: Pred oddajo
+      options:
+        - label: Preveril sem obstoječe predloge (da ni podvojen)
+          required: true
+        - label: Potrjeno z notranjimi deležniki

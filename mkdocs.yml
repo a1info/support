@@ -18,7 +18,6 @@ theme:
     - scheme: default
       primary: indigo
       accent: blue grey
-
   features:
     - navigation.instant
     - navigation.sections
@@ -43,9 +42,8 @@ extra:
       link: /
       lang: sl
     - name: English
-      link: /en/ 
+      link: /en/
       lang: en
-
 
 markdown_extensions:
   - admonition

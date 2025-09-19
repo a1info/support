@@ -1,0 +1,80 @@
+name: "Prijava hrošča (napake)"
+description: "Prijavite napako, ki ste jo opazili v Optima Prevent."
+title: "[HROŠČ] Kratek opis napake"
+labels:
+  - bug
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hvala za prijavo. Prosimo, da izpolnite čim več podatkov za hitrejšo analizo.
+        (Opomba: Ne vnašajte občutljivih osebnih podatkov / PII.)
+  - type: input
+    id: kontakt
+    attributes:
+      label: Kontaktni e‑mail
+      description: "Vaš e‑mail (za morebitna dodatna pojasnila)."
+      placeholder: "ime.priimek@primer.si"
+    validations:
+      required: true
+  - type: dropdown
+    id: resnost
+    attributes:
+      label: Stopnja resnosti
+      description: "Ocenite vpliv napake."
+      options:
+        - Nizka (kozmetična)
+        - Srednja (vpliva na del procesa)
+        - Visoka (ovira delo, a obstaja obvoz)
+        - Kritična (blokirano ključnega pomena)
+    validations:
+      required: true
+  - type: textarea
+    id: opis
+    attributes:
+      label: Opis napake
+      description: "Kaj ste pričakovali in kaj se je dejansko zgodilo?"
+      placeholder: "Pričakovano vedenje: ... \nDejansko vedenje: ..."
+    validations:
+      required: true
+  - type: textarea
+    id: koraki
+    attributes:
+      label: Koraki za reproduciranje
+      description: "Minimalni koraki, da se napaka pojavi."
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: okolje
+    attributes:
+      label: Okolje
+      description: "Brskalnik, verzija, modul, datum/čas, ID zapisa ipd."
+      placeholder: "Chrome 128, Windows 11, Modul: Usposabljanja ..."
+    validations:
+      required: false
+  - type: textarea
+    id: dnevnik
+    attributes:
+      label: Logi / dodatni podatki
+      description: "Prilepite morebitna besedilna sporočila napak ali povezave do posnetkov zaslona."
+      placeholder: "Sporočilo: NullReferenceException ... ali https://primer.si/slika.png"
+    validations:
+      required: false
+  - type: checkboxes
+    id: preverjanje
+    attributes:
+      label: Pred oddajo
+      options:
+        - label: Preveril sem obstoječe odprte in zaprte zadeve
+          required: true
+        - label: Poskusil sem v drugem brskalniku / inkognito načinu
+        - label: Odstranil sem predpomnilnik / osvežil stran
+  - type: textarea
+    id: dodatno
+    attributes:
+      label: Dodatne informacije
+      description: "Karkoli, kar bi nam pomagalo pri analizi."
+    validations:
+      required: false
