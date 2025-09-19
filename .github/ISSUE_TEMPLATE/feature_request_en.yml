@@ -1,0 +1,77 @@
+name: "Feature Request"
+description: "Suggest a new feature or improvement."
+title: "[FEATURE] Short summary"
+labels:
+  - enhancement
+  - ideas
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us understand the value and context of your idea.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email
+      description: "So we can clarify business context if needed."
+      placeholder: "name.surname@example.com"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / need
+      description: "What issue or opportunity are you addressing?"
+      placeholder: "Currently we must ... which causes ..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed solution
+      description: "How do you imagine it working?"
+      placeholder: "Add a button ... which allows ..."
+    validations:
+      required: true
+  - type: textarea
+    id: business_value
+    attributes:
+      label: Business value / benefit
+      description: "How does this improve efficiency, compliance, safety, or UX?"
+      placeholder: "Saves time by ..., reduces errors in ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Suggested priority
+      options:
+        - Low
+        - Medium
+        - High
+        - Critical
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / workarounds
+      description: "How do you solve it today?"
+      placeholder: "Manual export to ..."
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+      description: "Attachments, external examples, links."
+    validations:
+      required: false
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked existing feature requests (to avoid duplicates)
+          required: true
+        - label: Confirmed with internal stakeholders

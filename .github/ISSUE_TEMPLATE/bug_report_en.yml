@@ -1,0 +1,80 @@
+name: "Bug Report"
+description: "Report a defect you observed in Optima Prevent."
+title: "[BUG] Short summary"
+labels:
+  - bug
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Please provide as much detail as possible.
+        (Note: Do not include sensitive personal data / PII.)
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email
+      description: "We may need to follow up."
+      placeholder: "name.surname@example.com"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: "How strongly does this affect your work?"
+      options:
+        - Low (cosmetic)
+        - Medium (affects part of a process)
+        - High (significant disruption, workaround exists)
+        - Critical (blocking key workflow)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "What did you expect and what happened instead?"
+      placeholder: "Expected behavior: ...\nActual behavior: ..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: "Minimal exact steps so we can reproduce."
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "Browser, version, module, date/time, record ID etc."
+      placeholder: "Chrome 128, Windows 11, Module: Training ..."
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / additional data
+      description: "Paste textual error messages or links to screenshots."
+      placeholder: "Error: NullReferenceException ... or https://example.com/screenshot.png"
+    validations:
+      required: false
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing open and closed issues
+          required: true
+        - label: I tried another browser / incognito
+        - label: I cleared cache / refreshed page
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: "Anything else that might help."
+    validations:
+      required: false
