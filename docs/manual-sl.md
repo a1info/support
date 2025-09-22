@@ -10,12 +10,14 @@ Tehnologija EAV (Entity-Attribute-Value) omogoča dodajanje atributov po meri, k
 
 Klient/strežnik arhitektura s transakcijsko SQL komunikacijo omogoča istočasni dostop vseh uporabnikov brez tveganja izgube podatkov ali sočasnega konflikta pri urejanju.
 
-Razvojne tehnologije: PHP 8, MVC (Model-View-Controller) — Laravel 9.x, z Livewire in jQuery 2 na uporabniškem vmesniku. Podatkovni sloj podpira PostgreSQL in Oracle.
+Razvojne tehnologije: PHP 8, MVC (Model-View-Controller) — Laravel 12.x, z Livewire/Alpine na uporabniškem vmesniku. Podatkovni sloj podpira PostgreSQL in Oracle.
 
 Vsi sloji dostopa do podatkov so šifrirani: SQL baza, datotečni sistem, omrežni prenos (SSL/VPN). Za GDPR skladnost se sejni piškotki hranijo v šifrirani SQL bazi. Obravnava osebnih podatkov je skladna z GDPR in dokumentirana v priloženi dokumentaciji Optima Prevent.
 
 Optima Prevent je blagovna znamka podjetja A1 Informatika d.o.o. in je registrirana pri Avtorski agenciji RS pod številko 030/19.
 
+- **Verzija**: 5.2
+- **Licenca**: a1-tech v2 @lic
 
 ## Vmesnik in prijava
 
@@ -68,17 +70,20 @@ Obvezni in ključni podatki:
 - logotip,
 - certifikat za podpisovanje dokumentov itd.
 
-V razdelku »Moduli« upravljate izbirne sistemske module in vnašate licence.
+V razdelku »Moduli« upravljate izbirne sistemske module in vnašate pridobite licence.
 
 ### Nadgradnja sistema
 
 V razdelku »Nadgradnja« je prikazana trenutna verzija. Če je sistem posodobljen, gumb za nadgradnjo ni prikazan.
+Na desni strani je prikazan kratek seznam sprememb posabezne različice.
 
 ### Digitalno podpisovanje dokumentov
 
-Dostop: Nastavitve → Sistem
+Dostop: Nastavitve → Potrdila/Akreditacije
 
-Podprti so P12 certifikati z geslom. Za samodejno podpisovanje PDF dokumentov dodajte P12 certifikat in geslo. Po tem bodo vsi PDF dokumenti samodejno digitalno podpisani in vidni uporabnikom strank po prijavi.
+Potrebno je dedati novi vnost tipa digitalni podpis, izbere se P12 datoteka in pripradajoče geslo. 
+
+Po tem bodo vsi PDF dokumenti samodejno digitalno podpisani in vidni uporabnikom strank po prijavi.
 
 
 ## Uporabniki
@@ -90,6 +95,10 @@ Sistemski uporabniki (zaposleni matične družbe) spadajo v skupine:
 - Operaterji,
 - Uporabniki.
 
+To so zadane sistemske skupine.  Lahko sami dodajate nove skupine in določite pravice teh skupin.
+
+Dostop: Nastavitve → Uporabniki
+
 Pravice:
 - Uporabniki: dostop do lastnih in skupinskih podatkov; brez pravic nad sistemskimi nastavitvami.
 - Operaterji: vpogled v vse podatke, delo v tujem imenu; brez pravic nad sistemskimi nastavitvami.
@@ -97,7 +106,7 @@ Pravice:
 
 ### Uporabniki strank
 
-Uporabniki strank (njihovi zaposleni) imajo, glede na dodeljene pravice, dostop do delov aplikacije z informacijami svoje stranke. Modulne pravice:
+Strankami lahko dodtelite pravico do dostopa v sistem. Glede na dodeljene pravice, imajo dostop do delov aplikacije z informacijami svoje stranke. Modulne pravice:
 - delovna oprema,
 - zaposleni,
 - osebna varovalna oprema,
@@ -122,13 +131,16 @@ Po prijavi je prikazan Dashboard s splošnimi informacijami in hitrimi povezavam
 - Dokumenti: Dostop prek menija »Dokumenti«.
 - Koledar veljavnosti (Periodika): Dostop prek menija »Periodika«.
 - Seznam zaposlenih: Dostop prek menija »Zaposleni«.
+- Seznam delovnih mest
+- Seznam delovne opreme: Dostop prek menija »Delovna oprema«.
+- Zdravniški pregledi
 
 Prijavno stran za stranke je možno prilagoditi.
 
 
 ## Začetna nastavitev in vnos podatkov
 
-Dostop: Sistem → Nastavitve → Sistem
+Dostop: Sistem → Nastavitve
 
 ### Migracija podatkov
 
@@ -144,7 +156,9 @@ Vsi izdani dokumenti so avtomatično oštevilčeni s števci, prilagodljivimi pr
 - ocene tveganja,
 - EKO/VZD meritve.
 
-Parametri: leto, stranka, tip dokumenta. Konfiguracija je v tekstovni datoteki in podpira različne kombinacije.
+Parametri: leto, stranka, tip dokumenta.
+
+Dostop: Sistem → Številčenje
 
 ### Uvoz Excel datotek
 
@@ -595,7 +609,9 @@ Priprava letnih poročil o številu objektov/opreme, na katerih so bili opravlje
 Komunikacija je interna in zunanja.
 
 - Interna: med uporabniki sistema (tudi uporabniki stranke) v realnem času; olajša usklajevanje in delo na projektih. Podpira transparentno obveščanje skrbnikov strank o spremembah.
-- Zunanja: prek šifrirane e-pošte. Nastavitve e-pošte so v konfiguraciji sistemskih uporabnikov in v nastavitvah matične družbe.
+
+- Zunanja: prek šifrirane e-pošte. Kako bi se omogočilo pošiljanje obvestil prek e-maila je potrebno kofigurirati email strežnik za pošiljanje v sistemskih nastavitvah.
+Konfiguracija e-mail obveščanja za posamezne stranke je dostopna na Nastavitve -> Obveščanje. Na ekranu lahko nastavite tip obveščanja in dan v mesecu za pošiljanje mailov.
 
 
 ## Urejanje podlog za izpis
@@ -610,7 +626,7 @@ Za netipične preglede (npr. kontrolni pregledi, vaje evakuacije). Elementi:
 - potrditveno polje (checkbox), dvojno potrditveno polje (da/ne),
 - SQL koda.
 
-Uporabite spremenljivke, npr. `cCustomer`, `cAddress`.
+V tekstu elemenata lahko uporabite spremenljivke, npr. `cCustomer`, `cAddress`.
 
 ### Predloge DOCX
 
@@ -642,7 +658,8 @@ Tipi: usposabljanje, delovna oprema, meritve, ocena tveganja.
 - `${locContact}` Kontakt / Odgovorna oseba poslovne enote  
 - `${cBusCode}` Šifra dejavnosti  
 - `${cBusCodeName}` Naziv dejavnosti  
-- `${locName}` Ime poslovne enote stranke (PE)  
+- `${locName}` Ime poslovne enote stranke (PE)
+- `${locAddress}` Naslov PE
 - `${locCity}` Mesto PE  
 - `${locZip}` Poštna št. PE  
 - `${uName}` Ime in priimek uporabnika  

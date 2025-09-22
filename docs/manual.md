@@ -2,38 +2,32 @@
 
 ## Pregled aplikacije
 
+- **Verzija**: 5.2
+- **Licenca**: a1-tech V2 @lic
+
 Optima Prevent je celovita rešitev za upravljanje s preventivo in varnostjo v podjetjih. Aplikacija omogoča sledenje različnim vidikom preventive, od testiranja do upravljanja s tveganji in človeškimi viri.
 
 ## Glavne funkcionalnosti
 
 ### Moduli aplikacije:
-- **ETEST** - Elektronsko testiranje
-- **RASSL** - Upravljanje s tveganji in assessment
-- **CUST** - Upravljanje s strankami
-- **ROA** - Upravljanje s cestnim prometom
+- **ETEST** - Oddaljeno usposabljanje
+- **VPP** - Varstvo pred požarem
+- **RASS** - Splošne ocene tveganj
+- **RASSL** - Ocene tveganje telesnih obremenitev
+- **CUST** - Dostop za stranke
+- **ROA** - Oddaljeni dostop prek QR kod
 - **HRM** - Upravljanje s človeškimi viri
 - **CRM** - Upravljanje z odnosi s strankami
 
 ## Tehnične specifikacije
 
-- **Verzija**: 5.2
-- **Framework**: Laravel 12.x
-- **PHP verzija**: 8.1 ali 8.2
-- **Licenca**: a1-info @lic
 
 ## Sistemske zahteve
 
 ### Minimalne zahteve:
-- PHP 8.1 ali novejši
-- MySQL/MariaDB baza podatkov
+- Laravel / PHP 8.2 ali novejši
+- Oracle/PostgreSQL baza podatkov
 - Apache/Nginx spletni strežnik
-- Kompozer za upravljanje odvisnosti
-
-### Priporočene zahteve:
-- PHP 8.2
-- MySQL 8.0 ali MariaDB 10.6+
-- SSD disk za boljše performanse
-- Vsaj 2GB RAM
 - SSL certifikat za varno povezavo
 
 ## Namestitev
