@@ -57,9 +57,11 @@ markdown_extensions:
 nav:
   - Domov: index.md
   - Dokumentacija: manual-sl.md
-  - Pogosta vprašanja (FAQ): faq.md
+  - Pogosta vprašanja (FAQ): faq-sl.md
+  - Cenik: pricelist-sl.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
     - Predlagaj izboljšavo: https://github.com/a1info/support/issues/new?template=feature_request.yml
     - Pogovori (Discussions): https://github.com/a1info/support/discussions
     - Kontakt: mailto:svetovanje@optima-prevent.eu
+  - Pogoji uporabe: terms-sl.md
