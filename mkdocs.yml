@@ -56,7 +56,9 @@ markdown_extensions:
 
 nav:
   - Domov: index.md
-  - Dokumentacija: manual-sl.md
+  - Dokumentacija:
+    - Priročnik: manual-sl.md
+    - Legenda spremenljivk: variables-sl.md
   - Pogosta vprašanja (FAQ): faq-sl.md
   - Cenik: pricelist-sl.md
   - Podpora:
