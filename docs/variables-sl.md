@@ -62,6 +62,15 @@ Posamezne — datumi in številčenje:
 - `${dateLastRep}` Datum prejšnjega zapisnika
 - `${nrLastRep}` Št. prejšnjega zapisnika
 
+Tabele — izvajalci (performers, crm_user_action časovni intervali):
+
+- `${rowPerfUser}` Ime izvajalca
+  - `${rowPerfCnt}` Zap. št.
+  - `${rowPerfUser}` Ime izvajalca (performer)
+  - `${rowPerfStart}` Začetek (dd.mm.yyyy hh:mm)
+  - `${rowPerfEnd}` Konec (dd.mm.yyyy hh:mm)
+  - `${rowPerfDur}` Trajanje (HH:MM)
+
 Opomba — odstranjevanje praznih blokov:
 
 - Če podatkov za blok ni, uporabite `cloneBlock('blockName', 0)` da se `${blockName}` ... `${/blockName}` odstrani iz DOCX izpisa.
@@ -378,7 +387,7 @@ Bloki (rezultati TDM):
   - Tabela `${rowRiskName}` — tveganja po kategorijah:
     - `${rowRiskNr}`, `${rowRiskName}`, `${rowRprob}`, `${rowRcons}`, `${rowRrisk}`, `${rowRriskTxt}`, `${rowAction}`, `${rowActionDate}`, `${rowPersResp}`
   - Tabela `${rowActRiskName}` — aktivni ukrepi:
-    - `${rowActCnt}`, `${rowActRiskName}`, `${rowActRiskProb}`, `${rowActRiskCons}`, `${rowActMark}`, `${rowActDate}`, `${rowActPersResp}`
+    - `${rowActCnt}`, `${rowActRiskName}`, `${rowActRiskProb}`, `${rowActRiskCons}`, `${rowActMark}`, `${rowActAction}`, `${rowActDate}`, `${rowActPersResp}`
 
 Tabele — periodike usposabljanj za TDM:
 
