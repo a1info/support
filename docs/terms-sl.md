@@ -150,7 +150,7 @@ Za reševanje sporov je pristojno sodišče v Ljubljani.
 
 ---
 
-**A1 Informatika d.o.O.**  
+**A1 Informatika d.o.o.**  
 E-pošta: info-si@optima-prevent.eu  
 Telefon: +386 40 211 989  
 Spletna stran: www.optima-prevent.eu
