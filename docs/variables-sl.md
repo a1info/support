@@ -101,6 +101,48 @@ Tabele:
 
 ---
 
+## Vaja evakuacije (VPPEVAC) — GenvppevacController
+
+Podpira tudi vse skupne spremenljivke (datum zapisa, veljavnost, stranka, uporabnik itd.).
+
+Posamezne:
+
+- `${nrRep}` Naziv vaje / št. poročila
+- `${evacLocation}` Specifična lokacija vaje
+- `${dateTest}` Datum izvedbe vaje
+- `${testBy}` Vajo izvedel
+- `${result}` Rezultat (večvrstično)
+- `${dateValid}` Datum veljavnosti (potek)
+- `${mntValid}` Veljavnost v mesecih
+
+Podrobni opisi (večvrstično podprti):
+
+- `${timeStart}` Čas proženja alarma
+- `${descPreparedBy}` Vajo so pripravili
+- `${nrExits}` Št. možnih izhodov
+- `${nrExitsUsed}` Št. uporabljenih izhodov
+- `${nrHumans}` Št. udeležencev
+- `${openExitDoor}` Odpiranje vrat (DA/NE)
+- `${descExtin}` Sredstva za gašenje
+- `${descApz}` Sistemi APZ
+- `${descApzInstall}` Izvedba sistemov APZ
+- `${descEmpNotice}` Seznanitev zaposlenih
+- `${descAlarmStart}` Način proženja alarma
+- `${timeFullEvac}` Čas evakuacije
+- `${timeSmoke}` Čas zadimljenja
+- `${descAlarmResponse}` Odzivni časi
+- `${descEvacPath}` Prehodnost poti
+- `${descMeet}` Zbirno mesto
+- `${descUnusedSpaces}` Stanje prostorov
+
+Bloki — slike (priloge):
+
+- `${cloneImg}` … `${/cloneImg}` (blok za slike)
+  - `${imgName}` Originalno ime datoteke
+  - `${imgFile}` Slika
+
+---
+
 ## Zapisnik o usposabljanju (Education)
 
 Posamezne:
