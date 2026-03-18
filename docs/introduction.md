@@ -21,6 +21,7 @@ Optima Prevent temelji na moderni, večplastni arhitekturi, ki zagotavlja visoko
 
 - **Modularna zasnova**: Sistem je sestavljen iz medsebojno povezanih modulov, ki se lahko uporabljajo samostojno ali kot celota
 - **EAV model** (Entity-Attribute-Value): Omogoča dodajanje atributov po meri in zagotavlja fleksibilnost pri vnosu in prikazu podatkov
+- **Zaščita podatkov (Optimistic Locking):** Vgrajen sistem preprečuje izgubo ali prepisovanje podatkov pri sočasnem delu več uporabnikov.
 - **Klient/strežnik arhitektura**: Transakcijska SQL komunikacija omogoča sočasen dostop vseh uporabnikov brez tveganja izgube podatkov
 - **Varnost**: Vsi sloji dostopa do podatkov so šifrirani (SQL baza, datotečni sistem, omrežni prenos preko SSL/VPN)
 - **GDPR skladnost**: Obravnava osebnih podatkov je v skladu z uredbo GDPR
