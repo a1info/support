@@ -104,6 +104,11 @@ Pravice:
 - Operaterji: vpogled v vse podatke, delo v tujem imenu; brez pravic nad sistemskimi nastavitvami.
 - Administratorji: polne pravice pregleda in urejanja.
 
+### Povezava uporabnikov z zaposlenimi (HRM integracija)
+Ob ustvarjanju ali urejanju uporabniškega računa je omogočena samodejna povezava profila z evidenco zaposlenega (HRM). 
+- Če sistem ne najde ustrezne osebe, se ob shranjevanju avtomatsko generira osnovni HR profil z enakim imenom in e-poštnim naslovom, kar omogoča takojšnjo uporabo HR funkcij (evidentiranje časa, dopusti).
+- Povezani profili se samodejno sinhronizirajo (npr. sprememba imena ali e-pošte uporabnika se prenese na HR kartico zaposlenega).
+
 ### Uporabniki strank
 
 Strankami lahko dodtelite pravico do dostopa v sistem. Glede na dodeljene pravice, imajo dostop do delov aplikacije z informacijami svoje stranke. Modulne pravice:
@@ -227,6 +232,7 @@ Dostop: glavni meni → Zaposleni
 - Sistem preverja podvojene zapise, vseeno pred vnosom preverite obstoj.
 - Na seznamu lahko urejate, deaktivirate ali ustvarite PDF poročilo zgodovine zaposlenega.
 - Če obstaja zgodovina, brisanje ni možno; zapis se deaktivira (možna ponovna aktivacija).
+- Preko modula zaposlenih lahko hitro ustvarite IT uporabniški račun in ga z enim klikom povežete z evidenco (omogoča avtomatsko sinhronizacijo podatkov in dostop do HR orodij).
 
 
 ## CRM (organizacija nalog)
@@ -271,6 +277,42 @@ Projekt združuje naloge, datoteke in komentarje v kronološko organiziran zaboj
 ### Delovni nalog
 
 Na seznamu nalog lahko izpišete delovne naloge (PDF) kot potrdilo o opravljenem delu (vključno s prostorom za podpis stranke). Oblika je prilagodljiva.
+
+
+## HRM (Upravljanje kadrov in odsotnosti)
+
+Modul HRM je zasnovan za poenostavitev procesov vodenja kadrov, evidenc časa, letnih dopustov in zaposlovanja. Za uporabo večine HR funkcionalnosti morajo imeti zaposleni dodeljen in povezan uporabniški IT račun.
+
+Dostop: glavni meni → HRM
+
+### Nadzorna plošča (Dashboard)
+HRM nadzorna plošča omogoča hiter pregled tekočega dneva:
+- Zaposleni, ki so trenutno na dopustu ali bolniški.
+- Hitri pregled čakajočih zahtevkov za odsotnost.
+- Bližnjica za takojšnje potrjevanje zahtevkov zaposlenih.
+- Število novih kandidatov in odprtih razpisov (če uporabljate pod-modul za zaposlovanje).
+- Terminal za hitro beleženje prihodov in odhodov z dela.
+
+### Evidenca delovnega časa (Terminal)
+Terminal ("Time Clock") omogoča beleženje prisotnosti zaposlenih.
+- Sistem za potrditev preprečuje podvojene klike znotraj iste minute.
+- Zaposleni se zjutraj ob prihodu "prijavi" (Clock-In) in ob zaključku izmene "odjavi" (Clock-Out).
+- Vpisujejo se tudi nadure, nočno delo in delo med prazniki, kar olajša obračunavanje plač.
+
+### Odsotnosti in dopusti
+Vodenje odsotnosti vključuje vse vrste odsotnosti:
+- Letni dopust, bolniška odsotnost, študijski dopust, neplačan dopust itd.
+- **Kvote dopustov:** Sistem omogoča hitro generiranje letnih kvot (osnovni dopust + prenos iz preteklega leta) za vse aktivne zaposlene hkrati. Zaposleni lahko v vsakem trenutku vidijo stanje porabljenega in preostalega dopusta.
+- Odsotnosti uporabljajo statusni tok: *Osnutek → Oddano → Potrjeno/Zavrnjeno*. Odgovorna oseba na nadzorni plošči vidi čakajoče vloge in jih z enim klikom odobri.
+
+### Zaposlovanje (Recruitment)
+HRM modul zajema tudi celovit proces iskanja novih sodelavcev:
+- **Razpisi:** Upravljanje odprtih delovnih mest, vodenje statusov (Osnutek, Odprto, Zapolnjeno).
+- **Kandidati:** Vnos in shranjevanje življenjepisov (CV-jev) ter kontaktnih podatkov kandidatov, prijavljenih na delovno mesto.
+- **Prijave (Kanban tabla):** Kandidati so razvrščeni po fazah zaposlovanja (Prejeto → V pregledu → Intervju → Ponudba → Zavrnjeno). Z enostavnim pregledom lahko kadrovska služba spremlja napredek posameznega kandidata in oceni njegovo ustreznost.
+
+### Prazniki in koledar
+Sistem omogoča samodejno sinhronizacijo državnih praznikov (Slovenija), kar zagotavlja, da prijava dopusta med prazniki ne odšteje dni iz letne kvote zaposlenega. V koledarju je prav tako možno dodati prilagojene praznike podjetja (kolektivni dopust).
 
 
 ## Usposabljanje
@@ -378,7 +420,7 @@ Zapisnik je možno urejati, brisati in tiskati (DOCX podloga).
 
 ### QR kode — ROA (Remote Object Access)
 
-Skeniranje QR kode prikaže informacije o opremi in zadnjem pregledu.  
+Skeniranje QR kode prikaže informacije o opremi in zadjem pregledu.  
 - Javni prikaz je privzeto omogočen (opcijsko zahteva prijavo).
 - Za ustvarjanje pregleda na terenu je potrebna prijava (sistemski uporabnik), enkrat na sejo.
 

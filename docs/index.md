@@ -1,8 +1,8 @@
 # Optima Prevent — Portal dokumentacije in podpore
 <div class="op-hero">
   <img src="media/logos/op-logo.png" alt="Optima Prevent logo" />
-  <h2>Celovita rešitev za VZD, PV in varstvo okolja</h2>
-  <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese in analitiko.</p>
+  <h2>Celovita rešitev za VZD, PV, HR in varstvo okolja</h2>
+  <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese, analitiko in upravljanje kadrov (HRM).</p>
   <div class="op-cta">
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
     <a class="md-button" href="manual-sl/">Odpri priročnik</a>
@@ -11,7 +11,7 @@
 
 ## Kaj je Optima Prevent
 
-Optima Prevent je celovit EHS (Environmental Health and Safety) sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV) in varstvom okolja.
+Optima Prevent je celovit EHS (Environmental Health and Safety) in HRM sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HR) in varstvom okolja.
 
 Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kompleksnimi zahtevami zakonodaje na področju varnosti in zdravja pri delu.
 
@@ -25,7 +25,7 @@ Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kom
 - Avtomatsko digitalno podpisovanje PDF (P12)
 - Analitika in koledarski pregled periodike
 - Digitalizacija vodenja evidenc in dokumentacije
-- Optimizacija procesov usposabljanja zaposlenih
+- Optimizacija procesov usposabljanja in upravljanja kadrov
 - Avtomatizirano opominjanje na potek veljavnosti dokumentov
 - Izboljšana dostopnost informacij in analitike
 
@@ -55,6 +55,16 @@ Sistem Optima Prevent vključuje naslednje glavne module:
       <li>Organizacija usposabljanj</li>
       <li>E-testi in oddaljeno usposabljanje</li>
       <li>Avtomatska potrdila in zapisniki</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>HRM (Kadrovska evidenca)</h3>
+    <p>Upravljanje odsotnosti, časa in zaposlovanja.</p>
+    <ul>
+      <li>Dopusti in kvote</li>
+      <li>Registracija delovnega časa</li>
+      <li>Kadrovski razpisi</li>
+      <li>Baza kandidatov in prijav</li>
     </ul>
   </div>
   <div class="op-card">
@@ -181,5 +191,5 @@ Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo 
 
 <hr>
 <p class="op-muted" style="text-align:center">
- © 2025 A1 Informatika d.o.o. · Optima Prevent v5.2 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
+ © 2025 A1 Informatika d.o.o. · Optima Prevent v5.3 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
 </p>
