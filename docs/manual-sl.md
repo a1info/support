@@ -8,7 +8,7 @@ Modularna arhitektura in večplastni dizajn omogočata visoko raven prilagodljiv
 
 Tehnologija EAV (Entity-Attribute-Value) omogoča dodajanje atributov po meri, kar zagotavlja fleksibilnost pri vnosu in prikazu podatkov.
 
-Klient/strežnik arhitektura s transakcijsko SQL komunikacijo omogoča istočasni dostop vseh uporabnikov brez tveganja izgube podatkov ali sočasnega konflikta pri urejanju.
+Klient/strežnik arhitektura s transakcijsko SQL komunikacijo in vgrajenim mehanizmom za nadzor sočasnosti (Optimistic Locking) omogoča istočasni dostop vseh uporabnikov brez tveganja izgube ali neželenega prepisa podatkov pri sočasnem urejanju.
 
 Razvojne tehnologije: PHP 8, MVC (Model-View-Controller) — Laravel 12.x, z Livewire/Alpine na uporabniškem vmesniku. Podatkovni sloj podpira PostgreSQL in Oracle.
 
@@ -31,7 +31,6 @@ Za dostop potrebujete IP ali domeno strežnika, kjer je nameščena aplikacija. 
 
 Do nadzorne plošče dostopate s klikom na logotip Optima Prevent v zgornjem levem kotu.
 
-
 ## Navigacija in skupne akcije
 
 ### Meni in navigacija
@@ -50,11 +49,16 @@ Parametri filtriranja so prikazani nad seznami.
 Seznami z več podatki omogočajo skupne akcije nad izbranimi vrsticami. Izbor vrstice z označitvenim poljem na desni strani; za izbor vseh vrstic označite polje v glavi tabele. Po izboru določite akcijo nad tabelo.
 
 Vmesniki s skupnimi akcijami:
-- seznam delovne opreme — brisanje, kaskadno brisanje (briše tudi preglede), skupni pregled (za preglede z enakimi parametri),
+- seznam delovne opreme — brisanje, kaskadno brisanje (briše tudi preglede), skupni pregled (za preglede z enakimi parametri), brisanje zgodovine sprememb,
 - seznam pregledov — brisanje,
-- seznam zaposlenih — brisanje,
+- seznam zaposlenih — brisanje, brisanje zgodovine sprememb,
 - seznam usposabljanj — brisanje.
 
+### Sledenje spremembam (Zgodovina zapisov)
+
+Sistem samodejno beleži zgodovino sprememb na ključnih modulih, kot so **Zaposleni** in **Delovna oprema** (Audit log). Vsakič, ko uporabnik ustvari ali posodobi zapis, sistem zabeleži te spremembe v ozadju, kar omogoča nadzor nad tem, kdo in kdaj je spremenil določene podatke.
+
+Če želite iz kateregakoli razloga (npr. ureditev GDPR pravic ali čiščenje podatkovne baze) izbrisati revizijsko sled sprememb za določene zapise, lahko na seznamu zaposlenih ali delovne opreme uporabite skupno akcijo **"Izbriši zgodovino izbranih zapisov"**. Akcija trajno odstrani celotno preteklo zgodovino sprememb za izbrane objekte.
 
 ## Sistemske nastavitve
 
@@ -72,19 +76,31 @@ Obvezni in ključni podatki:
 
 V razdelku »Moduli« upravljate izbirne sistemske module in vnašate pridobite licence.
 
+### Nastavitve modulov in matrika ocenjevanja tveganj
+V razdelku za konfiguracijo modulov (gumb nastavitve pri aktivnem modulu) lahko skrbniki prilagodijo delovanje posameznih sklopov aplikacije. 
+Pri modulu **Ocene tveganj (Rass)** je omogočena konfiguracija **dinamične formule za izračun tveganja**.
+
+V polje za formulo lahko vpišete poljubni matematični izraz z uporabo spremenljivk:
+- `a` = Verjetnost
+- `b` = Resnost
+- `c` = Pogostost (sistem avtomatično prikaže to polje v uporabniškem vmesniku, če je zaznana uporaba spremenljivke v formuli).
+
+Podprte so matematične funkcije (`min`, `max`, `floor`, `ceil`, `round`) in logični operaterji (`==`, `&&`, `?`, `:`). To omogoča preslikavo katerekoli tiskane matrike ocenjevanja tveganja neposredno v sistem. 
+*Primer standardne AUWA formule:* `a * b`
+*Primer kompleksne prilagojene 5-stopenjske matrike:* `min(a + 2, b + 2, floor((2 * b + a - 1) / 2)) - (a == 3 && b == 4 ? 1 : 0)`
+
 ### Nadgradnja sistema
 
 V razdelku »Nadgradnja« je prikazana trenutna verzija. Če je sistem posodobljen, gumb za nadgradnjo ni prikazan.
-Na desni strani je prikazan kratek seznam sprememb posabezne različice.
+Na desni strani je prikazan kratek seznam sprememb posamezne različice.
 
 ### Digitalno podpisovanje dokumentov
 
 Dostop: Nastavitve → Potrdila/Akreditacije
 
-Potrebno je dedati novi vnost tipa digitalni podpis, izbere se P12 datoteka in pripradajoče geslo. 
+Potrebno je dodati novi vnos tipa digitalni podpis, izbere se P12 datoteka in pripadajoče geslo. 
 
 Po tem bodo vsi PDF dokumenti samodejno digitalno podpisani in vidni uporabnikom strank po prijavi.
-
 
 ## Uporabniki
 
@@ -95,7 +111,7 @@ Sistemski uporabniki (zaposleni matične družbe) spadajo v skupine:
 - Operaterji,
 - Uporabniki.
 
-To so zadane sistemske skupine.  Lahko sami dodajate nove skupine in določite pravice teh skupin.
+To so zadane sistemske skupine. Lahko sami dodajate nove skupine in določite pravice teh skupin.
 
 Dostop: Nastavitve → Uporabniki
 
@@ -111,7 +127,7 @@ Ob ustvarjanju ali urejanju uporabniškega računa je omogočena samodejna povez
 
 ### Uporabniki strank
 
-Strankami lahko dodtelite pravico do dostopa v sistem. Glede na dodeljene pravice, imajo dostop do delov aplikacije z informacijami svoje stranke. Modulne pravice:
+Strankami lahko dodelite pravico do dostopa v sistem. Glede na dodeljene pravice imajo dostop do delov aplikacije z informacijami svoje stranke. Modulne pravice:
 - delovna oprema,
 - zaposleni,
 - osebna varovalna oprema,
@@ -141,7 +157,6 @@ Po prijavi je prikazan Dashboard s splošnimi informacijami in hitrimi povezavam
 - Zdravniški pregledi
 
 Prijavno stran za stranke je možno prilagoditi.
-
 
 ## Začetna nastavitev in vnos podatkov
 
@@ -194,7 +209,6 @@ Sistem ob dodelitvi atributa generira kodo polja. Za prikaz v predlogah uporabit
 
 Dostop: Seznami → Polja po meri
 
-
 ## Stranke in poslovne enote
 
 ### Stranke
@@ -220,7 +234,6 @@ Poslovne enote so pomembne za organizacijo dela pri večjih strankah (lokacije z
 
 Urejanje lokacij: na seznamu strank izberite »Uredi lokacije«.
 
-
 ## Zaposleni
 
 Modul za upravljanje zaposlenih strank je povezan z drugimi moduli (usposabljanja, OVO, zdravniški pregledi, delovne nezgode, ocene tveganja itd.).
@@ -233,7 +246,6 @@ Dostop: glavni meni → Zaposleni
 - Na seznamu lahko urejate, deaktivirate ali ustvarite PDF poročilo zgodovine zaposlenega.
 - Če obstaja zgodovina, brisanje ni možno; zapis se deaktivira (možna ponovna aktivacija).
 - Preko modula zaposlenih lahko hitro ustvarite IT uporabniški račun in ga z enim klikom povežete z evidenco (omogoča avtomatsko sinhronizacijo podatkov in dostop do HR orodij).
-
 
 ## CRM (organizacija nalog)
 
@@ -278,7 +290,6 @@ Projekt združuje naloge, datoteke in komentarje v kronološko organiziran zaboj
 
 Na seznamu nalog lahko izpišete delovne naloge (PDF) kot potrdilo o opravljenem delu (vključno s prostorom za podpis stranke). Oblika je prilagodljiva.
 
-
 ## HRM (Upravljanje kadrov in odsotnosti)
 
 Modul HRM je zasnovan za poenostavitev procesov vodenja kadrov, evidenc časa, letnih dopustov in zaposlovanja. Za uporabo večine HR funkcionalnosti morajo imeti zaposleni dodeljen in povezan uporabniški IT račun.
@@ -313,7 +324,6 @@ HRM modul zajema tudi celovit proces iskanja novih sodelavcev:
 
 ### Prazniki in koledar
 Sistem omogoča samodejno sinhronizacijo državnih praznikov (Slovenija), kar zagotavlja, da prijava dopusta med prazniki ne odšteje dni iz letne kvote zaposlenega. V koledarju je prav tako možno dodati prilagojene praznike podjetja (kolektivni dopust).
-
 
 ## Usposabljanje
 
@@ -367,7 +377,6 @@ Dostop: Usposabljanje → Vprašalniki
 2) Vprašanja:
 - opcijska priloga (PDF/MP4) pred vprašanjem,
 - dodelitev točk (privzeto 2; možnost prilagoditve).
-
 
 ## Delovna oprema
 
@@ -433,12 +442,11 @@ Možno je ustvariti »bianko« QR kode in jih na terenu dodeljevati opremi.
 - QR lahko ustvarite iz CSV/Excel datoteke z URL povezavami.  
 - Možno je dodati logotip, kontaktne informacije itd.
 
-
 ## Ocene tveganj
 
 Ocena tveganja je osrednji dokument varnostnih politik stranke. Nanj se vežejo usposabljanja, VZD/EKO meritve, OVO, zdravniški pregledi, evidence nevarnih snovi in pregledi delovne opreme.
 
-Vsi vmesniki za ocene tveganja so v glavnem meniju.
+Vsi vmesniki za ocene tveganja so v glavnem meniju. Sistem se opira na prilagodljive dinamične matrike za izračun stopnje tveganja, ki jih administrator določi v sistemskih nastavitvah.
 
 ### Tveganja in kategorije
 
@@ -453,28 +461,28 @@ Pomembno: Po vnosu tveganj/kategorij jih ne spreminjajte, da ne vplivate na že 
 
 Dostop: Ocene tveganj → Seznam TDM
 
-- Definirajte TDM-je (ime, glavna/občasna opravila, trajanje, opis dela, OVO ...). Polja se prikažejo v oceni in so urejanja.
+- Definirajte TDM-je (ime, glavna/občasna opravila, trajanje, opis dela, OVO ...). Polja se prikažejo v oceni in so namenjena urejanju.
 - Izberite tveganja, ki se obravnavajo za TDM (na desni strani tabele).
 
 ### Ocene za TDM
 
 Dostop: Ocene tveganj → Seznam ocen
 
-Koraki:
+Koraki za pripravo ocene:
 1) izberite stranko, TDM in datum ocene;  
 2) izberite zaposlene, ki spadajo pod TDM (predizbrani so tisti, že dodeljeni TDM na vmesniku Stranke → Zaposleni; ostale lahko dodate tukaj);  
-3) uredite splošne podatke TDM; v tabeli tveganj vnesite R0, t, Kon, Kš, Ku ter ocene pogostosti, verjetnosti in posledic;  
-4) za tveganja z vsoto F+V+P > 3 določite ukrepe in odgovorno osebo; določite periodike (usposabljanja, pregledi opreme, zdravniški pregledi, meritve).
+3) uredite splošne podatke TDM; v tabeli posameznih tveganj iz menijev določite ocene parametrov: **Verjetnost (a)**, **Resnost (b)** in opcijsko **Pogostost (c)** (če je to določeno v konfiguracijski formuli modula). Sistem bo na podlagi vpisane sistemske formule **samodejno izračunal stopnjo tveganja (T)** in polje glede na doseženo vrednost ustrezno barvno označil (npr. zelena, svetlo modra, oranžna, rumena, rdeča);
+4) za tveganja z določeno kritično vrednostjo vnesite ukrepe, odgovorno osebo in roke izvedbe;  
+5) določite periodike (usposabljanja, pregledi opreme, zdravniški pregledi, meritve).
 
 ### Dokumenti OTV
 
 Dostop: Ocene tveganj → Dokumenti OTV
 
-- Končni dokument je sestavljen iz več ocen TDM.  
+- Končni dokument je sestavljen iz več ocen posameznih TDM.  
 - Izberite stranko; prikazane so ocene, ki še niso združene v končni dokument.  
-- Izberite PE, datum, podlogo za izpis.  
+- Izberite PE, datum in podlogo za izpis.  
 - Na dnu je analiza varnostnega stanja (seznam po meri iz Nastavitve → Preizkusi po meri).
-
 
 ## VZD / EKO meritve
 
@@ -507,7 +515,6 @@ Vnos parametrov je odvisen od tipa. Meritve se lahko zaključijo že na prvem ko
 
 Operacije: urejanje, brisanje, kopiranje, izpis iz DOCX podloge. Kopiranje prihrani čas pri podobnih meritvah.
 
-
 ## Požarna varnost
 
 Dostop: Požarna varnost → Seznam objektov
@@ -533,7 +540,6 @@ Evidence v okviru objekta:
 - seznam požarov in eksplozij.
 
 Izvoz evidenc v PDF je na voljo na seznamih. Evidenco usposabljanja za začetne požare/evakuacijo lahko povežete z glavnim modulom usposabljanja (izbira tipa tečaja v vnosu objekta).
-
 
 ## Evidence
 
@@ -600,7 +606,6 @@ Vnos:
 - opombe,
 - seznam opreme in standardi (na desni kot pomoč).
 
-
 ## Analitika
 
 ### Periodika
@@ -645,7 +650,6 @@ Dokumente lahko ročno posodabljate in dodajate nove verzije:
 
 Priprava letnih poročil o številu objektov/opreme, na katerih so bili opravljeni pregledi (v skladu z zakonodajo RS).
 
-
 ## Sistem obveščanja
 
 Komunikacija je interna in zunanja.
@@ -654,7 +658,6 @@ Komunikacija je interna in zunanja.
 
 - Zunanja: prek šifrirane e-pošte. Kako bi se omogočilo pošiljanje obvestil prek e-maila je potrebno kofigurirati email strežnik za pošiljanje v sistemskih nastavitvah.
 Konfiguracija e-mail obveščanja za posamezne stranke je dostopna na Nastavitve -> Obveščanje. Na ekranu lahko nastavite tip obveščanja in dan v mesecu za pošiljanje mailov.
-
 
 ## Urejanje podlog za izpis
 
@@ -668,7 +671,7 @@ Za netipične preglede (npr. kontrolni pregledi, vaje evakuacije). Elementi:
 - potrditveno polje (checkbox), dvojno potrditveno polje (da/ne),
 - SQL koda.
 
-V tekstu elemenata lahko uporabite spremenljivke, npr. `cCustomer`, `cAddress`.
+V tekstu elementov lahko uporabite spremenljivke, npr. `cCustomer`, `cAddress`.
 
 ### Predloge DOCX
 

@@ -20,7 +20,8 @@ Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kom
 - Prilagojenost slovenski zakonodaji in mednarodnim standardom (OHSAS/ISO)
 - Modularna arhitektura in medsebojno povezani moduli
 - EAV model za polja po meri in fleksibilnost podatkov
-- Transakcijski SQL, večuporabniški sočasni dostop
+- Transakcijski SQL, večuporabniški sočasni dostop in zaščita pred prepisovanjem podatkov
+- Sledenje spremembam (Audit log) za pregledno zgodovino urejanja zapisov
 - Šifriranje na vseh nivojih (baza, datotečni sistem, prenos)
 - Avtomatsko digitalno podpisovanje PDF (P12)
 - Analitika in koledarski pregled periodike
@@ -37,7 +38,7 @@ Optima Prevent temelji na moderni, večplastni arhitekturi, ki zagotavlja visoko
 
 - Modularna zasnova: Sistem je sestavljen iz medsebojno povezanih modulov, ki se lahko uporabljajo samostojno ali kot celota
 - EAV model (Entity-Attribute-Value): Omogoča dodajanje atributov po meri in fleksibilnost pri vnosu in prikazu podatkov
-- Klient/strežniška arhitektura: Transakcijska SQL komunikacija omogoča sočasen dostop vseh uporabnikov brez tveganja izgube podatkov
+- Klient/strežniška arhitektura: Transakcijska SQL komunikacija z vgrajenim nadzorom sočasnosti (Optimistic Locking) omogoča sočasen dostop vseh uporabnikov brez tveganja izgube podatkov
 - Varnost: Vsi sloji dostopa do podatkov so šifrirani (SQL baza, datotečni sistem, omrežni prenos preko SSL/VPN)
 - GDPR skladnost: Obravnava osebnih podatkov je v skladu z uredbo GDPR
 - Odzivni vmesnik: Prilagojen za uporabo na različnih napravah, od računalnikov do tablic
@@ -82,8 +83,8 @@ Sistem Optima Prevent vključuje naslednje glavne module:
     <p>Ocenjevanje in dokumentiranje tveganj.</p>
     <ul>
       <li>Tipična delovna mesta (TDM)</li>
-      <li>Metodologija ocenjevanja</li>
-      <li>Ukepi in odgovorne osebe</li>
+      <li>Prilagodljive formule za izračun tveganj in dinamične matrike</li>
+      <li>Ukrepi in odgovorne osebe</li>
       <li>Digitalno podpisani dokumenti</li>
     </ul>
   </div>
