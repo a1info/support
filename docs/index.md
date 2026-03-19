@@ -6,7 +6,7 @@
   <div class="op-cta">
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
     <a class="md-button" href="manual-sl/">Odpri priročnik (Splet)</a>
-    <a class="md-button md-button--secondary" href="manual-mobile-sl/">Mobilna aplikacija</a>
+    <a class="md-button" href="manual-mobile-sl/">Mobilna aplikacija</a>
   </div>
 </div>
 
