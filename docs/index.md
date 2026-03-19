@@ -1,7 +1,6 @@
 # Optima Prevent — Portal dokumentacije in podpore
 <div class="op-hero">
-  <img src="media/logos/op-logo.png" alt="Optima Prevent logo" />
-  <h2>Celovita rešitev za VZD, PV, HR in varstvo okolja</h2>
+  <h2>Celovita rešitev za VZD, PV, HRM in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese, analitiko in upravljanje kadrov (HRM).</p>
   <div class="op-cta">
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
@@ -12,7 +11,7 @@
 
 ## Kaj je Optima Prevent
 
-Optima Prevent je celovit EHS (Environmental Health and Safety) in HRM sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HR) in varstvom okolja.
+Optima Prevent je celovit EHS (Environmental Health and Safety) in HRM sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HRM) in varstvom okolja.
 
 Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kompleksnimi zahtevami zakonodaje na področju varnosti in zdravja pri delu.
 
