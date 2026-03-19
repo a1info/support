@@ -60,7 +60,7 @@ nav:
     - Priročnik: manual-sl.md
     - Legenda spremenljivk: variables-sl.md
   - Pogosta vprašanja (FAQ): faq-sl.md
-  - Cenik: pricelist-sl.md
+#  - Cenik: pricelist-sl.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
     - Predlagaj izboljšavo: https://github.com/a1info/support/issues/new?template=feature_request.yml
