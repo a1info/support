@@ -16,7 +16,7 @@ Vsi sloji dostopa do podatkov so šifrirani: SQL baza, datotečni sistem, omrež
 
 Optima Prevent je blagovna znamka podjetja A1 Informatika d.o.o. in je registrirana pri Avtorski agenciji RS pod številko 030/19.
 
-- **Verzija**: 5.3
+- **Verzija**: 5
 - **Licenca**: a1-tech v2 @lic
 
 ## Vmesnik in prijava

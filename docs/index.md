@@ -192,5 +192,5 @@ Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo 
 
 <hr>
 <p class="op-muted" style="text-align:center">
- © 2025 A1 Informatika d.o.o. · Optima Prevent v5 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
+ © 2026 A1 Informatika d.o.o. · Optima Prevent v5 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
 </p>
