@@ -74,7 +74,7 @@ Sistem Optima Prevent vključuje naslednje glavne module:
     <ul>
       <li>Evidenca opreme in inventarja</li>
       <li>Periodični pregledi</li>
-      <li>QR kode za mobilni dostop</li>
+      <li>NFC/QR kode za mobilni dostop</li>
       <li>Digitalno podpisani zapisniki</li>
     </ul>
   </div>
@@ -192,5 +192,5 @@ Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo 
 
 <hr>
 <p class="op-muted" style="text-align:center">
- © 2025 A1 Informatika d.o.o. · Optima Prevent v5.3 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
+ © 2025 A1 Informatika d.o.o. · Optima Prevent v5 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
 </p>
