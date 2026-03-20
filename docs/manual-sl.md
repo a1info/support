@@ -195,9 +195,11 @@ Opomba: Za uvoz v poslovno enoto stranke najprej izberite aktivno stranko v zgor
 
 ### Teksti po meri
 
-Teksti po meri so ponavljajoča se besedila, ki se preko spremenljivk dodeljujejo v vmesnike (npr. `txtDevRes` za polje »Ugotovitev« pri pregledu delovne opreme). Seznam spremenljivk je na vmesnikih modulov.
+Teksti po meri so ponavljajoča se besedila, ki se preko spremenljivk dodeljujejo v vmesnike (npr. `txtDevRes` za polje »Ugotovitev« pri pregledu delovne opreme).
 
-V razdelku »Polja za prikaz« so izbirna polja za različne module. Če jih ne potrebujete, jih onemogočite, da ne obremenjujejo vnosnih mask.
+V razdelku »Polja za prikaz« so izbirna polja za različne ekrane.
+
+Če se izbere kljukica »Zadana vrednost«, potem se ta text avtomatično doda v izbrano polje.
 
 Dostop: Seznami → Teksti po meri
 
