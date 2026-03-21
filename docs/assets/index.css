@@ -1,165 +1,60 @@
-/* Optima Prevent – site overrides (forceful) */
+/* Optima Prevent - Material Theme Customizations */
 
-/* Color system */
 :root {
-  --op-primary: #2e5eaa;
-  --op-primary-dark: #1a4080;
-  --op-accent: #4b7cc7;
-  --op-grey-1: #f6f8fa;
-  --op-grey-2: #e1e5eb;
-  --op-text: #1f2a37;
-  --op-text-light: #5a6a7e;
-
+  /* Osnovne barve Optima Prevent - prilagojene za MkDocs spremenljivke */
+  --md-primary-fg-color:        #2e5eaa;
+  --md-primary-fg-color--light: #4b7cc7;
+  --md-primary-fg-color--dark:  #1a4080;
+  --md-accent-fg-color:         #4b7cc7;
+  
+  /* Optimizacija za hero sekcijo */
+  --op-hero-bg: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+  --op-hero-text: #1f2a37;
 }
 
-
-/* Completely remove content max-width and auto margins at any breakpoint */
-.md-grid,
-.md-main,
-.md-main__inner,
-.md-content,
-.md-content__inner {
-  max-width: none !important;
-  margin: 0 !important;
+/* Prilagoditve za temno temo */
+[data-md-color-scheme="slate"] {
+  --op-hero-bg: linear-gradient(180deg, #1e2530 0%, #11141a 100%);
+  --op-hero-text: #e1e5eb;
 }
 
-
-
-/* HERO: switch to light background and dark text for better visibility */
+/* HERO SEKCIJA (očiščena in optimizirana) */
 .op-hero {
-  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%) !important;
-  color: var(--op-text) !important;
-  border: 1px solid var(--op-grey-2) !important;
-  border-radius: 12px !important;
-  padding: 40px 28px !important;
-  margin: 18px 0 28px 0 !important;
-  text-align: center !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
+  background: var(--op-hero-bg);
+  color: var(--op-hero-text);
+  border: 1px solid var(--md-default-bg-color--lighter);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: var(--md-shadow-z1);
 }
 
 .op-hero h2 {
-  color: var(--op-primary) !important;
-  font-weight: 800 !important;
-  font-size: 2rem !important;
-  margin: 6px 0 10px 0 !important;
+  color: var(--md-primary-fg-color);
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .op-hero p {
-  color: var(--op-text) !important;
-  font-size: 1.125rem !important;
-  line-height: 1.55 !important;
-  margin: 8px auto 20px auto !important;
-  max-width: 1000px !important;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 auto 2rem auto;
+  max-width: 800px; /* Prepreči predolge vrstice za boljšo berljivost */
+  color: inherit;
 }
 
-/* Hero buttons */
 .op-hero .op-cta {
-  display: flex !important;
-  gap: 14px !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.op-hero .op-cta .md-button {
-  padding: 10px 22px !important;
-  font-weight: 700 !important;
-  border-radius: 8px !important;
-}
+/* Odstranjeni so .op-grid in .op-card, ker bomo uporabili nativne grid kartice! */
 
-/* Primary button */
-.op-hero .op-cta .md-button:first-child {
-  background: var(--op-primary) !important;
-  border: 1px solid var(--op-primary-dark) !important;
-  color: #fff !important;
-}
-
-/* Secondary button */
-.op-hero .op-cta .md-button:nth-child(2) {
-  background: #ffffff !important;
-  border: 1px solid var(--op-grey-2) !important;
-  color: var(--op-primary) !important;
-}
-
-/* Card styling (ensure cards are properly displayed) */
-.op-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  gap: 20px !important;
-  margin: 24px 0 !important;
-}
-
-.op-card {
-  background: var(--op-grey-1) !important;
-  border: 1px solid var(--op-grey-2) !important;
-  border-radius: 10px !important;
-  padding: 22px !important;
-  transition: transform 0.2s, box-shadow 0.2s !important;
-}
-
-.op-card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
-}
-
-.op-card h3 { 
-  margin-top: 0 !important; 
-  color: var(--op-primary) !important;
-  font-weight: 600 !important;
-}
-
-.op-card p { 
-  margin: 10px 0 14px 0 !important; 
-  color: var(--op-text) !important;
-}
-
-.op-card ul {
-  padding-left: 1.2rem !important;
-}
-
-.op-card li {
-  margin-bottom: 6px !important;
-}
-
-/* Fix button text visibility in cards */
-.md-button, 
-.md-button--primary,
-.op-card .md-button,
-.op-card .md-button--primary {
-  background-color: var(--op-primary) !important;
-  color: #ffffff !important;
-  border-color: var(--op-primary-dark) !important;
-  font-weight: 600 !important;
-  border-radius: 6px !important;
-  transition: all 0.2s ease !important;
-  padding: 8px 16px !important;
-  display: inline-block !important;
-  text-align: center !important;
-}
-
-.md-button:hover,
-.md-button--primary:hover,
-.op-card .md-button:hover,
-.op-card .md-button--primary:hover {
-  background-color: var(--op-primary-dark) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-  text-decoration: none !important;
-}
-
-/* Content headings color harmony */
-.md-typeset h1, .md-typeset h2 { color: var(--op-primary) !important; font-weight: 700 !important; }
-.md-typeset h3 { color: var(--op-primary-dark) !important; }
-
-/* Links */
-.md-content a { color: var(--op-primary) !important; }
-.md-content a:hover { color: var(--op-accent) !important; text-decoration: underline !important; }
-
-.op-muted { 
-  color: var(--op-text-light) !important; 
-}
-
-/* Small screens: full-width hero buttons stacked */
-@media (max-width: 480px) {
-  .op-hero .op-cta { flex-direction: column !important; }
-  .op-hero .op-cta .md-button { width: 100% !important; }
-}
+/* Pomožni razredi */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
