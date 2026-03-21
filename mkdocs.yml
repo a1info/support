@@ -1,7 +1,7 @@
 site_name: Optima Prevent
 site_url: https://support.optima-prevent.eu
 site_author: A1 Informatika d.o.o.
-site_description: Dokumentacija in podpora za programsko opremo Optima Prevent
+site_description: Dokumentacija in podpora za programsko opremo Optima Prevent (VZD, PV, HRM, CRM)
 
 repo_url: https://github.com/a1info/support
 repo_name: a1info/support
@@ -9,7 +9,6 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  custom_dir: overrides # Če boste kdaj prilagajali HTML teme
   language: sl
   logo: media/logos/op-logo.png
   favicon: media/logos/op-logo-blue.png
@@ -22,7 +21,7 @@ theme:
     # Svetla tema
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: custom # Barvo bomo določili v CSS
+      primary: custom
       accent: custom
       toggle:
         icon: material/weather-night
@@ -41,20 +40,28 @@ theme:
     - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.top
     - toc.integrate
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.tooltips
-    - content.tabs.link
+    - navigation.footer
 
 extra_css:
   - assets/index.css
 
 plugins:
   - search
+
+extra:
+  alternate:
+    - name: Slovenščina
+      link: /
+      lang: sl
+    - name: English
+      link: /en/
+      lang: en
 
 markdown_extensions:
   - admonition
@@ -73,7 +80,13 @@ markdown_extensions:
 
 nav:
   - Domov: index.md
-  - Priročnik:
-    - Uvod: introduction.md
-    - Uporaba: manual-sl.md
-  - FAQ in Podpora: faq-sl.md
+  - Dokumentacija:
+    - Priročnik: manual-sl.md
+    - Legenda spremenljivk: variables-sl.md
+  - Pogosta vprašanja (FAQ): faq-sl.md
+  - Podpora:
+    - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
+    - Predlagaj izboljšavo: https://github.com/a1info/support/issues/new?template=feature_request.yml
+    - Pogovori (Discussions): https://github.com/a1info/support/discussions
+    - Kontakt: mailto:svetovanje@optima-prevent.eu
+  - Pogoji uporabe: terms-sl.md
