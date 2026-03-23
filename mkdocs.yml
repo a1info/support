@@ -81,7 +81,26 @@ markdown_extensions:
 nav:
   - Domov: index.md
   - Dokumentacija:
-    - Priročnik: manual-sl.md
+    - Priročnik:
+      - Uvod: manual-sl/uvod.md
+      - Vmesnik in prijava: manual-sl/vmesnik-in-prijava.md
+      - Navigacija: manual-sl/navigacija.md
+      - Sistemske nastavitve: manual-sl/sistemske-nastavitve.md
+      - Uporabniki: manual-sl/uporabniki.md
+      - Začetna nastavitev: manual-sl/zacetna-nastavitev.md
+      - Stranke: manual-sl/stranke.md
+      - Zaposleni: manual-sl/zaposleni.md
+      - CRM: manual-sl/crm.md
+      - HRM: manual-sl/hrm.md
+      - Usposabljanje: manual-sl/usposabljanje.md
+      - Delovna oprema: manual-sl/delovna-oprema.md
+      - Ocene tveganj: manual-sl/ocene-tveganj.md
+      - Meritve: manual-sl/vzd-eko-meritve.md
+      - Požarna varnost: manual-sl/pozarna-varnost.md
+      - Evidence: manual-sl/evidence.md
+      - Analitika: manual-sl/analitika.md
+      - Sistem obveščanja: manual-sl/sistem-obvescanja.md
+      - Urejanje podlog: manual-sl/urejanje-podlog.md
     - Legenda spremenljivk: variables-sl.md
   - Pogosta vprašanja (FAQ): faq-sl.md
   - Podpora:
