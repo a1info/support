@@ -1,17 +1,19 @@
 # Optima Prevent — Portal dokumentacije in podpore
-
 <div class="op-hero">
-  <h2>Celovita rešitev za VZD, PV, HRM in varstvo okolja</h2>
+  <img src="media/logos/op-logo.png" alt="Optima Prevent logo" />
+  <h2>Celovita rešitev za VZD, PV, HR in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese, analitiko in upravljanje kadrov (HRM).</p>
   <div class="op-cta">
-    <a class="md-button md-button--primary" href="#podpora">Potrebujem podporo</a>
-    <a class="md-button" href="manual-sl/">Odpri priročnik (Splet)</a>
+    <a class="md-button" href="#podpora">Potrebujem podporo</a>
+    <a class="md-button" href="manual-sl/">Priročnik - Splet</a>
+    <a class="md-button md-button--secondary" href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a>
+    <a class="md-button md-button--secondary" href="manual-api/">API Integracije</a>
   </div>
 </div>
 
 ## Kaj je Optima Prevent
 
-Optima Prevent je celovit EHS (Environmental Health and Safety) in HRM sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HRM) in varstvom okolja.
+Optima Prevent je celovit EHS (Environmental Health and Safety) in HRM sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HR) in varstvom okolja.
 
 Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kompleksnimi zahtevami zakonodaje na področju varnosti in zdravja pri delu.
 
@@ -27,6 +29,8 @@ Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kom
 - Analitika in koledarski pregled periodike
 - Digitalizacija vodenja evidenc in dokumentacije
 - Optimizacija procesov usposabljanja in upravljanja kadrov
+- Avtomatizirano opominjanje na potek veljavnosti dokumentov
+- Izboljšana dostopnost informacij in analitike
 
 ## Arhitektura sistema
 
@@ -34,65 +38,98 @@ Optima Prevent temelji na moderni, večplastni arhitekturi, ki zagotavlja visoko
 
 ### Ključne tehnične značilnosti
 
-- **Modularna zasnova**: Sistem je sestavljen iz medsebojno povezanih modulov.
-- **EAV model**: Omogoča dodajanje atributov po meri.
-- **Klient/strežniška arhitektura**: Transakcijska SQL komunikacija z vgrajenim nadzorom sočasnosti.
-- **Varnost**: Vsi sloji dostopa do podatkov so šifrirani (SQL baza, datotečni sistem, omrežni prenos).
-- **GDPR skladnost**: Obravnava osebnih podatkov je v skladu z uredbo.
-- **Odzivni vmesnik**: Prilagojen za računalnike in tablice.
+- Modularna zasnova: Sistem je sestavljen iz medsebojno povezanih modulov, ki se lahko uporabljajo samostojno ali kot celota
+- EAV model (Entity-Attribute-Value): Omogoča dodajanje atributov po meri in fleksibilnost pri vnosu in prikazu podatkov
+- Klient/strežniška arhitektura: Transakcijska SQL komunikacija z vgrajenim nadzorom sočasnosti (Optimistic Locking) omogoča sočasen dostop vseh uporabnikov brez tveganja izgube podatkov
+- Varnost: Vsi sloji dostopa do podatkov so šifrirani (SQL baza, datotečni sistem, omrežni prenos preko SSL/VPN)
+- GDPR skladnost: Obravnava osebnih podatkov je v skladu z uredbo GDPR
+- Odzivni vmesnik: Prilagojen za uporabo na različnih napravah, od računalnikov do tablic
 
 ## Moduli sistema
 
-<div class="grid cards" markdown>
+Sistem Optima Prevent vključuje naslednje glavne module:
 
--   :fontawesome-solid-users: **Zaposleni in usposabljanja**
-    
-    Upravljanje kadrov, tečajev in preverjanja znanja.
-    
-    * Evidenca zaposlenih
-    * Organizacija usposabljanj
-    * E-testi in potrdila
-
--   :fontawesome-solid-user-clock: **HRM (Kadrovska evidenca)**
-    
-    Upravljanje odsotnosti, časa in zaposlovanja.
-    
-    * Dopusti in kvote
-    * Registracija časa
-    * Kadrovski razpisi
-
--   :fontawesome-solid-toolbox: **Delovna oprema**
-    
-    Evidenca in pregledi delovne opreme.
-    
-    * Inventar in QR kode
-    * Periodični pregledi
-    * Zapisniki
-
--   :fontawesome-solid-chart-line: **Ocene tveganj**
-    
-    Ocenjevanje in dokumentiranje tveganj (TDM).
-    
-    * Izračun tveganj in matrike
-    * Ukrepi in odgovorne osebe
-    * Digitalni podpis
-
--   :fontawesome-solid-bolt: **VZD/EKO meritve**
-    
-    Meritve delovnega okolja, hrupa, elektrike in strelovodov.
-
--   :fontawesome-solid-fire-extinguisher: **Požarna varnost**
-    
-    Evidence, gasilna oprema, vaje evakuacije in odgovorne osebe.
-
--   :fontawesome-solid-chart-pie: **Analitika in poročila**
-    
-    Pregledi in poročila poslovanja, koledar periodike, izdani dokumenti.
-
--   :fontawesome-solid-folder-open: **Ostale evidence**
-    
-    Zdravniški pregledi, OVO, delovne nezgode, nevarne snovi.
-
+<div class="op-grid">
+  <div class="op-card">
+    <h3>Zaposleni in usposabljanja</h3>
+    <p>Upravljanje kadrov, tečajev in preverjanja znanja.</p>
+    <ul>
+      <li>Evidenca zaposlenih</li>
+      <li>Organizacija usposabljanj</li>
+      <li>E-testi in oddaljeno usposabljanje</li>
+      <li>Avtomatska potrdila in zapisniki</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>HRM (Kadrovska evidenca)</h3>
+    <p>Upravljanje odsotnosti, časa in zaposlovanja.</p>
+    <ul>
+      <li>Dopusti in kvote</li>
+      <li>Registracija delovnega časa (Terminal/NFC)</li>
+      <li>Kadrovski razpisi</li>
+      <li>Baza kandidatov in prijav</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Delovna oprema</h3>
+    <p>Evidenca in pregledi delovne opreme.</p>
+    <ul>
+      <li>Evidenca opreme in inventarja</li>
+      <li>Periodični pregledi na terenu</li>
+      <li>QR kode za mobilni dostop</li>
+      <li>Digitalno podpisani zapisniki</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Ocene tveganj</h3>
+    <p>Ocenjevanje in dokumentiranje tveganj.</p>
+    <ul>
+      <li>Tipična delovna mesta (TDM)</li>
+      <li>Prilagodljive formule za izračun tveganj in dinamične matrike</li>
+      <li>Ukrepi in odgovorne osebe</li>
+      <li>Digitalno podpisani dokumenti</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>VZD/EKO meritve</h3>
+    <p>Meritve delovnega okolja in ostale meritve.</p>
+    <ul>
+      <li>Meritve delovnega okolja</li>
+      <li>Meritve hrupa</li>
+      <li>Električne meritve</li>
+      <li>Strelovodi in druge meritve</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Požarna varnost</h3>
+    <p>Evidence in dokumenti požarne varnosti.</p>
+    <ul>
+      <li>Evidence požarne zaščite</li>
+      <li>Gasilna oprema</li>
+      <li>Vaje evakuacije</li>
+      <li>Odgovorne osebe za PV</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Analitika in poročila</h3>
+    <p>Pregledi in poročila poslovanja.</p>
+    <ul>
+      <li>Koledar periodike</li>
+      <li>Pregled realizacije</li>
+      <li>Izdani dokumenti</li>
+      <li>Poročila po dejavnosti</li>
+    </ul>
+  </div>
+  <div class="op-card">
+    <h3>Ostale evidence</h3>
+    <p>Dodatne evidence in funkcionalnosti.</p>
+    <ul>
+      <li>Zdravniški pregledi</li>
+      <li>Osebna varovalna oprema (OVO)</li>
+      <li>Delovne nezgode</li>
+      <li>Nevarne snovi</li>
+    </ul>
+  </div>
 </div>
 
 ## Začetek uporabe
@@ -104,51 +141,60 @@ Za začetek uporabe sistema Optima Prevent potrebujete:
 3. **Osnovne nastavitve**: Nastavite osnovne parametre za vašo organizacijo  
 4. **Vnos podatkov**: Začnite z vnosom osnovnih podatkov (zaposleni, oprema, lokacije)
 
-## Podpora in pomoč {#podpora}
+Po začetni nastavitvi bo sistem pripravljen za redno uporabo. Priporočamo, da začnete z najpogosteje uporabljenimi moduli in postopoma dodajate ostale.
 
-<div class="grid cards" markdown>
+### Dostop za uporabnike strank
 
--   :fontawesome-solid-bug: **Prijava napake**
-    
-    Ste opazili napako v delovanju? Opišite nam jo.
-    
-    [:fontawesome-solid-arrow-right: Prijavi napako](https://github.com/a1info/support/issues/new?template=bug_report.yml)
+Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo in po potrebi urejajo podatke svoje organizacije. To zagotavlja večjo transparentnost in sodelovanje med ponudniki storitev VZD/PV in njihovimi strankami.
 
--   :fontawesome-solid-lightbulb: **Predlog funkcionalnosti**
-    
-    Vam manjka funkcija ali imate predlog za izboljšavo?
-    
-    [:fontawesome-solid-arrow-right: Predlagaj funkcijo](https://github.com/a1info/support/issues/new?template=feature_request.yml)
+## Podpora
 
--   :fontawesome-solid-circle-question: **Pogosta vprašanja**
-    
-    Hitri odgovori na najpogostejša vprašanja.
-    
-    [:fontawesome-solid-arrow-right: Preberi FAQ](faq-sl.md)
+### Prijava napak in predlogov
 
+<div class="op-grid" id="podpora">
+  <div class="op-card">
+    <h3>Prijava napake</h3>
+    <p>Opazili ste težavo ali napako v delovanju?</p>
+    <p><a class="md-button md-button--primary" href="https://github.com/a1info/support/issues/new?template=bug_report.yml">Odpri prijavo napake</a></p>
+    <p class="op-muted">Za hitrejšo obravnavo priložite korake za ponovitev, posnetek zaslona in verzijo sistema.<br><em>Potrebujete GitHub račun. Če ga nimate, pišite na <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a>.</em></p>
+  </div>
+  <div class="op-card">
+    <h3>Predlog funkcionalnosti</h3>
+    <p>Manjka vam funkcija ali izboljšava?</p>
+    <p><a class="md-button md-button--primary" href="https://github.com/a1info/support/issues/new?template=feature_request.yml">Predlagaj funkcijo</a></p>
+    <p class="op-muted">Navedite poslovni primer, pričakovano vedenje in prednost.<br><em>Potrebujete GitHub račun.</em></p>
+  </div>
+  <div class="op-card">
+    <h3>Uradni Priročniki</h3>
+    <p>Odgovori na najpogostejša vprašanja in uradna navodila za module.</p>
+    <ul>
+      <li><a href="manual-sl/">Priročnik - Spletni sistem</a></li>
+      <li><a href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a></li>
+      <li><a href="manual-api/">Priročnik - API Integracije</a></li>
+      <li><a href="manual/faq/">FAQ in reševanje težav</a></li>
+      <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
+    </ul>
+  </div>
 </div>
 
 ## Kontakt
 
-<div class="grid cards" markdown>
-
--   :fontawesome-solid-building: **A1 Informatika d.o.o.**
-    
-    Slovenija
-    
-    * E-pošta: [svetovanje@optima-prevent.eu](mailto:svetovanje@optima-prevent.eu)
-    * Splet: [optima-prevent.eu](https://optima-prevent.eu)
-
--   :fontawesome-brands-github: **GitHub**
-    
-    [Repozitorij podpore](https://github.com/a1info/support)
-    
-    * **Podpora**: [Prijava napake](https://github.com/a1info/support/issues/new?template=bug_report.yml)
-    * **Razvoj**: [Predlog funkcije](https://github.com/a1info/support/issues/new?template=feature_request.yml)
-
+<div class="op-grid">
+  <div class="op-card">
+    <h3>A1 Informatika d.o.o.</h3>
+    <p class="op-muted">Slovenija</p>
+    <p>E-pošta: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a><br>
+    Splet: <a href="https://optima-prevent.eu">optima-prevent.eu</a></p>
+  </div>
+  <div class="op-card">
+    <h3>GitHub</h3>
+    <p><a href="https://github.com/a1info/support">Repozitorij podpore</a></p>
+    <p><strong>Podpora</strong>: <a href="https://github.com/a1info/support/issues/new?template=bug_report.yml">Prijava napake</a><br>
+    <strong>Razvoj</strong>: <a href="https://github.com/a1info/support/issues/new?template=feature_request.yml">Predlog funkcije</a></p>
+  </div>
 </div>
 
 <hr>
-<p class="text-center" style="color: var(--md-default-fg-color--light);">
- © 2026 A1 Informatika d.o.o. · Optima Prevent v5 · Registrirano pri AARS (030/19)
+<p class="op-muted" style="text-align:center">
+ © 2026 A1 Informatika d.o.o. · Optima Prevent v5.4 · Blagovna znamka registrirana v Avtorski agenciji RS (030/19)
 </p>
