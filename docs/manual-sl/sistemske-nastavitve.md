@@ -1,41 +1,106 @@
 # Sistemske nastavitve
 
-Dostop: Sistem → Nastavitve
+**Dostop:** Sistem → Nastavitve
 
-Obvezni in ključni podatki:
-- ime in polno ime matične družbe,
-- DDV številka,
-- registrska številka,
-- sedež (naslov),
-- akreditacije RS,
-- kontakt (telefon, mobilni, e-pošta, spletna stran),
-- logotip,
-- certifikat za podpisovanje dokumentov itd.
+V tem razdelku upravljate osnovne podatke podjetja, aktivacijo modulov, nastavitve za pošiljanje e‑pošte, nadgradnjo sistema in digitalno podpisovanje dokumentov.
 
-V razdelku »Moduli« upravljate izbirne sistemske module in vnašate pridobite licence.
+---
 
-## Nastavitve modulov in matrika ocenjevanja tveganj
-V razdelku za konfiguracijo modulov (gumb nastavitve pri aktivnem modulu) lahko skrbniki prilagodijo delovanje posameznih sklopov aplikacije. 
-Pri modulu **Ocene tveganj (Rass)** je omogočena konfiguracija **dinamične formule za izračun tveganja**.
+## 1. Podjetje (Company)
 
-V polje za formulo lahko vpišete poljubni matematični izraz z uporabo spremenljivk:
-- `a` = Verjetnost
-- `b` = Resnost
-- `c` = Pogostost (sistem avtomatično prikaže to polje v uporabniškem vmesniku, če je zaznana uporaba spremenljivke v formuli).
+### 1.1. Osnovni podatki
 
-Podprte so matematične funkcije (`min`, `max`, `floor`, `ceil`, `round`) in logični operaterji (`==`, `&&`, `?`, `:`). To omogoča preslikavo katerekoli tiskane matrike ocenjevanja tveganja neposredno v sistem. 
-*Primer standardne AUWA formule:* `a * b`
-*Primer kompleksne prilagojene 5-stopenjske matrike:* `min(a + 2, b + 2, floor((2 * b + a - 1) / 2)) - (a == 3 && b == 4 ? 1 : 0)`
+| Polje | Opis |
+|-------|------|
+| **Ime podjetja** | Polno ime matične družbe |
+| **DDV številka** | Identifikacijska številka za DDV |
+| **Matična številka** | Registrska številka |
+| **Naslov** | Sedež podjetja |
+| **Kraj** | Mesto sedeža |
+| **Telefon / Mobilni** | Kontaktni podatki |
+| **E‑pošta / Spletna stran** | Javni kontakt |
+| **Odgovorna oseba** | Ime in priimek |
 
-## Nadgradnja sistema
+### 1.2. Logotip in podpis
+- Naložite **logotip** (prikaže se v poročilih in na prijavnem zaslonu).
+- Naložite **podpis** (uporablja se pri digitalnem podpisovanju dokumentov).
 
-V razdelku »Nadgradnja« je prikazana trenutna verzija. Če je sistem posodobljen, gumb za nadgradnjo ni prikazan.
-Na desni strani je prikazan kratek seznam sprememb posamezne različice.
+### 1.3. Poslovne enote (Business Units)
+Tabela prikazuje vse poslovne enote matične družbe.  
+- Dodajanje in brisanje je dovoljeno le, če ni aktivne lastniške stranke (ko je sistem povezan z osrednjo licenčno storitvijo).  
+- Poslovne enote se uporabljajo pri obveščanju in poročilih.
 
-## Digitalno podpisovanje dokumentov
+### 1.4. E‑poštna konfiguracija
+Nastavitve za odhodno pošiljanje obvestil (SMTP):
 
-Dostop: Nastavitve → Potrdila/Akreditacije
+| Polje | Opis |
+|-------|------|
+| **Mailer** | `smtp`, `localmailer` ali `sendmail` |
+| **Host** | SMTP strežnik |
+| **Port** | Vrata (npr. 587, 465) |
+| **Encryption** | `tls` ali `ssl` |
+| **Username / Password** | Podatki za avtentikacijo |
+| **From Name** | Ime pošiljatelja (npr. »Sistem Optima«) |
 
-Potrebno je dodati novi vnos tipa digitalni podpis, izbere se P12 datoteka in pripadajoče geslo. 
+---
 
-Po tem bodo vsi PDF dokumenti samodejno digitalno podpisani in vidni uporabnikom strank po prijavi.
+## 2. Moduli
+
+### 2.1. Pregled aktivnih modulov
+Na zavihku **Moduli** je prikazan seznam vseh modulov, ki jih sistem podpira. Za vsak modul je vidno:
+
+- **Ime modula** in kratek opis
+- **Status** – aktiven / neaktiven (odvisen od licence)
+- **Nastavitve** – gumb se prikaže le za module, ki podpirajo konfiguracijo
+
+### 2.2. Stanje licence
+Zgoraj je prikazano:
+- **Trenutni paket / načrt**
+- **Datum poteka licence** (če je omejena)
+- **Zadnja sinhronizacija** z osrednjim strežnikom
+
+Gumb **Sinhroniziraj licenco** ročno požene preverjanje stanja pri osrednjem strežniku.
+
+### 2.3. Konfiguracija modulov
+Klik na gumb **Nastavitve** pri aktivnem modulu odpre modalno okno, kjer lahko skrbnik prilagodi specifične parametre modula.  
+Primer za modul **Ocene tveganj (Rass)** je opisan v prejšnjem poglavju *Dinamična formula*.
+
+---
+
+## 3. Nadgradnja sistema
+
+**Dostop:** Sistem → Nastavitve → zavihek Nadgradnja
+
+Na tem zaslonu spremljate različico sistema in izvajate posodobitve.
+
+- **Nameščena različica** – trenutna verzija (pridobljena iz licence)
+- **Nova različica** – zadnja različica, ki je na voljo na centralnem strežniku
+- Gumb **Posodobi** se prikaže, če je na voljo novejša različica ali (le za superadmin) če želite ponovno namestiti trenutno različico.
+- V primeru, da je lokalna različica novejša od strežniške (npr. po testiranju), se prikaže opozorilo in gumb **Revert to …**, ki omogoči povratek na starejšo, vendar le superadminu.
+
+Desno je prikazan **dnevnik sprememb (changelog)** za vse različice, ki vsebuje seznam novosti in popravkov.
+
+Postopek nadgradnje samodejno:
+1. Prenese paket z osrednjega strežnika.
+2. Odstrani zastarele datoteke (če so navedene).
+3. Razširi novo kodo.
+4. Požene `composer update` in potrebne Artisan ukaze (`migrate`, `cache:clear` …).
+5. Posodobi različico v bazi.
+
+!!! warning
+    Pred nadgradnjo vedno naredite varnostno kopijo baze in datotek. Nadgradnja je enosmerna, razen če uporabnik izrecno izvede povratek na starejšo različico (kar ni priporočljivo).
+
+---
+
+## 4. Digitalno podpisovanje dokumentov
+
+**Dostop:** Nastavitve → Potrdila / Akreditacije
+
+1. Dodajte nov zapis s tipom **digitalni podpis**.
+2. Izberite datoteko **P12** (osebni certifikat) in vnesite pripadajoče geslo.
+3. Po shranitvi bo sistem ob vsakem generiranju PDF dokumenta (npr. zapisniki, poročila) le‑tega samodejno digitalno podpisal.
+
+Podpisani dokumenti so prepoznavni po vrstici *“DIGITALLY SIGNED”* in podatkih o podpisniku. Uporabnikom strank so prikazani po prijavi v modulu **Izdani dokumenti**.
+
+
+

@@ -1,41 +1,106 @@
 # Ocene tveganj
 
-Ocena tveganja je osrednji dokument varnostnih politik stranke. Nanj se vežejo usposabljanja, VZD/EKO meritve, OVO, zdravniški pregledi, evidence nevarnih snovi in pregledi delovne opreme.
+Ocena tveganja je osrednji dokument varnostnih politik stranke. Nanjo se vežejo usposabljanja, meritve delovnega okolja, osebna varovalna oprema, zdravniški pregledi, evidence nevarnih snovi in pregledi delovne opreme.
 
-Vsi vmesniki za ocene tveganja so v glavnem meniju. Sistem se opira na prilagodljive dinamične matrike za izračun stopnje tveganja, ki jih administrator določi v sistemskih nastavitvah.
+Sistem omogoča pripravo ocen po tipičnih delovnih mestih (TDM) z uporabo prilagodljive dinamične matrike, katere formulo lahko skrbnik nastavi v **Sistemskih nastavitvah → Moduli**.
 
-## Tveganja in kategorije
+---
 
-Dostop: Ocene tveganj → Urejanje tveganj
+## 1. Tveganja in kategorije
 
-- Definirajte tveganja in kategorije ter stopnje tveganja (standardni nabor, po potrebi prilagodljiv).
-- Možno je določiti splošne ukrepe za posamezna tveganja (prikažejo se v ocenah TDM).
+**Dostop:** Ocene tveganj → Urejanje tveganj
 
-Pomembno: Po vnosu tveganj/kategorij jih ne spreminjajte, da ne vplivate na že generirane dokumente.
+- Določite tveganja in jih združite v kategorije (standardni nabor je že vključen, lahko ga prilagodite).
+- Vsakemu tveganju lahko dodate splošne ukrepe, ki se bodo samodejno prikazali v ocenah TDM.
 
-## Tipična delovna mesta (TDM)
+!!! warning
+    Po vnosu tveganj in kategorij jih ne spreminjajte, da ne bi vplivali na že generirane dokumente.
 
-Dostop: Ocene tveganj → Seznam TDM
+---
 
-- Definirajte TDM-je (ime, glavna/občasna opravila, trajanje, opis dela, OVO ...). Polja se prikažejo v oceni in so namenjena urejanju.
-- Izberite tveganja, ki se obravnavajo za TDM (na desni strani tabele).
+## 2. Tipična delovna mesta (TDM)
 
-## Ocene za TDM
+**Dostop:** Ocene tveganj → Seznam TDM
 
-Dostop: Ocene tveganj → Seznam ocen
+V tem vmesniku definirate tipična delovna mesta:
 
-Koraki za pripravo ocene:
-1) izberite stranko, TDM in datum ocene;  
-2) izberite zaposlene, ki spadajo pod TDM (predizbrani so tisti, že dodeljeni TDM na vmesniku Stranke → Zaposleni; ostale lahko dodate tukaj);  
-3) uredite splošne podatke TDM; v tabeli posameznih tveganj iz menijev določite ocene parametrov: **Verjetnost (a)**, **Resnost (b)** in opcijsko **Pogostost (c)** (če je to določeno v konfiguracijski formuli modula). Sistem bo na podlagi vpisane sistemske formule **samodejno izračunal stopnjo tveganja (T)** in polje glede na doseženo vrednost ustrezno barvno označil (npr. zelena, svetlo modra, oranžna, rumena, rdeča);
-4) za tveganja z določeno kritično vrednostjo vnesite ukrepe, odgovorno osebo in roke izvedbe;  
-5) določite periodike (usposabljanja, pregledi opreme, zdravniški pregledi, meritve).
+| Podatek | Opis |
+|---------|------|
+| **Ime TDM** | Naziv delovnega mesta |
+| **Glavna / občasna opravila** | Opis dela |
+| **Trajanje** | Časovni obseg izvajanja |
+| **Osebna varovalna oprema (OVO)** | Seznam uporabljene OVO |
+| **Povezana tveganja** | Na desni strani tabele izberite tveganja, ki se za to delovno mesto obravnavajo |
 
-## Dokumenti OTV
+Podatki se kasneje prenesejo v obrazec ocene in jih je tam mogoče dodatno urejati.
 
-Dostop: Ocene tveganj → Dokumenti OTV
+---
 
-- Končni dokument je sestavljen iz več ocen posameznih TDM.  
-- Izberite stranko; prikazane so ocene, ki še niso združene v končni dokument.  
-- Izberite PE, datum in podlogo za izpis.  
-- Na dnu je analiza varnostnega stanja (seznam po meri iz Nastavitve → Preizkusi po meri).
+## 3. Ocena tveganja za TDM
+
+**Dostop:** Ocene tveganj → Seznam ocen
+
+Priprava ocene poteka v več korakih:
+
+### 3.1. Splošni podatki
+- Izberite **stranko**, **tipično delovno mesto (TDM)** in **datum ocene**.
+- Izberite zaposlene, ki spadajo pod to TDM.  
+  *Opomba:* zaposleni, ki jim je TDM že dodeljeno v modulu Stranke → Zaposleni, so predizbrani. Ostale lahko dodate ročno.
+
+### 3.2. Urejanje splošnih podatkov TDM
+- Uredite opis dela, trajanje, uporabljeno opremo, kemikalije itd.
+
+### 3.3. Vrednotenje tveganj
+V tabeli tveganj določite ocene parametrov:
+
+| Parameter | Pomen |
+|-----------|-------|
+| **Verjetnost (a)** | Možnost, da do škodljivega dogodka pride |
+| **Resnost (b)** | Morebitne posledice za zdravje delavca |
+| **Pogostost (c)** | Opcijski parameter, prikaže se le, če je vključen v formulo (glej poglavje *Dinamična formula*) |
+
+Sistem na podlagi v naprej določene **dinamične formule** (nastavljive v sistemskih nastavitvah) samodejno izračuna **stopnjo tveganja (T)**. Glede na doseženo vrednost se polje obarva v ustrezno barvo (npr. zelena – nizko tveganje, rdeča – nesprejemljivo tveganje).
+
+### 3.4. Ukrepi
+Za tveganja s kritično stopnjo vnesite:
+- ukrepe za zmanjšanje tveganja,
+- odgovorno osebo,
+- rok izvedbe.
+
+### 3.5. Periodike
+Določite zahtevane periode za:
+- usposabljanja,
+- preglede delovne opreme,
+- zdravniške preglede,
+- meritve delovnega okolja.
+
+Te nastavitve vplivajo na obveščanje o potekih v modulu **Periodika**.
+
+---
+
+## 4. Dokumenti OTV
+
+**Dostop:** Ocene tveganj → Dokumenti OTV
+
+Končni dokument »Ocena tveganja« združi več ocen posameznih TDM v enoten izpis.
+
+1. Izberite **stranko**.
+2. Prikaže se seznam ocen, ki še niso vključene v noben končni dokument.
+3. Označite želene ocene, izberite **poslovno enoto**, **datum** in **predlogo za izpis**.
+4. Na dnu dokumenta se lahko prikaže tudi analiza varnostnega stanja (seznam po meri iz *Nastavitve → Preizkusi po meri*).
+
+---
+
+## 5. Dinamična formula (konfiguracija modula)
+
+V razdelku za konfiguracijo modulov (gumb nastavitve pri aktivnem modulu) lahko skrbniki prilagodijo delovanje posameznih sklopov aplikacije. 
+Pri modulu **Ocene tveganj (Rass)** je omogočena konfiguracija **dinamične formule za izračun tveganja**.
+
+V polje za formulo lahko vpišete poljubni matematični izraz z uporabo spremenljivk:
+- `a` = Verjetnost
+- `b` = Resnost
+- `c` = Pogostost (sistem avtomatično prikaže to polje v uporabniškem vmesniku, če je zaznana uporaba spremenljivke v formuli).
+
+Podprte so matematične funkcije (`min`, `max`, `floor`, `ceil`, `round`) in logični operaterji (`==`, `&&`, `?`, `:`). To omogoča preslikavo katerekoli tiskane matrike ocenjevanja tveganja neposredno v sistem. 
+*Primer standardne AUWA formule:* `a * b`
+*Primer kompleksne prilagojene 5-stopenjske matrike:* `min(a + 2, b + 2, floor((2 * b + a - 1) / 2)) - (a == 3 && b == 4 ? 1 : 0)`
