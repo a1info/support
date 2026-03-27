@@ -1,6 +1,6 @@
 # Ocene telesnih obremenitev (RASSL)
 
-## 1. Pregled modula
+## Pregled modula
 
 Modul **RASSL** (Ocene telesnih obremenitev) omogoča sistematično ocenjevanje ergonomskih obremenitev delavcev na delovnih mestih. Dopolnjuje modul **Ocene tveganj** z namensko ergonomsko analizo telesnih obremenitev.
 
@@ -13,7 +13,7 @@ Ocene telesnih obremenitev temeljijo na standardiziranih ergonomskih metodah oce
 
 ---
 
-## 2. Kategorije telesnih obremenitev
+## Kategorije telesnih obremenitev
 
 Sistem RASSL podpira strukturirano ocenjevanje po kategorijah telesnih obremenitev. Razvrščene so v dve skupini:
 
@@ -44,7 +44,7 @@ Sistem RASSL podpira strukturirano ocenjevanje po kategorijah telesnih obremenit
 
 ---
 
-## 3. Tipična delovna mesta (TDM) za RASSL
+## Tipična delovna mesta (TDM) za RASSL
 
 Ocene telesnih obremenitev so neposredno vezane na **tipična delovna mesta (TDM)**, definirana v modulu Ocene tveganj.
 
@@ -56,7 +56,7 @@ Ocene telesnih obremenitev so neposredno vezane na **tipična delovna mesta (TDM
 
 ---
 
-## 4. Postopek ocenjevanja
+## Postopek ocenjevanja
 
 Ocenjevanje telesnih obremenitev poteka v naslednjih korakih:
 
@@ -95,7 +95,7 @@ Sistem samodejno izračuna **stopnjo telesne obremenitve** na podlagi vnesenih p
 
 ---
 
-## 5. Ukrepi
+## Ukrepi
 
 Na podlagi rezultatov ocene načrtujte in dokumentirajte ergonomske izboljšave:
 

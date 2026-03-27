@@ -4,7 +4,7 @@ Modul Delovna oprema zagotavlja celovito evidenco strojev, naprav in orodij ter 
 
 ---
 
-## 1. Pregled modula
+## Pregled modula
 
 | Komponenta | Opis |
 |-----------|------|
@@ -17,7 +17,7 @@ Modul Delovna oprema zagotavlja celovito evidenco strojev, naprav in orodij ter 
 
 ---
 
-## 2. Evidenca delovne opreme
+## Evidenca delovne opreme
 
 **Dostop:** Delovna oprema → Seznam delovne opreme
 
@@ -50,7 +50,7 @@ Na detajlnem pogledu opreme so razpoložljive naslednje informacije in operacije
 
 ---
 
-## 3. Pregledi delovne opreme
+## Pregledi delovne opreme
 
 **Dostop:** Delovna oprema → Pregledi → **Dodaj pregled** (+)
 
@@ -89,7 +89,7 @@ Preizkusi po meri se prikažejo kot dodatna polja na obrazcu pregleda za ustrezn
 
 ---
 
-## 4. Zapisniki pregledov
+## Zapisniki pregledov
 
 **Dostop:** Delovna oprema → Zapisniki
 
@@ -126,7 +126,7 @@ Postopek:
 
 ---
 
-## 5. QR kode – ROA (Remote Object Access)
+## QR kode – ROA (Remote Object Access)
 
 Vsak kos delovne opreme ima svojo edinstveno **QR kodo**, ki omogoča hiter terenski dostop do podatkov brez prijave v spletni vmesnik.
 
@@ -160,7 +160,7 @@ Za ustvarjanje novega pregleda neposredno prek QR kode je potrebna **prijava sis
 
 ---
 
-## 6. QR »bulk« ustvarjanje
+## QR »bulk« ustvarjanje
 
 **Dostop:** Seznami → QR ustvarjanje
 

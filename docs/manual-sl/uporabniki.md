@@ -4,7 +4,7 @@ Sistem loči med **sistemskimi uporabniki** (zaposleni matične družbe) in **up
 
 ---
 
-## 1. Sistemski uporabniki
+## Sistemski uporabniki
 
 **Dostop:** Sistem → Nastavitve → Uporabniki
 
@@ -73,7 +73,7 @@ Sistem pred brisanjem avtomatično preveri, ali je uporabnik povezan s katerim k
 
 ---
 
-## 2. Povezava uporabnikov z zaposlenimi (HRM integracija)
+## Povezava uporabnikov z zaposlenimi (HRM integracija)
 
 Sistem omogoča samodejno povezavo uporabniškega računa s profilom zaposlenega v modulu HR. Povezava prinaša naslednje prednosti:
 
@@ -111,7 +111,7 @@ Po shranitvi se zgodi naslednje:
 
 ---
 
-## 3. Uporabniki strank
+## Uporabniki strank
 
 Strankam lahko zagotovite varen, omejen dostop do njihovih lastnih podatkov. Uporabniki strank so **popolnoma ločeni od sistemskih uporabnikov** in nimajo dostopa do podatkov drugih strank.
 
@@ -177,7 +177,7 @@ Po uspešni prijavi se prikaže prilagojena nadzorna plošča s hitrimi povezava
 
 ---
 
-## 4. Dovoljenja (Permissions)
+## Dovoljenja (Permissions)
 
 Sistem uporablja podroben sistem dovoljenj, ki se dodeljujejo prek skupin (vlog). Dovoljenja določajo, kateri moduli in funkcije so dostopni posameznemu uporabniku.
 
@@ -199,7 +199,7 @@ Sistem uporablja podroben sistem dovoljenj, ki se dodeljujejo prek skupin (vlog)
 
 ---
 
-## 5. Brisanje uporabnika
+## Brisanje uporabnika
 
 | Pogoj | Dejanje |
 |-------|---------|

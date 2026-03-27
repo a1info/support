@@ -1,6 +1,6 @@
 # VZD / EKO meritve
 
-## 1. Pregled modula
+## Pregled modula
 
 Modul **EKO meritve** omogoča evidentiranje in upravljanje meritev delovnega okolja ter okoljevarstvenih meritev. Rezultati meritev se navezujejo na ocene tveganj in module požarne varnosti.
 
@@ -21,7 +21,7 @@ Modul **EKO meritve** omogoča evidentiranje in upravljanje meritev delovnega ok
 
 ---
 
-## 2. Tipi meritev
+## Tipi meritev
 
 Sistem podpira naslednje tipe meritev:
 
@@ -36,7 +36,7 @@ Sistem podpira naslednje tipe meritev:
 
 ---
 
-## 3. Dodajanje meritve
+## Dodajanje meritve
 
 Postopek vnosa meritve poteka v **2 do 3 korakih**.
 
@@ -77,7 +77,7 @@ Preverite vnesene podatke in potrdite shranjevanje meritve.
 
 ---
 
-## 4. Upravljanje meritev
+## Upravljanje meritev
 
 Za vsako obstoječo meritev so na voljo naslednje operacije:
 
@@ -93,7 +93,7 @@ Za vsako obstoječo meritev so na voljo naslednje operacije:
 
 ---
 
-## 5. Povezava s požarno varnostjo
+## Povezava s požarno varnostjo
 
 Meritve za **strelovod** in **elektro naprave** so neposredno povezane z modulom **Požarna varnost**.
 

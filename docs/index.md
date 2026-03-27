@@ -6,7 +6,7 @@
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese, analitiko in upravljanje kadrov (HRM).</p>
   <div class="op-cta">
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
-    <a class="md-button" href="manual-sl/uvod/">Priročnik - Splet</a>
+    <a class="md-button" href="manual-sl/">Priročnik - Splet</a>
     <a class="md-button md-button--secondary" href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a>
     <a class="md-button md-button--secondary" href="manual-api/">API Integracije</a>
   </div>

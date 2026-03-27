@@ -4,7 +4,7 @@ Modul **Požarna varnost** omogoča celovito vodenje evidenc požarne varnosti v
 
 ---
 
-## 1. Pregled modula
+## Pregled modula
 
 Modul pokriva vse ključne evidence, ki jih zahteva zakonodaja s področja varstva pred požarom:
 
@@ -28,7 +28,7 @@ Modul pokriva vse ključne evidence, ki jih zahteva zakonodaja s področja varst
 
 ---
 
-## 2. Objekti požarne varnosti
+## Objekti požarne varnosti
 
 Vsaka stranka ima lahko enega ali več objektov požarne varnosti. Vsak objekt je osnovna enota, na katero se navezujejo vse evidence.
 
@@ -53,7 +53,7 @@ Kliknite gumb **Dodaj objekt** na seznamu objektov.
 
 ---
 
-## 3. Evidence v okviru objekta
+## Evidence v okviru objekta
 
 Ko odprete posamezni objekt, imate na voljo naslednje zavihke z evidencami:
 
@@ -75,7 +75,7 @@ Ko odprete posamezni objekt, imate na voljo naslednje zavihke z evidencami:
 
 ---
 
-## 4. Tipi APZ
+## Tipi APZ
 
 Preden dodate sisteme aktivne požarne zaščite k objektu, morate definirati tipe APZ.
 
@@ -94,7 +94,7 @@ Preden dodate sisteme aktivne požarne zaščite k objektu, morate definirati ti
 
 ---
 
-## 5. Izvozi in tisk
+## Izvozi in tisk
 
 ### PDF izvoz
 
@@ -106,7 +106,7 @@ Potrdila in zapisniki usposabljanj za požarno varnost se generirajo v **glavnem
 
 ---
 
-## 6. Povezava z modulom Usposabljanja
+## Povezava z modulom Usposabljanja
 
 Usposabljanje zaposlenih za gašenje začetnih požarov in evakuacijo je tesno integrirano z modulom **Usposabljanja**.
 

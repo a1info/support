@@ -8,7 +8,7 @@ Sistem omogoča pripravo ocen po tipičnih delovnih mestih (TDM) z uporabo **pri
 
 ---
 
-## 1. Tveganja in kategorije
+## Tveganja in kategorije
 
 **Dostop:** Ocene tveganj → Urejanje tveganj
 
@@ -22,7 +22,7 @@ Tveganja in kategorije predstavljajo osnovo celotnega sistema ocenjevanja. Stand
 
 ---
 
-## 2. Tipična delovna mesta (TDM)
+## Tipična delovna mesta (TDM)
 
 **Dostop:** Ocene tveganj → Seznam TDM
 
@@ -42,7 +42,7 @@ Tipično delovno mesto (TDM) opisuje skupino delavcev z istovrstnimi delovnimi n
 
 ---
 
-## 3. Ocena tveganja za TDM
+## Ocena tveganja za TDM
 
 **Dostop:** Ocene tveganj → Seznam ocen
 
@@ -107,7 +107,7 @@ Določite zahtevane **periode** za posamezne aktivnosti, vezane na to delovno me
 
 ---
 
-## 4. Dokumenti OTV
+## Dokumenti OTV
 
 **Dostop:** Ocene tveganj → Dokumenti OTV
 
@@ -127,7 +127,7 @@ Modul **Dokumenti OTV** združi več ocen posameznih TDM v enoten, celovit dokum
 
 ---
 
-## 5. Dinamična formula
+## Dinamična formula
 
 **Dostop:** Gumb za nastavitve (zobnik ⚙) pri aktivnem modulu Ocene tveganj v konfiguracijski plošči modulov
 

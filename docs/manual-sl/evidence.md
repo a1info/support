@@ -1,6 +1,6 @@
 # Evidence
 
-## 1. Pregled modula
+## Pregled modula
 
 Modul **Evidence** je zbirno mesto za različne vrste evidenc, ki jih zahteva zakonodaja s področja varnosti in zdravja pri delu. Pokriva:
 
@@ -13,7 +13,7 @@ Modul **Evidence** je zbirno mesto za različne vrste evidenc, ki jih zahteva za
 
 ---
 
-## 2. Zdravniški pregledi
+## Zdravniški pregledi
 
 **Dostop:** Evidence → Zdravniški pregledi
 
@@ -51,7 +51,7 @@ Napotnico natisnete ali izvozite v **PDF** z gumbom za izpis pri posameznem zapi
 
 ---
 
-## 3. Osebna varovalna oprema (OVO)
+## Osebna varovalna oprema (OVO)
 
 **Dostop:** Evidence → Osebna varovalna oprema
 
@@ -78,7 +78,7 @@ Evidenca OVO beleži izdajanje osebne varovalne opreme posameznemu zaposlenemu n
 
 ---
 
-## 4. Delovne nezgode
+## Delovne nezgode
 
 **Dostop:** Evidence → Delovne nezgode
 
@@ -107,7 +107,7 @@ Obrazec delovne nezgode natisnete ali izvozite v **PDF** z gumbom za izpis pri p
 
 ---
 
-## 5. Ostale evidence
+## Ostale evidence
 
 **Dostop:** Evidence → Ostale evidence
 

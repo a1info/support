@@ -4,7 +4,7 @@ Modul **CRM** omogoča pregled in organizacijo dela z naročniki prek skupnega k
 
 ---
 
-## 1. Pregled modula
+## Pregled modula
 
 CRM modul je osrednje mesto za upravljanje delovnih nalog, projektov in komunikacije s strankami.
 
@@ -22,7 +22,7 @@ CRM modul je osrednje mesto za upravljanje delovnih nalog, projektov in komunika
 
 ---
 
-## 2. Naloge (Tasks)
+## Naloge (Tasks)
 
 Naloga je osnovna delovna enota v modulu CRM.
 
@@ -56,7 +56,7 @@ Naloga je osnovna delovna enota v modulu CRM.
 
 ---
 
-## 3. Koledarji
+## Koledarji
 
 Naloge so organizirane po koledarjih. Vsak koledar ima svojo barvo in namen.
 
@@ -79,7 +79,7 @@ Administratorji lahko dodajajo neomejeno število lastnih koledarjev (npr. »In�
 
 ---
 
-## 4. Projekti
+## Projekti
 
 Projekt združuje naloge, datoteke in komentarje v enotnem kronološkem pogledu.
 
@@ -107,7 +107,7 @@ Projekt združuje naloge, datoteke in komentarje v enotnem kronološkem pogledu.
 
 ---
 
-## 5. Delovni nalog
+## Delovni nalog
 
 Delovni nalog je tiskani (PDF) dokument, ki potrjuje opravljeno delo pri stranki.
 

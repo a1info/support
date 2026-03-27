@@ -4,7 +4,7 @@ Modul Usposabljanje pokriva celoten cikel izobraževanja in usposabljanj zaposle
 
 ---
 
-## 1. Pregled modula
+## Pregled modula
 
 Modul je večplasten in vključuje naslednje komponente:
 
@@ -19,7 +19,7 @@ Modul je večplasten in vključuje naslednje komponente:
 
 ---
 
-## 2. Tipi tečajev
+## Tipi tečajev
 
 **Dostop:** Usposabljanje → Tipi tečajev
 
@@ -39,7 +39,7 @@ Tipi tečajev so šifranti, ki določajo, kako se usposabljanja kategorizirajo i
 
 ---
 
-## 3. Dodajanje tečaja
+## Dodajanje tečaja
 
 **Dostop:** Usposabljanje → Seznam tečajev → **Dodaj tečaj** (+)
 
@@ -73,7 +73,7 @@ Po vnosu osnovnih podatkov tečaja dodate udeležence iz tabele zaposlenih:
 
 ---
 
-## 4. Udeleženci
+## Udeleženci
 
 Udeleženci se dodajajo **izključno med ustvarjanjem tečaja** (pred prvo shranjenjem). Po shranitvi je seznam udeležencev zaklenjen.
 
@@ -92,7 +92,7 @@ Po uspešno opravljenem testu sistem samodejno:
 
 ---
 
-## 5. Zapisniki usposabljanj
+## Zapisniki usposabljanj
 
 **Dostop:** Usposabljanje → Zapisniki
 
@@ -128,7 +128,7 @@ Postopek:
 
 ---
 
-## 6. Oddaljeno usposabljanje (E-test)
+## Oddaljeno usposabljanje (E-test)
 
 E-test omogoča zaposlenim, da usposabljanje in preverjanje znanja opravijo na daljavo – iz pisarne, doma ali s terena.
 
@@ -162,7 +162,7 @@ Primer: https://demo.optima-prevent.eu/mod-etest
 
 ---
 
-## 7. Vprašalniki za oddaljeno usposabljanje
+## Vprašalniki za oddaljeno usposabljanje
 
 **Dostop:** Usposabljanje → Vprašalniki
 

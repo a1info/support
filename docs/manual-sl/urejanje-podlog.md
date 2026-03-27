@@ -1,6 +1,6 @@
 # Urejanje predlog za izpis
 
-## 1. Pregled
+## Pregled
 
 Sistem OP5 podpira dve vrsti predlog za generiranje tiskovin in obrazcev:
 
@@ -13,11 +13,11 @@ Predloge določajo postavitev, vsebino in obliko izpisanih dokumentov. Vsaka pre
 
 ---
 
-## 2. Predloge FORMS
+## Predloge FORMS
 
 **Dostop:** Nastavitve → Predloge FORM
 
-### 2.1 Namen
+### Namen
 
 Predloge FORMS se uporabljajo za **nestandardne preglede in obrazce**, kjer je treba zbirati strukturirane podatke po meri stranke. Primeri:
 
@@ -26,7 +26,7 @@ Predloge FORMS se uporabljajo za **nestandardne preglede in obrazce**, kjer je t
 - Prilagojene kontrolne liste
 - Interni varnostni obrazci
 
-### 2.2 Elementi obrazca
+### Elementi obrazca
 
 Pri urejanju predloge FORM dodajate elemente iz nabora razpoložljivih tipov:
 
@@ -41,7 +41,7 @@ Pri urejanju predloge FORM dodajate elemente iz nabora razpoložljivih tipov:
 | **Dvojno potrditveno polje (da/ne)** | Vnos | Par polj Da / Ne za binarno izbiro |
 | **SQL koda** | Dinamično | Dinamični prikaz podatkov iz baze na podlagi SQL poizvedbe |
 
-### 2.3 Spremenljivke v besedilu elementov
+### Spremenljivke v besedilu elementov
 
 V besedilu elementov obrazca lahko uporabite naslednje vgrajene spremenljivke:
 
@@ -60,11 +60,11 @@ Izvajalec pregleda za stranko: ${cCustomer}, ${cAddress}
 
 ---
 
-## 3. Predloge DOCX
+## Predloge DOCX
 
 **Dostop:** Nastavitve → Urejanje predlog
 
-### 3.1 Namen
+### Namen
 
 Predloge DOCX se uporabljajo za generiranje **formalnih tiskovin** – dokumentov s statično postavitvijo (logotipi, stili, slike) in dinamičnim delom (spremenljivke, ki se zapolnijo s podatki ob generiranju).
 
@@ -77,7 +77,7 @@ Podprti tipi dokumentov:
 | **meritve** | Poročila o meritvah (hrup, osvetljenost, kemikalije …) |
 | **ocena tveganja** | Dokumenti ocene tveganja po delovnih mestih |
 
-### 3.2 Vrste spremenljivk
+### Vrste spremenljivk
 
 | Vrsta | Opis | Primer |
 |-------|------|--------|
@@ -85,7 +85,7 @@ Podprti tipi dokumentov:
 | **Tabelarne spremenljivke (vrstične)** | Ponovijo se za vsako vrstico v tabeli | Seznam udeležencev usposabljanja |
 | **Blok spremenljivke** | Ponavljajoči se paragrafi; vsebujejo posamezne ali tabelarne spremenljivke | Blok za vsak pregledani stroj |
 
-### 3.3 Format spremenljivk
+### Format spremenljivk
 
 Vse spremenljivke v DOCX datoteki sledijo isti sintaksi:
 
@@ -108,7 +108,7 @@ Datum pregleda: ${inspectionDate}
 | ${participantName} | ${participantRole} | ${participantSignature} |
 ```
 
-### 3.4 Spremenljivke za lastna polja (EAV)
+### Spremenljivke za lastna polja (EAV)
 
 Za **lastna polja** (polja po meri, dodana posamezni stranki) se uporablja posebna sintaksa z oznako polja in predpono pozicije:
 
@@ -124,9 +124,9 @@ Kjer je `<code>` koda lastnega polja, definirana v nastavitvah.
 
 ---
 
-## 4. Dodajanje in upravljanje predlog DOCX
+## Dodajanje in upravljanje predlog DOCX
 
-### 4.1 Dodajanje nove predloge
+### Dodajanje nove predloge
 
 1. Odprite **Nastavitve → Urejanje predlog**
 2. Kliknite gumb **Dodaj**
@@ -141,14 +141,14 @@ Kjer je `<code>` koda lastnega polja, definirana v nastavitvah.
 
 4. Shranite zapis
 
-### 4.2 Prioriteta predlog
+### Prioriteta predlog
 
 Kadar je za isti tip dokumenta na voljo **več predlog**, sistem privzeto uporabi tisto z **najnižjo zaporedno številko**.
 
 !!! tip "Preglasitev predloge"
     Pri vnosu storitve (usposabljanje, pregled …) je mogoče ročno izbrati, katero predlogo naj sistem uporabi za generiranje dokumenta, ne glede na privzeto prioriteto.
 
-### 4.3 Urejanje obstoječe predloge
+### Urejanje obstoječe predloge
 
 1. V seznamu predlog kliknite na naziv predloge
 2. Izvedite željene spremembe (zamenjava DOCX datoteke, sprememba naziva ali prioritete)

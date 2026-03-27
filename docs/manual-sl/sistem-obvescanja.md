@@ -1,6 +1,6 @@
 # Sistem obveščanja
 
-## 1. Pregled
+## Pregled
 
 Sistem obveščanja v aplikaciji OP5 zagotavlja celovito komunikacijo med vsemi udeleženci – skrbniki sistema, izvajalci in uporabniki strank. Obveščanje poteka po dveh kanalih:
 
@@ -14,7 +14,7 @@ Sistem pomaga pri usklajevanju dela in zagotavlja, da so vse stranke pravočasno
 
 ---
 
-## 2. Interna sporočila
+## Interna sporočila
 
 Interna sporočila omogočajo neposredno komunikacijo v realnem času med vsemi registriranimi uporabniki sistema – tako internimi (zaposleni pri izvajalcu) kot zunanjimi (uporabniki strank).
 
@@ -33,7 +33,7 @@ Kliknite ikono **kuverte** (✉) v zgornji navigacijski vrstici. Ob neprebrani p
 
 ---
 
-## 3. Sistemska obvestila
+## Sistemska obvestila
 
 Sistemska obvestila so **avtomatsko generirana** sporočila, ki vas opozorijo na dogajanje v sistemu brez ročnega posredovanja.
 
@@ -57,11 +57,11 @@ Kliknite ikono **zvonca** (🔔) v zgornji navigacijski vrstici. Ob novih obvest
 
 ---
 
-## 4. E-poštna obvestila
+## E-poštna obvestila
 
 E-poštna obvestila omogočajo pošiljanje avtomatskih obvestil na zunanje e-poštne naslove. Vsa odhodna e-pošta je **šifrirana** prek konfiguriranega SMTP strežnika.
 
-### 4.1 Konfiguracija SMTP strežnika
+### Konfiguracija SMTP strežnika
 
 **Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek E-poštna konfiguracija
 
@@ -80,7 +80,7 @@ Pred aktivacijo e-poštnega obveščanja je potrebno nastaviti SMTP strežnik:
 !!! warning "Pomembno"
     Preden aktivirate obveščanje za stranke, preverite delovanje SMTP konfiguracije z gumbom **Testiraj** v Sistemskih nastavitvah.
 
-### 4.2 Konfiguracija obveščanja po strankah
+### Konfiguracija obveščanja po strankah
 
 **Dostop:** Nastavitve → Obveščanje
 
@@ -97,13 +97,13 @@ Ko je SMTP strežnik pravilno konfiguriran, nastavite obveščanje za vsako stra
 - **Opomniki veljavnosti** – obvestila o iztekajočih se veljavnostih usposabljanj, pregledov in zdravniških spričeval
 - **Periodične naloge** – obvestila o nalogah s periodičnimi roki
 
-### 4.3 Šifrirana e-pošta
+### Šifrirana e-pošta
 
 Vsa odhodna e-poštna sporočila, ki jih pošlje sistem OP5, so šifrirana prek konfiguriranega SMTP strežnika. Ni potrebna dodatna konfiguracija – šifriranje se vzpostavi samodejno glede na vrednost polja **Encryption** v nastavitvah SMTP.
 
 ---
 
-## 5. Nastavitev obveščanja
+## Nastavitev obveščanja
 
 **Dostop:** Nastavitve → Obveščanje
 

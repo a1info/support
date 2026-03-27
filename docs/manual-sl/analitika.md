@@ -4,7 +4,7 @@ Modul **Analitika** omogoča celovit pregled in analizo podatkov o veljavnostih,
 
 ---
 
-## 1. Periodika (Pregled veljavnosti)
+## Periodika (Pregled veljavnosti)
 
 Poročilo omogoča spremljanje veljavnosti različnih evidenc: usposabljanja zaposlenih, pregledi delovne opreme, meritve delovnega okolja, požarna varnost, zdravniški pregledi in ostale evidence. Rezultati so prikazani v ločenih zavihkih z možnostjo iskanja, filtriranja, razvrščanja in izvoza.
 
@@ -62,7 +62,7 @@ Kliknite gumb **Prikaži koledar** v zgornjem desnem kotu za prikaz periodičnih
 
 ---
 
-## 2. Pregled realizacije
+## Pregled realizacije
 
 Poročilo prikazuje število in strukturo opravljenih aktivnosti v izbranem obdobju, združenih po strankah in izvajalcih.
 
@@ -100,7 +100,7 @@ Pod diagramom so **podrobne tabele** za vsako kategorijo z zapisi, ki vključuje
 
 ---
 
-## 3. Izdani dokumenti
+## Izdani dokumenti
 
 Upravljanje dokumentov, izdanih za stranke: zapisniki, potrdila, poročila in druge datoteke.
 
@@ -155,7 +155,7 @@ Dokumente je priporočljivo generirati **samodejno iz ustreznih modulov** (npr. 
 
 ---
 
-## 4. Poročilo po dejavnosti
+## Poročilo po dejavnosti
 
 Poročilo združuje stranke in opravljene aktivnosti glede na šifro dejavnosti po klasifikaciji **SKD 2025**. Namenjeno je internim pregledom in poročilom o obsegu dela po panogah.
 
@@ -193,7 +193,7 @@ Na dnu tabele so prikazane **vsote** za vse dejavnosti skupaj.
 
 ---
 
-## 5. Letno poročilo za stranko
+## Letno poročilo za stranko
 
 Modul omogoča generiranje prilagojenega dokumenta Word (**DOCX**) z letnim povzetkom vseh aktivnosti za izbrano stranko.
 

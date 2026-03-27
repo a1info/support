@@ -6,9 +6,9 @@ V tem razdelku upravljate osnovne podatke podjetja, aktivacijo modulov, nastavit
 
 ---
 
-## 1. Podjetje (Company)
+## Podjetje (Company)
 
-### 1.1 Osnovni podatki
+### Osnovni podatki
 
 | Polje | Opis |
 |-------|------|
@@ -23,19 +23,19 @@ V tem razdelku upravljate osnovne podatke podjetja, aktivacijo modulov, nastavit
 | **Spletna stran** | URL spletnega mesta podjetja |
 | **Odgovorna oseba** | Ime in priimek odgovorne osebe |
 
-### 1.2 Logotip in podpis
+### Logotip in podpis
 
 - **Logotip** – naloži se slikovna datoteka (PNG/JPG); prikaže se v poročilih in na prijavnem zaslonu aplikacije.
 - **Podpis** – slikovna datoteka podpisa odgovorne osebe; uporablja se pri digitalnem podpisovanju dokumentov (skupaj s certifikatom P12).
 
-### 1.3 Poslovne enote (Business Units)
+### Poslovne enote (Business Units)
 
 Tabela prikazuje vse poslovne enote matične družbe. Vsaka enota ima svoje ime, naslov in kontaktne podatke.
 
 !!! note "Opomba"
     Dodajanje in brisanje poslovnih enot je omejeno, kadar je sistem aktivno povezan z osrednjo licenčno storitvijo in obstaja lastniška stranka. Poslovne enote se navezujejo na obveščanje in poročila po enotah.
 
-### 1.4 E‑poštna konfiguracija (SMTP)
+### E‑poštna konfiguracija (SMTP)
 
 **Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek E‑poštna konfiguracija
 
@@ -56,9 +56,9 @@ Nastavitve za odhodno pošiljanje obvestil:
 
 ---
 
-## 2. Moduli
+## Moduli
 
-### 2.1 Pregled aktivnih modulov
+### Pregled aktivnih modulov
 
 Na zavihku **Moduli** je prikazan seznam vseh modulov, ki jih sistem podpira. Za vsak modul so prikazani:
 
@@ -68,7 +68,7 @@ Na zavihku **Moduli** je prikazan seznam vseh modulov, ki jih sistem podpira. Za
 | **Status** | Aktiven / Neaktiven (pogojeno z licenco) |
 | **Nastavitve** | Gumb z ikono zobnika – prikaže se le za module s konfiguracijo |
 
-### 2.2 Stanje licence
+### Stanje licence
 
 V zgornjem delu zavihka so prikazani podatki o licenci:
 
@@ -80,7 +80,7 @@ V zgornjem delu zavihka so prikazani podatki o licenci:
 
 Gumb **Sinhroniziraj licenco** ročno sproži preverjanje stanja licence pri osrednjem strežniku Optima Prevent. To je koristno po nakupu novega modula ali podaljšanju licence.
 
-### 2.3 Konfiguracija modulov
+### Konfiguracija modulov
 
 Klik na gumb **Nastavitve** (ikona zobnika ⚙) pri posameznem aktivnem modulu odpre modalno okno z nastavitvami, specifičnimi za ta modul.
 
@@ -90,13 +90,13 @@ V nastavitvah modula Rass je mogoče konfigurirati **dinamično formulo** za izr
 
 ---
 
-## 3. Nadgradnja sistema
+## Nadgradnja sistema
 
 **Dostop:** Sistem → Nastavitve → zavihek Nadgradnja
 
 Na tem zaslonu spremljate različico sistema in izvajate posodobitve.
 
-### 3.1 Prikaz različic
+### Prikaz različic
 
 | Element | Opis |
 |---------|------|
@@ -106,7 +106,7 @@ Na tem zaslonu spremljate različico sistema in izvajate posodobitve.
 | **Gumb Revert to …** | Prikaže se le superadminu, kadar je lokalna različica novejša od strežniške |
 | **Dnevnik sprememb** | Na desni strani zaslona – seznam novosti in popravkov za vse objavljene različice |
 
-### 3.2 Postopek samodejne nadgradnje
+### Postopek samodejne nadgradnje
 
 Ko kliknete **Posodobi**, sistem samodejno izvede naslednje korake:
 
@@ -123,13 +123,13 @@ Ko kliknete **Posodobi**, sistem samodejno izvede naslednje korake:
 
 ---
 
-## 4. Digitalno podpisovanje dokumentov
+## Digitalno podpisovanje dokumentov
 
 **Dostop:** Nastavitve → Potrdila / Akreditacije
 
 Sistem OP5 podpira samodejno digitalno podpisovanje vseh generiranih PDF dokumentov (zapisniki, poročila, potrdila) s pomočjo osebnega certifikata v formatu P12.
 
-### 4.1 Postopek nastavitve
+### Postopek nastavitve
 
 1. Odprite **Nastavitve → Potrdila / Akreditacije**
 2. Kliknite **Dodaj nov zapis**
@@ -140,7 +140,7 @@ Sistem OP5 podpira samodejno digitalno podpisovanje vseh generiranih PDF dokumen
 
 Po uspešni shranitvi bo sistem ob vsakem generiranju PDF dokumenta le-tega **samodejno digitalno podpisal**.
 
-### 4.2 Prepoznavanje podpisanih dokumentov
+### Prepoznavanje podpisanih dokumentov
 
 Digitalno podpisani dokumenti so prepoznavni po:
 
@@ -152,13 +152,13 @@ Digitalno podpisani dokumenti so prepoznavni po:
 
 ---
 
-## 5. Številčenje dokumentov
+## Številčenje dokumentov
 
 **Dostop:** Sistem → Številčenje
 
 Modul za samodejno številčenje omogoča definiranje pravil oštevilčevanja za vsako vrsto dokumenta posebej.
 
-### 5.1 Parametri oštevilčevanja
+### Parametri oštevilčevanja
 
 | Parameter | Opis |
 |-----------|------|
@@ -167,7 +167,7 @@ Modul za samodejno številčenje omogoča definiranje pravil oštevilčevanja za
 | **Tip dokumenta** | Vključi oznako tipa dokumenta |
 | **Zaporedna številka** | Samodejno naraščajoče zaporedje znotraj parametrov |
 
-### 5.2 Dokumenti s samodejnim številčenjem
+### Dokumenti s samodejnim številčenjem
 
 - Zapisniki usposabljanj
 - Potrdila o usposabljanju

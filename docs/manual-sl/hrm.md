@@ -4,7 +4,7 @@ Modul **HRM** poenostavlja procese vodenja kadrov, evidence delovnega časa, upr
 
 ---
 
-## 1. Pregled modula
+## Pregled modula
 
 HRM zagotavlja celovito podporo vsem ključnim kadrovskim procesom:
 
@@ -22,7 +22,7 @@ HRM zagotavlja celovito podporo vsem ključnim kadrovskim procesom:
 
 ---
 
-## 2. Nadzorna plošča (Dashboard)
+## Nadzorna plošča (Dashboard)
 
 HRM nadzorna plošča daje hiter pregled stanja na tekočo dan.
 
@@ -41,7 +41,7 @@ HRM nadzorna plošča daje hiter pregled stanja na tekočo dan.
 
 ---
 
-## 3. Evidenca delovnega časa (Terminal)
+## Evidenca delovnega časa (Terminal)
 
 Terminal (**Time Clock**) beleži prisotnost zaposlenih na delovnem mestu.
 
@@ -65,7 +65,7 @@ Terminal (**Time Clock**) beleži prisotnost zaposlenih na delovnem mestu.
 
 ---
 
-## 4. Odsotnosti in dopusti
+## Odsotnosti in dopusti
 
 ### Vrste odsotnosti
 
@@ -103,7 +103,7 @@ Osnutek → Oddano → Potrjeno / Zavrnjeno
 
 ---
 
-## 5. Prazniki in delovni koledar
+## Prazniki in delovni koledar
 
 ### Državni prazniki
 
@@ -127,7 +127,7 @@ Poleg državnih praznikov lahko dodate lastne proste dni:
 
 ---
 
-## 6. Zaposlovanje (Recruitment)
+## Zaposlovanje (Recruitment)
 
 Pod-modul za zaposlovanje pokriva celoten proces iskanja in selekcije novih sodelavcev.
 
