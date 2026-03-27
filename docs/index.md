@@ -1,11 +1,12 @@
 # Optima Prevent — Portal dokumentacije in podpore
+
 <div class="op-hero">
   <img src="media/logos/op-logo.png" alt="Optima Prevent logo" />
   <h2>Celovita rešitev za VZD, PV, HR in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese, analitiko in upravljanje kadrov (HRM).</p>
   <div class="op-cta">
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
-    <a class="md-button" href="manual-sl/">Priročnik - Splet</a>
+    <a class="md-button" href="manual-sl/uvod/">Priročnik - Splet</a>
     <a class="md-button md-button--secondary" href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a>
     <a class="md-button md-button--secondary" href="manual-api/">API Integracije</a>
   </div>
@@ -13,24 +14,16 @@
 
 ## Kaj je Optima Prevent
 
-Optima Prevent je celovit EHS (Environmental Health and Safety) in HRM sistem, posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HR) in varstvom okolja.
+Optima Prevent je celovit EHS (Environmental Health and Safety) sistem, ki je posebej prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Namenjen je organizacijam in strokovnim službam, ki se ukvarjajo z varnostjo in zdravjem pri delu (VZD), požarno varnostjo (PV), upravljanjem kadrov (HR) in varstvom okolja.
 
-Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kompleksnimi zahtevami zakonodaje na področju varnosti in zdravja pri delu.
+Sistem omogoča celovito in enostavno vodenje procesov ter popoln nadzor nad kompleksnimi zahtevami zakonodaje na področju varnosti in zdravja pri delu. Z Optima Prevent lahko vaša organizacija:
 
-### Prednosti rešitve
-
-- Prilagojenost slovenski zakonodaji in mednarodnim standardom (OHSAS/ISO)
-- Modularna arhitektura in medsebojno povezani moduli
-- EAV model za polja po meri in fleksibilnost podatkov
-- Transakcijski SQL, večuporabniški sočasni dostop in zaščita pred prepisovanjem podatkov
-- Sledenje spremembam (Audit log) za pregledno zgodovino urejanja zapisov
-- Šifriranje na vseh nivojih (baza, datotečni sistem, prenos)
-- Avtomatsko digitalno podpisovanje PDF (P12)
-- Analitika in koledarski pregled periodike
-- Digitalizacija vodenja evidenc in dokumentacije
-- Optimizacija procesov usposabljanja in upravljanja kadrov
-- Avtomatizirano opominjanje na potek veljavnosti dokumentov
-- Izboljšana dostopnost informacij in analitike
+- Digitalizira vodenje evidenc in dokumentacije.
+- Optimizira procese usposabljanja in upravljanja kadrov.
+- Avtomatizira opominjanje na potek veljavnosti dokumentov.
+- Zagotovi skladnost z zakonodajo in standardi.
+- Izboljša dostopnost informacij in analitike.
+- Poenostavi komunikacijo med deležniki.
 
 ## Arhitektura sistema
 
@@ -38,12 +31,12 @@ Optima Prevent temelji na moderni, večplastni arhitekturi, ki zagotavlja visoko
 
 ### Ključne tehnične značilnosti
 
-- Modularna zasnova: Sistem je sestavljen iz medsebojno povezanih modulov, ki se lahko uporabljajo samostojno ali kot celota
-- EAV model (Entity-Attribute-Value): Omogoča dodajanje atributov po meri in fleksibilnost pri vnosu in prikazu podatkov
-- Klient/strežniška arhitektura: Transakcijska SQL komunikacija z vgrajenim nadzorom sočasnosti (Optimistic Locking) omogoča sočasen dostop vseh uporabnikov brez tveganja izgube podatkov
-- Varnost: Vsi sloji dostopa do podatkov so šifrirani (SQL baza, datotečni sistem, omrežni prenos preko SSL/VPN)
-- GDPR skladnost: Obravnava osebnih podatkov je v skladu z uredbo GDPR
-- Odzivni vmesnik: Prilagojen za uporabo na različnih napravah, od računalnikov do tablic
+- **Modularna zasnova**: Sistem je sestavljen iz medsebojno povezanih modulov, ki se lahko uporabljajo samostojno ali kot celota.
+- **EAV model** (Entity-Attribute-Value): Omogoča dodajanje atributov po meri in zagotavlja fleksibilnost pri vnosu in prikazu podatkov.
+- **Klient/strežniška arhitektura**: Transakcijska SQL komunikacija z vgrajenim nadzorom sočasnosti (Optimistic Locking) omogoča sočasen dostop vseh uporabnikov brez tveganja izgube ali prepisovanja podatkov pri sočasnem delu več uporabnikov.
+- **Varnost**: Vsi sloji dostopa do podatkov so šifrirani (SQL baza, datotečni sistem, omrežni prenos preko SSL/VPN). Avtomatsko digitalno podpisovanje PDF (P12).
+- **GDPR skladnost**: Obravnava osebnih podatkov je v skladu z uredbo GDPR. Sledenje spremembam (Audit log) omogoča pregledno zgodovino urejanja zapisov.
+- **Odziven vmesnik**: Prilagojen za uporabo na različnih napravah, od računalnikov do tablic.
 
 ## Moduli sistema
 
@@ -76,8 +69,8 @@ Sistem Optima Prevent vključuje naslednje glavne module:
     <ul>
       <li>Evidenca opreme in inventarja</li>
       <li>Periodični pregledi na terenu</li>
-      <li>QR kode za mobilni dostop</li>
-      <li>Digitalno podpisani zapisniki</li>
+      <li>QR kode za hitri in mobilni dostop</li>
+      <li>Digitalno podpisani zapisniki in poročila</li>
     </ul>
   </div>
   <div class="op-card">
@@ -87,7 +80,7 @@ Sistem Optima Prevent vključuje naslednje glavne module:
       <li>Tipična delovna mesta (TDM)</li>
       <li>Prilagodljive formule za izračun tveganj in dinamične matrike</li>
       <li>Ukrepi in odgovorne osebe</li>
-      <li>Digitalno podpisani dokumenti</li>
+      <li>Povezava z drugimi moduli (usposabljanja, OVO, pregledi)</li>
     </ul>
   </div>
   <div class="op-card">
@@ -136,16 +129,16 @@ Sistem Optima Prevent vključuje naslednje glavne module:
 
 Za začetek uporabe sistema Optima Prevent potrebujete:
 
-1. **Dostop do sistema**: Pridobite uporabniško ime in geslo od vašega administratorja  
-2. **Prijava v sistem**: Obiščite URL naslov vaše instance sistema in se prijavite  
-3. **Osnovne nastavitve**: Nastavite osnovne parametre za vašo organizacijo  
-4. **Vnos podatkov**: Začnite z vnosom osnovnih podatkov (zaposleni, oprema, lokacije)
+1. **Dostop do sistema**: Pridobite uporabniško ime in geslo od vašega administratorja.
+2. **Prijava v sistem**: Obiščite URL naslov vaše instance sistema in se prijavite.
+3. **Osnovne nastavitve**: Nastavite osnovne parametre za vašo organizacijo.
+4. **Vnos podatkov**: Začnite z vnosom osnovnih podatkov (zaposleni, oprema, lokacije).
 
-Po začetni nastavitvi bo sistem pripravljen za redno uporabo. Priporočamo, da začnete z najpogosteje uporabljenimi moduli in postopoma dodajate ostale.
+Po začetni nastavitvi bo sistem pripravljen za redno uporabo. Za optimalne rezultate priporočamo, da začnete z najpogosteje uporabljenimi moduli in postopoma dodajate ostale funkcionalnosti.
 
 ### Dostop za uporabnike strank
 
-Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo in po potrebi urejajo podatke svoje organizacije. To zagotavlja večjo transparentnost in sodelovanje med ponudniki storitev VZD/PV in njihovimi strankami.
+Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo in po potrebi urejajo podatke svoje organizacije. To zagotavlja večjo transparentnost in sodelovanje med ponudniki storitev VZD/PV in njihovimi strankami. Uporabniki strank dostopajo do sistema preko posebnega URL naslova in imajo prilagojen vmesnik, ki prikazuje samo podatke njihove organizacije.
 
 ## Podpora
 
@@ -168,7 +161,7 @@ Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo 
     <h3>Uradni Priročniki</h3>
     <p>Odgovori na najpogostejša vprašanja in uradna navodila za module.</p>
     <ul>
-      <li><a href="manual-sl/">Priročnik - Spletni sistem</a></li>
+      <li><a href="manual-sl/uvod/">Priročnik - Spletni sistem</a></li>
       <li><a href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a></li>
       <li><a href="manual-api/">Priročnik - API Integracije</a></li>
       <li><a href="manual/faq/">FAQ in reševanje težav</a></li>

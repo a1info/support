@@ -1,141 +1,210 @@
 # Uporabniki
 
-Sistem loči med **sistemskimi uporabniki** (zaposleni matične družbe) in **uporabniki strank** (zunanje stranke, ki jim omogočite dostop do lastnih podatkov).
+Sistem loči med **sistemskimi uporabniki** (zaposleni matične družbe) in **uporabniki strank** (zunanje stranke, ki jim omogočite dostop do lastnih podatkov). Oba tipa sta popolnoma neodvisna in imata ločene prijavne strani ter nabore pravic.
 
 ---
 
-## Sistemski uporabniki
+## 1. Sistemski uporabniki
 
 **Dostop:** Sistem → Nastavitve → Uporabniki
 
-Sistemski uporabniki se delijo v vnaprej določene skupine, lahko pa ustvarite tudi lastne skupine z različnimi pravicami.
+Sistemski uporabniki se delijo v vnaprej določene skupine, poleg tega pa lahko ustvarite lastne skupino z natančno določenimi pravicami. Vsaka skupina (vloga) določa, do katerih modulov in funkcij ima uporabnik dostop.
+
+### Pregled skupin in njihovih pravic
 
 | Skupina | Pravice |
 |---------|---------|
-| **Uporabnik** | Dostop do lastnih in skupinskih podatkov; nima pravic nad sistemskimi nastavitvami. |
-| **Operater** | Vpogled v vse podatke, možnost dela v imenu drugih uporabnikov; nima pravic nad sistemskimi nastavitvami. |
+| **Uporabnik** | Dostop do lastnih in skupinskih podatkov. Nima pravic nad sistemskimi nastavitvami. |
+| **Operater** | Vpogled v vse podatke; možnost dela v imenu drugih uporabnikov. Nima pravic nad sistemskimi nastavitvami. |
 | **Administrator** | Polne pravice pregleda in urejanja vseh podatkov ter sistemskih nastavitev. |
-| **Superadmin** (posebna) | Ima vse pravice administratorja ter dodatno možnost nadgradnje sistema in povratka na starejše različice. |
+| **Superadmin** | Vse pravice administratorja, poleg tega možnost nadgradnje sistema in povratka na starejše različice. |
+
+!!! info "Privzete skupine"
+    Privzetih skupin (uporabnik, operater, administrator, superadmin) **ni mogoče izbrisati**, lahko pa jim kadar koli spremenite dodeljena dovoljenja.
+
+---
 
 ### Urejanje skupin (vlog)
 
-- V glavnem seznamu uporabnikov kliknite **Uredi skupine** (ikona ključavnice) za urejanje obstoječih skupin.
-- Skupini določite ime in izberite dovoljenja (permissions) s seznama.
-- Privzete skupine (uporabnik, operater, administrator, superadmin) ni mogoče izbrisati, lahko pa jim spreminjate dovoljenja.
+1. V glavnem seznamu uporabnikov kliknite gumb **Uredi skupine** (ikona ključavnice).
+2. Za vsako skupino določite:
+   - **Ime** skupine,
+   - **Dovoljenja** – izberite s seznama razpoložljivih dovoljenj.
+3. Shranite spremembe.
 
-### Urejanje uporabnika
-
-Nov uporabnik se doda s klikom na gumb **Dodaj** (+) v seznamu. Pri urejanju so na voljo naslednja polja:
-
-| Polje | Opis |
-|-------|------|
-| **E‑pošta** | Uporabniško ime (obvezno, edinstveno). Po shranitvi ga ni več mogoče spremeniti. |
-| **Geslo** | Za novega uporabnika obvezno. Pri obstoječem pustite prazno, če ga ne želite spremeniti. |
-| **Potrditev gesla** | Ponovni vpis gesla. |
-| **Skupina (vloga)** | Dodeli pravice. |
-| **Ime in priimek** | Polno ime uporabnika. |
-| **Strokovni naziv** | Neobvezno polje (npr. mag., inž.). |
-| **Aktivno** | Potrditveno polje – če ni aktivno, se uporabnik ne more prijaviti. |
-| **Povezava z zaposlenim (HRM)** | Glej poglavje *Povezava uporabnikov z zaposlenimi*. |
-| **Podpis** | Možnost nalaganja slike podpisa (prikaže se v poročilih). |
-| **Zadana stranka** | Stranka, ki se ob prijavi uporabnika samodejno nastavi kot aktivna. |
-| **Poslovna enota** | Poslovna enota matične družbe, ki ji uporabnik pripada. |
-| **Dodeljene stranke** (samo za ogled) | Seznam strank, ki so dodeljene uporabniku (ko je uporabnik skrbnik za stranko). |
-
-Uporabnika lahko izbrišete le, če ni povezan z nobenim zapisom (pregledi, usposabljanji, naročili …). Sistem pred brisanjem preveri prisotnost povezanih podatkov.
+!!! tip "Ustvarjanje lastnih skupin"
+    Za specifične potrebe (npr. skupina »Varnostni inženir« z dostopom samo do ocen tveganj) ustvarite novo skupino in ji dodelite natančno ta dovoljenja, ki jih potrebujete.
 
 ---
 
-## Povezava uporabnikov z zaposlenimi (HRM integracija)
+### Dodajanje in urejanje uporabnika
 
-Sistem omogoča samodejno povezavo uporabniškega računa s profilom zaposlenega (Custemployee). Povezava omogoča:
+Nov uporabnik se doda s klikom na gumb **Dodaj** (+) v seznamu sistemskih uporabnikov. Obrazec za urejanje vsebuje naslednja polja:
 
-- Enotno upravljanje podatkov (ime, priimek, e‑pošta, aktivnost).
-- Sinhronizacijo sprememb iz uporabniškega računa v HR profil (in obratno – pri dodelitvi prek izbire zaposlenega).
-- Uporabo HR funkcij (evidentiranje časa, dopusti) za ta račun.
+| Polje | Obvezno | Opis |
+|-------|---------|------|
+| **E-pošta** | ✅ | Uporabniško ime za prijavo. Mora biti edinstveno. **Po prvi shranitvi ga ni mogoče spremeniti.** |
+| **Geslo** | ✅ (novi) | Za novega uporabnika obvezno. Pri obstoječem pustite prazno, da geslo ostane nespremenjeno. |
+| **Potrditev gesla** | ✅ (novi) | Ponovni vpis gesla za preverjanje. |
+| **Skupina (vloga)** | ✅ | Določa pravice uporabnika v sistemu. |
+| **Ime in priimek** | — | Polno ime, ki se prikazuje v sistemu in poročilih. |
+| **Strokovni naziv** | — | Neobvezno (npr. mag., inž., dr.). Prikazuje se v podpisu poročil. |
+| **Aktivno** | — | Če potrditveno polje ni označeno, se uporabnik **ne more prijaviti**. |
+| **Povezava z zaposlenim (HRM)** | — | Poveže račun s HR profilom zaposlenega. Glej razdelek [HRM integracija](#2-povezava-uporabnikov-z-zaposlenimi-hrm-integracija). |
+| **Podpis** | — | Naložite sliko podpisa (prikazuje se v izpisanih poročilih). |
+| **Zadana stranka** | — | Stranka, ki se ob prijavi samodejno nastavi kot aktivna. |
+| **Poslovna enota** | — | Poslovna enota matične družbe, ki ji uporabnik pripada. |
+| **Dodeljene stranke** | 🔒 samo za ogled | Seznam strank, dodeljenih temu uporabniku kot skrbniku (ne urejate tukaj). |
 
-Obstajata dva načina povezave:
-
-### 1. Povezava z obstoječim zaposlenim
-Ko urejate uporabnika, v razdelku **Povezava z zaposlenim v HR** izberite zaposlenega s spustnega seznama. Prikažejo se samo zaposleni lastniške stranke (matične družbe), ki še niso povezani z nobenim uporabnikom.
-
-Po shranitvi:
-- Zaposlenemu se nastavi `user_id`.
-- Vsa nadaljnja posodobitev uporabnika (ime, e‑pošta, aktivnost) se samodejno prenese na HR profil.
-
-### 2. Samodejno ustvarjanje HR profila
-Če ne izberete obstoječega zaposlenega, sistem ob shranjevanju novega uporabnika samodejno ustvari osnovni HR profil:
-
-- Ime in priimek se razčlenita iz polnega imena uporabnika.
-- E‑pošta se prepiše.
-- Profil se dodeli glavni lokaciji (sedežu) lastniške stranke.
-- Uporabnik postane povezan s tem novim zapisom.
-
-Če uporabnik že ima povezanega zaposlenega (polje je zaklenjeno), se spremembe uporabnika (ime, e‑pošta, aktivnost) vedno prenesejo na HR profil.
+!!! warning "E-pošta kot uporabniško ime"
+    E-poštni naslov je hkrati uporabniško ime za prijavo. Po prvi shranitvi ga **ni mogoče spremeniti** – v primeru napake morate ustvariti novega uporabnika.
 
 ---
 
-## Uporabniki strank
+### Brisanje sistemskega uporabnika
 
-Strankam lahko omogočite varen dostop do sistema. Njihovi uporabniki so **neodvisni od sistemskih uporabnikov** in imajo dostop le do podatkov svoje stranke.
+Sistem pred brisanjem avtomatično preveri, ali je uporabnik povezan s katerim koli zapisom (pregledi, usposabljanja, naročila, ocene tveganj ipd.).
+
+- **Zapisi obstajajo** → brisanje ni dovoljeno. Uporabnika lahko le **deaktivirate** (odznačite polje *Aktivno*).
+- **Ni povezanih zapisov** → sistem izbriše uporabnika in vse njegove povezave: dodeljene vloge, dodeljene stranke in shranjene podpise.
+
+!!! danger "Deaktivacija namesto brisanja"
+    V večini primerov priporočamo deaktivacijo namesto brisanja. Deaktiviran uporabnik ostane v zgodovini zapisov, kar je pomembno za revizijsko sled.
+
+---
+
+## 2. Povezava uporabnikov z zaposlenimi (HRM integracija)
+
+Sistem omogoča samodejno povezavo uporabniškega računa s profilom zaposlenega v modulu HR. Povezava prinaša naslednje prednosti:
+
+- Enotno upravljanje podatkov (ime, priimek, e-pošta, aktivnost).
+- Sinhronizacija sprememb iz uporabniškega računa v HR profil.
+- Dostop do HR funkcij (evidentiranje prisotnosti, dopusti) za ta račun.
+
+Obstajata dva načina vzpostavitve povezave:
+
+### Način 1 – Povezava z obstoječim zaposlenim
+
+Pri urejanju uporabnika izberite zaposlenega iz spustnega seznama v razdelku **Povezava z zaposlenim v HR**.
+
+!!! note "Kateri zaposleni se prikažejo?"
+    Prikazujejo se samo zaposleni **lastniške stranke** (matične družbe), ki še **niso** bili povezani z nobenim uporabniškim računom.
+
+Po shranitvi se zgodi naslednje:
+
+- Zaposlenemu se nastavi vrednost `user_id`.
+- Vsa nadaljnja posodabljanja uporabnika (ime, e-pošta, aktivnost) se samodejno prenesejo na HR profil.
+
+### Način 2 – Samodejno ustvarjanje HR profila
+
+Če pri shranjevanju novega uporabnika **ne izberete** obstoječega zaposlenega, sistem samodejno ustvari osnovni HR profil:
+
+| Polje HR profila | Vrednost |
+|-----------------|---------|
+| Ime | Razčlenjeno iz polnega imena uporabnika |
+| Priimek | Razčlenjeno iz polnega imena uporabnika |
+| E-pošta | Prenesena iz uporabniškega računa |
+| Lokacija | Dodeljena glavni lokaciji (sedežu) lastniške stranke |
+
+!!! tip "Preverjanje povezave"
+    Ko je uporabnik že povezan z zaposlenim, je polje za izbiro zaklenjeno. Vse nadaljnje spremembe (ime, e-pošta, aktivnost) se samodejno prenesejo v HR profil.
+
+---
+
+## 3. Uporabniki strank
+
+Strankam lahko zagotovite varen, omejen dostop do njihovih lastnih podatkov. Uporabniki strank so **popolnoma ločeni od sistemskih uporabnikov** in nimajo dostopa do podatkov drugih strank.
 
 ### Ustvarjanje uporabnika stranke
 
 **Dostop:** Stranke → [izberite stranko] → Uporabniki
 
-Kliknite **Dodaj** in vnesite:
-- **E‑pošta** (uporabniško ime)
-- **Geslo** (uporabnik ga lahko kasneje spremeni)
-- **Ime in priimek**
-- **Modulne pravice** – izberite module (delovna oprema, zaposleni, OVO, zdravniški pregledi, delovne nezgode, naročila, požarna varnost) in zanje določite:
-  - **Pregled** – uporabnik lahko le pregleduje podatke.
-  - **Pregled in urejanje** – uporabnik lahko dodaja, spreminja in briše zapise v modulu.
+Kliknite **Dodaj** (+) in izpolnite obrazec:
+
+| Polje | Opis |
+|-------|------|
+| **E-pošta** | Uporabniško ime za prijavo. |
+| **Geslo** | Začetno geslo (uporabnik ga lahko pozneje sam spremeni). |
+| **Ime in priimek** | Polno ime kontaktne osebe stranke. |
+| **Modulne pravice** | Za vsak modul posebej izberite raven dostopa (glej spodnjo tabelo). |
+
+#### Modulne pravice
+
+Za vsak modul izberite eno od dveh ravni dostopa:
+
+| Raven | Opis |
+|-------|------|
+| **Pregled** | Uporabnik lahko samo pregleduje podatke (samo za branje). |
+| **Pregled in urejanje** | Uporabnik lahko dodaja, ureja in briše zapise v modulu. |
+
+Razpoložljivi moduli:
+
+- Delovna oprema
+- Zaposleni
+- OVO (osebna varovalna oprema)
+- Zdravniški pregledi
+- Delovne nezgode
+- Naročila
+- Požarna varnost
 
 ### Prijava uporabnika stranke
 
-Prijavna stran je ločena od glavne prijave sistemskih uporabnikov:
+Prijavna stran za stranke je **ločena** od glavne prijavne strani sistemskih uporabnikov:
 
-
-URL za prijavo: https://naslov_vaše_inštalacije/mod-cust  
+```
+https://[naslov_vaše_instalacije]/mod-cust
 Primer: https://demo.optima-prevent.eu/mod-cust
+```
 
-- Uporabniško ime: e‑poštni naslov
-- Geslo: nastavljeno ob vnosu (uporabnik ga lahko po prvi prijavi spremeni v svojem profilu)
+- **Uporabniško ime:** e-poštni naslov
+- **Geslo:** nastavljeno ob ustvarjanju računa
 
 ### Dostop po prijavi
 
-Po prijavi se uporabniku prikaže prilagojena nadzorna plošča (dashboard) s hitrimi povezavami. Glede na dodeljene pravice ima dostop do:
+Po uspešni prijavi se prikaže prilagojena nadzorna plošča s hitrimi povezavami. Razpoložljivi elementi menija so odvisni od dodeljenih pravic:
 
 | Meni | Vsebina |
 |------|---------|
-| **Dokumenti** | Izdani dokumenti, povezani s stranko. |
+| **Dokumenti** | Izdani dokumenti in poročila, povezana s stranko. |
 | **Periodika** | Koledarski pregled veljavnosti (usposabljanja, pregledi, meritve). |
 | **Zaposleni** | Seznam zaposlenih stranke. |
-| **Delovna mesta** | Tipična delovna mesta (če so na voljo). |
+| **Delovna mesta** | Tipična delovna mesta (če so konfigurirana). |
 | **Delovna oprema** | Seznam opreme in pregledi. |
 | **Zdravniški pregledi** | Evidence zdravstvenih pregledov. |
 
-Prijavno stran in izgled za stranke je možno prilagoditi (CSS, logotip).
+!!! tip "Prilagoditev izgleda"
+    Prijavno stran in celoten videz portala za stranke je mogoče prilagoditi z lastnim CSS in logotipom stranke.
 
 ---
 
-## Dovoljenja (Permissions)
+## 4. Dovoljenja (Permissions)
 
-Sistem uporablja podroben sistem dovoljenj, ki se dodeljujejo prek skupin (vlog). Za lažjo nastavitev so na voljo vnaprej pripravljena dovoljenja za ključne module, kot so:
+Sistem uporablja podroben sistem dovoljenj, ki se dodeljujejo prek skupin (vlog). Dovoljenja določajo, kateri moduli in funkcije so dostopni posameznemu uporabniku.
 
-- `view_educourse` – ogled usposabljanj
-- `view_measure` – ogled meritev
-- `view_custemployee` – ogled zaposlenih
-- `view_mdeviceobj` – ogled delovne opreme
-- `view_vpp` – ogled požarne varnosti
-- `view_rass` – ogled ocen tveganj
-- `view_rassl` – ogled ocen TDM
-- `view_sdev` – ogled tehnične varnosti
+### Predefinirana dovoljenja modulov
 
-Skrbnik lahko v nastavitvah skupin poljubno kombinir ta dovoljenja ali doda nova, če jih sistem podpira.
+| Dovoljenje | Opis |
+|-----------|------|
+| `view_educourse` | Ogled usposabljanj in tečajev |
+| `view_measure` | Ogled meritev |
+| `view_custemployee` | Ogled zaposlenih strank |
+| `view_mdeviceobj` | Ogled delovne opreme |
+| `view_vpp` | Ogled požarne varnosti |
+| `view_rass` | Ogled ocen tveganj |
+| `view_rassl` | Ogled ocen tveganj TDM |
+| `view_sdev` | Ogled tehnične varnosti (naprave) |
+
+!!! info "Kombiniranje dovoljenj"
+    Administrator lahko v nastavitvah skupin poljubno kombinira dovoljenja ali doda nova, če jih sistem podpira. S tem je mogoče natančno prilagoditi dostop za vsako vlogo v organizaciji.
 
 ---
 
-## Brisanje uporabnika
+## 5. Brisanje uporabnika
 
-Pri brisanju uporabnika sistem preveri, ali je povezan s kakšnim zapisom (pregledi, usposabljanji, naročili ipd.). Če so takšni zapisi prisotni, brisanje ni dovoljeno – uporabnika lahko le deaktivirate. V nasprotnem primeru se izbrišejo tudi vse povezave (dodeljene vloge, dodeljene stranke, lastni podpisi) in uporabnik izgine iz sistema.
+| Pogoj | Dejanje |
+|-------|---------|
+| Uporabnik **je** povezan z zapisi (pregledi, usposabljanja, naročila …) | Brisanje ni dovoljeno. Uporabnika **deaktivirajte**. |
+| Uporabnik **ni** povezan z nobenim zapisom | Sistem izbriše uporabnika in vse povezave: vloge, dodeljene stranke, shranjene podpise. |
+
+!!! warning "Kdaj izbrisati, kdaj deaktivirati?"
+    Priporočamo **deaktivacijo** v vsakem primeru, ko uporabnik ne bo več aktivno delal v sistemu, a so njegovi zapisi (poročila, pregledi) del revizijske sledi. Pravo brisanje je namenjeno samo za testne ali napačno ustvarjene račune brez kakršnih koli zapisov.

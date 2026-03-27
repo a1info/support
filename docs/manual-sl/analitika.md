@@ -1,75 +1,74 @@
 # Analitika
 
-Modul Analitika omogoča pregled in analizo podatkov o veljavnostih, realizaciji opravljenih aktivnosti, izdanih dokumentih ter pripravo letnih poročil za stranke.
+Modul **Analitika** omogoča celovit pregled in analizo podatkov o veljavnostih, realizaciji opravljenih aktivnosti, izdanih dokumentih ter pripravo poročil za stranke.
 
 ---
 
 ## 1. Periodika (Pregled veljavnosti)
 
-Poročilo omogoča spremljanje veljavnosti različnih evidenc, kot so usposabljanja zaposlenih, pregledi delovne opreme, meritve delovnega okolja, požarna varnost, zdravniški pregledi in ostale evidence. Rezultati so prikazani v zavihkih z možnostjo iskanja, filtriranja, razvrščanja in izvoza v Excel.
+Poročilo omogoča spremljanje veljavnosti različnih evidenc: usposabljanja zaposlenih, pregledi delovne opreme, meritve delovnega okolja, požarna varnost, zdravniški pregledi in ostale evidence. Rezultati so prikazani v ločenih zavihkih z možnostjo iskanja, filtriranja, razvrščanja in izvoza.
 
 ### Dostop
 
-- **Meni:** Analitika → Periodika
+**Analitika → Periodika**
 
 ### Obrazec za iskanje
 
-![Obrazec za iskanje periodike](img/analytics/validity-search.png)
-
 | Polje | Opis |
 |-------|------|
-| **Tip iskanja** | Izberite enega ali več tipov veljavnosti (Usposabljanja, Delovna oprema, Tehnična varnost, Meritve, Požarna varnost, Zdravniški pregledi, Ostale evidence). Gumb prikaže barvne značke za izbrane tipe. |
-| **Obdobje** | Izberite časovno obdobje, ki se uporabi za filtriranje datumov poteka veljavnosti. |
-| **Vključi poteklo** | Če je označeno, so v rezultatih prikazani tudi že potekli zapisi. |
-| **Poslovna enota** | Filter po poslovni enoti izbrane stranke (prikaže se, ko je aktivna stranka). |
-| **Skrbnik** | Filter po uporabniku sistema, ki je zapis ustvaril ali nazadnje urejal. |
-| **Tip stranke** | Kadar ni aktivne stranke, lahko filtrirate po tipu stranke. |
+| **Tip iskanja** | Izberite enega ali več tipov veljavnosti (Usposabljanja, Delovna oprema, Tehnična varnost, Meritve, Požarna varnost, Zdravniški pregledi, Ostale evidence). Vsak izbrani tip se prikaže kot barvna značka. |
+| **Obdobje** | Časovno obdobje za filtriranje datumov poteka veljavnosti. |
+| **Vključi poteklo** | Ko je označeno, so v rezultatih prikazani tudi že potekli zapisi. |
+| **Poslovna enota** | Filter po poslovni enoti izbrane stranke (prikaže se samo, kadar je aktivna stranka). |
+| **Skrbnik** | Filter po uporabniku, ki je zapis ustvaril ali nazadnje urejal. |
+| **Tip stranke** | Kadar ni aktivne stranke, filtrirajte po tipu stranke. |
 
 Po nastavitvi kriterijev kliknite **Najdi**.
 
 ### Prikaz rezultatov
 
-Rezultati so prikazani v zavihkih glede na izbrane tipe veljavnosti. Vsak zavihek vsebuje tabelo z ustreznimi podatki, polje za hitro iskanje, filter tipa, možnost razvrščanja in stranjenje.
+Rezultati so organizirani v zavihke glede na izbrane tipe veljavnosti. Vsak zavihek vsebuje:
 
-![Zavihki rezultatov](img/analytics/validity-tabs.png)
+- **Hitro iskanje** – filtriranje vrstic z vpisom ključne besede v iskalno polje,
+- **Filter tipa** – spustni seznam za filtriranje po podtipu (npr. tip tečaja, kategorija opreme),
+- **Razvrščanje** – klik na glavo stolpca razvrsti podatke naraščajoče ali padajoče,
+- **Izvoz v Excel** – pogovorno okno za izbiro stolpcev, ki jih vključite v izvoz; datoteka se prenese samodejno,
+- **Stranjenje** – navigacija med stranmi z gumbi na dnu tabele.
 
-#### Skupne funkcije
+!!! warning "Potekli zapisi"
+    Zapisi s poteklo veljavnostjo so v stolpcu **Datum poteka** označeni z **rdečo barvo**. Preverite jih redno in načrtujte obnovo.
 
-- **Hitro iskanje** – vpis v iskalno polje filtrira vrstice znotraj trenutne tabele.
-- **Filter tipa** – spustni seznam omogoča filtriranje po podtipu (npr. tip tečaja, kategorija opreme).
-- **Razvrščanje** – klik na glavo stolpca razvrsti podatke naraščajoče/padajoče.
-- **Izvozi v Excel** – klik na ikono Excela odpre pogovorno okno za izbiro stolpcev, ki jih želite vključiti v izvoz. Po potrditvi se datoteka prenese.
-- **Stranjenje** – s pomočjo številk na dnu tabele se pomikate med stranmi.
-
-#### Zavihki po tipih
+### Zavihki po tipih
 
 | Zavihek | Vsebina |
-|---------|--------|
-| **Usposabljanja** | Seznam zaposlenih z usposabljanji, datumom usposabljanja, datumom poteka, poslovno enoto itd. |
-| **Delovna oprema** | Pregledi delovne opreme z nazivom opreme, serijsko številko, datumom pregleda in potekom. |
+|---------|---------|
+| **Usposabljanja** | Zaposleni z usposabljanji, datum usposabljanja, datum poteka, poslovna enota. |
+| **Delovna oprema** | Pregledi z nazivom opreme, serijsko številko, datumom pregleda in potekom. |
 | **Tehnična varnost** | Pregledi opreme tehnične varnosti. |
 | **Meritve** | Meritve delovnega okolja, hrupa, elektrike, pretoka zraka itd. |
 | **Zdravniški pregledi** | Evidence zdravniških pregledov zaposlenih. |
-| **Ostale evidence** | Druge evidence (npr. oddaja osebne varovalne opreme). |
-| **Požarna varnost** | Združen zavihek, ki vsebuje podzavihke za sisteme APZ, gasilnike, hidrante, strelovode, kurilne naprave in vaje evakuacije. Vsak podtip ima svojo tabelo z ustreznimi filtri in iskanjem. |
-
-Potekli zapisi so označeni z rdečo barvo v stolpcu **Datum poteka**.
+| **Ostale evidence** | Druge evidence (npr. oddaja osebne varovalne opreme – OVO). |
+| **Požarna varnost** | Združeni zavihek s **podzavihki** za: sistemi APZ, gasilniki, hidrantni listi, strelovodi, kurilne naprave, vaje evakuacije. Vsak podzavihek ima lasten filter in iskanje. |
 
 ### Koledarski pogled
 
-Kliknite gumb s koledarjem v zgornjem desnem kotu obrazca za prikaz/kritje koledarja. Koledar prikazuje periodične naloge (npr. predvidene preglede) kot barvno označene dogodke. S klikom na ikono informacij se odpre meni z opisom dogodka in možnostjo ustvarjanja nove naloge.
+Kliknite gumb **Prikaži koledar** v zgornjem desnem kotu za prikaz periodičnih nalog v obliki barvno označenega mesečnega/tedenskega koledarja.
 
-Koledarski pogled lahko izvozite v format ICS z gumbom **ICS**.
+- S klikom na posamezen dogodek se odpre meni z opisom in možnostjo **ustvarjanja nove naloge** v CRM modulu.
+- Koledarski pogled izvozite v format **ICS** z gumbom ICS (združljivo z Google Calendar, Outlook itd.).
+
+!!! tip
+    ICS izvoz je koristen za sinhronizacijo rokov veljavnosti z osebnimi ali skupinskimi koledarji zunaj sistema.
 
 ---
 
 ## 2. Pregled realizacije
 
-Poročilo prikazuje število opravljenih aktivnosti (usposabljanja, pregledi delovne opreme, meritve, pregledi požarne varnosti) v izbranem obdobju, združeno po strankah in uporabnikih.
+Poročilo prikazuje število in strukturo opravljenih aktivnosti v izbranem obdobju, združenih po strankah in izvajalcih.
 
 ### Dostop
 
-- **Meni:** Analitika → Pregled realizacije
+**Analitika → Pregled realizacije**
 
 ### Obrazec za iskanje
 
@@ -77,130 +76,158 @@ Poročilo prikazuje število opravljenih aktivnosti (usposabljanja, pregledi del
 |-------|------|
 | **Datum od** | Začetni datum obdobja. |
 | **Datum do** | Končni datum obdobja. |
-| **Stranka** | Izberite določeno stranko (neobvezno). |
-| **Uporabnik** | Izberite uporabnika sistema, ki je aktivnost izvedel (neobvezno). |
+| **Stranka** | Neobvezno – omeji rezultate na določeno stranko. |
+| **Uporabnik** | Neobvezno – omeji rezultate na aktivnosti, ki jih je opravil določen uporabnik. |
 
 Kliknite **Najdi** za prikaz poročila.
 
 ### Rezultati
 
-- **Stolpčni diagram** – prikaže skupno število aktivnosti po kategorijah (usposabljanja, delovna oprema, meritve, VPP gasilniki, VPP APZ). Diagram se posodobi samodejno po vsakem iskanju.
-- **Tabele** – pod diagramom so prikazane tabele z dejanskimi zapisi za vsako kategorijo, vključno s stranko, tipom, datumom, veljavnostjo in uporabnikom.
+**Stolpčni diagram** prikaže skupno število aktivnosti po kategorijah. Kategorije:
 
-Poročilo je prijazno tiskanju – uporabite gumb **Natisni** za izpis.
+| Kategorija | Opis |
+|------------|------|
+| **Usposabljanja** | Izvedena usposabljanja zaposlenih |
+| **Delovna oprema** | Pregledi skupin delovne opreme |
+| **Meritve** | Meritve delovnega okolja in elektro meritve |
+| **VPP – Gasilniki** | Pregledi ročnih gasilnikov |
+| **VPP – APZ** | Pregledi sistemov aktivne požarne zaščite |
+
+Pod diagramom so **podrobne tabele** za vsako kategorijo z zapisi, ki vključujejo stranko, tip, datum, veljavnost in izvajalca.
+
+!!! info "Tiskanje"
+    Poročilo realizacije je optimizirano za tisk. Kliknite **Natisni** za pošiljanje poročila na tiskalnik ali shranitev kot PDF.
 
 ---
 
 ## 3. Izdani dokumenti
 
-Upravljanje dokumentov, izdanih za stranke (zapisniki, potrdila, poročila). Omogoča iskanje, ogled, nalaganje novih različic in brisanje dokumentov.
+Upravljanje dokumentov, izdanih za stranke: zapisniki, potrdila, poročila in druge datoteke.
 
 ### Dostop
 
-- **Meni:** Analitika → Izdani dokumenti
+**Analitika → Izdani dokumenti**
 
 ### Obrazec za iskanje
 
 | Polje | Opis |
 |-------|------|
-| **Tip dokumenta** | Filter po vrsti dokumenta (meritve, delovna oprema, usposabljanja, požarna varnost ipd.). |
+| **Tip dokumenta** | Filter po vrsti (meritve, delovna oprema, usposabljanja, požarna varnost itd.). |
 | **Št. zapisnika** | Iskanje po številki zapisnika. |
-| **Datum od / Datum do** | Omejitev na dokumente, izdane v določenem obdobju. |
-| **Ime in priimek zaposlenega** | Iskanje po imenu zaposlenega, če je dokument povezan z osebo. |
+| **Datum od / Datum do** | Dokumenti, izdani v izbranem obdobju. |
+| **Ime in priimek zaposlenega** | Iskanje po osebi, kadar je dokument vezan na konkretnega zaposlenega. |
 
 Kliknite **Najdi** za prikaz dokumentov.
 
 ### Seznam dokumentov
 
-Seznam vsebuje:
+Vsak zapis v seznamu vsebuje:
 
 - Stranka
 - Tip dokumenta
 - Datum dokumenta
-- Datum shranitve
+- Datum shranitve v sistem
 - Številka zapisnika
 - Ime datoteke
 - Uporabnik, ki je dokument ustvaril
 
-#### Akcije na dokumentu
+### Akcije na dokumentu
 
 | Akcija | Opis |
 |--------|------|
-| **Nova različica** | Zamenja obstoječo datoteko z novo. Po izbiri datoteke se ta samodejno naloži. |
-| **Prenos** | Odpre dokument v novem zavihku. |
-| **Izbriši** | Trajno izbriše zapis in datoteko. |
+| **Nova različica** | Zamenja obstoječo datoteko z novo. Po izbiri datoteke se ta naloži samodejno. |
+| **Prenos** | Odpre dokument v novem zavihku brskalnika (PDF, DOCX itd.). |
+| **Izbriši** | Trajno izbriše zapis in datoteko iz sistema. Dejanje je nepovratno. |
 
 ### Dodajanje novega dokumenta
 
-Dokumente je mogoče generirati samodejno iz različnih modulov (npr. iz skupine usposabljanj ali skupine delovne opreme) s klikom na gumb “Dodaj dokument” znotraj modula. Ročen prenos datoteke je prav tako možen prek funkcije “Dodaj dokument” v kontekstu stranke ali poslovne enote.
+Dokumente je priporočljivo generirati **samodejno iz ustreznih modulov** (npr. iz skupine usposabljanj ali delovne opreme s klikom na »Dodaj dokument«). Ročen prenos datoteke je prav tako možen prek funkcije »Dodaj dokument« v kontekstu stranke ali poslovne enote.
 
 ### Čiščenje starih različic
 
-Nad seznamom dokumentov je gumb **Čiščenje starih datotek**. Ob kliku se odstranijo starejše različice (ohrani se le zadnja različica za posamezen tip in objekt) in tudi osirotele datoteke (datoteke, ki niso več v bazi) starejše od 24 ur. S tem se ohranja prostor na disku.
+!!! info "Čiščenje starih datotek"
+    Gumb **Čiščenje starih datotek** nad seznamom odstrani:
+
+    - **starejše različice** dokumentov (ohrani se le zadnja različica za vsak tip in objekt),
+    - **osirotele datoteke** (datoteke na disku brez zapisa v bazi), starejše od 24 ur.
+
+    S čiščenjem ohranjate red in zmanjšujete porabo prostora na strežniku.
 
 ---
 
 ## 4. Poročilo po dejavnosti
 
-Poročilo združuje stranke in opravljene aktivnosti glede na šifro dejavnosti (SKD 2025). Prikazuje število strank v posamezni dejavnosti in število opravljenih pregledov oziroma meritev v izbranem letu.
+Poročilo združuje stranke in opravljene aktivnosti glede na šifro dejavnosti po klasifikaciji **SKD 2025**. Namenjeno je internim pregledom in poročilom o obsegu dela po panogah.
 
 ### Dostop
 
-- **Meni:** Analitika → Poročilo po dejavnosti
+**Analitika → Poročilo po dejavnosti**
 
 ### Obrazec za iskanje
 
 | Polje | Opis |
 |-------|------|
-| **Tip poročila** | Izberite med **Delovna oprema** (pregledi delovne opreme) ali **Meritve delovnega okolja**. |
-| **Leto** | Koledarsko leto, za katerega želite združiti podatke. |
+| **Tip poročila** | Izberite **Delovna oprema** (pregledi) ali **Meritve delovnega okolja**. |
+| **Leto** | Koledarsko leto, za katerega se podatki združijo. |
 
 Kliknite **Najdi** za prikaz poročila.
 
 ### Rezultati
 
-Tabela vsebuje vse šifre dejavnosti na prvi ravni (enoštevilčne kode) z naslednjimi stolpci:
+Tabela prikazuje vse šifre dejavnosti na **prvi ravni** (enoštevilčne kode SKD 2025):
 
-- Koda dejavnosti
-- Naziv dejavnosti
-- Število strank v tej dejavnosti
-- Glede na izbran tip poročila:
-  - **Delovna oprema**: število pregledov, število potrdil
-  - **Meritve delovnega okolja**: število meritev toplotnih razmer, število meritev osvetljenosti, število meritev hrupa
+| Stolpec | Opis |
+|---------|------|
+| **Koda dejavnosti** | Enoštevilčna koda SKD 2025 (npr. C – Predelovalne dejavnosti). |
+| **Naziv dejavnosti** | Polno ime dejavnostne kategorije. |
+| **Število strank** | Koliko strank v sistemu spada v to dejavnost. |
+| **Pregledi / Potrdila** | *(Delovna oprema)* Število izvedenih pregledov in izdanih potrdil. |
+| **Meritve toplotnih razmer** | *(Meritve)* Število opravljenih meritev toplotnih razmer. |
+| **Meritve osvetljenosti** | *(Meritve)* Število opravljenih meritev osvetljenosti. |
+| **Meritve hrupa** | *(Meritve)* Število opravljenih meritev hrupa. |
 
-Na dnu tabele so prikazana skupna števila za vse dejavnosti.
+Na dnu tabele so prikazane **vsote** za vse dejavnosti skupaj.
+
+!!! tip
+    Poročilo po dejavnosti je koristno za letna interna poročila o obsegu dela in za pregled porazdelitve strank po panogah.
 
 ---
 
 ## 5. Letno poročilo za stranko
 
-Omogoča generiranje prilagojenega Wordovega dokumenta (DOCX) z letnim povzetkom vseh aktivnosti za izbrano stranko. Poročilo vključuje preglede, usposabljanja, meritve, požarno varnost in ocene tveganj, združene po poslovnih enotah.
+Modul omogoča generiranje prilagojenega dokumenta Word (**DOCX**) z letnim povzetkom vseh aktivnosti za izbrano stranko.
 
 ### Dostop
 
-- **Meni:** Analitika → Letno poročilo za stranko
+**Analitika → Letno poročilo za stranko**
 
 ### Obrazec za iskanje
 
 | Polje | Opis |
 |-------|------|
-| **Stranka** | Izberite stranko, za katero želite poročilo. |
-| **Leto** | Leto, za katerega se podatki združijo. |
-| **Poslovna enota** | Neobvezen filter za določeno poslovno enoto stranke. |
-| **Predloga za izpis** | Izberite vnaprej pripravljeno Wordovo predlogo, ki določa strukturo in vsebino poročila. |
+| **Stranka** | Izberite stranko, za katero se pripravi poročilo. |
+| **Leto** | Leto, za katerega se podatki zberejo in združijo. |
+| **Poslovna enota** | Neobvezno – omejite poročilo na določeno PE stranke. |
+| **Predloga za izpis** | Izberite Wordovo predlogo, ki določa strukturo, glavo, pisavo in razporeditev vsebine. |
 
-Kliknite **Ustvari poročilo**. Datoteka se samodejno prenese; ne shrani se v sistem.
+Kliknite **Ustvari poročilo**. Datoteka DOCX se samodejno prenese na vaš računalnik in **se ne shrani v sistem**.
 
 ### Vsebina poročila
 
-Generirani dokument vsebuje:
+Generirani dokument vključuje:
 
-- Podatke o stranki (naziv, naslov, kontaktna oseba, davčna številka, matična številka, šifra dejavnosti)
-- Usposabljanja v izbranem letu s številom udeležencev, datumom, številko zapisnika, lokacijo in tipom
-- Preglede delovne opreme (skupine) s številom kosov opreme, datumom, številko zapisnika, lokacijo in tipom pregleda
-- Meritve (okolje, elektrika itd.) z veljavnostjo, številko zapisnika, lokacijo in tipom meritve
-- Ocene tveganj (skupine RASS)
-- Dokumente požarne varnosti (VPP) in vaje evakuacije
-- Informacije o prihodnjih potekih v naslednjem letu (če predloga to podpira)
+| Razdelek | Vsebina |
+|----------|---------|
+| **Podatki o stranki** | Naziv, naslov, kontaktna oseba, davčna in matična številka, šifra dejavnosti. |
+| **Usposabljanja** | Izvedena usposabljanja z datumom, številko zapisnika, številom udeležencev, lokacijo in tipom. |
+| **Delovna oprema** | Pregledane skupine z datumom, zapisnikom, lokacijo, tipom pregleda in številom kosov. |
+| **Meritve** | Meritve okolja in elektro z veljavnostjo, zapisnikom, lokacijo in tipom meritve. |
+| **Ocene tveganj** | Skupini RASS ocene tveganj s ključnimi ugotovitvami. |
+| **Požarna varnost** | Dokumenti VPP in evidence vaj evakuacije. |
+| **Prihodnji poteki** | Pregled aktivnosti, ki potečejo v naslednjem letu *(odvisno od predloge)*. |
 
-Natančna postavitev in izbrani podatki so odvisni od uporabljene predloge.
+!!! info "Predloge za izpis"
+    Natančna postavitev, izbrani razdelki in oblikovanje so odvisni od **izbrane predloge**. Predloge pripravi in vzdržuje administrator sistema. Kontaktirajte skrbnika, če pogrešate določeno vsebino v poročilu.
+
+!!! tip
+    Letno poročilo je primerno za letne sestanke z naročnikom ali kot priložek k pogodbi o storitvah.
