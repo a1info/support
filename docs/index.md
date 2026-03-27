@@ -1,7 +1,6 @@
 # Optima Prevent — Portal dokumentacije in podpore
 
 <div class="op-hero">
-  <img src="media/logos/op-logo.png" alt="Optima Prevent logo" />
   <h2>Celovita rešitev za VZD, PV, HR in varstvo okolja</h2>
   <p>Optima Prevent je napredni EHS sistem, prilagojen slovenski zakonodaji in mednarodnim standardom (OHSAS, ISO). Na enem mestu združuje dokumentacijo, procese, analitiko in upravljanje kadrov (HRM).</p>
   <div class="op-cta">
