@@ -83,25 +83,26 @@ nav:
   - Dokumentacija:
     - Priročnik:
       - Uvod: manual-sl/uvod.md
-      - Vmesnik in prijava: manual-sl/vmesnik-in-prijava.md
+      - Prijava in vmesnik: manual-sl/prijava.md
       - Navigacija: manual-sl/navigacija.md
-      - Sistemske nastavitve: manual-sl/sistemske-nastavitve.md
-      - Uporabniki: manual-sl/uporabniki.md
       - Začetna nastavitev: manual-sl/zacetna-nastavitev.md
-      - Stranke: manual-sl/stranke.md
+      - Stranke in poslovne enote: manual-sl/stranke.md
       - Zaposleni: manual-sl/zaposleni.md
-      - CRM: manual-sl/crm.md
-      - HRM: manual-sl/hrm.md
+      - Uporabniki in pravice: manual-sl/uporabniki.md
+      - Analitika: manual-sl/analitika.md
       - Usposabljanje: manual-sl/usposabljanje.md
       - Delovna oprema: manual-sl/delovna-oprema.md
-      - Ocene tveganj: manual-sl/ocene-tveganj.md
-      - Meritve: manual-sl/vzd-eko-meritve.md
-      - Požarna varnost: manual-sl/pozarna-varnost.md
       - Evidence: manual-sl/evidence.md
-      - Analitika: manual-sl/analitika.md
+      - VZD / EKO meritve: manual-sl/vzd-eko-meritve.md
+      - Ocene tveganj: manual-sl/ocene-tveganj.md
+      - Ocene telesnih obremenitev (RASSL): manual-sl/rassl.md
+      - Požarna varnost: manual-sl/pozarna-varnost.md
+      - HRM - Upravljanje kadrov: manual-sl/hrm.md
+      - CRM - Organizacija dela: manual-sl/crm.md
+      - Sistemske nastavitve: manual-sl/sistemske-nastavitve.md
       - Sistem obveščanja: manual-sl/sistem-obvescanja.md
-      - Urejanje podlog: manual-sl/urejanje-podlog.md
-    - Legenda spremenljivk: variables-sl.md
+      - Urejanje predlog: manual-sl/urejanje-podlog.md
+      - Legenda spremenljivk: manual-sl/variables-sl.md
   - Pogosta vprašanja (FAQ): faq-sl.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml
