@@ -82,7 +82,6 @@ nav:
   - Domov: index.md
   - Dokumentacija:
     - Priročnik:
-      - Uvod: manual-sl/uvod.md
       - Prijava in vmesnik: manual-sl/prijava.md
       - Navigacija: manual-sl/navigacija.md
       - Začetna nastavitev: manual-sl/zacetna-nastavitev.md
