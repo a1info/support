@@ -10,6 +10,7 @@ Modul je **tesno povezan z ostalimi moduli** sistema OP5:
 |---|---|
 | Usposabljanja | Zaposleni so udeleženci usposabljanj; generirajo se zapisniki in potrdila |
 | OVO (Osebna varovalna oprema) | Evidenca izdane opreme posameznemu delavcu |
+| Delovna oprema | Zadolževanje zaposlenih z delovno opremo (orodje, stroji, službena vozila) |
 | Zdravniški pregledi | Sledenje veljavnosti zdravniških spričeval |
 | Delovne nezgode | Zaposleni nastopajo kot ponesrečenci ali priče |
 | Ocene tveganja | Tipična delovna mesta zaposlenih so osnova za OT |
@@ -85,9 +86,23 @@ Sistem OP5 **samodejno preverja podvojene zapise** na podlagi kombinacije ime + 
 - Kliknite na **ime zaposlenega** v seznamu ali na ikono za urejanje (svinčnik).
 - Odpre se obrazec z vsemi polji — spremenite željene podatke in shranite.
 
+### Zadolževanje opreme (Delovna oprema)
+
+Zaposlenemu lahko dodelite v uporabo delovno opremo (npr. orodje, merilnike, službeno vozilo). Več zaposlenih lahko souporablja isto opremo, hkrati pa lahko določite, kdo izmed njih je **odgovorna oseba** za to opremo.
+
+**Postopek zadolžitve:**
+1. V seznamu kliknite na ime zaposlenega, da odprete **Kartoteko zaposlenega (Ogled)**.
+2. Izberite zavihek **Zadolžena oprema**.
+3. Kliknite gumb **»+ Zadolži«**.
+4. Odpre se iskalno okno, kjer lahko poiščete opremo (po nazivu, serijski ali inventarni številki). Prikazana je le oprema podjetja, v katerem je delavec zaposlen.
+5. Izpolnite polja (označite ali je zaposleni odgovoren, vpišite datum zadolžitve in morebitno opombo).
+6. Shranite.
+
+*Opomba: Ko zaposleni vrne opremo, v urejanju zadolžitve vnesite »Datum vračila«. S tem se ohrani sledljivost, oprema pa ni več aktivno na delavcu.*
+
 ### Deaktivacija zaposlenega
 
-Zaposlenih z obstoječo zgodovino **ni mogoče izbrisati** — evidenca preteklih usposabljanj, pregledov in dokumentov mora ostati nespremenjena.
+Zaposlenih z obstoječo zgodovino **ni mogoče izbrisati** (če imajo na primer opravljene preglede, usposabljanja ali zadolženo opremo) — evidenca preteklih usposabljanj in dokumentov mora ostati nespremenjena.
 
 Namesto brisanja zaposlene **deaktivirajte**:
 
@@ -107,7 +122,7 @@ Za vsakega zaposlenega je možno generirati **PDF poročilo z zgodovino** — pr
 
 - opravljenih usposabljanj in veljavnih potrdil,
 - zdravniških pregledov,
-- izdane OVO,
+- zadolžene delovne opreme in OVO,
 - delovnih nezgod (kot ponesrečenec ali priča).
 
 **Dostop:** Kliknite na zaposlenega → gumb »PDF poročilo« ali ikona za tiskanje.
@@ -120,9 +135,9 @@ Sistem OP5 omogoča hitro **povezavo evidence zaposlenega z IT uporabniškim ra�
 
 ### Postopek
 
-1. Odprite zapis zaposlenega.
-2. Kliknite gumb **»Ustvari IT račun«** ali **»Poveži z računom«**.
-3. Sistem samodejno ustvari ali poveže uporabniški račun z evidenco zaposlenega.
+1. Odprite zapis zaposlenega (zavihek Dodatno).
+2. Obkljukajte gumb **»Ustvari uporabniški račun (Login)«**.
+3. Sistem samodejno ustvari račun, kjer kot prijavno ime nastavi e-pošto zaposlenega.
 
 ### Prednosti povezave
 
@@ -145,17 +160,17 @@ Za masovni vnos zaposlenih (npr. pri novi stranki) uporabite **uvoz iz Excel dat
 
 ### Postopek uvoza
 
-```
-1. Prenesite predlogo tplImportCustemployee.xlsx
-2. Odprite v LibreOffice Calc (priporočeno)
-3. Vnesite ali prilepite podatke pod naslovno vrstico
-4. Preverite, da naslovna vrstica ostane nespremenjena
-5. Shranite datoteko v formatu UTF-8
-6. V OP5 izberite aktivno stranko (zgornji meni)
-7. Pojdite na Zaposleni → Uvoz Excel
-8. Naložite datoteko in potrdite uvoz
-9. Preglejte rezultat (uspešno / neuspešno uvožene vrstice)
-```
+
+    - Prenesite predlogo tplImportCustemployee.xlsx,
+    . Odprite v LibreOffice Calc (priporočeno),
+    - Vnesite ali prilepite podatke pod naslovno vrstico,
+    - Preverite, da naslovna vrstica ostane nespremenjena,
+    - Shranite datoteko v formatu UTF-8,
+    - V OP5 izberite aktivno stranko (zgornji meni),
+    - Pojdite na Zaposleni → ikona za uvoz (ob gumbu Dodaj),
+    - Naložite datoteko in potrdite uvoz,
+    - Preglejte rezultat (uspešno / neuspešno uvožene vrstice)
+
 
 !!! important "UTF-8 kodiranje"
     Datoteko vedno shranite s kodiranjem **UTF-8**, da zagotovite pravilen prikaz šumnikov (č, š, ž). V LibreOffice izberite: Datoteka → Shrani kot → Format: CSV (UTF-8) ali ustrezni Excel format.
@@ -164,4 +179,4 @@ Za masovni vnos zaposlenih (npr. pri novi stranki) uporabite **uvoz iz Excel dat
     Pred uvozom celotnega seznama najprej uvozite 3–5 testnih vrstic in preverite rezultat. Tako hitro odkrijete morebitne napake v strukturi datoteke.
 
 !!! note "Aktivna stranka"
-    Pred uvozom preverite, da je v zgornjem meniju izbrana **pravilna aktivna stranka**. Uvoženi zaposleni bodo dodeljeni izbrani stranki.
+    Pred uvozom preverite, da je v zgornjem meniju izbrana **pravilna aktivna stranka**. Uvoženi zaposleni bodo dodeljeni izbrani stranki in izbrani poslovni enoti.
