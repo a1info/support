@@ -54,12 +54,12 @@ Za zanesljivo delovanje priporočamo eno izmed naslednjih rešitev:
 2. **Namenske storitve za pošiljanje e-pošte (Transactional Email Services)**
    Te storitve so narejene specifično za pošiljanje sistemskih sporočil iz aplikacij in zagotavljajo najvišjo stopnjo dostavljivosti (e-pošta ne konča v vsiljeni pošti/spamu).
    
-   * **Brezplačne možnosti** (odlične za zagon in manjši obseg obvestil):
+   **Brezplačne možnosti** (odlične za zagon in manjši obseg obvestil):
       * **[Brevo (prej Sendinblue)](https://www.brevo.com/)**: Brezplačen paket omogoča do 300 poslanih e-mailov na dan.
       * **[MailerSend](https://www.mailersend.com/)**: Brezplačen paket vključuje do 3.000 sporočil na mesec.
       * **[Mailtrap](https://mailtrap.io/)**: Ponuja brezplačen paket primeren za testiranje in osnovno pošiljanje.
    
-   * **Plačljive možnosti** (za podjetja z velikim obsegom sporočil):
+   **Plačljive možnosti** (za podjetja z velikim obsegom sporočil):
       * **[Mailgun](https://www.mailgun.com/)**
       * **[SendGrid (Twilio)](https://sendgrid.com/)**
       * **[Postmark](https://postmarkapp.com/)**
