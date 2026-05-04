@@ -60,7 +60,7 @@ Za zanesljivo delovanje priporočamo eno izmed naslednjih rešitev:
     * **[Mailtrap](https://mailtrap.io/)**: Ponuja brezplačen paket primeren za testiranje in osnovno pošiljanje.
 ---
 
-!!! info "Plačljive možnosti (za podjetja z velikim obsegom sporočil)"
+!!! tip "Plačljive možnosti (za podjetja z velikim obsegom sporočil)"
     * **[Mailgun](https://www.mailgun.com/)**
     * **[SendGrid (Twilio)](https://sendgrid.com/)**
     * **[Postmark](https://postmarkapp.com/)**
