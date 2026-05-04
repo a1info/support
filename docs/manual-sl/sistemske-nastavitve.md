@@ -37,22 +37,47 @@ Tabela prikazuje vse poslovne enote matične družbe. Vsaka enota ima svoje ime,
 
 ### E‑poštna konfiguracija (SMTP)
 
-**Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek E‑poštna konfiguracija
+**Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek Email Configuration
 
-Nastavitve za odhodno pošiljanje obvestil:
+Sistem Optima Prevent omogoča pošiljanje sistemskih obvestil (npr. o poteku veljavnosti usposabljanj in opreme), vendar **nima vgrajenega lastnega SMTP strežnika za pošiljanje e-pošte**. Za uspešno pošiljanje obvestil mora uporabnik priskrbeti in nastaviti svoj lastni SMTP strežnik.
+
+!!! warning "Opozorilo glede MS Office 365 in Gmail (Google Workspace)"
+    Glavni ponudniki poslovne e-pošte (kot sta **Microsoft Office 365** in **Google Workspace / Gmail**) zaradi strogih varnostnih politik (onemogočanje t.i. "Basic Authentication", obvezna dvostopenjska avtentikacija - 2FA) **pogosto ne dovoljujejo neposrednega pošiljanja e-pošte** preko preprostega SMTP protokola ali pa zahtevajo zapleteno nastavljanje posebnih aplikacijskih gesel. Uporaba teh ponudnikov za sistemsko pošiljanje ni priporočljiva.
+
+**Kako zagotoviti ustrezen SMTP strežnik?**
+
+Za zanesljivo delovanje priporočamo eno izmed naslednjih rešitev:
+
+1. **Uporaba SMTP strežnika vašega spletnega gostovanja**
+   Če ima vaše podjetje zakupljeno klasično spletno gostovanje (npr. cPanel pri ponudnikih kot so Neoserv, Domenca, Hostinger, Domovanje), lahko v njihovi nadzorni plošči ustvarite namenski e-poštni predal (npr. `obvestila@vase-podjetje.si`) in uporabite njihove SMTP podatke.
+
+2. **Namenske storitve za pošiljanje e-pošte (Transactional Email Services)**
+   Te storitve so narejene specifično za pošiljanje sistemskih sporočil iz aplikacij in zagotavljajo najvišjo stopnjo dostavljivosti (e-pošta ne konča v vsiljeni pošti/spamu).
+   
+   * **Brezplačne možnosti** (odlične za zagon in manjši obseg obvestil):
+      * **[Brevo (prej Sendinblue)](https://www.brevo.com/)**: Brezplačen paket omogoča do 300 poslanih e-mailov na dan.
+      * **[MailerSend](https://www.mailersend.com/)**: Brezplačen paket vključuje do 3.000 sporočil na mesec.
+      * **[Mailtrap](https://mailtrap.io/)**: Ponuja brezplačen paket primeren za testiranje in osnovno pošiljanje.
+   
+   * **Plačljive možnosti** (za podjetja z velikim obsegom sporočil):
+      * **[Mailgun](https://www.mailgun.com/)**
+      * **[SendGrid (Twilio)](https://sendgrid.com/)**
+      * **[Postmark](https://postmarkapp.com/)**
+      * **[Amazon SES](https://aws.amazon.com/ses/)**
+
+**Nastavitve za odhodno pošiljanje:**
+
+V vmesniku izpolnite naslednja polja glede na podatke vašega SMTP ponudnika:
 
 | Polje | Opis | Primer vrednosti |
 |-------|------|-----------------|
-| **Mailer** | Vrsta pošiljatelja | `smtp` |
-| **Host** | Naslov SMTP strežnika | `mail.podjetje.si` |
-| **Port** | Vrata strežnika | `587` (TLS) ali `465` (SSL) |
-| **Encryption** | Vrsta šifriranja | `tls` ali `ssl` |
-| **Username** | Uporabniško ime za prijavo | `obvestila@podjetje.si` |
-| **Password** | Geslo za SMTP račun | — |
-| **From Name** | Prikazno ime pošiljatelja | `Optima Prevent` |
-
-!!! tip "Testiranje konfiguracije"
-    Po vnosu podatkov kliknite gumb **Testiraj**, da preverite, ali SMTP strežnik sprejema pošiljanje. Testno sporočilo bo poslano na e-poštni naslov vpisanega skrbnika.
+| **SMTP Mailer** | Vrsta pošiljatelja | `smtp` |
+| **Mail Host** | Naslov SMTP strežnika | `smtp-relay.brevo.com` ali `mail.vasadomena.si` |
+| **Mail Port** | Vrata strežnika | `587` (TLS) ali `465` (SSL) |
+| **Mail Encryption** | Vrsta šifriranja | `tls` ali `ssl` |
+| **Mail Username** | Uporabniško ime za prijavo | `sistemska.obvestila@podjetje.si` |
+| **Mail Password** | Geslo za SMTP račun | Vaše SMTP ali API geslo |
+| **Mail From Name** | Prikazno ime pošiljatelja | `Optima Prevent Sistem` |
 
 ---
 
@@ -78,7 +103,7 @@ V zgornjem delu zavihka so prikazani podatki o licenci:
 | **Datum poteka licence** | Datum izteka (prazno = neomejena licenca) |
 | **Zadnja sinhronizacija** | Datum in čas zadnje uspešne sinhronizacije z licenčnim strežnikom |
 
-Gumb **Sinhroniziraj licenco** ročno sproži preverjanje stanja licence pri osrednjem strežniku Optima Prevent. To je koristno po nakupu novega modula ali podaljšanju licence.
+Gumb **Sinhroniziraj licenco** ročno sproži preverjanje stanja licence pri osrednjega strežnika Optima Prevent. To je koristno po nakupu novega modula ali podaljšanju licence.
 
 ### Konfiguracija modulov
 
