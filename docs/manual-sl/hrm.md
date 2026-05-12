@@ -18,7 +18,7 @@ HRM zagotavlja celovito podporo vsem ključnim kadrovskim procesom:
 **Glavni meni → HRM**
 
 !!! warning "Pogoj za polno funkcionalnost"
-    Za uporabo večine HRM funkcionalnosti morajo imeti zaposleni v sistemu dodeljen in **povezan IT uporabniški račun**. Račune povežite prek modula **Zaposleni** (zavihek Uporabnik).
+    Za uporabo večine HRM funkcionalnosti morajo imeti zaposleni v sistemu dodeljen in **povezan IT uporabniški račun**. Uporabniški račun lahko ustvarite iz evidence [Zaposleni](zaposleni.md#povezava-z-it-racunom), pravice in vloge pa nato uredite v poglavju [Uporabniki](uporabniki.md).
 
 ---
 

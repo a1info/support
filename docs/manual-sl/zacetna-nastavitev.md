@@ -2,7 +2,7 @@
 
 ## Pregled
 
-Ta razdelek zajema korake začetne konfiguracije aplikacije Optima Prevent (OP5). Pred začetkom operativnega dela je priporočljivo izvesti nastavitve, opisane na tej strani — migracija obstoječih podatkov, nastavitev avtomatičnega številčenja dokumentov, uvoz podatkov iz Excel datotek ter konfiguracija tekstov in polj po meri.
+Ta razdelek zajema korake začetne konfiguracije aplikacije Optima Prevent (OP5). Pred začetkom operativnega dela je priporočljivo izvesti nastavitve, opisane na tej strani — migracija obstoječih podatkov, priprava ključnih sistemskih nastavitev, uvoz podatkov iz Excel datotek ter konfiguracija tekstov in polj po meri.
 
 ---
 
@@ -26,31 +26,14 @@ Tipični scenariji migracije:
 
 ## Avtomatično številčenje dokumentov
 
-Vsi izdani dokumenti so v sistemu OP5 **avtomatično oštevilčeni** s številskimi števci. Pravila številčenja so prilagodljiva in sledijo pravilom matične družbe.
+Pred prvo produkcijsko uporabo preverite, da je za vse ključne vrste dokumentov pravilno nastavljeno **avtomatično številčenje**.
 
 **Dostop:** Sistem → Številčenje
 
-### Dokumenti, ki se številčijo
-
-| Vrsta dokumenta | Opis |
-|---|---|
-| Zapisniki o usposabljanju | Potrditev izvedenega usposabljanja |
-| Potrdila o usposabljanju | Individualno potrdilo udeleženca |
-| Zapisniki o pregledih delovne opreme | Evidenca pregledov posameznih naprav |
-| Potrdila za delovno opremo | Certifikati za napravo |
-| Ocene tveganja | Dokumenti OT s podpisno stranjo |
-| EKO/VZD meritve | Rezultati meritev delovnega okolja |
-
-### Parametri številčenja
-
-Vsak števec je definiran z naslednjimi parametri:
-
-- **Leto** — tekoče leto (se samodejno ponastavi)
-- **Stranka** — opcijsko, za ločeno številčenje po strankah
-- **Tip dokumenta** — kategorizacija znotraj iste evidence
-
 !!! tip "Prilagoditev"
     Nastavitve številčenja prilagodite pred prvim izdanim dokumentom. Naknadno popravljanje zaporednih številk zahteva poseg v bazo.
+
+Podrobna referenca za parametre, tipe dokumentov in delovanje števcev je v poglavju [Sistemske nastavitve](sistemske-nastavitve.md#stevilcenje-dokumentov).
 
 ---
 

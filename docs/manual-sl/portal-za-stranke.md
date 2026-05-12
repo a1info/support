@@ -4,6 +4,8 @@ Optima Prevent vključuje namensko spletno aplikacijo (portal) za vaše stranke.
 
 Ker je portal neposredno povezan z glavno bazo podatkov, so vsi dokumenti in spremembe, ki jih ustvarite, stranki vidni takoj.
 
+Portalni uporabniki so **ločeni od sistemskih uporabnikov**. Za interne račune, skupine in dovoljenja glejte poglavje [Uporabniki](uporabniki.md).
+
 ---
 
 ## 1. Dodeljevanje dostopa (Ustvarjanje uporabnikov strank)
@@ -55,7 +57,7 @@ Stranka se prijavi s svojim e-poštnim naslovom in geslom.
 
 ---
 
-## 3. Nadzorna plošča in obvestila (Dashboard)
+## 3. Nadzorna plošča in dogodki (Dashboard)
 
 Takoj po uspešni prijavi je stranki prikazana **Nadzorna plošča**, ki ponuja zbirni pregled ključnih informacij.
 
@@ -64,9 +66,11 @@ Takoj po uspešni prijavi je stranki prikazana **Nadzorna plošča**, ki ponuja 
 2. **Koledar naročil in realizacije:** Vizualni prikaz naročenega in opravljenega dela.
 3. **Analitika (Mesečni povzetek):** Grafikon, ki prikazuje opravljena dela in izvedene preglede po mesecih.
 
-### Sistem internih obvestil (Dogodki)
+### Zadnji dogodki
 Desni del nadzorne plošče vsebuje seznam **Zadnjih dogodkov**. 
-To je interni sistem obveščanja. **Kadarkoli v glavni aplikaciji za to stranko ustvarite in objavite nov dokument** (npr. zapisnik o usposabljanju, nov pregled delovne opreme, oceno tveganja), sistem tukaj samodejno zabeleži dogodek. Stranka tako ob prijavi takoj vidi, katere nove storitve in dokumenti so ji bili nedavno predani.
+**Kadarkoli v glavni aplikaciji za to stranko ustvarite in objavite nov dokument** (npr. zapisnik o usposabljanju, nov pregled delovne opreme, oceno tveganja), sistem tukaj samodejno zabeleži dogodek. Stranka tako ob prijavi takoj vidi, katere nove storitve in dokumenti so ji bili nedavno predani.
+
+Za splošna pravila obveščanja, e-poštne opomnike, e-test sporočila in diagnostiko pošte glejte poglavje [Sistem obveščanja](sistem-obvescanja.md).
 
 ---
 

@@ -16,6 +16,8 @@ Izbirnik aktivne stranke določa kontekst za vse vnose in prikaze podatkov v apl
 - vsi seznami in poročila prikazujejo podatke **samo za to stranko**,
 - zagotovljeno je, da podatki ne mešajo med različnimi strankami.
 
+Če aktivna stranka **ni izbrana**, sistem praviloma prikazuje zbirne sezname vseh strank. Tak pogled je uporaben za globalne preglede in analitiko, ne pa za operativne vnose.
+
 !!! tip "Nastavite aktivno stranko pred delom"
     Pred pričetkom vnosa ali pregledovanja podatkov vedno preverite, ali je v izbirniku aktivna prava stranka. S tem se izognete napačnim vnosom ali pregledovanju napačnih podatkov.
 
@@ -109,10 +111,7 @@ V zgornjem meniju aplikacije sta dve ikoni za komunikacijo in obveščanje:
 
 ### Sistemska obvestila (zvonček 🔔)
 
-Ikona **zvončka** prikazuje sistemska obvestila, ki jih aplikacija samodejno generira – tipično gre za:
-
-- opozorila o **prihajajočih ali preteklih rokih** (periodika pregledov, veljavnost dokumentov, roki usposabljanj),
-- obvestila o potrebnih ukrepih.
+Ikona **zvončka** prikazuje sistemska obvestila, na primer opozorila o rokih, veljavnostih in drugih dogodkih, ki zahtevajo pozornost uporabnika.
 
 ### Interna sporočila (ovojnica ✉️)
 
@@ -121,3 +120,5 @@ Ikona **ovojnice** omogoča pošiljanje in prejemanje **internih sporočil** med
 ### Rdeča oznaka z neprebrano vsebino
 
 Na obeh ikonah se prikaže **rdeča oznaka (badge) s številom**, ki kaže količino **neprebranih obvestil ali sporočil**. Ko preberete vsebino, se oznaka samodejno odstrani.
+
+Za pravila pošiljanja obvestil, e-poštne opomnike, e-test sporočila in diagnostiko pošte glejte poglavje [Sistem obveščanja](sistem-obvescanja.md).

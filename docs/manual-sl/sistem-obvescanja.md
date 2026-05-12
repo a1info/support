@@ -2,6 +2,8 @@
 
 Sistem Optima Prevent omogoča napredno avtomatizirano obveščanje strank in zaposlenih preko e-pošte. Obvestila pokrivajo opomnike o poteku veljavnosti (pregledi opreme, usposabljanja), pošiljanje dostopnih podatkov za e-učenje in sistemska opozorila.
 
+To je osrednje poglavje za pravila obveščanja, e-test pošto, diagnostiko pošiljanja in pregled portalnih/in-app dogodkov. Pomen ikon v zgornjem meniju je na kratko opisan v poglavju [Navigacija in skupne akcije](navigacija.md#obvestila-in-sporocila).
+
 !!! warning "Predpogoj: Nastavitev SMTP strežnika"
     Za uspešno delovanje celotnega sistema obveščanja mora biti predhodno pravilno nastavljen vaš lastni SMTP strežnik. 
     Navodila za nastavitev najdete v poglavju [Sistemske nastavitve](sistemske-nastavitve.md#e-postna-konfiguracija-smtp).
@@ -83,4 +85,4 @@ Poleg e-pošte sistem podpira tudi t.i. *in-app* obveščanje za vaše naročnik
 Stranke imajo omogočen dostop do lastnega spletnega portala, kjer lahko pregledujejo svojo opremo, zaposlene, ocene tveganja in dokumente. **Kadarkoli v sistemu za stranko ustvarite in objavite nov dokument**, se na njihovem portalu samodejno ustvari obvestilo o novem dokumentu.
 
 !!! info "Več informacij o portalu"
-    Podrobna navodila o dodeljevanju dostopov strankam in upravljanju portala za stranke so opisana v ločenem poglavju **Portal za stranke** .
+    Podrobna navodila o dodeljevanju dostopov strankam in upravljanju portala za stranke so opisana v ločenem poglavju [Portal za stranke](portal-za-stranke.md).
