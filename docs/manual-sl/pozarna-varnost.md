@@ -61,7 +61,7 @@ Ko odprete posamezni objekt, imate na voljo naslednje zavihke z evidencami:
 |----------|------|
 | **Aktivna požarna zaščita (APZ)** | Sistemi aktivne požarne zaščite (javljalniki, sprinklerji itd.). Tipi APZ se upravljajo v **Požarna varnost → Tip APZ**. |
 | **Ročni gasilniki** | Seznam prenosnih in prevoznih gasilnikov z datumi pregledov. Na voljo je uvoz iz datoteke CSV. |
-| **Usposabljanje zaposlenih** | Evidenca usposabljanj za začetno gašenje in evakuacijo. Povezano z glavnim modulom Usposabljanja – izberite tip tečaja v nastavitvah objekta. |
+| **Usposabljanje zaposlenih** | Evidenca povezav na usposabljanja za začetno gašenje in evakuacijo. Tip tečaja nastavite na objektu, izvedba pa poteka v glavnem modulu Usposabljanja. |
 | **Vaje evakuacije** | Prikazano samo kadar ogroženost ≥ 3 IN število oseb ≥ 100. Evidenca letnih vaj z datumom, opisom in priponkami. |
 | **Kurilne in dimne naprave** | Kotli, peči in dimne naprave z datumi čiščenja in pregledov. |
 | **Strelovodi** | Inštalacije za zaščito pred strelo z datumi meritev in pregledov. |
@@ -108,7 +108,7 @@ Potrdila in zapisniki usposabljanj za požarno varnost se generirajo v **glavnem
 
 ## Povezava z modulom Usposabljanja
 
-Usposabljanje zaposlenih za gašenje začetnih požarov in evakuacijo je tesno integrirano z modulom **Usposabljanja**.
+Usposabljanje zaposlenih za gašenje začetnih požarov in evakuacijo je tesno integrirano z modulom [Usposabljanje](usposabljanje.md). Celoten potek tečajev, e-testov, zapisnikov in potrdil se vodi tam.
 
 ### Nastavitev
 
@@ -122,4 +122,4 @@ Usposabljanje zaposlenih za gašenje začetnih požarov in evakuacijo je tesno i
 - Iz evidence požarne varnosti lahko dostopate do povezanega zapisa v usposabljanjih s klikom na ikono povezave.
 
 !!! tip
-    Za celovit nadzor usposobljenosti zaposlenih za PV redno preverjajte **Analitika → Periodika → Usposabljanja**, kjer so prikazani poteki veljavnosti.
+    Za celovit nadzor usposobljenosti zaposlenih za PV redno preverjajte **Analitika → Periodika → Usposabljanja**, podrobna navodila za samo izvedbo usposabljanj pa so v poglavju [Usposabljanje](usposabljanje.md).

@@ -7,7 +7,7 @@ Oznake:
 - Tabele (rows): vrstične spremenljivke za uporabo z `cloneRow('...')`.
 - Bloki (clone): ponavljajoči se odseki med `${block}` in `${/block}` (lahko vsebujejo tudi tabelarne spremenljivke).
 
-[← Nazaj na Priročnik](manual-sl.md)
+[← Nazaj na dokumentacijo](../index.md)
 
 ---
 

@@ -1,6 +1,8 @@
 # Uporabniki
 
-Sistem loči med **sistemskimi uporabniki** (zaposleni matične družbe) in **uporabniki strank** (zunanje stranke, ki jim omogočite dostop do lastnih podatkov). Oba tipa sta popolnoma neodvisna in imata ločene prijavne strani ter nabore pravic.
+Sistem loči med **sistemskimi uporabniki** (zaposleni matične družbe) in **uporabniki strank** (zunanje stranke z dostopom do B2B portala). Oba tipa sta popolnoma neodvisna in imata ločene prijavne strani ter nabore pravic.
+
+Za ustvarjanje uporabnikov strank, portalne pravice in prijavo v B2B portal glejte poglavje [Portal za stranke](portal-za-stranke.md).
 
 ---
 
@@ -50,7 +52,7 @@ Nov uporabnik se doda s klikom na gumb **Dodaj** (+) v seznamu sistemskih uporab
 | **Ime in priimek** | — | Polno ime, ki se prikazuje v sistemu in poročilih. |
 | **Strokovni naziv** | — | Neobvezno (npr. mag., inž., dr.). Prikazuje se v podpisu poročil. |
 | **Aktivno** | — | Če potrditveno polje ni označeno, se uporabnik **ne more prijaviti**. |
-| **Povezava z zaposlenim (HRM)** | — | Poveže račun s HR profilom zaposlenega. Glej razdelek [HRM integracija](#2-povezava-uporabnikov-z-zaposlenimi-hrm-integracija). |
+| **Povezava z zaposlenim (HRM)** | — | Poveže račun s HR profilom zaposlenega. Glej razdelek [HRM integracija](#povezava-uporabnikov-z-zaposlenimi-hrm-integracija). |
 | **Podpis** | — | Naložite sliko podpisa (prikazuje se v izpisanih poročilih). |
 | **Zadana stranka** | — | Stranka, ki se ob prijavi samodejno nastavi kot aktivna. |
 | **Poslovna enota** | — | Poslovna enota matične družbe, ki ji uporabnik pripada. |
@@ -113,67 +115,14 @@ Po shranitvi se zgodi naslednje:
 
 ## Uporabniki strank
 
-Strankam lahko zagotovite varen, omejen dostop do njihovih lastnih podatkov. Uporabniki strank so **popolnoma ločeni od sistemskih uporabnikov** in nimajo dostopa do podatkov drugih strank.
+Uporabniki strank so namenjeni izključno dostopu do **B2B portala**. Niso del seznama sistemskih uporabnikov, nimajo internih vlog in nimajo dostopa do administrativnega dela aplikacije.
 
-### Ustvarjanje uporabnika stranke
+Na tej strani zadošča naslednje pravilo:
 
-**Dostop:** Stranke → [izberite stranko] → Uporabniki
+- **sistemski uporabniki** = interni računi, skupine, dovoljenja, HRM povezave,
+- **uporabniki strank** = zunanji portalni računi za posamezno stranko.
 
-Kliknite **Dodaj** (+) in izpolnite obrazec:
-
-| Polje | Opis |
-|-------|------|
-| **E-pošta** | Uporabniško ime za prijavo. |
-| **Geslo** | Začetno geslo (uporabnik ga lahko pozneje sam spremeni). |
-| **Ime in priimek** | Polno ime kontaktne osebe stranke. |
-| **Modulne pravice** | Za vsak modul posebej izberite raven dostopa (glej spodnjo tabelo). |
-
-#### Modulne pravice
-
-Za vsak modul izberite eno od dveh ravni dostopa:
-
-| Raven | Opis |
-|-------|------|
-| **Pregled** | Uporabnik lahko samo pregleduje podatke (samo za branje). |
-| **Pregled in urejanje** | Uporabnik lahko dodaja, ureja in briše zapise v modulu. |
-
-Razpoložljivi moduli:
-
-- Delovna oprema
-- Zaposleni
-- OVO (osebna varovalna oprema)
-- Zdravniški pregledi
-- Delovne nezgode
-- Naročila
-- Požarna varnost
-
-### Prijava uporabnika stranke
-
-Prijavna stran za stranke je **ločena** od glavne prijavne strani sistemskih uporabnikov:
-
-```
-https://[naslov_vaše_instalacije]/mod-cust
-Primer: https://demo.optima-prevent.eu/mod-cust
-```
-
-- **Uporabniško ime:** e-poštni naslov
-- **Geslo:** nastavljeno ob ustvarjanju računa
-
-### Dostop po prijavi
-
-Po uspešni prijavi se prikaže prilagojena nadzorna plošča s hitrimi povezavami. Razpoložljivi elementi menija so odvisni od dodeljenih pravic:
-
-| Meni | Vsebina |
-|------|---------|
-| **Dokumenti** | Izdani dokumenti in poročila, povezana s stranko. |
-| **Periodika** | Koledarski pregled veljavnosti (usposabljanja, pregledi, meritve). |
-| **Zaposleni** | Seznam zaposlenih stranke. |
-| **Delovna mesta** | Tipična delovna mesta (če so konfigurirana). |
-| **Delovna oprema** | Seznam opreme in pregledi. |
-| **Zdravniški pregledi** | Evidence zdravstvenih pregledov. |
-
-!!! tip "Prilagoditev izgleda"
-    Prijavno stran in celoten videz portala za stranke je mogoče prilagoditi z lastnim CSS in logotipom stranke.
+Za ustvarjanje portalnih računov, dodeljevanje modulnih pravic, prijavni naslov `/mod-cust` in prikaz po prijavi uporabite poglavje [Portal za stranke](portal-za-stranke.md).
 
 ---
 

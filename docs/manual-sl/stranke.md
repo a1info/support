@@ -123,22 +123,6 @@ Poslovne enote so ključne za:
 
 ## Aktivna stranka
 
-Koncept **aktivne stranke** je eden najpomembnejših elementov vmesnika OP5.
+Zapisi zaposlenih, opreme, dokumentov in uvozov so vedno vezani na trenutno izbrano **aktivno stranko**. Zato pred delom na posamezni stranki vedno preverite izbirnik v zgornjem meniju.
 
-### Kaj je aktivna stranka?
-
-V zgornjem desnem kotu aplikacije se nahaja selector za izbiro **aktivne stranke**. Ko izberete aktivno stranko:
-
-- Vsi **vnosi** so samodejno vezani na to stranko.
-- Vsi **seznami** (zaposleni, oprema, dokumenti) so filtrirani samo na zapise te stranke.
-- **Uvoz iz Excel** datoteke uvozi podatke v kontekstu aktivne stranke.
-
-### Prikaz brez aktivne stranke
-
-Če aktivna stranka **ni izbrana**, sistem prikazuje zapise vseh strank skupaj. To je primerno za globalne preglede in analitiko, ne pa za operativno delo.
-
-!!! warning "Preverite aktivno stranko pred vnosom"
-    Pred vsakim vnosom podatkov (zaposleni, oprema, dokumenti) preverite, da je v zgornjem meniju izbrana **pravilna aktivna stranka**. Napačno dodeljeni zapisi zahtevajo ročni popravek.
-
-!!! tip "Hiter dostop"
-    Aktivno stranko lahko kadar koli zamenjate — izberite drugo stranko v selektorju in pogled se takoj osveži.
+Podrobna razlaga globalnega obnašanja aktivne stranke je v poglavju [Navigacija in skupne akcije](navigacija.md#aktivna-stranka).

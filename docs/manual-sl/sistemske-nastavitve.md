@@ -35,7 +35,7 @@ Tabela prikazuje vse poslovne enote matične družbe. Vsaka enota ima svoje ime,
 !!! note "Opomba"
     Dodajanje in brisanje poslovnih enot je omejeno, kadar je sistem aktivno povezan z osrednjo licenčno storitvijo in obstaja lastniška stranka. Poslovne enote se navezujejo na obveščanje in poročila po enotah.
 
-### E‑poštna konfiguracija (SMTP)
+### E-poštna konfiguracija (SMTP)
 
 **Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek Email Configuration
 
@@ -183,7 +183,7 @@ Digitalno podpisani dokumenti so prepoznavni po:
 
 **Dostop:** Sistem → Številčenje
 
-Modul za samodejno številčenje omogoča definiranje pravil oštevilčevanja za vsako vrsto dokumenta posebej.
+Modul za samodejno številčenje omogoča definiranje pravil oštevilčevanja za vsako vrsto dokumenta posebej. To je referenčno mesto za nastavitev števcev, ki jih pred prvo produkcijsko uporabo samo preverite še v okviru [začetne nastavitve](zacetna-nastavitev.md#avtomaticno-stevilcenje-dokumentov).
 
 ### Parametri oštevilčevanja
 
