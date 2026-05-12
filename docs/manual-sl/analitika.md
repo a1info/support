@@ -54,7 +54,16 @@ Rezultati so organizirani v zavihke glede na izbrane tipe veljavnosti. Vsak zavi
 
 Kliknite gumb **Prikaži koledar** v zgornjem desnem kotu za prikaz periodičnih nalog v obliki barvno označenega mesečnega/tedenskega koledarja.
 
-- S klikom na posamezen dogodek se odpre meni z opisom in možnostjo **ustvarjanja nove naloge** v CRM modulu.
+Sistem centralno bdi nad vsemi roki (pregledi opreme, usposabljanja, meritve). Periodiko lahko pregledujete v obliki seznama ali **koledarskega pogleda**, kjer so tipi operacij barvno ločeni:
+
+- 🟡 **Rumena:** Pregledi delovne opreme
+- 🟢 **Zelena:** EKO / VZD meritve
+- 🔵 **Modra:** Usposabljanja zaposlenih
+- 🔴 **Rdeča:** Požarna varnost
+- 🟣 **Vijolična:** Zdravniški pregledi
+- ⚪ **Siva:** Ostale evidence
+
+
 - Koledarski pogled izvozite v format **ICS** z gumbom ICS (združljivo z Google Calendar, Outlook itd.).
 
 !!! tip
