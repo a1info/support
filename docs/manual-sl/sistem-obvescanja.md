@@ -1,133 +1,86 @@
 # Sistem obveščanja
 
-## Pregled
+Sistem Optima Prevent omogoča napredno avtomatizirano obveščanje strank in zaposlenih preko e-pošte. Obvestila pokrivajo opomnike o poteku veljavnosti (pregledi opreme, usposabljanja), pošiljanje dostopnih podatkov za e-učenje in sistemska opozorila.
 
-Sistem obveščanja v aplikaciji OP5 zagotavlja celovito komunikacijo med vsemi udeleženci – skrbniki sistema, izvajalci in uporabniki strank. Obveščanje poteka po dveh kanalih:
-
-| Kanal | Opis |
-|-------|------|
-| **Interna sporočila** | Sporočila v realnem času znotraj sistema med vsemi registriranimi uporabniki |
-| **Sistemska obvestila** | Avtomatska opozorila za roke, naloge in odobritve |
-| **E-poštna obvestila** | Obvestila, poslana prek konfiguriranega SMTP strežnika na zunanji e-poštni naslov |
-
-Sistem pomaga pri usklajevanju dela in zagotavlja, da so vse stranke pravočasno obveščene o pomembnih spremembah, rokih in obveznostih.
+!!! warning "Predpogoj: Nastavitev SMTP strežnika"
+    Za uspešno delovanje celotnega sistema obveščanja mora biti predhodno pravilno nastavljen vaš lastni SMTP strežnik. 
+    Navodila za nastavitev najdete v poglavju [Sistemske nastavitve](sistemske-nastavitve.md#e-postna-konfiguracija-smtp).
 
 ---
 
-## Interna sporočila
+## 1. Pravila obveščanja strank (Veljavnosti)
 
-Interna sporočila omogočajo neposredno komunikacijo v realnem času med vsemi registriranimi uporabniki sistema – tako internimi (zaposleni pri izvajalcu) kot zunanjimi (uporabniki strank).
+Sistem omogoča prožno nastavljanje avtomatiziranih e-poštnih opomnikov za stranke. Tako ste vi in vaše stranke pravočasno obveščeni o izteku veljavnosti zapisnikov, pregledov opreme ali zdravniških spričeval.
 
-### Dostop
+**Dostop:** Nastavitve → Obveščanje (Notifications)
 
-Kliknite ikono **kuverte** (✉) v zgornji navigacijski vrstici. Ob neprebrani pošti je prikazana **rdeča značka** s številom neprebranih sporočil.
+### Ustvarjanje pravila
 
-### Funkcionalnosti
-
-- **Neposredno sporočanje** med katerima koli dvema uporabnikoma sistema
-- **Transparentno obveščanje strank** – skrbniki strank prejmejo obvestila ob pomembnih spremembah podatkov (npr. oddaja novega poročila, posodobitev ocene tveganja)
-- Podpora za **uporabnike stranke** – dostop do sporočil imajo tudi kontaktne osebe na strani naročnika
-
-!!! tip "Nasvet"
-    Interna sporočila so primerna za hitra vprašanja in usklajevanje. Za formalno dokumentacijo in sledenje nalogam uporabite modul CRM.
-
----
-
-## Sistemska obvestila
-
-Sistemska obvestila so **avtomatsko generirana** sporočila, ki vas opozorijo na dogajanje v sistemu brez ročnega posredovanja.
-
-### Dostop
-
-Kliknite ikono **zvonca** (🔔) v zgornji navigacijski vrstici. Ob novih obvestilih je prikazana značka s številom neprebranih vnosov.
-
-### Vrste sistemskih obvestil
-
-| Vrsta obvestila | Opis | Modul |
-|----------------|------|-------|
-| **Potekajoče veljavnosti** | Opozorilo pred iztekom usposabljanj, pregledov, zdravniških spričeval ipd. | Vsi moduli |
-| **Dodelitev naloge** | Obvestilo, ko vam je v CRM sistemu dodeljena nova naloga | CRM |
-| **Odobritev dopusta** | Obvestilo o odobritvi ali zavrnitvi vloge za dopust | HRM |
-| **Zavrnitev dopusta** | Obvestilo o zavrnitvi vloge za dopust s komentarjem | HRM |
-
-### Navigacija iz obvestil
-
-!!! info
-    Klik na posamezno obvestilo vas **neposredno preusmeri** na zadevni zapis v sistemu (npr. na usposabljanje z iztekajočo se veljavnostjo ali na nalogo v CRM-u). Ni potrebno ročno iskati zapisa.
-
----
-
-## E-poštna obvestila
-
-E-poštna obvestila omogočajo pošiljanje avtomatskih obvestil na zunanje e-poštne naslove. Vsa odhodna e-pošta je **šifrirana** prek konfiguriranega SMTP strežnika.
-
-### Konfiguracija SMTP strežnika
-
-**Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek E-poštna konfiguracija
-
-Pred aktivacijo e-poštnega obveščanja je potrebno nastaviti SMTP strežnik:
-
-| Polje | Opis | Primer |
-|-------|------|--------|
-| **Mailer** | Vrsta pošiljatelja | `smtp` |
-| **Host** | Naslov SMTP strežnika | `mail.podjetje.si` |
-| **Port** | Vrata strežnika | `587` (TLS) ali `465` (SSL) |
-| **Encryption** | Vrsta šifriranja | `tls` ali `ssl` |
-| **Username** | Uporabniško ime za prijavo | `obvestila@podjetje.si` |
-| **Password** | Geslo za SMTP account | — |
-| **From Name** | Prikazno ime pošiljatelja | `Optima Prevent` |
-
-!!! warning "Pomembno"
-    Preden aktivirate obveščanje za stranke, preverite delovanje SMTP konfiguracije z gumbom **Testiraj** v Sistemskih nastavitvah.
-
-### Konfiguracija obveščanja po strankah
-
-**Dostop:** Nastavitve → Obveščanje
-
-Ko je SMTP strežnik pravilno konfiguriran, nastavite obveščanje za vsako stranko posebej:
+Kliknite na gumb za dodajanje (**+**) in izpolnite naslednje parametre:
 
 | Polje | Opis |
 |-------|------|
-| **Stranka** | Izberite stranko iz seznama |
-| **Tip obveščanja** | Vrsta obvestil (veljavnosti, periodične naloge …) |
-| **Dan v mesecu za pošiljanje** | Kateri dan v mesecu se pošlje mesečno e-poštno obvestilo |
+| **Stranka** | Izbira stranke, na katero se obvestilo nanaša. |
+| **E-pošta** | E-poštni naslov prejemnika (lahko je kontakt pri stranki ali vaš skrbnik). |
+| **Tip obvestila** | Kategorija, ki se preverja (npr. poteki pregledov delovne opreme, poteki usposabljanj). |
+| **Periodika** | Kako pogosto naj se obvestilo pošlje (npr. mesečno). |
+| **Dan v mesecu** | Točen dan v mesecu (1-28), ko se obvestilo zgenerira in pošlje. |
+| **Dni pred potekom** | Koliko dni vnaprej naj sistem opozori na potek (npr. 30 dni). |
+| **Dni po poteku** | Opozorilo za postavke, ki so že potekle in še niso bile rešene (npr. 15 dni). |
+| **Status** | Pravilo lahko začasno deaktivirate brez brisanja (Aktivno / Neaktivno). |
 
-#### Razpoložljivi tipi obveščanja
-
-- **Opomniki veljavnosti** – obvestila o iztekajočih se veljavnostih usposabljanj, pregledov in zdravniških spričeval
-- **Periodične naloge** – obvestila o nalogah s periodičnimi roki
-
-### Šifrirana e-pošta
-
-Vsa odhodna e-poštna sporočila, ki jih pošlje sistem OP5, so šifrirana prek konfiguriranega SMTP strežnika. Ni potrebna dodatna konfiguracija – šifriranje se vzpostavi samodejno glede na vrednost polja **Encryption** v nastavitvah SMTP.
+!!! tip "Več prejemnikov"
+    Če želite isto obvestilo poslati več osebam (npr. direktorju stranke in vašemu skrbniku za to stranko), preprosto ustvarite dve ločeni pravili z različnima e-poštnima naslovoma.
 
 ---
 
-## Nastavitev obveščanja
+## 2. Obveščanje zaposlenih (eUsposabljanje / eTest)
 
-**Dostop:** Nastavitve → Obveščanje
+Modul za usposabljanja vsebuje lasten sistem obveščanja, ki skrbi za neposredno komunikacijo z zaposlenimi pri izvajanju spletnih tečajev (e-izobraževanj).
 
-### Postopek nastavitve
+### Pošiljanje dostopnih podatkov
 
-1. Odprite **Nastavitve → Obveščanje**
-2. Kliknite **Dodaj** ali izberite obstoječo nastavitev za stranko
-3. Izpolnite polja:
-   - **Tip obveščanja** – izberite vrsto obvestil
-   - **Dan v mesecu za pošiljanje** – vnesite številko dneva (npr. `1` za prvi dan v mesecu)
-4. Shranite nastavitev
+Ko ustvarite nov tečaj usposabljanja z omogočenim **e-testom**, mora sistem udeležencem poslati unikatne dostopne podatke.
 
-!!! tip "Nasvet pred aktivacijo"
-    Pred aktivacijo obveščanja za stranke obvezno:
+1. Zaposleni mora imeti v svojem profilu **vpisan e-poštni naslov**.
+2. Pri ustvarjanju tečaja (zapisnika) morate obvezno **obkljukati možnost za pošiljanje e-pošte** s pristopnimi podatki.
+3. Sistem bo udeležencu samodejno poslal e-poštno sporočilo, ki vsebuje:
+    - Povezavo (URL) do portala za reševanje testa,
+    - Uporabniško ime,
+    - Geslo za enkratno prijavo.
 
-    1. Nastavite SMTP strežnik v **Sistem → Nastavitve → Podjetje**
-    2. Preverite, da ima stranka veljavne e-poštne naslove kontaktnih oseb
-    3. Testirajte pošiljanje z gumbom **Testiraj** v konfiguraciji e-pošte
+### Opomniki pred iztekom e-testa
 
-### Pogoji za delovanje
+E-testi imajo običajno določen rok za reševanje (npr. 7 ali 14 dni). Če zaposleni testa ne reši takoj, sistem spremlja njegovo aktivnost.
+Nekaj dni pred iztekom roka za reševanje bo sistem **samodejno poslal opomnitveno e-pošto**, da zaposlenega spomni na neopravljeno obveznost.
 
-| Pogoj | Stanje |
-|-------|--------|
-| SMTP konfiguracija | ✅ Obvezno konfigurirana |
-| Kontaktni e-poštni naslovi stranke | ✅ Vneseni pri stranki |
-| Tip obveščanja | ✅ Izbran v nastavitvah obveščanja |
-| Dan v mesecu | ✅ Nastavljen (1–28) |
+---
+
+## 3. Sledenje e-pošti in diagnostika (Email Log)
+
+Ker je dostavljivost e-pošte ključnega pomena, ima sistem vgrajeno orodje za sledenje in diagnostiko odhodne pošte. Tukaj lahko preverite, ali je bil mail dejansko poslan in odkrijete morebitne napake (npr. napačno vnesen e-mail stranke, napaka na SMTP strežniku).
+
+**Dostop:** Nastavitve → Dnevnik dejavnosti (System log) → zavihek **Email log**
+
+### Uporaba dnevnika
+
+- **Prikaz terminala:** Dnevnik je prikazan v obliki temnega terminalskega okna, ki prikazuje surovo komunikacijo med sistemom in vašim SMTP strežnikom.
+- **Filtriranje:** Na vrhu lahko določite število vrstic za prikaz (Lines) in uporabite polje **Filter** za iskanje specifičnega e-poštnega naslova (npr. iskanje `janez.novak@stranka.si`, da vidite, ali je dobil povabilo na e-test).
+
+!!! note "Kaj pomenijo napake v dnevniku?"
+    Če pri določenem e-mailu vidite napako (pogosto obarvano ali označeno z *Exception*), to najpogosteje pomeni:
+    
+    - Vaš SMTP strežnik je zavrnil povezavo (napačno geslo v sistemskih nastavitvah).
+    - E-poštni predal prejemnika je poln ali ne obstaja.
+    - Vaš ponudnik gostovanja je blokiral pošiljanje zaradi prekoračitve dnevne omejitve.
+
+---
+
+## 4. Obveščanje znotraj Portala za stranke
+
+Poleg e-pošte sistem podpira tudi t.i. *in-app* obveščanje za vaše naročnike. 
+
+Stranke imajo omogočen dostop do lastnega spletnega portala, kjer lahko pregledujejo svojo opremo, zaposlene, ocene tveganja in dokumente. **Kadarkoli v sistemu za stranko ustvarite in objavite nov dokument**, se na njihovem portalu samodejno ustvari obvestilo o novem dokumentu.
+
+!!! info "Več informacij o portalu"
+    Podrobna navodila o dodeljevanju dostopov strankam in upravljanju portala za stranke so opisana v ločenem poglavju **Portal za stranke** .
