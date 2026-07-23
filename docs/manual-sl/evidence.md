@@ -19,35 +19,93 @@ Modul **Evidence** je zbirno mesto za različne vrste evidenc, ki jih zahteva za
 
 ### Namen
 
-Modul omogoča sledenje zdravniškim pregledom zaposlenih in izdajanje napotnic. Podprti tipi pregledov:
+Modul omogoča sledenje zdravniškim pregledom zaposlenih in izdajanje napotnic. Sistem samodejno poveže oceno tveganja delovnega mesta z zdravniškim pregledom in prenese ugotovljene dejavnike tveganja v napotnico.
+
+Podprti tipi pregledov:
 
 | Tip pregleda | Opis |
 |---|---|
-| **Predhodni** | Pregled pred nastopom dela ali razporeditvijo na novo delovno mesto |
-| **Obdobni preventivni** | Redni periodični pregled v skladu s predpisi |
-| **Kontrolni** | Pregled po bolezni, poškodbi ali posebni odreditvi |
+| **Predhodni** | Pregled pred nastopom dela, po več kot 12 mesecih prekinitve ali ob menjavi delovnega mesta |
+| **Obdobni preventivni** | Redni periodični pregled v skladu s pravilnikom (Ur.l. RS, št. 87/02 s spremembami) |
 
 !!! info "Veljavnost in Periodika"
     Veljavnost pregleda (v mesecih) se samodejno spremlja v modulu **Analitika → Periodika**, ki ob poteku opozori odgovornega uporabnika.
 
-### Polja za vnos
+### Obrazec — zavihki
+
+Obrazec za vnos zdravniškega pregleda je razdeljen na štiri zavihke:
+
+| Zavihek | Vsebina |
+|---|---|
+| **Zdravniški pregled** | Osnovni podatki: stranka, zaposleni, tip pregleda, razlog napotitve / pravna podlaga, datumi |
+| **Dodatno** | Podrobni podatki za napotnico: opis delovnega procesa, oprema, predmeti dela, izpostavljenost tveganjem, ukrepi, OVO, zdravstvene zahteve |
+| **Dejavniki tveganja** | Seznam ugotovljenih dejavnikov tveganja — samodejno prenesenih iz ocene tveganja in specifičnih za zaposlenega |
+| **Rezultat** | Zdravniško spričevalo: datum pregleda, številka spričevala, ocena (1–6), omejitve, predlagani ukrepi |
+
+### Razlog napotitve / Pravna podlaga
+
+Polje pod izbiro tipa pregleda se prilagodi glede na izbrani tip:
+
+- **Obdobni pregled:** vnos člena Pravilnika o preventivnih zdravstvenih pregledih delavcev (npr. *7., 9. in 14. člen*). Gumb `?` prikaže celoten seznam členov s pripadajočimi tveganji.
+- **Predhodni pregled:** izbira razloga napotitve (prva zaposlitev, vrnitev po 12 mesecih, menjava delovnega mesta).
+
+### Dejavniki tveganja
+
+Ob izbiri zaposlenega sistem samodejno:
+
+1. Poišče **zadnjo oceno tveganja** za delovno mesto zaposlenega.
+2. Prenese vsa tveganja z oceno **R0 > 1** (povišano tveganje) v seznam dejavnikov.
+3. Doda **specifične dejavnike**, ki so vpisani na profilu zaposlenega (zavihek Dodatno → *Dejavniki tveganja (specifični)*).
+
+Zdravnik lahko seznam dejavnikov v napotnici poljubno dopolni, uredi ali odstrani.
+
+!!! info "Specifični dejavniki zaposlenega"
+    Specifične dejavnike tveganja (npr. alergije, kronične bolezni) vpišete na **profilu zaposlenega** (Zaposleni → urejanje → zavihek Dodatno). Ob vsakem novem zdravniškem pregledu se samodejno dodajo v seznam.
+
+### Rezultat pregleda — Zdravniško spričevalo
+
+Po opravljenem pregledu vnesete rezultate v zavihek **Rezultat**:
 
 | Polje | Opis |
 |---|---|
-| **Stranka** | Podjetje / delodajalec |
-| **Zaposleni** | Delavec, ki se napotuje na pregled |
-| **Tip pregleda** | Predhodni / obdobni preventivni / kontrolni |
-| **Datum pregleda** | Datum opravljenega pregleda |
-| **Datum napotnice** | Datum izdaje napotnice |
-| **Veljavnost (meseci)** | Rok veljavnosti pregleda v mesecih |
-| **Polja napotnice** | Dodatni podatki, zahtevani na napotnici (delovno mesto, nevarnosti, ukrepi …) |
+| **Datum pregleda** | Dejanski datum opravljenega pregleda |
+| **Št. zdravniškega spričevala** | Številka spričevala, ki ga izda pooblaščeni zdravnik |
+| **Ocena** | 1–6 po uradnem obrazcu |
+| **Omejitve** | Prikaže se pri ocenah 2 in 3 |
+| **Predlagano drugo delo** | Prikaže se pri oceni 5 |
+| **Razlog (6.1–6.4)** | Prikaže se pri oceni 6 |
+| **Predlagani ukrepi** | Ukrepi, ki jih predlaga zdravnik |
 
-!!! tip "Šifranti"
-    Mnoga polja so vezana na **šifrante** (kodni seznam). Ikone nad posameznim poljem omogočajo hiter dostop do ustreznega šifranta in dodajanje novih vrednosti.
+**Ocene (1–6):**
+
+| Oznaka | Pomen |
+|---|---|
+| 1 | Izpolnjuje posebne zdravstvene zahteve |
+| 2 | Izpolnjuje z omejitvami |
+| 3 | Začasno ne izpolnjuje |
+| 4 | Trajno ne izpolnjuje |
+| 5 | Predlagano drugo delo |
+| 6 | Ne moremo podati ocene |
 
 ### Tisk napotnice
 
 Napotnico natisnete ali izvozite v **PDF** z gumbom za izpis pri posameznem zapisu.
+
+**Prva stran** (delodajalec) vsebuje:
+- osnovne podatke delavca in delodajalca,
+- razlog napotitve ali pravno podlago,
+- podatke iz ocene tveganja,
+- **seznam ugotovljenih dejavnikov tveganja** s pripadajočimi ocenami R0.
+
+**Druga stran** (zdravnik) — Zdravniško spričevalo se **samodejno izpolni** s podatki, vnesenimi v zavihku Rezultat.
+
+### Prikaz tveganj na profilu zaposlenega
+
+Na **kartici zaposlenega** (Zaposleni → klik na ime) so v ločenem razdelku prikazani vsi dejavniki tveganja, ki izhajajo iz ocene tveganja njegovega delovnega mesta. Enak prikaz je viden tudi na **portalu za stranke**.
+
+### Filter po oddelku
+
+Tabela zdravniških pregledov omogoča filtriranje po **oddelku** zaposlenega, kar olajša pregled po organizacijskih enotah.
 
 ---
 

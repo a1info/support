@@ -11,7 +11,7 @@ Modul je **tesno povezan z ostalimi moduli** sistema OP5:
 | Usposabljanja | Zaposleni so udeleženci usposabljanj; generirajo se zapisniki in potrdila |
 | OVO (Osebna varovalna oprema) | Evidenca izdane opreme posameznemu delavcu |
 | Delovna oprema | Zadolževanje zaposlenih z delovno opremo (orodje, stroji, službena vozila) |
-| Zdravniški pregledi | Sledenje veljavnosti zdravniških spričeval |
+| Zdravniški pregledi | Sledenje veljavnosti zdravniških spričeval; prikaz dejavnikov tveganja na profilu zaposlenega |
 | Delovne nezgode | Zaposleni nastopajo kot ponesrečenci ali priče |
 | Ocene tveganja | Tipična delovna mesta zaposlenih so osnova za OT |
 
@@ -57,6 +57,7 @@ Ko je v zgornjem meniju izbrana **aktivna stranka**, seznam prikazuje samo zapos
 | Delovno mesto | Izbor | Da | Tipično delovno mesto (TDM) — osnova za ocene tveganja |
 | Poslovna enota | Izbor | Da | Lokacija oz. enota, kjer je zaposleni razporejen |
 | Aktiven | Da/Ne | — | Status zaposlenega; privzeto: Da |
+| Specifični dejavniki tveganja | Besedilo | Ne | Posebnosti zaposlenega (alergije, kronične bolezni …), ki se prenašajo v zdravniške preglede |
 
 ### Delovno mesto (TDM)
 
