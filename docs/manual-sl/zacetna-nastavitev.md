@@ -109,9 +109,38 @@ Modul **Polja po meri** (EAV — Entity-Attribute-Value) omogoča dodajanje **la
 
 ### Značilnosti
 
-- Polja po meri so vidna v **celotnem sistemu**: pri uvozu, izvozu, prikazu na ekranih in v dokumentnih predlogah.
-- Sistem ob dodelitvi atributa **samodejno generira kodo polja**.
-- Polja so vezana na določen objekt (npr. oprema, zaposleni) ali operacijo (npr. pregled, usposabljanje).
+- Polja po meri so vidna v **celotnem sistemu**: pri vnosu, uvozu, izvozu, prikazu na seznamih in v dokumentnih predlogah.
+- Sistem ob dodelitvi atributa **samodejno generira kodo polja** (format: `tabelaID`, npr. `custemployee42`).
+- Polja so vezana na določeno tabelo (npr. delovna oprema, zaposleni, meritve).
+- Vrednosti se shranjujejo v skupni tabeli `fldopt_val` kot **tekstovni podatki** brez omejitve dolžine.
+
+### Tipi polj
+
+Ob kreiranju polja po meri izberete **tip**, ki določa, kako se polje prikaže na obrazcih:
+
+| Tip | Prikaz na obrazcu | Namen |
+|---|---|---|
+| **Besedilo** (`vchar`) | Vnosno polje (do 250 znakov) | Kratka besedila: številke, oznake, opombe |
+| **Številka** (`int`) | Številčno polje | Cela števila: količine, letnice, zaporedne št. |
+| **Datum** (`date`) | Izbirnik datuma | Datumi brez ure: veljavnost, rok, datum izdaje |
+| **Potrditveno polje** (`boolean`) | Kljukica (checkbox) | DA/NE vrednosti: veljavnost, potrditev, status |
+| **Izbirni seznam** (`enum`) | Spustni seznam (select) | Vnaprej določene možnosti: tip delavca, kategorija, prioriteta |
+
+### Izbirni seznam (enum) — podrobna nastavitev
+
+Pri tipu **Izbirni seznam** vnesete možnosti eno za drugo prek gumba `+`. Vsaka možnost se prikaže kot značka, ki jo lahko odstranite s klikom na `×`.
+
+Po vnosu možnosti izberete **privzeto vrednost** iz spustnega seznama — ta vrednost bo samodejno izbrana ob kreiranju novega zapisa.
+
+!!! example "Primer: Tip delavca"
+    1. Izberite tabelo **Zaposleni** (`custemployee`)
+    2. Izberite tip **Izbirni seznam** (`enum`)
+    3. Dodajte možnosti: `študent`, `delavec`
+    4. Izberite privzeto vrednost: `delavec`
+    5. Shranite
+
+!!! tip "Privzeta vrednost"
+    Če ne izberete privzete vrednosti, bo sistem uporabil **prvo možnost** s seznama. Privzeto vrednost lahko kadarkoli spremenite z urejanjem polja.
 
 ### Uporaba v dokumentnih predlogah
 
@@ -119,8 +148,20 @@ Za prikaz vrednosti polja po meri v Word/PDF predlogah uporabite kodo s **prefik
 
 | Kontekst | Sintaksa | Primer |
 |---|---|---|
-| Seznam (list) | `${lst<code>}` | `${lstCustomField1}` |
-| Posamezni zapis (detail) | `${dev<code>}` | `${devCustomField1}` |
+| Seznam (list) | `${lst<code>}` | `${lstcustemployee42}` |
+| Posamezni zapis (detail) | `${dev<code>}` | `${devcustemployee42}` |
 
 !!! tip "Generirana koda"
-    Kodo polja poiščite v nastavitvah polja po meri — sistem jo prikaže po shranjevanju atributa. Kodo kopirajte in jo vstavite v predlogo natančno tako, kot je prikazana.
+    Kodo polja poiščite v nastavitvah polja po meri — sistem jo prikaže po shranjevanju atributa (stolpec **Koda**). Kodo kopirajte in jo vstavite v predlogo natančno tako, kot je prikazana.
+
+### Arhitektura
+
+Vrednosti polj po meri se shranjujejo v tabeli **`fldopt_val`** (prej `fldopt_val_vchar`). Tabela uporablja stolpec `value` tipa `text` brez omejitve dolžine, kar omogoča shranjevanje poljubno dolgih vrednosti.
+
+Metapodatki (ime polja, tip, tabela, možnosti) so shranjeni v tabeli **`fldopt`**. Za izbirne sezname se možnosti in privzeta vrednost shranijo v stolpcu `def_val` v JSON formatu:
+
+```json
+{"o": ["študent", "delavec"], "d": "delavec"}
+```
+
+kjer je `o` seznam možnosti (*options*) in `d` privzeta vrednost (*default*).
