@@ -39,47 +39,48 @@ Tabela prikazuje vse poslovne enote matične družbe. Vsaka enota ima svoje ime,
 
 **Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek Email Configuration
 
-Sistem Optima Prevent omogoča pošiljanje sistemskih obvestil (npr. o poteku veljavnosti usposabljanj in opreme), vendar **nima vgrajenega lastnega SMTP strežnika za pošiljanje e-pošte**. Za uspešno pošiljanje obvestil mora uporabnik priskrbeti in nastaviti svoj lastni SMTP strežnik.
+Sistem Optima Prevent uporablja storitev **MailerSend** kot privzeti pošiljatelj za vsa sistemska obvestila (opomniki o poteku veljavnosti, e-test vabila, periodična poročila). MailerSend je vgrajen v sistem in **ne zahteva dodatne konfiguracije** – pošiljanje deluje takoj po namestitvi.
+
+**Kako deluje privzeto pošiljanje:**
+
+- Vsa sporočila se pošiljajo preko varnega SMTP strežnika `smtp.mailersend.net` (TLS, vrata 587).
+- **Pošiljatelj (From):** sporočila se pošiljajo iz domene `@aena.si`, ki je verificirana pri MailerSend. Če imate v polju *Mail Username* vpisan e-poštni naslov na domeni `@aena.si`, se ta uporabi kot pošiljatelj. V nasprotnem primeru se uporabi `noreply@aena.si`.
+- **Prikazno ime (From Name):** nastavite v polju *Mail From Name* (privzeto: ime podjetja).
+- **Naslov za odgovor (Reply-To):** nastavite v polju *Reply-To*. Če je prazno, sistem uporabi *Mail Username* ali *E-pošto podjetja* (v tem vrstnem redu). Prejemniki bodo ob kliku na »Odgovori« pisali na ta naslov.
+
+!!! tip "Brezplačno in pripravljeno za uporabo"
+    MailerSend omogoča do **3.000 brezplačnih sporočil na mesec**, kar zadostuje za večino manjših in srednjih podjetij. Za večji obseg sporočil lahko nadgradite na plačljiv paket. Več informacij na [mailersend.com](https://www.mailersend.com/).
+
+### Lastni SMTP strežnik (opcijsko)
+
+Če želite za pošiljanje uporabiti **svoj lastni SMTP strežnik** (namesto privzetega MailerSend), v spustnem meniju **SMTP Mailer** izberite `SMTP` in vnesite podatke svojega strežnika.
 
 !!! warning "Opozorilo glede MS Office 365 in Gmail (Google Workspace)"
     Glavni ponudniki poslovne e-pošte (kot sta **Microsoft Office 365** in **Google Workspace / Gmail**) zaradi strogih varnostnih politik (onemogočanje t.i. "Basic Authentication", obvezna dvostopenjska avtentikacija - 2FA) **pogosto ne dovoljujejo neposrednega pošiljanja e-pošte** preko preprostega SMTP protokola ali pa zahtevajo zapleteno nastavljanje posebnih aplikacijskih gesel. Uporaba teh ponudnikov za sistemsko pošiljanje ni priporočljiva.
 
-**Kako zagotoviti ustrezen SMTP strežnik?**
+**Primeri SMTP nastavitev za pogoste ponudnike:**
 
-Za zanesljivo delovanje priporočamo eno izmed naslednjih rešitev:
+| Ponudnik | Mail Host | Port | Encryption |
+|----------|-----------|------|------------|
+| MailerSend (privzeto) | `smtp.mailersend.net` | `587` | `tls` |
+| Brevo (Sendinblue) | `smtp-relay.brevo.com` | `587` | `tls` |
+| Lastno gostovanje (cPanel) | `mail.vasadomena.si` | `587` | `tls` |
 
-1. **Uporaba SMTP strežnika vašega spletnega gostovanja**
-   Če ima vaše podjetje zakupljeno klasično spletno gostovanje (npr. cPanel pri ponudnikih kot so Neoserv, Domenca, Hostinger, Domovanje), lahko v njihovi nadzorni plošči ustvarite namenski e-poštni predal (npr. `obvestila@vase-podjetje.si`) in uporabite njihove SMTP podatke.
-
-2. **Namenske storitve za pošiljanje e-pošte (Transactional Email Services)**
-   Te storitve so narejene specifično za pošiljanje sistemskih sporočil iz aplikacij in zagotavljajo najvišjo stopnjo dostavljivosti (e-pošta ne konča v vsiljeni pošti/spamu).
-   
-!!! tip "Brezplačne možnosti (odlične za zagon in manjši obseg obvestil)"
-    * **[Brevo (prej Sendinblue)](https://www.brevo.com/)**: Brezplačen paket omogoča do 300 poslanih e-mailov na dan.
-    * **[MailerSend](https://www.mailersend.com/)**: Brezplačen paket vključuje do 3.000 sporočil na mesec.
-    * **[Mailtrap](https://mailtrap.io/)**: Ponuja brezplačen paket primeren za testiranje in osnovno pošiljanje.
----
-
-!!! tip "Plačljive možnosti (za podjetja z velikim obsegom sporočil)"
-    * **[Mailgun](https://www.mailgun.com/)**
-    * **[SendGrid (Twilio)](https://sendgrid.com/)**
-    * **[Postmark](https://postmarkapp.com/)**
-    * **[Amazon SES](https://aws.amazon.com/ses/)**
----
-
-**Nastavitve za odhodno pošiljanje:**
-
-V vmesniku izpolnite naslednja polja glede na podatke vašega SMTP ponudnika:
+**Polja v obrazcu:**
 
 | Polje | Opis | Primer vrednosti |
 |-------|------|-----------------|
-| **SMTP Mailer** | Vrsta pošiljatelja | `smtp` |
-| **Mail Host** | Naslov SMTP strežnika | `smtp-relay.brevo.com` ali `mail.vasadomena.si` |
+| **SMTP Mailer** | Izbira pošiljatelja | `MailerSend` (privzeto) ali `SMTP` (lastni strežnik) |
+| **Mail Host** | Naslov SMTP strežnika | `mail.vasadomena.si` (samo pri `SMTP`) |
 | **Mail Port** | Vrata strežnika | `587` (TLS) ali `465` (SSL) |
 | **Mail Encryption** | Vrsta šifriranja | `tls` ali `ssl` |
-| **Mail Username** | Uporabniško ime za prijavo | `sistemska.obvestila@podjetje.si` |
+| **Mail Username** | Uporabniško ime za SMTP prijavo | `obvestila@podjetje.si` |
 | **Mail Password** | Geslo za SMTP račun | Vaše SMTP ali API geslo |
 | **Mail From Name** | Prikazno ime pošiljatelja | `Optima Prevent Sistem` |
+| **Reply-To** | E-poštni naslov za odgovore | `info@vas-podjetje.si` |
+
+!!! note "Opomba"
+    Ko izberete `SMTP`, se polja za gostitelja, vrata, šifriranje, uporabniško ime in geslo odklenejo za vnos. Ob preklopu nazaj na `MailerSend` se ta polja samodejno počistijo, sistem pa uporabi vgrajene nastavitve MailerSend.
 
 ---
 
