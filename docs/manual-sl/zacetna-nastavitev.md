@@ -126,6 +126,21 @@ Ob kreiranju polja po meri izberete **tip**, ki določa, kako se polje prikaže 
 | **Potrditveno polje** (`boolean`) | Kljukica (checkbox) | DA/NE vrednosti: veljavnost, potrditev, status |
 | **Izbirni seznam** (`enum`) | Spustni seznam (select) | Vnaprej določene možnosti: tip delavca, kategorija, prioriteta |
 
+### Kategorijsko omejevanje polj
+
+Pri tabelah, ki imajo **kategorije** (npr. delovna oprema `mdeviceobj`, varnostne naprave `sdeviceobj`), lahko polje po meri omejite na določeno kategorijo.
+
+Če je pri polju izbrana kategorija, bo polje vidno **samo na zapisih tiste kategorije**. Če kategorija ni izbrana (prazno), je polje vidno **na vseh zapisih** v tabeli.
+
+!!! example "Primer: Polje za gasilnike"
+    1. Izberite tabelo **Delovna oprema** (`mdeviceobj`)
+    2. Izberite kategorijo **Gasilniki**
+    3. Vnesite ime polja: `Prostornina vode`
+    4. Shranite — polje bo vidno samo pri gasilnikih, ne pa pri lestvah ali električnih panelih
+
+!!! warning "Menjava kategorije zapisa"
+    Če uporabnik spremeni kategorijo obstoječega zapisa, se vrednosti polj, ki ne veljajo za novo kategorijo, **samodejno izbrišejo** (kaskadni izbris). S tem preprečimo osirotele podatke.
+
 ### Izbirni seznam (enum) — podrobna nastavitev
 
 Pri tipu **Izbirni seznam** vnesete možnosti eno za drugo prek gumba `+`. Vsaka možnost se prikaže kot značka, ki jo lahko odstranite s klikom na `×`.
