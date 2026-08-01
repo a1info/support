@@ -107,6 +107,15 @@ Na **kartici zaposlenega** (Zaposleni → klik na ime) so v ločenem razdelku pr
 
 Tabela zdravniških pregledov omogoča filtriranje po **oddelku** zaposlenega, kar olajša pregled po organizacijskih enotah.
 
+### Status pregleda
+
+Če ima izbrana stranka dodeljenega izvajalca medicine dela (preko *Stranke → urejanje → Izvajalci MD*), se v tabeli zdravniških pregledov prikaže dodatni stolpec **Status**, ki prikazuje:
+
+- **Čaka** — zdravnik še ni vnesel rezultata pregleda
+- **Ocena z datumom** — barvna značka z oceno (1–6) in datumom opravljenega pregleda
+
+Stolpec omogoča hiter pregled, katere napotnice so že obdelane in katere še čakajo na rezultat.
+
 ---
 
 ## Osebna varovalna oprema (OVO)

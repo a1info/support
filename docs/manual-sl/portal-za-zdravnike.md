@@ -65,6 +65,16 @@ Po prijavi zdravnik vidi nadzorno ploščo s ključnimi številkami:
 | **Zaposleni** | Število vseh zaposlenih pri dodeljenih podjetjih |
 | **Poteka** | Število pregledov, ki jim veljavnost poteče v 30 dneh |
 
+Pod kazalniki se nahaja **Koledar potekov** — prikaz zaposlenih, ki jim v naslednjih 12 mesecih poteče veljavnost zdravniškega spričevala. Zaposleni so združeni po mesecih in podjetjih:
+
+- 🔴 **Rdeče obarvani meseci** — zaposleni, ki jim je veljavnost že potekla (v zadnjih 3 mesecih)
+- 🟡 **Rumeno obarvan mesec** — zaposleni, ki jim veljavnost poteče v tekočem mesecu
+- 🟢 **Zeleno obarvani meseci** — zaposleni, ki jim veljavnost poteče v prihodnosti
+
+Zdravnik tako na enem mestu vidi, katero podjetje mora obiskati v katerem mesecu.
+
+V zgornjem desnem kotu navigacijske vrstice sta prikazana **ime in priimek zdravnika** ter **naziv ustanove**, tako da je vedno jasno, kdo je prijavljen.
+
 Če ima zdravnik dodeljenih več podjetij, se v zgornjem meniju prikaže **izbirnik aktivnega podjetja**, s katerim lahko filtrira prikazane podatke.
 
 ---
@@ -73,23 +83,60 @@ Po prijavi zdravnik vidi nadzorno ploščo s ključnimi številkami:
 
 **Dostop:** Portal → Zaposleni
 
-Prikaz vseh aktivnih zaposlenih iz podjetij, ki so dodeljena zdravnikovi ustanovi. Zaposleni so razvrščeni po podjetjih.
+Prikaz vseh aktivnih zaposlenih iz podjetij, ki so dodeljena zdravnikovi ustanovi. Zaposleni so razvrščeni **po podjetjih in nato po delovnih mestih**.
+
+Vsako delovno mesto ima svojo glavo, ki prikazuje:
+
+- **Naziv delovnega mesta**
+- **Datum zadnje ocene tveganja**
+- **Število dejavnikov tveganja** (R0 > 1)
+- **Veljavnost pregledov** (v mesecih)
+- **Kategorije tveganj** (npr. Hrup, Prah, Vibracije)
 
 | Stolpec | Pomen |
 |---|---|
 | **Ime in priimek** | Klik na ime odpre podrobno kartico zaposlenega |
-| **Delovno mesto** | Trenutno delovno mesto zaposlenega |
 | **OT** | Število dejavnikov tveganja iz ocene tveganja (zeleno = ima OT, klik za podrobnosti) |
 | **Rezultat** | Zadnji znani rezultat zdravniškega pregleda |
+| **+** | Gumb za hitro kreiranje nove napotnice |
 
-Iskalno polje omogoča hitro iskanje po imenu ali priimku.
+### 4.1 Filtri in iskanje
 
-### 4.1 Kartica zaposlenega
+Nad seznamom so na voljo naslednji filtri:
+
+| Filter | Opis |
+|---|---|
+| **Iskalnik po imenu** | Hitro iskanje po imenu ali priimku |
+| **Tip pregleda** | Izbira tipa napotnice, ki se bo ustvarila ob kliku na **+** (obdobni / predhodni / izredni) |
+| **Moji pacienti** | Gumb za prikaz samo tistih zaposlenih, ki jih je zdravnik že osebno pregledal |
+| **Kategorija tveganja** | Spustni seznam kategorij tveganj (Hrup, Kemikalije, Vibracije …) za filtriranje zaposlenih, ki so izpostavljeni določenemu tveganju |
+
+### 4.2 Izvoz v Excel
+
+Gumb **Excel** v zgornjem desnem kotu izvozi trenutno filtriran seznam zaposlenih v Excel datoteko. Izvoz vključuje: ime, priimek, podjetje, delovno mesto, število in kategorije tveganj, datum OT, veljavnost, datum in oceno zadnjega pregleda ter datum poteka.
+
+Izvoz upošteva vse aktivne filtre — če je vklopljen filter »Moji pacienti« ali izbrana kategorija tveganja, se izvozijo samo filtrirani zaposleni.
+
+### 4.3 Kreiranje napotnice iz portala
+
+Zdravnik lahko neposredno iz seznama zaposlenih ustvari novo napotnico:
+
+1. V spustnem seznamu **Tip pregleda** izbere vrsto pregleda (obdobni / predhodni / izredni).
+2. Klikne gumb **+** v vrstici zaposlenega.
+3. Sistem samodejno ustvari napotnico z vsemi podatki iz ocene tveganja:
+   - prenese dejavnike tveganja delovnega mesta,
+   - doda specifične dejavnike zaposlenega,
+   - prenese podatke o OVO, opremi in kemikalijah.
+4. Zdravnik je preusmerjen na obrazec za vnos rezultata, kjer takoj vpiše oceno.
+
+### 4.4 Kartica zaposlenega
 
 S klikom na ime zaposlenega se odpre podrobna kartica, ki vsebuje:
 
 - **Osebne podatke** — EMŠO, datum rojstva, delovno mesto
+- **Zasebne opombe zdravnika** — opombe, ki so vidne **samo prijavljenemu zdravniku** (niso vidne delodajalcu na portalu za stranke). Namenjene so kliničnim opombam, opozorilom in sledenju.
 - **Podatke iz ocene tveganja** — delovno mesto, datum OT, oprema, kemikalije, OVO
+- **Trend zadnjih pregledov** — primerjava zadnjih treh pregledov (datum, tip, ocena, omejitve) v strnjeni tabeli. Zdravnik tako takoj vidi, ali se ocena skozi čas slabša (npr. 1 → 2 → 3).
 - **Seznam dejavnikov tveganja** — vsa tveganja z R0 > 1, razvrščena po kategorijah
 - **Specifične dejavnike** — morebitne posebnosti zaposlenega (alergije ipd.)
 - **Zgodovino pregledov** — vsi pretekli zdravniški pregledi z rezultati
@@ -104,13 +151,13 @@ Prikaz vseh napotnic, dodeljenih zdravniku ali njegovi ustanovi. Možnosti filtr
 
 - **Čakajoči** — prikaže samo neobdelane napotnice
 - **Vsi** — prikaže vse napotnice (tudi že obdelane)
-- **Iskalnik** — hitro iskanje po imenu zaposlenega
+- **Obdobni / Predhodni / Izredni** — gumbi za filtriranje po tipu pregleda. Oba filtra (status in tip) se lahko kombinirata — npr. »Čakajoči + Predhodni« prikaže samo neobdelane predhodne preglede.
 
 | Stolpec | Pomen |
 |---|---|
 | **Podjetje** | Delodajalec |
 | **Delavec** | Ime in priimek zaposlenega |
-| **Tip** | Vrsta pregleda (obdobni / predhodni) |
+| **Tip** | Vrsta pregleda (obdobni / predhodni / izredni) |
 | **Datum** | Datum napotnice |
 | **Rezultat** | Barvna značka z oceno (če je že vnešena) ali "Čaka" |
 | **Akcija** | Gumb **Vnesi** (če še ni rezultata) ali **Ogled** (če je že vnešen) |
@@ -135,9 +182,10 @@ Na vrhu obrazca so prikazani:
 
 | Polje | Opis |
 |---|---|
-| **Datum pregleda** | Dejanski datum opravljenega pregleda |
+| **Datum pregleda** | Dejanski datum opravljenega pregleda. Polje uporablja **koledarski izbirnik (flatpickr)** za enostaven vnos datuma. |
 | **Št. zdravniškega spričevala** | Številka izdanega spričevala |
 | **Ocena** | 1–6 po uradnem obrazcu |
+| **Priloge** | Možnost nalaganja datotek — izvidi, laboratorijski izsledki, avdiogrami, specialistična poročila (PDF, slike, dokumenti do 10 MB). Že naložene datoteke so prikazane kot povezava za prenos in jih je mogoče izbrisati. |
 
 **Ocene po uradnem obrazcu:**
 
