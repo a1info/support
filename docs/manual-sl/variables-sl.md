@@ -143,57 +143,141 @@ Bloki — slike (priloge):
 
 ---
 
-## Zapisnik o usposabljanju (Education)
+## Zapisnik o usposabljanju (Education) — GeneduController
+
+Podpira tudi vse skupne spremenljivke (sistem, stranka, PE, uporabnik, certifikati, datumi in številčenje).
+
+Programi usposabljanja (`nr_prog`): v zapisu je lahko več programov, ločenih z `||` (en program je shranjen brez ločila). V predlogah sta na voljo dve formaciji izpisa:
+
+- privzeta (v eni vrstici, ločeno z `, `): `${nrProg}`, `${rowNrProg}`, `${row2NrProg}`, `${rowPassNrProg}`, `${frmNrProg}`, `${attNrProg}`;
+- seznam v novih vrsticah: `${nrProgLst}`, `${rowNrProgLst}`, `${row2NrProgLst}`, `${rowPassNrProgLst}`, `${frmNrProgLst}`, `${attNrProgLst}`.
 
 Posamezne:
 
 - `${dateRep}` Datum zapisnika
 - `${dateStart}` Datum začetka usposabljanja
-- `${custNrRep}` Številka zapisnika
+- `${custNrRep}` Številka zapisnika (`${nrRep}` je enaka vrednost)
+- `${nrProg}` Program(i) usposabljanja (v vrstici, ločeno z `, `)
+- `${nrProgLst}` Program(i) usposabljanja (vsak v svoji vrstici)
+- `${nrHour}` Število ur usposabljanja
+- `${location}` Lokacija
+- `${cPersResp}` Odgovorna oseba stranke
+- `${cPersMent}` Neposredni vodja / mentor
+- `${mntValid}` Veljavnost — št. mesecev
+- `${dateValid}` Datum veljavnosti (izračunan)
+- `${txtEduDesc}` Opis tipa usposabljanja
+- `${txtEduDescLow}` Opis tipa usposabljanja (male črke)
 - `${txtCust1}` Tekst po meri 1
 - `${txtCust2}` Tekst po meri 2
 - `${txtLaw}` Tekst zakonskih odredb
-- `${nrHour}` Število ur usposabljanja
-- `${nrProg}` Program usposabljanja
-- `${location}` Lokacija
-- `${mntValid}` Veljavnost — št. mesecev
+- `${txtCourseAttach}` Priloge tečaja (večvrstično)
+- `${txtCourseDesc}` Opis tečaja (večvrstično)
+- `${eduAddress}` Naslov izvedbe (lokacija ali naslov stranke)
+- `${edutypeImg}` Slika/logotip tipa usposabljanja
+- Dinamična polja tipa usposabljanja (edutype): spremenljivke s kodami polj iz sistemskih nastavitev (Fldopt — `edutype`)
 
 Tabele — edinstven seznam delavcev:
 
 - `${rowNameUn}` Ime in priimek
   - `${rowCntUn}` Zap. št.
+  - `${rowNameUn}` Ime in priimek
   - `${rowDateBirthUn}` Datum rojstva
   - `${rowWorkPlaceUn}` Delovno mesto
-  - `${rowEduTypeUn}` Tip usposabljanja
+  - `${rowEdutypeUn}` Tip(i) usposabljanja (več tipov ločenih z vejico)
 
 Tabele — seznam delavcev:
 
 - `${rowName}` Ime in priimek
   - `${rowCnt}` Zap. št.
+  - `${rowName}` Ime in priimek
   - `${rowDateBirth}` Datum rojstva
   - `${rowWorkPlace}` Delovno mesto
   - `${rowNrRep}` Številka potrdila
-  - `${rowEduType}` Tip usposabljanja
-  - `${rowNrProg}` Program usposabljanja
-  - `${rowRes}` Uspešno / Neuspešno
+  - `${rowEdutype}` Tip usposabljanja
+  - `${rowNrProg}` Program(i) usposabljanja (v vrstici)
+  - `${rowNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
+  - `${rowDateValid}` Datum veljavnosti
+  - `${rowDateEtest}` Datum e-testa (če je opravljen)
+  - `${rowRes}` Uspešno / Neuspešno (DA/NE)
+  - `${rowPass}` Uspešno / Neuspešno (besedilo)
+
+Tabele — dvojnik seznama delavcev (row2, za vzporedno tabelo v predlogi):
+
+- `${row2Name}` Ime in priimek
+  - `${row2Cnt}` Zap. št.
+  - `${row2Name}` Ime in priimek
+  - `${row2DateBirth}` Datum rojstva
+  - `${row2WorkPlace}` Delovno mesto
+  - `${row2NrRep}` Številka potrdila
+  - `${row2Edutype}` Tip usposabljanja
+  - `${row2NrProg}` Program(i) usposabljanja (v vrstici)
+  - `${row2NrProgLst}` Program(i) usposabljanja (v novih vrsticah)
+  - `${row2DateValid}` Datum veljavnosti
+  - `${row2Res}` Uspešno / Neuspešno (DA/NE)
+  - `${row2Pass}` Uspešno / Neuspešno (besedilo)
+
+Tabele — samo uspešno opravljena usposabljanja (rowPass):
+
+- `${rowPassName}` Ime in priimek
+  - `${rowPassCnt}` Zap. št.
+  - `${rowPassName}` Ime in priimek
+  - `${rowPassDateBirth}` Datum rojstva
+  - `${rowPassWorkPlace}` Delovno mesto
+  - `${rowPassNrRep}` Številka potrdila
+  - `${rowPassEdutype}` Tip usposabljanja
+  - `${rowPassNrProg}` Program(i) usposabljanja (v vrstici)
+  - `${rowPassNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
+  - `${rowPassRes}` Rezultat (vedno DA)
+  - `${rowPassPass}` Rezultat (besedilo)
+  - `${rowPassDateValid}` Datum veljavnosti
 
 Tabele — seznam tečajev v zapisniku:
 
 - `${rowEdulstEdutype}` Tip usposabljanja
-  - `${rowEdulstMntValid}` Veljavnost
+  - `${rowEdulstEdutype}` Tip usposabljanja
+  - `${rowEdulstEdudesc}` Opis tipa usposabljanja
+  - `${rowEdulstMntValid}` Veljavnost (meseci)
 
 Bloki:
 
+- `${cloneForm0}` … `${/cloneForm0}` (obrazec za vsakega delavca)
+  - `${frmName}` Ime in priimek
+  - `${frmDateBirth}` Datum rojstva
+  - `${frmWorkPlace}` Delovno mesto
+  - `${frmDateStart}` Datum usposabljanja
+  - `${frmnrHour}` Število ur
+  - `${frmNrProg}` Program(i) usposabljanja (v vrstici)
+  - `${frmNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
+  - `${frmEduDesc}` Opis tipa usposabljanja
+
 - `${cloneCert0}` … `${/cloneCert0}` (blok potrdil)
   - `${attName}` Ime in priimek
-  - `${attWorkPlace}` Delovno mesto
+  - `${attName2}` Ime in priimek (alternativna oznaka)
   - `${attDateBirth}` Datum rojstva
-  - `${attDateValid}` Datum veljavnosti potrdila
-  - `${attMntValid}` Velja — meseci
-  - `${attDateEtest}` Datum opravljanja usposabljanja
+  - `${attDateBirth2}` Datum rojstva (alternativna oznaka)
+  - `${attAddress}` Naslov delavca
+  - `${attAddress2}` Naslov delavca (alternativna oznaka)
+  - `${attCity}` Mesto delavca
+  - `${attCity2}` Mesto delavca (alternativna oznaka)
+  - `${attWorkPlace}` Delovno mesto
+  - `${attNrRep}` Številka potrdila
+  - `${attNrHour}` Število ur
+  - `${attNrProg}` Program(i) usposabljanja (v vrstici)
+  - `${attNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
   - `${attLocName}` Poslovna enota
   - `${attLocAddress}` Naslov PE
   - `${attLocCity}` Mesto PE
+  - `${attEduDesc}` Opis tipa usposabljanja
+  - `${attEduDesc2}` Opis tipa usposabljanja (alternativna oznaka)
+  - `${attTxtCourseAttach}` Priloge tečaja (večvrstično)
+  - `${attTxtCourseDesc}` Opis tečaja (večvrstično)
+  - `${attTxtCust1}` Tekst po meri 1 (večvrstično)
+  - `${attTxtCust2}` Tekst po meri 2 (večvrstično)
+  - `${attdateStart}` Datum usposabljanja
+  - `${attMntValid}` Velja — meseci
+  - `${attDateValid}` Datum veljavnosti potrdila
+  - `${attDateEtest}` Datum opravljanja e-testa
+  - Dinamična polja zaposlenega (custemployee): spremenljivke `att<koda_polja>` iz sistemskih nastavitev (Fldopt — `custemployee`)
 
 ---
 
@@ -498,7 +582,7 @@ Posamezne:
 - Kontakt in identifikacija:
   - `${cContact}` Odgovorna oseba (glavni kontakt ali fallback na customer.contact)
   - `${cTaxNr}`, `${cRegId}`, `${cBusCode}`, `${cBusCodeName}`
-  - `${nrProg}` Program (če obstaja)
+  - `${nrProg}` Program(i) usposabljanja (če obstajajo; več programov ločenih z vejico)
   - `${cPersResp}`, `${cPersMed}` (iz RASS)
 
 Tabele — usposabljanja (v letu):

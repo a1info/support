@@ -120,7 +120,7 @@ Za **lastna polja** (polja po meri, dodana posamezni stranki) se uporablja poseb
 Kjer je `<code>` koda lastnega polja, definirana v nastavitvah.
 
 !!! info "Celoten seznam spremenljivk"
-    Razpoložljive spremenljivke so odvisne od tipa dokumenta. Za popoln seznam spremenljivk za posamezni tip se obrnite na ekipo **Optima Prevent**.
+    Razpoložljive spremenljivke so odvisne od tipa dokumenta. Popoln seznam spremenljivk po tipih predlog je zbran v [Legendi spremenljivk (DOCX/FORM)](variables-sl.md).
 
 ---
 

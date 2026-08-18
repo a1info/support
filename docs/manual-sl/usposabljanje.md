@@ -104,16 +104,28 @@ Zapisnik je sestavni dokument, ki združuje enega ali več tečajev različnih t
 
 Postopek:
 
-1. **Izberite stranko** – določa kontekst zapisnika.
-2. **Izberite tečaje** – prikažejo se samo tečaji, ki še niso vključeni v noben drug zapisnik (*prosti pregledi*).
+1. **Izberite stranko** – določa kontekst zapisnika in nabor programov (glej spodaj).
+2. **Izberite tečaje** – prikažejo se samo tečaji, ki še niso vključeni v noben drug zapisnik (*prosti tečaji*).
 3. **Dopolnite podatke:**
 
 | Polje | Opis |
 |-------|------|
 | **Stranka / Poslovna enota** | Se prenese iz izbranih tečajev. |
 | **Datum** | Datum sestave zapisnika. |
-| **Tip pregleda** | Vrsta usposabljanja (določa obliko izpisa). |
-| **Dodatni podatki** | Opombe, sklici na predpise, izvajalec usposabljanja. |
+| **Program(i) usposabljanja** | Izbira enega ali več programov (glej poglavje spodaj). |
+| **Ure, odgovorna oseba, mentor** | Podatki, ki se izpišejo v zapisniku in potrdilih. |
+| **Tečaji** | Označite tečaje, ki jih zapisnik zajema. |
+
+### Program(i) usposabljanja
+
+Polje omogoča izbiro **več programov** iz spustnega seznama:
+
+- Seznam se filtrira glede na **izbrano stranko**: prikažejo se programi te stranke in prosti programi; če stranka ni izbrana, so prikazani samo prosti programi.
+- **Programi stranke so odebeljeni in navedeni na vrhu** seznama, prosti programi so v običajnem prikazu.
+- Program lahko v seznamu poiščete z vpisom imena; izbrani programi se prikažejo kot značke (×), ki jih lahko odstranite.
+- Če programa ni v šifrantu, lahko **vpišete poljuben naziv** – shrani se kot besedilo, enako kot izbran program.
+
+V zapis se shranijo **imena programov** (več programov je ločenih znotraj zapisa). V DOCX izpisih sta na voljo dve obliki izpisa – v eni vrstici, ločeno z vejico, ali vsak program v svoji vrstici (spremenljivke `nrProg`, `nrProgLst` ipd. — glej [Legendo spremenljivk](variables-sl.md)).
 
 ### Operacije nad zapisnikom
 
