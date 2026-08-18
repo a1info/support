@@ -286,34 +286,66 @@ Bloki:
 Posamezne:
 
 - `${dateRep}` Datum zapisnika
-- `${dateTest}` Datum pregleda
+- `${dateTest}` Datum pregleda (iz prve naprave v zapisniku)
 - `${devUser}` Uporabnik delovne opreme
 - `${devUserAddr}` Naslov uporabnika opreme
-- `${custNrRep}` Številka zapisnika
-- `${dateLastRep}` Datum zadnjega pregleda
-- `${nrLastRep}` Št. zadnjega pregleda
+- `${custNrRep}` Številka zapisnika (`${nrRep}` je enaka vrednost)
+- `${dateLastRep}` Datum prejšnjega zapisnika (mdevicegrp)
+- `${nrLastRep}` Št. prejšnjega zapisnika (s predpono » Št.zap. «)
 - `${infoLast}` Opis zadnjega pregleda
 - `${txtType}` Tip pregledov
-- `${desc}` Opis metodologije
-- `${result}` Skupni rezultat
+- `${desc}` Opis metodologije (večvrstično)
+- `${result}` Skupni rezultat (večvrstično)
+
+Tabele — merilniki (instrumenti):
+
+- `${rowInstName}` Naziv merilnika
+  - `${rowInstName}` Naziv merilnika
+  - `${rowInstCert}` Certifikat merilnika
 
 Tabele — kratek seznam pregledane opreme:
 
 - `${rowShortName}` Naziv opreme
   - `${rowShortCnt}` Zap. št.
+  - `${rowShortName}` Naziv opreme
+  - `${rowShortSerial}` Serijska št.
+  - `${rowShortNrInv}` Inventarna št.
+  - `${rowShortManufacturer}` Proizvajalec
+  - `${rowShortManufactYear}` Leto izdelave
+  - `${rowShortTypeDevice}` Tip / model
+  - `${rowShortLocation}` Mikro lokacija
   - `${rowShortResult}` Rezultat pregleda
-  - `${rowInstName}` Naziv merilnika
-  - `${rowInstCert}` Certifikat merilnika
+  - `${rowShortPass}` Ustreza (DA/NE)
+  - `${rowShortNote}` Rezultat (opomba)
+  - `${rowShortDesc}` Dodatni opis
+
+Tabele — kratek seznam, neustrezne naprave najprej (rowShortFailFirst):
+
+- `${rowShortNameFailFirst}` Naziv opreme
+  - `${rowShortCntFailFirst}` Zap. št.
+  - `${rowShortNameFailFirst}` Naziv opreme
+  - `${rowShortSerialFailFirst}` Serijska št.
+  - `${rowShortNrInvFailFirst}` Inventarna št.
+  - `${rowShortManufacturerFailFirst}` Proizvajalec
+  - `${rowShortManufactYearFailFirst}` Leto izdelave
+  - `${rowShortTypeDeviceFailFirst}` Tip / model
+  - `${rowShortLocationFailFirst}` Mikro lokacija
+  - `${rowShortResultFailFirst}` Rezultat pregleda
+  - `${rowShortPassFailFirst}` Ustreza (DA/NE)
+  - `${rowShortNoteFailFirst}` Rezultat (opomba)
+  - `${rowShortDescFailFirst}` Dodatni opis
 
 Tabele — podroben seznam:
 
 - `${lstName}` Naziv opreme
+  - `${lstNrCnt}` Zap. št.
+  - `${lstName}` Naziv opreme
   - `${lstNrRep}` Št. potrdila
   - `${lstDateTest}` Datum pregleda
   - `${lstSerial}` Serijska št.
   - `${lstNrInv}` Inventarna št.
   - `${lstLocation}` Mikro lokacija pregleda
-  - `${lstLocationObj}` Mikro lokacija objekta
+  - `${lstLocationObj}` Mikro lokacija objekta (zgodovinska vrednost)
   - `${lstTypeDevice}` Tip / model
   - `${lstDesc}` Dodatni opis
   - `${lstDoc}` Predložena dokumentacija
@@ -321,7 +353,10 @@ Tabele — podroben seznam:
   - `${lstIndPass}` Indikator ustreznosti
   - `${lstManufacturer}` Proizvajalec
   - `${lstManufactYear}` Leto izdelave
+  - `${lstKW}` Moč (kW)
   - `${lstMesOhm}` Izmerjena upornost
+  - `${lstMesVolt}` Izmerjena napetost
+  - `${lstPersResp}` Odgovorna oseba
   - `${lstChkName}` Preizkusi po meri
   - `${lstChkResult}` Rezultat preizkusa po meri
   - `${lstChkValue}` Izmerjena vrednost preizkusa po meri
@@ -330,12 +365,38 @@ Tabele — podroben seznam:
   - `${lstChkElecResult}` Rezultat el. preizkusa
   - `${lstChkElecValue}` Izmerjena vrednost el. preizkusa
   - `${lstChkElecSist}` Referenčna vrednost el. preizkusa
+  - Dinamična polja objekta (Fldopt — `mdeviceobj`): `${lst<koda_polja>}`
+  - Dinamična polja pregleda (Fldopt — `mdevice`): `${lst<koda_polja>}`
 
 Bloki:
 
-- `${cloneDevLst}` … `${/cloneDevLst}` (info blok opreme)
+- `${cloneDevLst0}` … `${/cloneDevLst0}` (info blok opreme)
 - `${cloneCert0}` … `${/cloneCert0}` (blok potrdil)
+  - `${devName}` Naziv opreme
+  - `${devNrCnt}` Zap. št.
+  - `${devNrRep}` Št. potrdila
+  - `${devNrRep2}` Št. potrdila (alternativna oznaka)
+  - `${devDateTest}` Datum pregleda
+  - `${devDateValid}` Datum veljavnosti (izračunan: date_test + mnt_valid mesecev)
+  - `${devDateLast}` Datum zadnjega pregleda in preizkusa (najkasnejši `date_test` v `mdevice` za to delovno opremo; če ni, `/`)
+  - `${devMntValid}` Veljavnost — št. mesecev
+  - `${devSerial}` Serijska št.
+  - `${devNrInv}` Inventarna št.
+  - `${devTypeDevice}` Tip / model
+  - `${devDesc}` Dodatni opis (večvrstično)
+  - `${devDevUser}` Uporabnik opreme (iz pregleda)
+  - `${devDevUserAddr}` Naslov uporabnika opreme (iz pregleda)
+  - `${devPersResp}` Odgovorna oseba
+  - `${devResult}` Rezultat pregleda
   - `${devUsage}` Namen opreme
+  - `${devDoc}` Predložena dokumentacija (večvrstično)
+  - `${devManufacturer}` Proizvajalec
+  - `${devManufactYear}` Leto izdelave
+  - `${devLocation}` Mikro lokacija (privzeto »Poslovni prostori«)
+  - `${devMesOhm}` Izmerjena upornost (privzeto `/`)
+  - `${devMesVolt}` Izmerjena napetost (privzeto `/`)
+  - Dinamična polja objekta (Fldopt — `mdeviceobj`): `${dev<koda_polja>}`
+  - Dinamična polja pregleda (Fldopt — `mdevice`): `${dev<koda_polja>}`
 
 ---
 
