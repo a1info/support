@@ -116,7 +116,7 @@ Da, Optima Prevent podpira oddaljeno usposabljanje:
 Za upravljanje vprašalnikov:
 1. Odprite modul "Usposabljanje → Vprašalniki"
 2. Ustvarite nov vprašalnik ali uredite obstoječega
-3. Dodajte vprašanja in možne odgovore
+3. Dodajte vprašanja in možne odgovore (besedilo ali slike)
 4. Določite prag uspešnosti (običajno 80%)
 5. Dodelite vprašalnik ustreznemu tipu usposabljanja
 

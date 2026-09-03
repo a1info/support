@@ -146,13 +146,47 @@ E-test omogoča zaposlenim, da usposabljanje in preverjanje znanja opravijo na d
 
 ### Potek e-testa za udeleženca
 
-```
 1. Udeleženec prejme dostopno povezavo ali se prijavi na e-test portal.
-2. Opravi predvajanje gradiva (HTML5/video), če je nastavljeno.
-3. Odgovori na vprašanja testa.
+2. Opravi predvajanje predstavitvenega gradiva (HTML5), če je nastavljeno – predstavitev se predvaja ob vsaki novi prijavi.
+3. Odgovori na vprašanja testa – odgovori se **samodejno shranjujejo**.
 4. Sistem samodejno ovrednoti rezultat.
 5. Ob uspešno opravljenem testu se izpiše potrdilo.
-```
+
+#### Samodejno shranjevanje napredka
+
+- Vsak odgovor se **takoj shrani na strežnik** – udeleženec lahko med testom varno osveži stran, uporabi gumb nazaj/naprej v brskalniku ali zapre okno in kasneje nadaljuje.
+- Ob ponovnem odprtju testa se prikaže zadnje vprašanje z vsemi že podanimi odgovori.
+- Vpisi v obrazec ob zaključku testa se prav tako sproti shranjujejo.
+
+#### Navigacija med vprašanji
+
+- Nad vprašanjem je **vrstica s krožci** – vsak krožec predstavlja eno vprašanje.
+- Števec ob krožcih prikazuje trenutno vprašanje (npr. »12 / 60«).
+- Na že obiskana vprašanja se lahko vrnete s klikom na krožec in spremenite odgovor.
+- Naprej lahko preskočite samo na vprašanja, do katerih ste že odgovorili; zaklenjeni krožci so osiveli.
+- Krožci vprašanj z gradivom (PDF/MP4) imajo dodano ikono gradiva.
+
+#### Časovna omejitev
+
+- Če ima tečaj nastavljeno časovno omejitev, se števec **ohrani tudi po osvežitvi strani** – preostali čas se s ponovnim nalaganjem ne podaljša.
+- Ob izteku časa sistem samodejno odda izpolnjene odgovore.
+- Ob novi prijavi na nedokončan test se časovno okno začne znova (vsaka prijava je nov poskus).
+
+#### Gradivo pri vprašanju (PDF / MP4)
+
+- Če je vprašanju priloženo gradivo, ga mora udeleženec najprej potrditi (»Sem v celoti seznanjen z vsebino«), šele nato se prikaže vprašanje.
+- Med odgovarjanjem si lahko gradivo kadar koli znova prikaže z gumbom **Prikaži/skrij gradivo**, za vrnitev na vprašanje pa uporabi **Nazaj na vprašanje**.
+- Ob prehodu na drugo vprašanje se predvajani videoposnetki samodejno zaustavijo.
+
+#### Predstavitev (HTML5 gradivo)
+
+- Predstavitev se predvaja **ob vsaki novi prijavi**. Ko udeleženec enkrat začne z odgovarjanjem, se ob gumbu nazaj v brskalniku predstavitev ne predvaja več – vrne se neposredno na vprašanja.
+
+#### Rezultat testa
+
+- Po oddaji sistem prikaže **rezultat s točkami** – skupno in po posamezni skupini vprašanj (če so določene).
+- Ob neuspehu lahko udeleženec poskusi znova (največ **4 poskusi**); po četrtem neuspehu je nadaljnje reševanje zaklenjeno.
+- Rezultat se prikaže na poenoteni svetli strani, enaki videzu samega testa.
 
 ### Konfiguracija e-testa pri tečaju
 
@@ -191,7 +225,7 @@ Vprašalniki so osnova za e-test. Ustvarite jih v dveh korakih.
 | **Obrazec ob zaključku** | — | FORM, ki ga udeleženec izpolni po testu. Nastavite, ali je obvezen ali neobvezen. |
 
 !!! info "Podprta gradiva"
-    Vprašalnik podpira uvoz interaktivnih HTML5 paketov (iSpring, H5P, Articulate) v obliki ZIP arhiva. Gradivo se prikaže v vdelanem predvajalniku pred začetkom testiranja.
+    Vprašalnik podpira uvoz interaktivnih HTML5 paketov (iSpring, H5P, Articulate) v obliki ZIP arhiva. Gradivo se prikaže v vdelanem predvajalniku pred začetkom testiranja. Paket naj v zadnjem koraku vsebuje povezavo za nadaljevanje na test.
 
 ### Korak 2 – Vprašanja
 
@@ -199,13 +233,35 @@ Za vsako vprašanje določite:
 
 | Nastavitev | Opis |
 |-----------|------|
-| **Besedilo vprašanja** | Vprašanje, ki se prikaže udeležencu. |
-| **Odgovori** | Vnesite možne odgovore in označite pravilnega (ali več pravilnih). |
+| **Besedilo vprašanja** | Vprašanje, ki se prikaže udeležencu. Namesto besedila lahko naložite **sliko vprašanja**. |
+| **Odgovori** | Vnesite možne odgovore in s stikali **A / B / C** označite pravilnega. Vsak odgovor je lahko besedilo ali **slika**. |
 | **Točke** | Privzeto **2 točki** na vprašanje. Vrednost je mogoče prilagoditi. |
-| **Priloga pred vprašanjem** | Neobvezna datoteka (PDF ali MP4), ki se prikaže pred vprašanjem kot kontekst ali navodilo. |
+| **Priloga pred vprašanjem** | Neobvezna datoteka **PDF ali MP4** (gumb »pdf / mp4«), ki se prikaže pred vprašanjem kot kontekst ali navodilo. |
 
 !!! tip "Prilagoditev točkovanja"
     Za zahtevnejša vprašanja dodelite višje število točk. Sistem samodejno preračuna skupni rezultat in ga primerja s pragom uspešnosti.
+
+#### Slikovna vprašanja in odgovori
+
+Vsako polje vprašalnika je lahko **besedilo ali slika**:
+
+- Podprte so slike **JPG in PNG** do **4 MB**.
+- Sliko naložite z ikono ob polju; ob naloženi sliki se polje za besedilo onemogoči, prikaže pa se predogled in gumb za izbris.
+- V seznamu vprašanj se slikovno vprašanje prikaže kot pomanjšana sličica.
+- V testu se slike samodejno prilagodijo velikosti zaslona (tudi na mobilnih napravah) in so obrobljene, da se ločijo od ozadja.
+
+#### Skupine vprašanj
+
+Vprašanja lahko razdelite v **skupine** z lastnim pragom uspešnosti:
+
+- Vsaka skupina ima svoj naziv, vrstni red in zahtevani odstotek točk.
+- Rezultat se na koncu prikaže **po skupinah** – udeleženec mora doseči prag v vsaki skupini.
+- Že opravljene skupine se ob ponovnem poskusu ne ponavljajo.
+
+#### Uvoz in izvoz vprašanj (Excel)
+
+- Vprašanja lahko **izvozite v Excel** in jih uvozite nazaj ali v drug vprašalnik.
+- Uvoz podpira besedilna vprašanja; slikovna vprašanja urejajte neposredno v vmesniku.
 
 ### Primer konfiguracije vprašalnika
 
