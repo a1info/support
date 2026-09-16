@@ -585,6 +585,65 @@ Tabele — periodike usposabljanj za TDM:
 
 ---
 
+## Ocene tveganj kemičnih snovi (RASSC) — GenrasscController
+
+Posamezne (naslovnica in podatki dokumenta):
+
+- `${cName}`, `${cAddress}`, `${cZip}`, `${cCity}` — stranka (naročnik)
+- `${custNrRep}` Št. dokumenta; `${version}` Verzija; `${dateRep}` Datum
+- `${rasscGrpName}` Naziv dokumenta OTV KEM
+- `${sysName}` Izdelovalec ocene (družba z dovoljenjem)
+- `${uName}`, `${expTitle}` Strokovni sodelavec in strokovni naziv
+- `${cPersResp}` Odgovorna oseba delodajalca; `${cPersMed}` Pooblaščeni zdravnik; `${cPersRep}` Predstavnik delavcev
+- `${descWorkEnv}` Opis tehnološkega postopka
+- `${uSignImg}` (opcijsko) slika podpisa izvajalca
+
+Blok ocen delovnih mest:
+
+- `${cloneRasscLst}` … `${/cloneRasscLst}` — seznam ocen v dokumentu
+  - `${rasscCnt}` Zap. št.
+  - `${rasscName}` Naziv ocene
+  - `${rasscTarget}` Delovno mesto / proces (predmet ocene)
+  - `${rasscDate}` Datum ocene
+  - `${rasscDescExposure}`, `${rasscDescOther}`, `${rasscDescMeasures}`, `${rasscDescHealth}`, `${rasscDescr}` — opisi (večvrstično)
+
+Tabela 1 – Evidenca nevarnih kemičnih snovi (cloneRow `${rowSubCnt}`):
+
+- `${rowSubCnt}`, `${rowSubCode}`, `${rowSubTrg}`, `${rowSubChem}`
+- `${rowSubCas}`, `${rowSubEs}`, `${rowSubIndex}`, `${rowSubReach}`
+- `${rowSubState}` Agregatno stanje; `${rowSubBoil}` Vrelišče
+- `${rowSubR}`, `${rowSubH}` R/H stavki; `${rowSubClassif}` Klasifikacija
+- `${rowSubMv}`, `${rowSubKtv}`, `${rowSubBat}` MV/KTV/BAT
+- `${rowSubSupplier}` Dobavitelj; `${rowSubSdsDate}` Datum VL
+- `${rowSubForb}` Prepovedana snov; `${rowSubSvhc}` SVHC
+
+Tabela 2 – Podatki o uporabi na delovnem mestu (cloneRow `${rowUseCnt}`):
+
+- `${rowUseCnt}`, `${rowUseTrg}`, `${rowUseChem}`
+- `${rowUseH}` H-stavki; `${rowUseClassif}` Klasifikacija
+- `${rowUseQty}` Količina; `${rowUseMv}`, `${rowUseKtv}`, `${rowUseBat}`
+- `${rowUsePhys}` Fizikalne lastnosti (sestava)
+
+Tabela 3 – Kontrolni listi, Korak 1–3 (cloneRow `${rowItemCnt}`):
+
+- `${rowItemCnt}`, `${rowItemAss}` Ocena; `${rowItemSub}` Snov
+- `${rowItemOps}` Operacije (Korak 1)
+- `${rowItemGroup}` Skupina A–E; `${rowItemK}` oznaka K
+- `${rowItemQty}` Količina; `${rowItemFactor}` Prašnost/hlapnost
+- `${rowItemBoil}` Vrelišče; `${rowItemWork}` Delovna temperatura
+- `${rowItemLevel}` Stopnja tveganja 1–4
+- `${rowItemActions}` Ukrepi (večvrstično); `${rowItemMnt}` Meritve; `${rowItemHealth}` Zdravstveni nadzor; `${rowItemOvo}` OVO; `${rowItemDescr}` Opombe
+
+Tabela 4 – Ukrepi, Korak 4 (cloneRow `${rowUkrCnt}`):
+
+- `${rowUkrCnt}`, `${rowUkrSub}` Snov, `${rowUkrActions}` Ukrepi
+- `${rowUkrOvo}` OVO, `${rowUkrMnt}` Meritve, `${rowUkrHealth}` Zdravstveni nadzor, `${rowUkrDescr}` Opombe
+
+!!! info "cloneRow v predlogi"
+    Vrstica tabele vsebuje neindeksirane spremenljivke (npr. `${rowSubTrg}`). Generator vrstico samodejno podvoji za vsako snov in polni `${rowSubTrg#1}`, `${rowSubTrg#2}` … V Word predlogi mora biti spremenljivka v **eni vrstici** tabele (prva celica vrstice naj vsebuje `${rowSubCnt}` ipd.).
+
+---
+
 ## Kartica stranke (povzetek) — CustomercardController
 
 Posamezne:
