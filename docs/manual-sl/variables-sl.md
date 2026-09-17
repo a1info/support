@@ -612,7 +612,7 @@ Tabela 1 – Evidenca nevarnih kemičnih snovi (cloneRow `${rowSubCnt}`):
 - `${rowSubCnt}`, `${rowSubCode}`, `${rowSubTrg}`, `${rowSubChem}`
 - `${rowSubCas}`, `${rowSubEs}`, `${rowSubIndex}`, `${rowSubReach}`
 - `${rowSubState}` Agregatno stanje; `${rowSubBoil}` Vrelišče
-- `${rowSubR}`, `${rowSubH}` R/H stavki; `${rowSubClassif}` Klasifikacija
+- `${rowSubR}`, `${rowSubH}` R/H stavki (R = le stari podatki, po CLP opuščeni); `${rowSubClassif}` Klasifikacija
 - `${rowSubMv}`, `${rowSubKtv}`, `${rowSubBat}` MV/KTV/BAT
 - `${rowSubSupplier}` Dobavitelj; `${rowSubSdsDate}` Datum VL
 - `${rowSubForb}` Prepovedana snov; `${rowSubSvhc}` SVHC

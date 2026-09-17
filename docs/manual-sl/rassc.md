@@ -42,7 +42,7 @@ Skupna baza snovi, ki se uporabljajo v kontrolnih listih. Enkrat vnesena snov se
 | **CAS / ES / Indeks / REACH** | Identifikacijske številke snovi |
 | **Agregatno stanje** | trdna / tekoča / plinasta |
 | **Vrelišče [°C]** | Za določitev hlapnosti (Graf 1) |
-| **R-stavki / H-stavki** | Izbor iz kataloga (Tabela 1 smernic); določajo skupino nevarnosti A–E in skupino K |
+| **H-stavki** | Izbor iz kataloga CLP (Uredba 1272/2008): H3xx (H300–H373) in njihove kombinacije + EUH stavki; določajo skupino nevarnosti A–E in skupino K |
 | **Klasifikacija (CLP)** | Klasifikacija po Uredbi 1272/2008 |
 | **Sestava (SDS/GHS)** | Sestava iz varnostnega lista |
 | **MV / KTV / BAT** | Mejna vrednost, kratkotrajna vrednost, biološka mejna vrednost |
@@ -50,7 +50,10 @@ Skupna baza snovi, ki se uporabljajo v kontrolnih listih. Enkrat vnesena snov se
 | **Prepovedana snov / SVHC** | Oznaki prepovedane uporabe in snovi s seznama SVHC (REACH) |
 | **Aktivna** | Snov je na voljo v kontrolnih listih |
 
-Ob izbiri R/H stavkov sistem sproti prikaže izračunano **skupino nevarnosti (A–E)** in oznako **K** (stik s kožo/očmi). Vnos z enako **CAS številko** je blokiran (deduplikacija).
+Ob izbiri H-stavkov sistem sproti prikaže izračunano **skupino nevarnosti (A–E)** in oznako **K** (stik s kožo/očmi). Vnos z enako **CAS številko** je blokiran (deduplikacija).
+
+!!! info "CLP - ukinitev R-stavkov"
+    R- in S-stavki se po **1. juniju 2017** ne smejo več uporabljati (Uredba CLP 1272/2008). V programu se zato vnašajo le **H-stavki**. Stari R-stavki ostajajo v bazi zgolj za prehodno obdobje (stara evidenčna polja se pri urejanju ne spreminjajo).
 
 ### Uvoz (Excel)
 
@@ -59,7 +62,7 @@ Na seznamu snovi je gumb za **uvoz** (ikona nalaganja). Odpre se čarovnik za uv
 - podprte datoteke: `.xlsx`, `.xls`, `.csv`,
 - prva vrstica mora vsebovati **naslove stolpcev**; čarovnik jih samodejno preslika v polja snovi (ujemanje po imenu, nato po podobnosti),
 - obvezen je le **Kemijsko ime**; ostali stolpci so neobvezni,
-- R/H stavki so lahko ločeni z `;` ali `,`,
+- H-stavki so lahko ločeni z `;` ali `,` (tudi kombinacije, npr. `H302+H312`),
 - vrstice z obstoječo CAS številko se preskočijo; na koncu se izpiše povzetek (vneseno / napake / obstoječe CAS).
 
 ### Izvoz (Excel)
@@ -96,7 +99,7 @@ Za vsako snov se izdela kontrolni list po poenostavljeni metodi:
 | Korak | Vsebina | Vnos |
 |---|---|---|
 | **Korak 1** | Operacije, kjer se snov uporablja | prosti opis |
-| **Korak 2A** | Skupina nevarnosti **A–E** + oznaka **K** | samodejno iz R/H stavkov (možen ročni popravek) |
+| **Korak 2A** | Skupina nevarnosti **A–E** + oznaka **K** | samodejno iz H-stavkov (možen ročni popravek) |
 | **Korak 2B** | Količina: majhna (g/ml) / srednja (kg/l) / velika (t/m³) | izbor |
 | **Korak 2C** | Prašnost/hlapnost: nizka / srednja / visoka | samodejno iz agregatnega stanja in vrelišča (možna ročna izbira) |
 | **Korak 3** | Stopnja tveganja **1–4** (Tabela 3 smernic) | samodejno iz matrike |
@@ -110,7 +113,7 @@ Dodatne evidence na kontrolnem listu:
 - **Opombe**.
 
 !!! info "Izračun poenostavljene metode"
-    - Skupina A–E in K se določita iz R/H stavkov (katalog `rassc_rhmap`, Tabela 1 smernic). Velja najvišja skupina (E > D > C > B > A).
+    - Skupina A–E in K se določita iz H-stavkov (katalog `rassc_rhmap`, Tabela 1 smernic). Velja najvišja skupina (E > D > C > B > A).
     - Hlapnost tekočin se določi iz vrelišča: < 50 °C → visoka, 50–150 °C → srednja, > 150 °C → nizka; pri povišani delovni temperaturi se meje premaknejo (Graf 1). Plini so vedno visoka hlapnost, prašnost trdnih snovi se izbere ročno.
     - Stopnja 1–4 se odčita iz matrike (skupina × količina × hlapnost/prašnost); skupina **E** je vedno stopnja 4.
     - Izračunane vrednosti (skupina, stopnja, ukrepi) se ob shranjevanju **zapišejo v kontrolni list** (`rassc_item`), zato kasnejše spremembe katalogov ne spreminjajo že izdelanih ocen.
