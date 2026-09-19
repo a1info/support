@@ -39,7 +39,7 @@ Skupna baza snovi, ki se uporabljajo v kontrolnih listih. Enkrat vnesena snov se
 | **Trgovsko ime** | Trgovsko ime izdelka (npr. barva, topilo) |
 | **Kemijsko ime** | Kemijsko ime snovi/zmesi (obvezno) |
 | **Koda proizvoda** | Interna oznaka |
-| **CAS / ES / Indeks / REACH** | Identifikacijske številke snovi |
+| **CAS / ES / Indeks / REACH** | Identifikacijske številke snovi; gumb 🔍 ob CAS izvede **iskanje v ECHA bazi** |
 | **Agregatno stanje** | trdna / tekoča / plinasta |
 | **Vrelišče [°C]** | Za določitev hlapnosti (Graf 1) |
 | **H-stavki** | Izbor iz kataloga CLP (Uredba 1272/2008): H3xx (H300–H373) in njihove kombinacije + EUH stavki; določajo skupino nevarnosti A–E in skupino K |
@@ -54,6 +54,9 @@ Ob izbiri H-stavkov sistem sproti prikaže izračunano **skupino nevarnosti (A�
 
 !!! info "CLP - ukinitev R-stavkov"
     R- in S-stavki se po **1. juniju 2017** ne smejo več uporabljati (Uredba CLP 1272/2008). V programu se zato vnašajo le **H-stavki**. Stari R-stavki ostajajo v bazi zgolj za prehodno obdobje (stara evidenčna polja se pri urejanju ne spreminjajo).
+
+!!! info "Iskanje v lokalni ECHA bazi"
+    Ob vnosu **CAS** ali **ES številke** gumb 🔍 poišče snov v lokalni bazi ECHA (harmonizirani seznam CLP Annex VI + SVHC seznam). Prazna polja se samodejno izpolnijo: kemijsko ime, ES, indeks, klasifikacija in **H-stavki** (samo kode iz kataloga H3xx/EUH). Snovi s **SVHC seznama** se samodejno označijo. Baza se osvežuje ročno (artisan `op:importechadb`).
 
 ### Uvoz (Excel)
 
