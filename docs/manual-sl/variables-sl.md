@@ -156,6 +156,7 @@ Posamezne:
 
 - `${dateRep}` Datum zapisnika
 - `${dateStart}` Datum začetka usposabljanja
+- `${datePract}` Datum praktičnega dela (iz prvega udeleženca; za posameznega udeleženca glej `rowDatePract`, `attDatePract`)
 - `${custNrRep}` Številka zapisnika (`${nrRep}` je enaka vrednost)
 - `${nrProg}` Program(i) usposabljanja (v vrstici, ločeno z `, `)
 - `${nrProgLst}` Program(i) usposabljanja (vsak v svoji vrstici)
@@ -183,6 +184,7 @@ Tabele — edinstven seznam delavcev:
   - `${rowNameUn}` Ime in priimek
   - `${rowDateBirthUn}` Datum rojstva
   - `${rowWorkPlaceUn}` Delovno mesto
+  - `${rowDatePractUn}` Datum praktičnega dela
   - `${rowEdutypeUn}` Tip(i) usposabljanja (več tipov ločenih z vejico)
 
 Tabele — seznam delavcev:
@@ -192,6 +194,7 @@ Tabele — seznam delavcev:
   - `${rowName}` Ime in priimek
   - `${rowDateBirth}` Datum rojstva
   - `${rowWorkPlace}` Delovno mesto
+  - `${rowDatePract}` Datum praktičnega dela
   - `${rowNrRep}` Številka potrdila
   - `${rowEdutype}` Tip usposabljanja
   - `${rowNrProg}` Program(i) usposabljanja (v vrstici)
@@ -208,6 +211,7 @@ Tabele — dvojnik seznama delavcev (row2, za vzporedno tabelo v predlogi):
   - `${row2Name}` Ime in priimek
   - `${row2DateBirth}` Datum rojstva
   - `${row2WorkPlace}` Delovno mesto
+  - `${row2DatePract}` Datum praktičnega dela
   - `${row2NrRep}` Številka potrdila
   - `${row2Edutype}` Tip usposabljanja
   - `${row2NrProg}` Program(i) usposabljanja (v vrstici)
@@ -223,6 +227,7 @@ Tabele — samo uspešno opravljena usposabljanja (rowPass):
   - `${rowPassName}` Ime in priimek
   - `${rowPassDateBirth}` Datum rojstva
   - `${rowPassWorkPlace}` Delovno mesto
+  - `${rowPassDatePract}` Datum praktičnega dela
   - `${rowPassNrRep}` Številka potrdila
   - `${rowPassEdutype}` Tip usposabljanja
   - `${rowPassNrProg}` Program(i) usposabljanja (v vrstici)
@@ -245,6 +250,7 @@ Bloki:
   - `${frmDateBirth}` Datum rojstva
   - `${frmWorkPlace}` Delovno mesto
   - `${frmDateStart}` Datum usposabljanja
+  - `${frmDatePract}` Datum praktičnega dela
   - `${frmnrHour}` Število ur
   - `${frmNrProg}` Program(i) usposabljanja (v vrstici)
   - `${frmNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
@@ -274,6 +280,8 @@ Bloki:
   - `${attTxtCust1}` Tekst po meri 1 (večvrstično)
   - `${attTxtCust2}` Tekst po meri 2 (večvrstično)
   - `${attdateStart}` Datum usposabljanja
+  - `${attDatePract}` Datum praktičnega dela
+  - `${attDatePract2}` Datum praktičnega dela (alternativna oznaka)
   - `${attMntValid}` Velja — meseci
   - `${attDateValid}` Datum veljavnosti potrdila
   - `${attDateEtest}` Datum opravljanja e-testa

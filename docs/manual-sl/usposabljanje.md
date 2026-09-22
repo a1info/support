@@ -90,6 +90,16 @@ Po uspešno opravljenem testu sistem samodejno:
 - Posodobi status udeleženca na **pozitivno**.
 - Dodeli **številko potrdila** (če je avtomatično oštevilčenje konfigurirano).
 
+### Praktični del usposabljanja (datum)
+
+Tečaj ima lahko poleg teoretičnega dela tudi **praktični del**, ki se lahko izvede na drug datum in za vsakega udeleženca posebej:
+
+- Ob dodajanju udeleženca se **Praktično usp.** samodejno napolni z datumom tečaja (teoretičnega dela).
+- Datum lahko spremenite za vsakega udeleženca posebej v stolpcu **Praktično usp.** na zaslonu udeležencev.
+- Za hitro izpolnjevanje uporabite **Vnesi datum za vse** (zgoraj desno): en klik nastavi izbrani datum vsem udeležencem, nato po potrebi popravite posameznike.
+- Z gumbom **Počisti datume** pobrišete datum praktičnega dela pri vseh udeležencih (zahteva potrditev).
+- V zapisnikih in potrdilih je datum praktičnega dela na voljo kot spremenljivka `${datePract}`, `${rowDatePract}`, `${attDatePract}` ipd. — glej [Legendo spremenljivk](variables-sl.md).
+
 ---
 
 ## Zapisniki usposabljanj
