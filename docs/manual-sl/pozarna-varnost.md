@@ -104,6 +104,17 @@ Na vsakem seznamu evidenc (gasilniki, APZ, strelovodi itd.) je na voljo gumb za 
 
 Potrdila in zapisniki usposabljanj za požarno varnost se generirajo v **glavnem modulu Usposabljanja**, ne neposredno iz tega modula. Evidenca v požarni varnosti je le referenca na opravljeno usposabljanje.
 
+### Vaje evakuacije – dokumenti
+
+V seznamu **vaj evakuacije** sta na voljo ikona **Dok. za stranko (PDF)** in ikona **DOCX** s spustnim seznamom predlog:
+
+- **Dok. za stranko (PDF)** – generira PDF dokument za stranko iz izbrane predloge (digitalno podpisan, če je podpisovanje nastavljeno) ali omogoča nalaganje **PDF po meri**.
+- **DOCX** – generira datoteko DOCX za podpis in arhiv iz izbrane predloge.
+- Predloga, ki je bila **zadnjič uporabljena** za posamezno vajo, je v seznamu označena s kljukico ✓.
+- Ko je PDF za stranko ustvarjen, se na njegovem mestu prikažeta ikoni za prenos in brisanje.
+
+Podrobnejši opis je v poglavju [Urejanje predlog → Generiranje dokumentov iz seznamov](urejanje-podlog.md).
+
 ---
 
 ## Povezava z modulom Usposabljanja

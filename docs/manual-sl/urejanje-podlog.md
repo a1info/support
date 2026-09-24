@@ -145,8 +145,28 @@ Kjer je `<code>` koda lastnega polja, definirana v nastavitvah.
 
 Kadar je za isti tip dokumenta na voljo **več predlog**, sistem privzeto uporabi tisto z **najnižjo zaporedno številko**.
 
-!!! tip "Preglasitev predloge"
-    Pri vnosu storitve (usposabljanje, pregled …) je mogoče ročno izbrati, katero predlogo naj sistem uporabi za generiranje dokumenta, ne glede na privzeto prioriteto.
+### Izbira predloge pri generiranju
+
+Pred generiranjem dokumenta je mogoče izbrati katero koli predlogo za ta tip dokumenta:
+
+- V seznamu zapisov (npr. Zapisniki usposabljanj, Zapisniki delovne opreme, Meritve …) imata ikona **Dok. za stranko** (PDF) in ikona **DOCX** spustni seznam vseh predlog za ta tip dokumenta.
+- Predloga, ki je bila **zadnjič uporabljena** za generiranje dokumenta tega zapisa, je v seznamu označena s kljukico ✓.
+- Sistem si izbrano predlogo **zapomni** za posamezen zapis – ob naslednjem generiranju je takoj razvidno, katera predloga je bila uporabljena nazadnje.
+
+### Generiranje dokumentov iz seznamov
+
+Generiranje dokumentov poteka neposredno iz seznama zapisov, brez osveževanja strani:
+
+| Ikona | Namembnost |
+|-------|------------|
+| **PDF (Dok. za stranko)** | Generira PDF dokument za stranko iz izbrane DOCX predloge. Če je nastavljeno digitalno podpisovanje, je dokument tudi digitalno podpisan. |
+| **PDF po meri** | V istem spustnem seznamu lahko namesto generiranja naložite **lasten PDF dokument** (npr. ročno podpisan izpis). |
+| **DOCX** | Generira DOCX datoteko za podpis in arhiv iz izbrane predloge. |
+
+Ko je dokument za stranko enkrat ustvarjen, se na njegovem mestu prikažeta ikona za **prenos** in ikona za **brisanje** dokumenta. Po brisanju se ponovno prikaže spustni seznam za novo generiranje.
+
+!!! info "Obvestila"
+    Uspešno generiranje in morebitne napake sistem sporoči z obvestilom v kotu zaslona. Vneseni dokument (PDF po meri) mora biti datoteka tipa PDF in velikosti do 10 MB.
 
 ### Urejanje obstoječe predloge
 

@@ -168,7 +168,10 @@ V zapis se shranijo **imena programov** (več programov je ločenih znotraj zapi
 |----------|------|
 | **Uredi** | Popravite podatke zapisnika (dokler ni zaključen). |
 | **Izbriši** | Izbrisati je mogoče le nezaključene zapisnike brez tiskanih izpisov. |
-| **Natisni (DOCX)** | Sistem iz predloge ustvari datoteko DOCX za podpis in arhiv. |
+| **Dok. za stranko (PDF)** | Spustni seznam predlog za generiranje **PDF dokumenta za stranko** (digitalno podpisanega, če je podpisovanje nastavljeno) ali nalaganje **PDF po meri**. |
+| **DOCX** | Spustni seznam predlog za generiranje datoteke DOCX za podpis in arhiv. |
+
+V spustnem seznamu predlog je predloga, ki je bila **zadnjič uporabljena** za ta zapisnik, označena s kljukico ✓. Ko je PDF za stranko ustvarjen, se na njegovem mestu prikažeta ikoni za prenos in brisanje. Podrobnejši opis je v poglavju [Urejanje predlog → Generiranje dokumentov iz seznamov](urejanje-podlog.md).
 
 !!! info "Avtomatično oštevilčenje"
     Če je oštevilčenje konfigurirano za tip tečaja, zapisnik ob shranitvi samodejno dobi zaporedno številko (npr. ZAP-VPP-2024-007).

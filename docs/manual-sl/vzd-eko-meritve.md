@@ -86,7 +86,10 @@ Za vsako obstoječo meritev so na voljo naslednje operacije:
 | **Uredi** | Spremenite podatke obstoječe meritve |
 | **Izbriši** | Trajno odstranite meritev iz sistema |
 | **Kopiraj** | Ustvari novo meritev s prekopirano splošnimi podatki — prihrani čas pri rednih ponovnih meritvah na istih lokacijah |
-| **Natisni** | Generira izpis iz DOCX predloge |
+| **Dok. za stranko (PDF)** | Spustni seznam predlog za generiranje **PDF dokumenta za stranko** (digitalno podpisanega, če je podpisovanje nastavljeno) ali nalaganje **PDF po meri** |
+| **DOCX** | Spustni seznam predlog za generiranje datoteke DOCX iz predloge za tip meritve |
+
+V spustnem seznamu predlog je predloga, ki je bila **zadnjič uporabljena** za to meritev, označena s kljukico ✓. Ko je PDF za stranko ustvarjen, se na njegovem mestu prikažeta ikoni za prenos in brisanje. Podrobnejši opis je v poglavju [Urejanje predlog → Generiranje dokumentov iz seznamov](urejanje-podlog.md).
 
 !!! tip "Kopiranje meritev"
     Funkcija **Kopiraj** je posebej koristna pri rednih meritvah, kjer se splošni podatki (stranka, merilniki, lokacija) ne spremenijo. Po kopiranju prilagodite le datum in vrednosti parametrov.

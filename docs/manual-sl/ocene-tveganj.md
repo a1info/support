@@ -125,6 +125,17 @@ Modul **Dokumenti OTV** združi več ocen posameznih TDM v enoten, celovit dokum
 !!! tip
     Dokument OTV je uradni zaključni dokument, ki ga stranke predložijo inšpekcijskim organom ali ga hranijo v arhivu. Priporočamo uporabo odobrene predloge podjetja.
 
+### Generiranje dokumentov iz seznama
+
+V seznamu dokumentov OTV sta na voljo ikona **Dok. za stranko (PDF)** in ikona **DOCX** s spustnim seznamom predlog:
+
+- **Dok. za stranko (PDF)** – generira PDF dokument za stranko iz izbrane predloge (digitalno podpisan, če je podpisovanje nastavljeno) ali omogoča nalaganje **PDF po meri**.
+- **DOCX** – generira datoteko DOCX za podpis in arhiv iz izbrane predloge.
+- Predloga, ki je bila **zadnjič uporabljena** za ta dokument, je v seznamu označena s kljukico ✓.
+- Ko je PDF za stranko ustvarjen, se na njegovem mestu prikažeta ikoni za prenos in brisanje.
+
+Podrobnejši opis je v poglavju [Urejanje predlog → Generiranje dokumentov iz seznamov](urejanje-podlog.md).
+
 ---
 
 ## Dinamična formula
