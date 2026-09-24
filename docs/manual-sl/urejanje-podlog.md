@@ -156,3 +156,25 @@ Kadar je za isti tip dokumenta na voljo **več predlog**, sistem privzeto uporab
 
 !!! warning "Pozor"
     Zamenjava DOCX datoteke pri obstoječi predlogi vpliva na vse **prihodnje** generacije dokumentov. Že generirani dokumenti ostanejo nespremenjeni.
+
+---
+
+## Predloga potrdila za usposabljanje (samodejno generiranje)
+
+Predloge tipa **usposabljanje** običajno vsebujejo zapisnik in prilogo s potrdili. Sistem iz naložene predloge **samodejno izdela ločeno predlogo samo za potrdilo** (tip **Potrdilo o usposabljanju**), ki se uporablja pri tiskanju posameznih potrdil iz kartice zaposlenega.
+
+### Kako deluje
+
+- Zadnji del predloge usposabljanja mora vsebovati blok potrdila, označen s spremenljivkama `${cloneCert0}` in `${/cloneCert0}` – enako kot pri zapisniku.
+- Ob vsakem nalaganju nove predloge tipa **usposabljanje** sistem:
+
+    1. iz naložene datoteke izreže zadnje poglavje (blok potrdila),
+    2. ga shrani kot samostojno predlogo tipa **Potrdilo o usposabljanju**,
+    3. staro predlogo potrdila nadomesti z novo in jo izbriše.
+
+- Če naložena predloga ne vsebuje bloka potrdila, sistem obdrži obstoječo predlogo potrdila in izpiše opozorilo.
+
+### Opozorila
+
+- Predloga potrdila se praviloma upravlja samodejno; po potrebi jo lahko ročno nadomestite z nalaganjem lastne DOCX datoteke tipa **Potrdilo o usposabljanju**.
+- Že natisnjena potrdila se ob zamenjavi predloge ne spremenijo. Pri ponovnem tiskanju starejšega potrdila sistem uporabi predlogo, ki je bila shranjena ob generiranju zapisnika; če ta ne obstaja več, uporabi trenutno predlogo.

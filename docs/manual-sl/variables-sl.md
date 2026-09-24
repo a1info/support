@@ -257,6 +257,7 @@ Bloki:
   - `${frmEduDesc}` Opis tipa usposabljanja
 
 - `${cloneCert0}` … `${/cloneCert0}` (blok potrdil)
+  - Ta blok je hkrati osnova za samodejno izdelano predlogo **Potrdilo o usposabljanju** (tiskanje posameznih potrdil iz kartice zaposlenega).
   - `${attName}` Ime in priimek
   - `${attName2}` Ime in priimek (alternativna oznaka)
   - `${attDateBirth}` Datum rojstva

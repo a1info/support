@@ -102,6 +102,31 @@ Tečaj ima lahko poleg teoretičnega dela tudi **praktični del**, ki se lahko i
 
 ---
 
+## Potrdila o usposabljanju
+
+### Tiskanje potrdila iz kartice zaposlenega
+
+**Dostop:** Stranke → Zaposleni → odprite zaposlenega → razdelek **Usposabljanje**
+
+V tabeli izobraževanj je za vsako **uspešno opravljeno** usposabljanje na voljo gumb s PDF ikono:
+
+1. Kliknite ikono PDF v vrstici usposabljanja.
+2. Sistem iz predloge za potrdilo ustvari **PDF potrdilo** in ga prenese na vaš računalnik.
+
+### Katera predloga se uporabi
+
+- Pri generiranju zapisnika si sistem **zapomni predlogo potrdila**, ki je bila takrat veljavna.
+- Pri tiskanju uporabi zapomnjeno predlogo; če ta ne obstaja več (nadomeščena z novo), uporabi **trenutno** predlogo potrdila.
+- Če predloga potrdila ni nastavljena, sistem prikaže opozorilo – naložite predlogo tipa **usposabljanje** (glej [Urejanje predlog](urejanje-podlog.md)).
+
+### Pogoji za tiskanje
+
+- Potrdilo je mogoče natisniti samo za udeležence s statusom **Opravljeno**.
+- Potrdilo vsebuje podatke delavca ob izvedbi usposabljanja (zgodovinski podatki) in podatke zapisnika.
+- Če ima organizacija nastavljeno digitalno podpisovanje, je potrdilo tudi digitalno podpisano.
+
+---
+
 ## Zapisniki usposabljanj
 
 **Dostop:** Usposabljanje → Zapisniki
