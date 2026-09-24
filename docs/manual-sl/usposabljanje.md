@@ -226,6 +226,15 @@ E-test omogoča zaposlenim, da usposabljanje in preverjanje znanja opravijo na d
 - Ob neuspehu lahko udeleženec poskusi znova (največ **4 poskusi**); po četrtem neuspehu je nadaljnje reševanje zaklenjeno.
 - Rezultat se prikaže na poenoteni svetli strani, enaki videzu samega testa.
 
+### Izpisi iz seznama udeležencev
+
+Pri zaprtem tečaju z e-testom (Usposabljanje → Seznam tečajev → odprite tečaj → zavihek **E-usposabljanje**) sta v stolpcu Potrdilo na voljo dva ločena PDF izpisa:
+
+- **Potrditev e-usposabljanja** (ikona PDF) – uradno potrdilo z osnovnimi podatki delavca, datumom usposabljanja, izvajalcem, nazivom vprašalnika, številko potrdila in rezultatom. Primerno za delavca in delodajalca.
+- **Vprašalnik in odgovori** (ikona seznama) – interna dokumentacija: celoten vprašalnik z označenimi pravilnimi in izbranimi odgovori. Namenjeno nadzoru in reševanju sporov; ker vsebuje bazo vprašanj, je ne posredujte udeležencem.
+
+Oba izpisa je mogoče izdelati za posameznega udeleženca ali za vse hkrati (gumba v glavi stolpca).
+
 ### Konfiguracija e-testa pri tečaju
 
 1. Pri ustvarjanju tečaja izberite **vprašalnik** v ustreznem polju.
