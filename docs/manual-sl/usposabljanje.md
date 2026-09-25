@@ -230,8 +230,8 @@ E-test omogoča zaposlenim, da usposabljanje in preverjanje znanja opravijo na d
 
 Pri zaprtem tečaju z e-testom (Usposabljanje → Seznam tečajev → odprite tečaj → zavihek **E-usposabljanje**) sta v stolpcu Potrdilo na voljo dva ločena PDF izpisa:
 
-- **Potrditev e-usposabljanja** (ikona PDF) – uradno potrdilo z osnovnimi podatki delavca, datumom usposabljanja, izvajalcem, nazivom vprašalnika, številko potrdila in rezultatom. Primerno za delavca in delodajalca.
-- **Vprašalnik in odgovori** (ikona seznama) – interna dokumentacija: celoten vprašalnik z označenimi pravilnimi in izbranimi odgovori. Namenjeno nadzoru in reševanju sporov; ker vsebuje bazo vprašanj, je ne posredujte udeležencem.
+- **Potrdilo e-usposabljanja** (ikona PDF) – uradno potrdilo z osnovnimi podatki delavca, datumom usposabljanja, izvajalcem, nazivom vprašalnika ter tabelo shranjenih odgovorov in rezultatom. Primerno za delavca in delodajalca.
+- **Vzorec testa** (ikona seznama) – vprašalnik z vprašanji in možnimi odgovori, brez označenih pravilnih ali izbranih odgovorov.
 
 Oba izpisa je mogoče izdelati za posameznega udeleženca ali za vse hkrati (gumba v glavi stolpca).
 
