@@ -42,7 +42,7 @@ Rezultati so organizirani v zavihke glede na izbrane tipe veljavnosti. Vsak zavi
 
 | Zavihek | Vsebina |
 |---------|---------|
-| **Usposabljanja** | Zaposleni z usposabljanji, datum usposabljanja, datum poteka, poslovna enota. |
+| **Usposabljanja** | Zaposleni z usposabljanji, datum usposabljanja, datum poteka, poslovna enota. Datum poteka se izračuna po **individualni veljavnosti udeleženca** (polje **Velja (mes)** na tečaju). |
 | **Delovna oprema** | Pregledi z nazivom opreme, serijsko številko, datumom pregleda in potekom. |
 | **Tehnična varnost** | Pregledi opreme tehnične varnosti. |
 | **Meritve** | Meritve delovnega okolja, hrupa, elektrike, pretoka zraka itd. |

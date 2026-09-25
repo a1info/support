@@ -57,8 +57,11 @@ Tipi tečajev so šifranti, ki določajo, kako se usposabljanja kategorizirajo i
 |-------|------|
 | **Lokacija tečaja** | Kraj izvedbe (npr. soba za usposabljanje, zunanji prostor). |
 | **Tip tečaja** | Kategorizacija: VZD, VPP, VPP ODG itd. |
-| **Veljavnost** | Rok veljavnosti potrdila v letih. Sistem samodejno izračuna datum izteka. |
+| **Veljavnost** | Privzeta veljavnost tečaja v **mesecih** (hitra izbira 12/24/36/60) – služi kot predloga za vse udeležence. Veljavnost lahko prilagodite za vsakega udeleženca posebej na zaslonu udeležencev. |
 | **Vprašalnik (e-test)** | Izberite, če usposabljanje vključuje elektronsko preverjanje znanja. |
+
+!!! info "Veljavnost se po dodanih udeležencih zaklene"
+    Ko ima tečaj že dodane udeležence (ali je zaključen), je polje **Veljavnost** na obrazcu tečaja samo za branje. Veljavnost se takrat ureja na posameznem udeležencu v seznamu udeležencev.
 
 ### Dodajanje udeležencev
 
@@ -67,6 +70,15 @@ Po vnosu osnovnih podatkov tečaja dodate udeležence iz tabele zaposlenih:
 1. Uporabite **hitri filter** za iskanje po imenu, oddelku ali delovnem mestu.
 2. Označite posamezne zaposlene ali izberite vse filtrirane.
 3. Kliknite **Dodaj udeležence**.
+
+### Veljavnost po udeležencu
+
+V seznamu udeležencev je na voljo stolpec **Velja (mes)**, v katerem lahko za vsakega udeleženca določite individualno veljavnost usposabljanja:
+
+- Ob dodajanju udeleženca se vrednost **samodejno predizpolni**: najprej iz predpisane veljavnosti njegovega **delovnega dovoljenja** za tip tečaja, sicer iz veljavnosti tečaja (predloge).
+- Če ima delovno dovoljenje zaposlenega za tip tečaja predpisano veljavnost, se ob nazivu delovnega dovoljenja v stolpcu **TDM** prikaže značka z vrednostjo (npr. `24m`).
+- Datum poteka posameznika se izračuna kot **datum začetka tečaja + njegovi meseci** in se upošteva pri preverjanju veljavnosti, obvestilih, izvozih in potrdilih.
+- Vrednost lahko kadar koli popravite – tudi pri že zaključenem tečaju (stolpci: **Velja (mes)**, **Praktično usp.**, **Uspešno**, **Št. potrdila**).
 
 !!! danger "Udeleženci so zaklenjeni po shranitvi"
     Ko je tečaj enkrat shranjen, **dodajanje ali odstranjevanje udeležencev ni več mogoče**. Preden shranite, natančno preverite seznam. Če je prišlo do napake, morate ustvariti nov tečaj.

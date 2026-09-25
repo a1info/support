@@ -147,6 +147,9 @@ Bloki — slike (priloge):
 
 Podpira tudi vse skupne spremenljivke (sistem, stranka, PE, uporabnik, certifikati, datumi in številčenje).
 
+!!! info "Veljavnost po udeležencu"
+    Vse spremenljivke veljavnosti (npr. `${mntValid}`, `${dateValid}`, `${rowDateValid}`, `${rowPassDateValid}`, `${attMntValid}`, `${attDateValid}`) se izračunajo iz **individualne veljavnosti udeleženca** (polje **Velja (mes)** na tečaju): datum poteka = datum začetka tečaja + meseci udeleženca. V glavi zapisnika (`${mntValid}` / `${dateValid}`) se upošteva prvi udeleženec po vrstnem redu.
+
 Programi usposabljanja (`nr_prog`): v zapisu je lahko več programov, ločenih z `||` (en program je shranjen brez ločila). V predlogah sta na voljo dve formaciji izpisa:
 
 - privzeta (v eni vrstici, ločeno z `, `): `${nrProg}`, `${rowNrProg}`, `${row2NrProg}`, `${rowPassNrProg}`, `${frmNrProg}`, `${attNrProg}`;
@@ -164,8 +167,8 @@ Posamezne:
 - `${location}` Lokacija
 - `${cPersResp}` Odgovorna oseba stranke
 - `${cPersMent}` Neposredni vodja / mentor
-- `${mntValid}` Veljavnost — št. mesecev
-- `${dateValid}` Datum veljavnosti (izračunan)
+- `${mntValid}` Veljavnost udeleženca — št. mesecev
+- `${dateValid}` Datum veljavnosti udeleženca (izračunan)
 - `${txtEduDesc}` Opis tipa usposabljanja
 - `${txtEduDescLow}` Opis tipa usposabljanja (male črke)
 - `${txtCust1}` Tekst po meri 1
@@ -199,7 +202,7 @@ Tabele — seznam delavcev:
   - `${rowEdutype}` Tip usposabljanja
   - `${rowNrProg}` Program(i) usposabljanja (v vrstici)
   - `${rowNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
-  - `${rowDateValid}` Datum veljavnosti
+  - `${rowDateValid}` Datum veljavnosti udeleženca
   - `${rowDateEtest}` Datum e-testa (če je opravljen)
   - `${rowRes}` Uspešno / Neuspešno (DA/NE)
   - `${rowPass}` Uspešno / Neuspešno (besedilo)
@@ -216,7 +219,7 @@ Tabele — dvojnik seznama delavcev (row2, za vzporedno tabelo v predlogi):
   - `${row2Edutype}` Tip usposabljanja
   - `${row2NrProg}` Program(i) usposabljanja (v vrstici)
   - `${row2NrProgLst}` Program(i) usposabljanja (v novih vrsticah)
-  - `${row2DateValid}` Datum veljavnosti
+  - `${row2DateValid}` Datum veljavnosti udeleženca
   - `${row2Res}` Uspešno / Neuspešno (DA/NE)
   - `${row2Pass}` Uspešno / Neuspešno (besedilo)
 
@@ -234,14 +237,14 @@ Tabele — samo uspešno opravljena usposabljanja (rowPass):
   - `${rowPassNrProgLst}` Program(i) usposabljanja (v novih vrsticah)
   - `${rowPassRes}` Rezultat (vedno DA)
   - `${rowPassPass}` Rezultat (besedilo)
-  - `${rowPassDateValid}` Datum veljavnosti
+  - `${rowPassDateValid}` Datum veljavnosti udeleženca
 
 Tabele — seznam tečajev v zapisniku:
 
 - `${rowEdulstEdutype}` Tip usposabljanja
   - `${rowEdulstEdutype}` Tip usposabljanja
   - `${rowEdulstEdudesc}` Opis tipa usposabljanja
-  - `${rowEdulstMntValid}` Veljavnost (meseci)
+  - `${rowEdulstMntValid}` Veljavnost udeležencev (meseci)
 
 Bloki:
 
@@ -283,8 +286,8 @@ Bloki:
   - `${attdateStart}` Datum usposabljanja
   - `${attDatePract}` Datum praktičnega dela
   - `${attDatePract2}` Datum praktičnega dela (alternativna oznaka)
-  - `${attMntValid}` Velja — meseci
-  - `${attDateValid}` Datum veljavnosti potrdila
+  - `${attMntValid}` Veljavnost udeleženca — meseci
+  - `${attDateValid}` Datum veljavnosti potrdila (izračunan po udeležencu)
   - `${attDateEtest}` Datum opravljanja e-testa
   - Dinamična polja zaposlenega (custemployee): spremenljivke `att<koda_polja>` iz sistemskih nastavitev (Fldopt — `custemployee`)
 

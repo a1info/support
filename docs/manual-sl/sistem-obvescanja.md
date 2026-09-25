@@ -34,6 +34,9 @@ Kliknite na gumb za dodajanje (**+**) in izpolnite naslednje parametre:
 !!! tip "Več prejemnikov"
     Če želite isto obvestilo poslati več osebam (npr. direktorju stranke in vašemu skrbniku za to stranko), preprosto ustvarite dve ločeni pravili z različnima e-poštnima naslovoma.
 
+!!! info "Usposabljanja: datum poteka po udeležencu"
+    Pri potekih usposabljanj sistem izračuna datum poteka za **vsakega udeleženca posebej** – iz njegove individualne veljavnosti (stolpec **Velja (mes)** na tečaju). Če ima delovno dovoljenje zaposlenega za tip tečaja predpisano veljavnost, se ta samodejno upošteva.
+
 ---
 
 ## 2. Obveščanje zaposlenih (eUsposabljanje / eTest)
