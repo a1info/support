@@ -151,26 +151,79 @@ Evidenca OVO beleži izdajanje osebne varovalne opreme posameznemu zaposlenemu n
 
 ### Namen
 
-Modul zagotavlja standardizirano evidentiranje delovnih nezgod v skladu z zakonskimi zahtevami. Zbrani podatki so osnova za obvezno poročanje pristojnim organom.
+Modul zagotavlja standardizirano evidentiranje delovnih nezgod v skladu z zakonskimi zahtevami in pripravi vse podatke, potrebne za uradno prijavo pristojnim organom.
 
-### Polja za vnos
+!!! info "Zakonska podlaga"
+    - **ZVZD-1** (Ur. l. RS, št. 43/11), 41. člen: delodajalec mora inšpekciji dela (IRSD) **takoj** prijaviti vsako smrtno nezgodo, nezgodo z več kot tremi delovnimi dnevi odsotnosti in vsako kolektivno nezgodo.
+    - **Pravilnik o prijavi nezgode in poškodbe pri delu** (Ur. l. RS, št. 78/22): s **1. 9. 2022** je papirni obrazec ER-8 nadomestila elektronska prijava **ePrijava NPD** prek portala **SPOT**. Vneseni podatki se posredujejo na IRSD, ZZZS in NIJZ; poškodovanec pri izbranem osebnem zdravniku uredi zdravstveni del prijave.
+    - Vsako poškodbo z **vsaj enim dnem bolniške odsotnosti** je treba prijaviti tudi ZZZS/NIJZ.
 
-| Polje | Opis |
+Modul Optima Prevent vodi **interno evidenco** nezgod in pripravi podatke za prepis v uradno prijavo; uradna oddaja poteka izključno na portalu SPOT.
+
+### Seznam
+
+Seznam prikazuje vse zabeležene nezgode s statusom prijave:
+
+| Stolpec | Opis |
 |---|---|
-| **Stranka** | Podjetje, kjer je nezgoda nastala |
-| **Zaposleni** | Poškodovana oseba |
-| **Podatki o osebi** | Osebni in zaposlitveni podatki (iz šifranta) |
-| **Datum dogodka** | Datum in ura nezgode |
-| **Delovno mesto** | Delovno mesto poškodovanca |
-| **Kraj dogodka** | Natančen opis kraja nezgode |
-| **Izjava o nezgodi** | Opis okoliščin, vzrokov in posledic nezgode |
+| **Ime / Priimek** | Poškodovanec — prikaže se ime, veljavno **ob času dogodka** (spremembe v kadrovski evidenci označi ikona zgodovine) |
+| **Stranka** | Podjetje / delodajalec |
+| **Poslovna enota** | Enota, v kateri je bil poškodovanec zaposlen ob dogodku |
+| **Datum** | Datum nezgode |
+| **Lokacija** | Kraj nezgode |
+| **Status** | `v pripravi` / `oddano` (z datumom oddaje) / `preklicano` |
+| **Datoteka** | Prenos priložene dokumentacije |
+| **PDF** | Izpis internega zapisa (obrazec ER-8) |
+| **SPOT** | Hitra povezava na portal SPOT za uradno prijavo |
+| **Dejanja** | Urejanje, kopiranje zapisa, brisanje |
 
-!!! tip "Šifranti"
-    Polja za kraj, vzrok, vrsto poškodbe in ostale standardizirane vrednosti so vezana na **šifrante**, kar zagotavlja enotnost poročanja.
+Na voljo so filtri po **letu**, **poslovni enoti** ter **imenu in priimku**. Za uporabnike z vlogo skrbnika je omogočeno tudi **skupinsko brisanje** več zapisov.
+
+### Obrazec — zavihki
+
+Obrazec za vnos delovne nezgode je razdeljen na tri zavihke:
+
+| Zavihek | Vsebina |
+|---|---|
+| **Osnovni podatki** | Stranka, poškodovanec, delovno mesto, datum in ura nezgode, datum prijave, kraj nezgode, kratek opis dogodka, priloga datoteke |
+| **Šifranti (NPD)** | Standardizirani podatki za ePrijavo NPD: podatki o delodajalcu, poškodovancu in nezgodi |
+| **Prijava na SPOT** | Status prijave, datum oddaje, številka prijave NPD, podatki o prijavitelju in povezave na portal SPOT |
+
+### Šifranti (NPD)
+
+Polja za standardizirane vrednosti so opremljena s pomožnimi šifranti, ki se odprejo s klikom na oznako šifre ob polju:
+
+| Šifrant | Vsebina |
+|---|---|
+| **06** | Število zaposlenih pri delodajalcu |
+| **11** | Zaposlitveni status poškodovanca |
+| **S13** | Poklic (klasifikacija poklicev) |
+| **S21** | Narava poškodbe |
+| **S22** | Poškodovani del telesa |
+| **S23** | Delovno okolje |
+| **S24** | Delovni proces |
+| **S25** | Specifična aktivnost v času nezgode |
+| **S26** | Vzrok nezgode |
+| **S27** | Način poškodbe |
+| **S28** | Materialni povzročitelj |
+
+Ob izbiri poškodovanca se polje **spol** samodejno izpolni iz kadrovske evidence.
+
+### Prijava na SPOT — status
+
+Ker uradno oddajo na portalu SPOT izvede pooblaščena oseba s kvalificiranim digitalnim potrdilom, sistem vodi status prijave ročno:
+
+| Status | Pomen |
+|---|---|
+| **v pripravi** | Zapis še ni oddan na SPOT |
+| **oddano na SPOT** | Prijava je bila oddana; samodejno se zabeleži datum oddaje, vnesete lahko številko prijave NPD |
+| **preklicano** | Prijava je bila na SPOT preklicana |
+
+Na zavihku so tudi povezavi **Oddaj prijavo na SPOT (ePrijava NPD)** ter **Preklic prijave / pooblastila**.
 
 ### Tisk
 
-Obrazec delovne nezgode natisnete ali izvozite v **PDF** z gumbom za izpis pri posameznem zapisu.
+Z gumbom **PDF** pri posameznem zapisu natisnete **interni zapis** v obliki obrazca ER-8. Zapisu je dodana oznaka, da gre za interno dokumentacijo — uradna prijava se odda izključno prek portala SPOT.
 
 ---
 

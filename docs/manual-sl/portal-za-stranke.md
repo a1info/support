@@ -94,7 +94,9 @@ Evidenca strojev in naprav. Uporabniki lahko pregledujejo tehnične podatke opre
 Dostop do evidence zdravniških pregledov in prenos izdanih zdravniških potrdil/napotnic za svoje zaposlene.
 
 ### Delovne nezgode
-Modul omogoča strankam, da ob nesreči same kreirajo in izpolnijo obrazec za prijavo nezgode. Prijavi lahko priložijo priponke (slike poškodb, dokumentacijo). Te prijave so takoj vidne tudi vašim skrbnikom v osrednjem sistemu, ki nato lahko izvedejo preiskavo in ukrepe. Na tem seznamu se nahaja tudi hitra povezava do uradne **e-VEM** prijave nezgode.
+Modul omogoča strankam, da ob nesreči same kreirajo in izpolnijo obrazec za prijavo nezgode (enak obrazec kot v osrednjem sistemu: zavihki **Osnovni podatki**, **Šifranti (NPD)** in **Prijava na SPOT**). Prijavi lahko priložijo priponke (slike poškodb, dokumentacijo) in spremljajo **status prijave** (v pripravi / oddano na SPOT / preklicano). Te prijave so takoj vidne tudi vašim skrbnikom v osrednjem sistemu, ki nato lahko izvedejo preiskavo in ukrepe.
+
+Na seznamu se nahaja tudi hitra povezava do portala **SPOT** za uradno oddajo prijave (**ePrijava NPD** — papirni obrazec ER-8 je od 1. 9. 2022 ukinjen) ter gumb **PDF** za izpis internega zapisa.
 
 ### Osebna varovalna oprema (OVO)
 Vpogled v zadolžitve za osebno varovalno opremo posameznih zaposlenih, skladno s standardi in zahtevami ocene tveganja.
