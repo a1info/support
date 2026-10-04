@@ -72,6 +72,7 @@ Po opravljenem pregledu vnesete rezultate v zavihek **Rezultat**:
 | **Št. zdravniškega spričevala** | Številka spričevala, ki ga izda pooblaščeni zdravnik |
 | **Ocena** | 1–6 po uradnem obrazcu |
 | **Omejitve** | Prikaže se pri ocenah 2 in 3 |
+| **Rok naslednjega pregleda** | Prikaže se pri oceni 2. Če rok ni vpisan, velja prvotna veljavnost pregleda |
 | **Predlagano drugo delo** | Prikaže se pri oceni 5 |
 | **Razlog (6.1–6.4)** | Prikaže se pri oceni 6 |
 | **Predlagani ukrepi** | Ukrepi, ki jih predlaga zdravnik |
@@ -87,6 +88,14 @@ Po opravljenem pregledu vnesete rezultate v zavihek **Rezultat**:
 | 5 | Predlagano drugo delo |
 | 6 | Ne moremo podati ocene |
 
+### Izvajalec medicine dela in zdravnik
+
+Napotnici lahko dodelite **izvajalca medicine dela** in opcijsko **zdravnika** (glavni meni → Evidence → Zdravniški pregledi → urejanje napotnice).
+
+- Ob kreiranju napotnice za stranko, ki ima dodeljenega izvajalca medicine dela (Stranke → urejanje → Izvajalci MD), se izvajalec in prednostni zdravnik **samodejno predizpolnita**.
+- Dodeljeni izvajalec in zdravnik se izpišeta na tiskani napotnici, napotnica pa se prikaže na portalu za zdravnike (mod-medic).
+- Napotnice **brez** dodeljenega izvajalca so na portalu za zdravnike vidne ustanovam, ki imajo stranko dodeljeno (ne dodeljene napotnice).
+
 ### Tisk napotnice
 
 Napotnico natisnete ali izvozite v **PDF** z gumbom za izpis pri posameznem zapisu.
@@ -97,7 +106,7 @@ Napotnico natisnete ali izvozite v **PDF** z gumbom za izpis pri posameznem zapi
 - podatke iz ocene tveganja,
 - **seznam ugotovljenih dejavnikov tveganja** s pripadajočimi ocenami R0.
 
-**Druga stran** (zdravnik) — Zdravniško spričevalo se **samodejno izpolni** s podatki, vnesenimi v zavihku Rezultat.
+**Druga stran** (zdravnik) — Zdravniško spričevalo se **samodejno izpolni** s podatki, vnesenimi v zavihku Rezultat. V glavi spričevala sta izpisana **naziv in naslov izvajalca medicine dela** ter **ime pooblaščenega zdravnika** (če sta dodeljena), desno od naslova pa je **QR koda**, ki zdravnika pripelje neposredno na obrazec za vnos rezultata.
 
 ### Prikaz tveganj na profilu zaposlenega
 
@@ -109,12 +118,22 @@ Tabela zdravniških pregledov omogoča filtriranje po **oddelku** zaposlenega, k
 
 ### Status pregleda
 
-Če ima izbrana stranka dodeljenega izvajalca medicine dela (preko *Stranke → urejanje → Izvajalci MD*), se v tabeli zdravniških pregledov prikaže dodatni stolpec **Status**, ki prikazuje:
+Tabela zdravniških pregledov vsebuje stolpca **Izvajalec medicine dela** in **Zdravnik**, ki prikazujeta, komu je napotnica dodeljena.
+
+Stolpec **Status** se prikaže pri napotnicah, ki imajo **dodeljenega izvajalca medicine dela** (izbranega neposredno na napotnici):
 
 - **Čaka** — zdravnik še ni vnesel rezultata pregleda
 - **Ocena z datumom** — barvna značka z oceno (1–6) in datumom opravljenega pregleda
 
 Stolpec omogoča hiter pregled, katere napotnice so že obdelane in katere še čakajo na rezultat.
+
+V filtrirni vrstici tabele so na voljo filtri:
+
+| Filter | Opis |
+|---|---|
+| **Status** | Čakajoče in posamezne ocene (1–6). Prikaže samo napotnice z dodeljenim izvajalcem |
+| **Izvajalec medicine dela** | Filtriranje po ustanovi |
+| **Zdravnik** | Filtriranje po posameznem zdravniku |
 
 ---
 
