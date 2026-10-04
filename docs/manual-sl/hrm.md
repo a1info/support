@@ -23,9 +23,9 @@ Meni modula je zgoščen na štiri področja:
 
 | Meni | Vsebina (zavihki) |
 |------|-------------------|
-| **Odsotnosti** | Pregled · Odsotnosti · Kvote · Prazniki · Načrtovanje |
+| **Odsotnosti** | Pregled · Odsotnosti · Kvote · Načrtovanje · Prazniki |
 | **Moj HRM** | Samopostrežni pogled zaposlenega |
-| **Evidenca časa** | Vnosi · Mesečno poročilo · Preverjanje |
+| **Evidenca časa** | Vnosi · Mesečno poročilo · Preverjanje · Nastavitve |
 | **Zaposlovanje** | Razpisi · Kandidati |
 
 Vrste odsotnosti so del **Šifrantov** (glavni meni → Seznami).
@@ -73,7 +73,7 @@ Stran deluje tudi, če zaposleni nima IT uporabniškega računa – sistem ga pr
 
 ### Vrste odsotnosti
 
-Vrste odsotnosti upravljate v **Šifrantih** (meni → Seznami in šifranti → Vrste odsotnosti). Vsaka vrsta ima:
+Vrste odsotnosti upravljate v **Šifrantih** (meni → Seznami → Vrste odsotnosti). Vsaka vrsta ima:
 
 | Nastavitev | Opis |
 |------------|------|
@@ -142,6 +142,16 @@ Zavihek **Načrtovanje** ponuja vodstveni pregled:
 
 Klik na ime zaposlenega odpre njegov **Karton zaposlenega**.
 
+### Koledar odsotnosti
+
+Na dnu strani **Načrtovanje** je **koledar odsotnosti po oddelkih**:
+
+- **mesečna mreža** z imeni odsotnih po dnevih (barva = vrsta odsotnosti),
+- **rdeča oznaka** dneva, ko število sočasnih odsotnosti doseže dovoljeno mejo,
+- **letni pregled** – skupno število dni odsotnosti po mesecih.
+
+Pri potrjevanju zahtevka sistem opozori, če novi dopust povzroči presežek meje sočasnih odsotnosti v oddelku (mejo nastavite v Nastavitvah).
+
 ---
 
 ## Evidenca delovnega časa
@@ -154,15 +164,21 @@ Zapisi delovnega časa vključujejo:
 |-------|------|
 | **Datum in čas** | Prihod / odhod (samodejni izračun minut). |
 | **Tip dela** | Redno delo, nadure, nočno delo, vikend, praznik. |
+| **Lokacija** | Delovišče (stroškovno mesto) – izbere se ob prijavi na terminalu ali v vnosu. |
+| **Odmor** | Samodejni odbitek odmora po pravilu podjetja; lahko ga ročno popravite. |
 | **Status** | Osnutek → Oddano → Zaklenjeno. |
 | **Čez polnoč** | Oznaka za izmeno, ki sega čez polnoč. |
 
-Seznam omogoča **filtriranje po datumu** in strani (paginacija).
+Seznam omogoča **filtriranje po lokaciji in datumu** ter strani (paginacija).
+
+!!! info "Samodejni odmor"
+    Ob odjavi sistem po pravilu podjetja samodejno odšteje odmor (privzeto **30 min po 6 urah**). Pravilo in mejo nastavite v zavihku **Nastavitve**.
 
 ### Mesečno poročilo
 
-- Prikaz ur po tipih dela za izbrani mesec in podjetje.
-- **Excel izvoz** za obračun plač.
+- Prikaz ur po tipih dela za izbrani mesec in podjetje (skupaj, odmor, neto).
+- **Ure po lokacijah:** seštevek ur po deloviščih za obračun stroškov po mestih.
+- **Excel izvoz** za obračun plač (vključuje odmor, neto in razdelitev po lokacijah).
 - **Zaklepanje meseca:** potrjen mesec se zaklene – zaklenjenih zapisov ni več mogoče urejati (priprava za obračun).
 
 ### Preverjanje časa
@@ -182,6 +198,18 @@ Zavihek **Preverjanje** preveri delovni čas glede na poenostavljena pravila:
 ### Opomnik ob pozabljeni odjavi
 
 Če zaposleni ob koncu dneva ostane prijavljen, sistem ob 18:00 samodejno pošlje **e-poštni opomnik za odjavo**.
+
+### Nastavitve
+
+Zavihek **Nastavitve** vsebuje pravila, ki veljajo globalno ali za izbrano podjetje:
+
+| Nastavitev | Privzeta vrednost | Uporaba |
+|------------|-------------------|---------|
+| **Največ sočasnih odsotnosti na dan** | 2 (na oddelek) | Opozorila ob potrjevanju in rdeče oznake v koledarju. |
+| **Odmor – po opravljenih minutah** | 360 min | Meja, od katere se odšteje odmor. |
+| **Odmor – trajanje** | 30 min | Samodejni odbitek ob odjavi. |
+
+Če nastavitev za podjetje ni določena, se uporabi globalna nastavitev ali privzete vrednosti.
 
 ---
 
