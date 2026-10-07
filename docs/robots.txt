@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /*?
 
 Sitemap: https://support.optima-prevent.eu/sitemap.xml

@@ -295,6 +295,8 @@ Bloki:
 
 ## Zapisnik o pregledu delovne opreme (MDEVICE)
 
+Statusi pregleda (`mdevice.status`): `pass` = Ustreza, `fail` = Ne ustreza, `repair` = V popravilu / okvari, `missing` = Pogrešano. Spremenljivke stanja spodaj prikazujejo te vrednosti. Status **ne** vpliva na prisotnost opreme v evidenci (za izločitev velja samo datum odpisa).
+
 Posamezne:
 
 - `${dateRep}` Datum zapisnika
@@ -326,9 +328,10 @@ Tabele — kratek seznam pregledane opreme:
   - `${rowShortManufactYear}` Leto izdelave
   - `${rowShortTypeDevice}` Tip / model
   - `${rowShortLocation}` Mikro lokacija
-  - `${rowShortResult}` Rezultat pregleda
-  - `${rowShortPass}` Ustreza (DA/NE)
-  - `${rowShortNote}` Rezultat (opomba)
+  - `${rowShortResult}` Rezultat pregleda (Uspešno / Neuspešno — iz `ind_pass`)
+  - `${rowShortPass}` Ustreza (Da / Ne — iz `ind_pass`)
+  - `${rowShortStatus}` Status opreme (kratko): `DA`, `NE`, `V POPRAVILU`, `POGREŠANO`
+  - `${rowShortNote}` Opomba pregleda; če je prazna, se za statusa *V popravilu* in *Pogrešano* samodejno vpiše opomba »potrdilo ni izdano«
   - `${rowShortDesc}` Dodatni opis
 
 Tabele — kratek seznam, neustrezne naprave najprej (rowShortFailFirst):
@@ -342,9 +345,10 @@ Tabele — kratek seznam, neustrezne naprave najprej (rowShortFailFirst):
   - `${rowShortManufactYearFailFirst}` Leto izdelave
   - `${rowShortTypeDeviceFailFirst}` Tip / model
   - `${rowShortLocationFailFirst}` Mikro lokacija
-  - `${rowShortResultFailFirst}` Rezultat pregleda
-  - `${rowShortPassFailFirst}` Ustreza (DA/NE)
-  - `${rowShortNoteFailFirst}` Rezultat (opomba)
+  - `${rowShortResultFailFirst}` Rezultat pregleda (Uspešno / Neuspešno — iz `ind_pass`)
+  - `${rowShortPassFailFirst}` Ustreza (Da / Ne — iz `ind_pass`)
+  - `${rowShortStatusFailFirst}` Status opreme (kratko: `DA` / `NE` / `V POPRAVILU` / `POGREŠANO`)
+  - `${rowShortNoteFailFirst}` Opomba pregleda (avtomatska opomba za popravilo/pogrešano, če ni vpisanega rezultata)
   - `${rowShortDescFailFirst}` Dodatni opis
 
 Tabele — podroben seznam:
@@ -362,7 +366,8 @@ Tabele — podroben seznam:
   - `${lstDesc}` Dodatni opis
   - `${lstDoc}` Predložena dokumentacija
   - `${lstResult}` Rezultat pregleda
-  - `${lstIndPass}` Indikator ustreznosti
+  - `${lstIndPass}` Indikator ustreznosti (`DA` / `NE` — iz `ind_pass`)
+  - `${lstStatus}` Status opreme (kratko): `DA`, `NE`, `V POPRAVILU`, `POGREŠANO`
   - `${lstManufacturer}` Proizvajalec
   - `${lstManufactYear}` Leto izdelave
   - `${lstKW}` Moč (kW)
@@ -383,13 +388,13 @@ Tabele — podroben seznam:
 Bloki:
 
 - `${cloneDevLst0}` … `${/cloneDevLst0}` (info blok opreme)
-- `${cloneCert0}` … `${/cloneCert0}` (blok potrdil)
+- `${cloneCert0}` … `${/cloneCert0}` (blok potrdil — izpolni se **samo za opremo s statusom Ustreza**; oprema s statusi Ne ustreza, V popravilu in Pogrešano se na potrdilih ne pojavi)
   - `${devName}` Naziv opreme
   - `${devNrCnt}` Zap. št.
   - `${devNrRep}` Št. potrdila
   - `${devNrRep2}` Št. potrdila (alternativna oznaka)
   - `${devDateTest}` Datum pregleda
-  - `${devDateValid}` Datum veljavnosti (izračunan: date_test + mnt_valid mesecev)
+  - `${devDateValid}` Datum veljavnosti (shranjena vrednost `mdevice.date_valid`; izračuna se ob shranjevanju pregleda samo za status *Ustreza*)
   - `${devDateLast}` Datum zadnjega pregleda in preizkusa (najkasnejši `date_test` v `mdevice` za to delovno opremo; če ni, `/`)
   - `${devMntValid}` Veljavnost — št. mesecev
   - `${devSerial}` Serijska št.
