@@ -13,6 +13,20 @@ Oznake:
 
 ## Skupne (generične) spremenljivke
 
+Posamezne — podjetje (glava dokumenta):
+
+- `${sysName}` Naziv podjetja
+- `${sysRegNr}` Registrska (matična) številka podjetja
+- `${sysAddress}` Naslov podjetja
+- `${sysZip}` Poštna številka podjetja
+- `${sysCity}` Mesto podjetja
+- `${sysEmail}` E-pošta podjetja
+- `${sysWeb}` Spletna stran podjetja
+- `${sysLogo}` Logotip podjetja (slika)
+
+!!! info "Vir podatkov o podjetju"
+    Naziv, naslov in registrsko številko sistem prebere iz vrstice stranke s kategorijo **OWN** (lastno podjetje); logotip, e-pošta in spletna stran pa so iz *Sistemskih nastavitev → Podjetje*.
+
 Posamezne:
 
 - `${cName}` Ime stranke
@@ -79,6 +93,8 @@ Opomba — odstranjevanje praznih blokov:
 
 ## Poročilo naloge (CRM Task) — GentaskController
 
+Podpira tudi vse spremenljivke podjetja (glava dokumenta): `${sysName}`, `${sysAddress}`, `${sysZip}`, `${sysCity}`, `${sysRegNr}`, `${sysEmail}`, `${sysWeb}`, `${sysLogo}`.
+
 Posamezne:
 
 - `${cEmail}` E‑pošta glavnega kontakta stranke
@@ -98,6 +114,36 @@ Tabele:
   - `${rowServiceUser}` Izvajalec
   - `${rowServiceQty}` Količina
   - `${rowServiceDesc}` Opis
+
+---
+
+## Ponudba (ERP Offer) — GenofferController
+
+Podpira tudi vse spremenljivke podjetja (glava dokumenta) in spremenljivke stranke: `${cName}`, `${cAddress}`, `${cZip}`, `${cCity}`, `${cTax}`.
+
+Posamezne:
+
+- `${offerNr}` Številka ponudbe
+- `${dateIssue}` Datum izdaje
+- `${dateValid}` Datum veljavnosti ponudbe
+- `${notes}` Opombe (večvrstično)
+- `${subtotal}` Skupaj brez DDV
+- `${taxTotal}` Znesek DDV
+- `${total}` Skupaj z DDV
+
+Tabele — postavke ponudbe (cloneRow `${rowServiceCnt}`):
+
+- `${rowServiceCnt}` Zap. št.
+  - `${rowServiceCnt}` Zap. št.
+  - `${rowServiceName}` Naziv storitve
+  - `${rowServiceQty}` Količina
+  - `${rowServicePrice}` Cena na enoto (€)
+  - `${rowServiceDiscount}` Popust (%)
+  - `${rowServiceTax}` Stopnja DDV (%)
+  - `${rowServiceLine}` Znesek vrstice (€)
+
+!!! info "Izračun zneskov"
+    Zneski (`${rowServiceLine}`, `${subtotal}`, `${taxTotal}`, `${total}`) se izračunajo po enakem pravilu kot v obrazcu ponudbe: količina × cena × (1 − popust/100); DDV se obračuna na znesek vrstice.
 
 ---
 

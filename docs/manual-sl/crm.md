@@ -54,6 +54,14 @@ Naloga je osnovna delovna enota v modulu CRM.
 !!! info "Upravljanje storitev"
     Seznam storitev, ki so na voljo pri nalogah, upravljajo administratorji prek **Nastavitve → Storitve**.
 
+### Povezava s ponudbami (ERP)
+
+Naloga je lahko povezana s ponudbo iz modula **ERP**:
+
+- Nalogo ustvarite neposredno **iz ponudbe** z gumbom *Ustvari nalogo* (glejte poglavje *ERP — Ponudbe in pogodbe*); sistem samodejno poveže nalogo s ponudbo ter predizpolni stranko in naziv naloge.
+- Povezava je vidna v obrazcu naloge (**Povezan objekt** s povezavo na ponudbo).
+- Na seznamu nalog se pod nazivom naloge izpiše modra značka s **številko ponudbe**; klik nanjo odpre ponudbo.
+
 ---
 
 ## Koledarji
@@ -117,6 +125,7 @@ Na **seznamu nalog** ali znotraj posamezne naloge kliknite ikono za **tisk delov
 
 ### Vsebina delovnega naloga
 
+- Glava z nazivom, naslovom, registrsko številko, e-pošto, spletno stranjo in logotipom vašega podjetja (iz nastavitev podjetja — stranka s kategorijo *OWN*)
 - Podatki o stranki in naslovu
 - Datum in čas opravljenega dela
 - Opis opravljenih storitev

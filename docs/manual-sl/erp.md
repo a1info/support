@@ -11,7 +11,7 @@ ERP modul združuje naslednje sklope, ki med seboj sodelujejo pri pripravi proda
 - **Storitve (šifrant):** osnovna baza storitev in produktov.
 - **Cenik po strankah:** posebne cene in popusti storitev za posamezne stranke.
 - **Ponudbe:** priprava ponudb z izvozom v Word (Docx) in Excel.
-- **Pogodbe:** evidenca naročniških razmerij z obračunskimi obdobji, priponkami ter izvozom v Word (Docx) in Excel.
+- **Pogodbe:** evidenca naročniških razmerij z obračunskimi obdobji, priponkami ter izvozom v Excel.
 
 ### Dostop in pravice
 
@@ -86,9 +86,17 @@ Status ponudbe spreminjate z gumbi ob trenutnem statusu. Sistem dovoljuje le pre
 | **Sprejeto** | (končni status) | Stranka je ponudbo sprejela. |
 | **Zavrnjeno** | → nazaj v Osnutek | Ponudba je zavrnjena; za ponovno oddajo jo vrnite v osnutek. |
 
+### Povezava s CRM nalogami
+
+Ponudbo lahko povežete z delovnimi nalogami v modulu **CRM**:
+
+- **Ustvari nalogo** — gumb v glavi obrazca ponudbe ali ikona naloge na seznamu ponudb odpre okno za novo nalogo. Stranka, naziv in povezava na ponudbo se izpolnijo samodejno.
+- **Povezane naloge** — na dnu obrazca ponudbe je seznam nalog, povezanih s ponudbo (naziv, termin, izvajalec, status); nalogo odprete in uredite z ikono svinčnika.
+- Ob **brisanju ponudbe** se naloge ne izbrišejo — povezava na ponudbo se samo odstrani.
+
 ### Izvoz ponudbe
 
-- **Word (Docx):** na seznamu ponudb izberite ikono Word in predlogo dokumenta. Sistem pripravi Word dokument na podlagi predlog (glejte poglavje *Urejanje predlog*); izpisani dokumenti se zabeležijo v evidenci izdanih dokumentov.
+- **Word (Docx):** na seznamu ponudb izberite ikono Word in predlogo dokumenta. Privzeta predloga *Ponudba* samodejno izpolni glavo podjetja (naziv, naslov, registrska številka, e-pošta, spletna stran in logotip), podatke stranke in poslovne enote, tabelo postavk (količina, cena, popust, DDV, znesek vrstice) ter skupne zneske. Predloge urejate v poglavju *Urejanje predlog*, razpoložljive spremenljivke pa so opisane v poglavju *Legenda spremenljivk*; izpisani dokumenti se zabeležijo v evidenci izdanih dokumentov.
 - **Excel:** z zelenim gumbom na seznamu izvozite seznam ponudb (številka, stranka, poslovna enota, datumi, status ter izračunani zneski).
 
 ### Dokumentni tok
@@ -144,7 +152,6 @@ Pri vsaki pogodbi lahko naložite poljubno število datotek (do 20 MB na datotek
 
 ### Izvoz pogodbe
 
-- **Word (Docx):** na seznamu pogodb izberite ikono Word in predlogo. Sistem pripravi Word dokument na podlagi predlog ter ga zabeleži v evidenco izdanih dokumentov.
 - **Excel:** z zelenim gumbom izvozite seznam pogodb (številka, naziv, stranka, poslovna enota, datumi, cikel, status, zunanja koda, skupaj in odprto za obračun).
 
 ### Dokumentni tok
@@ -170,6 +177,6 @@ Cena iz cenika se **samodejno uporabi** ob izbiri storitve na ponudbi ali pogodb
 ## Nastavitve
 
 - **Številčenje:** zaporedne številke ponudb in pogodb se upravljajo v *Sistemu številčenja* (vrsti **ERP Ponudbe** in **ERP Pogodbe**). Določite lahko začetno številko in številčenje po letih.
-- **Word predloge:** predloge za ponudbe in pogodbe pripravite v *Urejanje predlog* (vrsta predloge `offer` oziroma `contract`); razpoložljive spremenljivke so opisane v poglavju *Legenda spremenljivk*.
+- **Word predloge:** predloge za ponudbe pripravite v *Urejanje predlog* (vrsta predloge `offer`); razpoložljive spremenljivke so opisane v poglavju *Legenda spremenljivk*.
 - **Dokumentni tok:** potek potrjevanja za posamezno stranko nastavite na strani *Dokumentni tok* (modul `ERP`).
 - **Pravice:** dostop do sklopov modula se ureja prek vlog uporabnikov (pravice `view_erp_*` / `manage_erp_*`).
