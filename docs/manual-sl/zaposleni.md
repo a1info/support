@@ -25,7 +25,7 @@ Ko je v zgornjem meniju izbrana **aktivna stranka**, seznam prikazuje samo zapos
 
 ### Elementi seznama
 
-- **Tabela zaposlenih** — priimek, ime, delovno mesto, poslovna enota, status (aktiven/neaktiven)
+- **Tabela zaposlenih** — priimek, ime, delovno mesto, poslovna enota, status (aktiven/neaktiven) in delovni status
 - **Desni panel** — gumbi za akcije in možnosti filtriranja
 
 ### Možnosti filtriranja
@@ -33,6 +33,7 @@ Ko je v zgornjem meniju izbrana **aktivna stranka**, seznam prikazuje samo zapos
 | Filter | Opis |
 |---|---|
 | Aktivni / neaktivni | Prikaz samo aktivnih, samo neaktivnih ali vseh zaposlenih |
+| Delovni status | Prikaz zaposlenih po trenutnem delovnem statusu (Aktiven, Bolniški dopust, Porodniški dopust …) |
 | Poslovna enota | Filtrirajte zaposlene po določeni lokaciji stranke |
 | Delovno mesto | Prikaz po vrsti delovnega mesta |
 | Iskanje po imenu | Hitro iskanje po priimku ali imenu |
@@ -57,6 +58,7 @@ Ko je v zgornjem meniju izbrana **aktivna stranka**, seznam prikazuje samo zapos
 | Delovno mesto | Izbor | Da | Tipično delovno mesto (TDM) — osnova za ocene tveganja |
 | Poslovna enota | Izbor | Da | Lokacija oz. enota, kjer je zaposleni razporejen |
 | Aktiven | Da/Ne | — | Status zaposlenega; privzeto: Da |
+| Delovni status | Izbor | Ne | Trenutno delovno stanje zaposlenega (Aktiven, Bolniški dopust, Porodniški dopust, Starševski dopust, Izobraževalni dopust, Neplačani dopust); privzeto: Aktiven |
 | Specifični dejavniki tveganja | Besedilo | Ne | Posebnosti zaposlenega (alergije, kronične bolezni …), ki se prenašajo v zdravniške preglede |
 
 ### Delovno mesto (TDM)
@@ -87,6 +89,25 @@ Sistem OP5 **samodejno preverja podvojene zapise** na podlagi kombinacije ime + 
 - Kliknite na **ime zaposlenega** v seznamu ali na ikono za urejanje (svinčnik).
 - Odpre se obrazec z vsemi polji — spremenite željene podatke in shranite.
 
+### Delovni statusi
+
+Poleg osnovnega statusa (aktiven/neaktiven) ima vsak zaposleni **delovni status**, ki opisuje njegovo trenutno delovno stanje:
+
+| Status | Pomen |
+|---|---|
+| **Aktiven** | Zaposleni aktivno dela. |
+| **Bolniški dopust** | Začasna odsotnost zaradi bolezni. |
+| **Porodniški dopust** | Odsotnost zaradi porodniškega dopusta. |
+| **Starševski dopust** | Odsotnost zaradi starševskega dopusta. |
+| **Izobraževalni dopust** | Odsotnost zaradi izobraževanja. |
+| **Neplačani dopust** | Odsotnost brez nadomestila. |
+| **Neaktiven** | Zaposleni ni več v delovnem razmerju (sistem ga nastavi samodejno ob odznačitvi polja Aktiven). |
+
+Delovni status nastavite ročno v obrazcu zaposlenega. Če uporabljate modul **HRM**, sistem status posodablja tudi samodejno iz potrjenih odsotnosti (glej poglavje [HRM](hrm.md)). Vsaka sprememba statusa se zabeleži v zgodovini zapisa (kdo in kdaj).
+
+!!! info "Vpliv na preglede veljavnosti"
+    Zaposleni z delovnim statusom, ki ni **Aktiven**, so v poročilu **Periodika (Analitika)** označeni z ustrezno značko, iz e-poštnih opomnikov o potekih veljavnosti pa so izključeni. Tako sistem ne »lovi« veljavnosti zaposlenih med odsotnostjo.
+
 ### Zadolževanje opreme (Delovna oprema)
 
 Zaposlenemu lahko dodelite v uporabo delovno opremo (npr. orodje, merilnike, službeno vozilo). Več zaposlenih lahko souporablja isto opremo, hkrati pa lahko določite, kdo izmed njih je **odgovorna oseba** za to opremo.
@@ -111,6 +132,8 @@ Namesto brisanja zaposlene **deaktivirajte**:
 2. Odznačite polje **Aktiven**.
 3. Shranite.
 
+Ob deaktivaciji se delovni status samodejno nastavi na **Neaktiven**; ob ponovni aktivaciji se povrne na **Aktiven**.
+
 Deaktiviran zaposleni:
 
 - se ne prikazuje v operativnih pregledih in izbirah,
@@ -124,7 +147,10 @@ Za vsakega zaposlenega je možno generirati **PDF poročilo z zgodovino** — pr
 - opravljenih usposabljanj in veljavnih potrdil,
 - zdravniških pregledov,
 - zadolžene delovne opreme in OVO,
-- delovnih nezgod (kot ponesrečenec ali priča).
+- delovnih nezgod (kot ponesrečenec ali priča),
+- trenutnega delovnega statusa zaposlenega.
+
+Poročilo vsebuje glavo z logotipom in podatki vašega podjetja.
 
 **Dostop:** Kliknite na zaposlenega → gumb »PDF poročilo« ali ikona za tiskanje.
 

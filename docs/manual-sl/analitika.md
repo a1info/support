@@ -20,6 +20,7 @@ Poročilo omogoča spremljanje veljavnosti različnih evidenc: usposabljanja zap
 | **Obdobje** | Časovno obdobje za filtriranje datumov poteka veljavnosti. |
 | **Vključi poteklo** | Ko je označeno, so v rezultatih prikazani tudi že potekli zapisi. |
 | **Poslovna enota** | Filter po poslovni enoti izbrane stranke (prikaže se samo, kadar je aktivna stranka). |
+| **Delovni status** | Filter po delovnem statusu zaposlenega (npr. samo aktivno delujoči zaposleni). Velja za zavihka **Usposabljanja** in **Zdravniški pregledi**. |
 | **Skrbnik** | Filter po uporabniku, ki je zapis ustvaril ali nazadnje urejal. |
 | **Tip stranke** | Kadar ni aktivne stranke, filtrirajte po tipu stranke. |
 
@@ -31,6 +32,7 @@ Rezultati so organizirani v zavihke glede na izbrane tipe veljavnosti. Vsak zavi
 
 - **Hitro iskanje** – filtriranje vrstic z vpisom ključne besede v iskalno polje,
 - **Filter tipa** – spustni seznam za filtriranje po podtipu (npr. tip tečaja, kategorija opreme),
+- **Delovni status** – stolpec z značko delovnega statusa zaposlenega (zavihka Usposabljanja in Zdravniški pregledi),
 - **Razvrščanje** – klik na glavo stolpca razvrsti podatke naraščajoče ali padajoče,
 - **Izvoz v Excel** – pogovorno okno za izbiro stolpcev, ki jih vključite v izvoz; datoteka se prenese samodejno,
 - **Stranjenje** – navigacija med stranmi z gumbi na dnu tabele.
@@ -42,11 +44,11 @@ Rezultati so organizirani v zavihke glede na izbrane tipe veljavnosti. Vsak zavi
 
 | Zavihek | Vsebina |
 |---------|---------|
-| **Usposabljanja** | Zaposleni z usposabljanji, datum usposabljanja, datum poteka, poslovna enota. Datum poteka se izračuna po **individualni veljavnosti udeleženca** (polje **Velja (mes)** na tečaju). |
+| **Usposabljanja** | Zaposleni z usposabljanji, datum usposabljanja, datum poteka, poslovna enota. Datum poteka se izračuna po **individualni veljavnosti udeleženca** (polje **Velja (mes)** na tečaju). Zaposleni brez opravljenega usposabljanja so prikazani z oznako **Ni pregledov**. |
 | **Delovna oprema** | Pregledi z nazivom opreme, serijsko številko, datumom pregleda in potekom. |
 | **Tehnična varnost** | Pregledi opreme tehnične varnosti. |
 | **Meritve** | Meritve delovnega okolja, hrupa, elektrike, pretoka zraka itd. |
-| **Zdravniški pregledi** | Evidence zdravniških pregledov zaposlenih. |
+| **Zdravniški pregledi** | Evidence zdravniških pregledov zaposlenih. Zaposleni brez opravljenega pregleda so prikazani z oznako **Ni pregledov**. |
 | **Ostale evidence** | Druge evidence (npr. oddaja osebne varovalne opreme – OVO). |
 | **Požarna varnost** | Združeni zavihek s **podzavihki** za: sistemi APZ, gasilniki, hidrantni listi, strelovodi, kurilne naprave, vaje evakuacije. Vsak podzavihek ima lasten filter in iskanje. |
 

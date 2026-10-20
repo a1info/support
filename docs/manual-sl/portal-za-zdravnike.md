@@ -6,6 +6,8 @@ Portal je neposredno povezan z glavno bazo podatkov — vsi rezultati, ki jih zd
 
 Zdravniki se v portal prijavljajo z ločenimi računi, ki jih upravljajo administratorji v glavni aplikaciji oziroma **administratorji ustanove** neposredno v portalu.
 
+Administrator ustanove lahko v portalu **samostojno upravlja tudi stranke in zaposlene** (ročni vnos in uvoz iz Excela) ter **načrtuje termine pregledov** — portal tako v celoti deluje tudi kot samostojna namestitev za izvajalce medicine dela (glej poglavje [13. Samostojna namestitev](#13-samostojna-namestitev-op-medic)).
+
 !!! info "Javna vstopna stran"
     Na naslovu `https://vaš-naslov.si/mod-medic` se gostom prikaže **javna predstavitvena stran** portala (opis funkcionalnosti, potek dela in kontakt za pridobitev dostopa). Prijavljeni uporabniki so namesto tega preusmerjeni na nadzorno ploščo.
 
@@ -20,6 +22,8 @@ Preden lahko zdravnik dostopa do portala, mora administrator v glavni aplikaciji
 3. Dodeliti ustanovo **stranki** (podjetju)
 4. Ustvariti **uporabniški račun** za zdravnika
 
+V samostojni namestitvi (poglavje 13) administrator ustanove vse to ureja neposredno v portalu.
+
 ### 1.1 Ustanove in zdravniki
 
 **Dostop:** Glavni meni → Stranke → Izvajalci medicine dela
@@ -29,10 +33,12 @@ V tem vmesniku administrator:
 - Ustvari in ureja ustanove (naziv, naslov, kontakt)
 - Dodaja zdravnike k posamezni ustanovi (ime, priimek, e-pošta, licenčna številka)
 - Ustvarja uporabniške račune za zdravnike — gumb **Ustvari** ob vsakem zdravniku generira e-poštni naslov in geslo za prijavo v portal
-- Z oznako **Admin ustanove** podeli zdravniku pravice za upravljanje dostopov znotraj ustanove (glej poglavje [9. Ustanova](#9-ustanova-administrator-ustanove))
+- Z oznako **Admin ustanove** podeli zdravniku pravice za upravljanje dostopov znotraj ustanove (glej poglavje [11. Ustanova](#11-ustanova-administrator-ustanove))
+
+Zdravnike (dodajanje, urejanje, brisanje) in podatke ustanove lahko administrator ustanove ureja tudi neposredno v portalu — glej poglavje 11.
 
 !!! tip "Geslo za zdravnika"
-    Ob kliku na **Ustvari** se prikaže generirano geslo. Tega sporočite zdravniku (po e-pošti, telefonu). Zdravnik si ga lahko kasneje spremeni sam (glej poglavje [10. Sprememba gesla](#10-sprememba-gesla)), geslo pa lahko kadar koli ponastavi tudi administrator ustanove.
+    Ob kliku na **Ustvari** se prikaže generirano geslo. Tega sporočite zdravniku (po e-pošti, telefonu). Zdravnik si ga lahko kasneje spremeni sam (glej poglavje [12. Sprememba gesla](#12-sprememba-gesla)), geslo pa lahko kadar koli ponastavi tudi administrator ustanove.
 
 ### 1.2 Dodeljevanje ustanov strankam
 
@@ -71,15 +77,17 @@ Po prijavi zdravnik vidi nadzorno ploščo s pozdravom, hitrimi akcijami in klju
 | **Podjetja** | Število dodeljenih podjetij |
 | **Poteka** | Število pregledov, ki jim veljavnost (oziroma **rok naslednjega pregleda**, če ga je zdravnik določil) poteče v 30 dneh |
 
+Če ima zdravnik za današnji dan načrtovane termine, se na plošči prikaže tudi kartica **Današnji termini** s časovnim okvirom in seznamom naročenih delavcev (klik na delavca odpre obrazec za vnos rezultata).
+
 Pod kazalniki se nahaja **Koledar potekov** — prikaz zaposlenih, ki jim v naslednjih 12 mesecih poteče veljavnost spričevala, združenih po mesecih in podjetjih:
 
 - 🔴 **Rdeče obarvani meseci** — veljavnost je že potekla
 - 🟡 **Rumeno obarvan mesec** — veljavnost poteče v tekočem mesecu
 - 🟢 **Zeleno obarvani meseci** — veljavnost poteče v prihodnosti
 
-V zgornjem desnem kotu navigacijske vrstice sta prikazana **ime in priimek zdravnika** ter **naziv ustanove**.
+Pod navigacijsko vrstico sta kot ločeni znački prikazana **ime in priimek zdravnika** ter **naziv ustanove**.
 
-Če ima zdravnik dodeljenih več podjetij, se v zgornjem meniju prikaže **izbirnik aktivnega podjetja**, s katerim lahko filtrira prikazane podatke.
+Če ima zdravnik dodeljenih več podjetij, se v zgornjem meniju prikaže **izbirnik aktivnega podjetja**, s katerim lahko filtrira prikazane podatke. Izbrano podjetje se ohrani med navigacijo po straneh portala.
 
 ---
 
@@ -100,20 +108,13 @@ Koledar prikazuje **12-mesečno preglednico** od tekočega meseca naprej — tud
 
 **Dostop:** Portal → Zaposleni
 
-Prikaz vseh aktivnih zaposlenih iz podjetij, ki so dodeljena zdravnikovi ustanovi. Zaposleni so razvrščeni **po podjetjih in nato po delovnih mestih**.
-
-Vsako delovno mesto ima svojo glavo, ki prikazuje:
-
-- **Naziv delovnega mesta**
-- **Datum zadnje ocene tveganja**
-- **Število dejavnikov tveganja** (R0 > 1)
-- **Veljavnost pregledov** (v mesecih)
-- **Kategorije tveganj** (npr. Hrup, Prah, Vibracije)
+Prikaz vseh aktivnih zaposlenih iz podjetij, ki so dodeljena zdravnikovi ustanovi. Zaposleni so razvrščeni **po podjetjih**, znotraj podjetja pa so v enotni tabeli s stolpci:
 
 | Stolpec | Pomen |
 |---|---|
 | **☑** | Izbira zaposlenih za **skupinsko kreiranje napotnic** (glej 5.3) |
 | **Ime in priimek** | Klik na ime odpre podrobno kartico zaposlenega |
+| **Delovno mesto** | Naziv delovnega mesta; pod njim so drobno izpisani podatki ocene tveganja (datum OT, število dejavnikov tveganja, veljavnost). Zaposleni brez delovnega mesta imajo oznako *Brez delovnega mesta* |
 | **OT** | Število dejavnikov tveganja iz ocene tveganja |
 | **Rezultat** | Zadnji znani rezultat zdravniškega pregleda |
 | **+** | Gumb za hitro kreiranje nove napotnice |
@@ -157,17 +158,53 @@ S klikom na ime zaposlenega se odpre podrobna kartica, ki vsebuje:
 - **Podatke iz ocene tveganja** — delovno mesto, datum OT, oprema, kemikalije, OVO
 - **Trend zadnjih pregledov** — primerjava zadnjih treh pregledov (datum, tip, ocena, omejitve)
 - **Seznam dejavnikov tveganja** — vsa tveganja z R0 > 1, razvrščena po kategorijah
-- **Zgodovino pregledov** — vsi pretekli pregledi z ocenami in veljavnostjo
+- **Zgodovino pregledov** — vsi pretekli pregledi z ocenami in veljavnostjo (vidni so samo pregledi lastne ustanove)
+
+### 5.5 Upravljanje zaposlenih (administrator ustanove)
+
+Administrator ustanove lahko zaposlene ureja neposredno v portalu:
+
+- **Nov zaposleni** — gumb v zgornjem desnem kotu odpre obrazec (stranka, ime, priimek, EMŠO, datum rojstva, spol, delovno mesto, naslov, pošta, kraj, telefon, e-pošta, aktivnost)
+- **Urejanje** — ikona svinčnika ob imenu zaposlenega
+- **Uvoz iz Excela** — gumb **Uvozi** odpre čarovnika za uvoz. Uvoz se izvede za **izbrano aktivno podjetje**; v prvi vrstici datoteke so naslovi stolpcev, ki jih sistem samodejno poveže s polji zaposlenega (mapping je mogoče ročno popraviti). Uporabite enako predlogo kot v glavni aplikaciji (Ime, Priimek, EMŠO, Naslov, Pošta, Kraj, Telefon, E-pošta, Datum rojstva, Delovno mesto ...)
+
+!!! info "Delovno mesto pri uvozu"
+    Če stolpec **Delovno mesto** vsebuje naziv, ki še ne obstaja, sistem samodejno ustvari novo delovno mesto pri izbranem podjetju.
 
 ---
 
-## 6. Seznam pregledov
+## 6. Stranke (administrator ustanove)
+
+**Dostop:** Portal → Stranke (vidno samo administratorjem ustanove)
+
+Administrator ustanove vodi seznam podjetij, ki so pogodbena za njegovo ustanovo:
+
+| Stolpec | Pomen |
+|---|---|
+| **Naziv podjetja** | Klik odpre obrazec za urejanje |
+| **Davčna št.** | Davčna številka podjetja |
+| **Kraj** | Kraj iz glavne poslovne enote |
+| **Zaposleni** | Število aktivnih zaposlenih |
+| **Čakajoči pregledi** | Število neobdelanih napotnic (klik odpre filtriran seznam pregledov) |
+| **Status** | Aktivno / neaktivno |
+| **Akcije** | Dodaj zaposlenega, aktiviraj / deaktiviraj |
+
+**Nova stranka** — gumb v zgornjem desnem kotu odpre obrazec: naziv podjetja, polno ime, davčna številka, šifra dejavnosti, naslov, pošta, kraj in opis. Sistem samodejno ustvari glavno poslovno enoto in stranko **poveže z ustanovo** — zaposleni in napotnice stranke so takoj vidni vsem zdravnikom ustanove.
+
+**Uvoz strank** — gumb **Uvozi** odpre Excel uvoz (Naziv, Davčna št., Polno ime, Naslov, Pošta, Kraj, Šifra dejavnosti). Vse uvožene stranke se samodejno povežejo z ustanovo.
+
+!!! warning "Deaktivacija stranke"
+    Stranke z aktivnimi zaposlenimi ni mogoče deaktivirati — najprej deaktivirajte njene zaposlene.
+
+---
+
+## 7. Seznam pregledov
 
 **Dostop:** Portal → Zdravniški pregledi
 
 Prikaz vseh napotnic, dodeljenih zdravniku ali njegovi ustanovi. Privzeto so prikazani **vsi** pregledi.
 
-### 6.1 Filtri
+### 7.1 Filtri
 
 | Filter | Opis |
 |---|---|
@@ -176,7 +213,7 @@ Prikaz vseh napotnic, dodeljenih zdravniku ali njegovi ustanovi. Privzeto so pri
 | **Iskalnik po imenu** | Hitro iskanje po imenu ali priimku zaposlenega |
 | **Obdobni / Predhodni / Izredni** | Filtri po tipu pregleda — filtri se lahko poljubno kombinirajo |
 
-### 6.2 Stolpci
+### 7.2 Stolpci
 
 | Stolpec | Pomen |
 |---|---|
@@ -188,17 +225,17 @@ Prikaz vseh napotnic, dodeljenih zdravniku ali njegovi ustanovi. Privzeto so pri
 | **Pripomba zdravnika** | Omejitve oziroma predlagani ukrepi (krajši izvleček, celotno besedilo se prikaže ob prehodu z miško) |
 | **Akcija** | Gumb **Vnesi** (če še ni rezultata) ali **Ogled** |
 
-### 6.3 Izvoz v Excel
+### 7.3 Izvoz v Excel
 
 Gumb **Excel** izvozi trenutno filtriran seznam pregledov: zaposleni, podjetje, tip, datumi, ocena, omejitve, **rok naslednjega pregleda**, predlagani ukrepi, številka spričevala in datum pregleda.
 
 ---
 
-## 7. Vnos rezultata pregleda
+## 8. Vnos rezultata pregleda
 
 **Dostop:** Klik na **Vnesi** v seznamu pregledov ali preko QR kode na napotnici
 
-### 7.1 Podatki o delavcu in napotnici
+### 8.1 Podatki o delavcu in napotnici
 
 Na vrhu obrazca so prikazani vsi podatki napotnice:
 
@@ -206,11 +243,11 @@ Na vrhu obrazca so prikazani vsi podatki napotnice:
 - **Napotnica** — tip pregleda, datum napotnice, datum pregleda, razlog napotitve, zadnji preventivni pregled, datum ocene tveganja, veljavnost pregledov
 - **Dejavniki tveganja** — kratek opis delovnega procesa, delovna oprema, predmeti dela, izpostavljenost tveganjem, ugotovljeni dejavniki tveganja (R0), izvedeni ukrepi, osebna varovalna oprema, posebne zdravstvene zahteve, delovno mesto neustrezno za, pripombe delodajalca
 
-### 7.2 Vnos rezultata
+### 8.2 Vnos rezultata
 
 | Polje | Opis |
 |---|---|
-| **Datum pregleda** | Dejanski datum opravljenega pregleda (koledarski izbirnik) |
+| **Datum pregleda** | Dejanski datum opravljenega pregleda (koledarski izbirnik, oblika dd.mm.llll) |
 | **Št. zdravniškega spričevala** | Številka izdanega spričevala |
 | **Ocena** | 1–6 po uradnem obrazcu (obvezno polje) |
 | **Rok naslednjega pregleda** | Prikazan pri oceni **2 (z omejitvami)** — **neobvezno** polje. Če je vpisan, velja ta rok za naslednji pregled; če je prazen, velja prvotna veljavnost iz ocene tveganja |
@@ -240,7 +277,56 @@ Na dnu obrazca je polje **Predlagani ukrepi** za morebitne dodatne opombe ali pr
 
 ---
 
-## 8. Dostop preko QR kode
+## 9. Termini in urnik
+
+Portal vključuje **planer terminov** za organizacijo zdravniških pregledov. Termine upravlja administrator ustanove, zdravniki pa svoje termine spremljajo na osebnem urniku.
+
+### 9.1 Upravljanje terminov (administrator ustanove)
+
+**Dostop:** Portal → Termini (vidno samo administratorjem ustanove)
+
+Stran prikazuje **tedenski planer** — za vsak dan v tednu so izpisani termini s časom, zdravnikom, lokacijo, statusom in zasedenostjo (zasedeno / kapaciteta). Nad planerjem je značka s številom **čakajočih napotnic brez termina**.
+
+Navigacija med tedni: gumba **Nazaj / Naprej** in **Ta teden**. Filtri: po **zdravniku**, po **statusu** (odprt / preklican / zaključen / vsi) in prikaz **samo terminov s prostimi mesti**.
+
+**Nov termin** — obrazec z naslednjimi polji:
+
+| Polje | Opis |
+|---|---|
+| **Datum** | Datum termina (koledarski izbirnik) |
+| **Ura od / Ura do** | Časovni okvir termina (24-urni izbirnik ure) |
+| **Zdravnik** | Zdravnik, ki izvaja preglede na terminu (neobvezno) |
+| **Kapaciteta** | Največje število pregledov na terminu |
+| **Lokacija** | Prosto besedilo (npr. ambulanta, teren) |
+| **Opomba** | Notranja opomba |
+| **Ponovi tedensko** | Samodejno ustvari enake termine v naslednjih tednih (1–12 ponovitev) |
+
+Vsak termin je mogoče **urediti**, **preklicati** (naročeni pregledi se vrnejo med čakajoče) ali **izbrisati** (samo če ni naročenih pregledov).
+
+### 9.2 Naročanje pregledov na termin
+
+**Dostop:** Klik na gumb **Pregledi** ob terminu
+
+Na kartici termina administrator:
+
+- Vidi seznam **naročenih pregledov** (delavec, podjetje, status) — vsak ima gumb **Vnesi** za vnos rezultata in gumb za **odstranitev** s termina
+- **Dodeli napotnico** — iz seznama čakajočih napotnic izbere delavca (iskanje po imenu, filter po podjetju) in ga naroči na termin. Sistem pri tem:
+    - napotnici določi **datum pregleda** na datum termina,
+    - napotnico **dodeli zdravniku termina** (če je določen),
+    - prepreči prekoračitev kapacitete
+- Termin po opravljenih pregledih označi kot **zaključen** (gumb **Zaključi termin**)
+
+### 9.3 Moj urnik (zdravniki)
+
+**Dostop:** Portal → Moj urnik
+
+Vsak zdravnik vidi svoj osebni urnik prihajajočih terminov, razvrščenih po dnevih. Za vsak termin so izpisani čas, lokacija, zasedenost in seznam naročenih delavcev — klik na delavca neposredno odpre obrazec za vnos rezultata.
+
+Današnji termini so prikazani tudi na nadzorni plošči (kartica **Današnji termini**).
+
+---
+
+## 10. Dostop preko QR kode
 
 Vsaka tiskana napotnica vsebuje **QR kodo** na drugi strani dokumenta (v glavi spričevala, desno od naslova). Zdravnik lahko s skeniranjem kode (s telefonom) neposredno odpre obrazec za vnos rezultata — **brez prijave v portal**.
 
@@ -253,11 +339,13 @@ Lastnosti QR dostopa:
 
 ---
 
-## 9. Ustanova (administrator ustanove)
+## 11. Ustanova (administrator ustanove)
 
-**Dostop:** Portal → Ustanova (viden samo uporabnikom z oznako **Admin ustanove**)
+**Dostop:** Portal → Ustanova (vidno samo uporabnikom z oznako **Admin ustanove**)
 
-Administrator ustanove lahko samostojno upravlja dostope zdravnikov svoje ustanove, brez posredovanja administratorja glavne aplikacije:
+Administrator ustanove samostojno upravlja svojo ustanovo, brez posredovanja administratorja glavne aplikacije.
+
+### 11.1 Dostopi zdravnikov
 
 | Dejanje | Opis |
 |---|---|
@@ -265,11 +353,19 @@ Administrator ustanove lahko samostojno upravlja dostope zdravnikov svoje ustano
 | **Novo geslo** | Ponastavi geslo zdravnika (novo geslo se prikaže enkrat) |
 | **Aktiviraj / Deaktiviraj** | Vklopi ali izklopi dostop zdravnika do portala |
 
+### 11.2 Zdravniki ustanove
+
+Administrator lahko v portalu tudi **doda novega zdravnika** (gumb **Nov zdravnik**), **uredi** njegove podatke (ime, priimek, e-pošta, licenčna številka, aktivnost) ter ga **izbriše**. Brisanje je mogoče samo, če zdravnik še nima uporabniškega računa in nima vpisanih pregledov.
+
+### 11.3 Podatki ustanove
+
+Gumb **Podatki ustanove** odpre obrazec za urejanje naziva, naslova, pošte, kraja, e-pošte, telefona in davčne številke ustanove.
+
 Pravice so omejene na lastno ustanovo — administrator ustanove ne more upravljati zdravnikov drugih ustanov.
 
 ---
 
-## 10. Sprememba gesla
+## 12. Sprememba gesla
 
 **Dostop:** ikona ključa 🔑 v navigacijski vrstici portala
 
@@ -281,7 +377,26 @@ Vsak zdravnik si lahko sam spremeni geslo:
 
 ---
 
-## 11. Povezava z glavno aplikacijo
+## 13. Samostojna namestitev (OP Medic)
+
+Portal lahko deluje tudi kot **samostojna namestitev** za izvajalca medicine dela — z lastno podatkovno bazo, lastnim naslovom in brez povezave z glavno namestitvijo Optima Prevent.
+
+V samostojnem načinu:
+
+- korenski naslov (`/`) uporabnika preusmeri neposredno na portal Medicina dela,
+- administrator ustanove vse podatke (stranke, zaposleni, zdravniki, termini) ureja v portalu — glavna aplikacija ni potrebna,
+- vsaka namestitev vodi **svoje** podatke in poročila (ni deljenja med ustanovami).
+
+**Vklop načina:** v datoteki `.env` nastavite `OP_MEDIC_STANDALONE=true` (po želji tudi `OP_MEDIC_SLOT_MINUTES` za privzeto dolžino termina v minutah, privzeto 30).
+
+**Začetna nastavitev:** po namestitvi in zagonu migracij ustvarite ustanovo, prvega zdravnika (admina) in njegov uporabniški račun neposredno v bazi, nato pa vse ostalo uredite v portalu (zdravniki, stranke, zaposleni, termini).
+
+!!! info "Priprava na povezovanje namestitev"
+    Podatkovna struktura je pripravljena za prihodnjo sinhronizacijo med namestitvami: vsi ključni zapisi (stranke, zaposleni, napotnice, ustanove, zdravniki, termini) imajo enolične identifikatorje (UUID), termini pa oznako za zunanjo povezavo. To omogoča nadaljnji razvoj izmenjave prostih terminov in podatkov o napotnicah med namestitvami.
+
+---
+
+## 14. Povezava z glavno aplikacijo
 
 Vsi podatki, ki jih zdravnik vnese preko portala, so takoj na voljo:
 

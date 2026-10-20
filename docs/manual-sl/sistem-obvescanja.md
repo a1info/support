@@ -37,6 +37,9 @@ Kliknite na gumb za dodajanje (**+**) in izpolnite naslednje parametre:
 !!! info "Usposabljanja: datum poteka po udeležencu"
     Pri potekih usposabljanj sistem izračuna datum poteka za **vsakega udeleženca posebej** – iz njegove individualne veljavnosti (stolpec **Velja (mes)** na tečaju). Če ima delovno dovoljenje zaposlenega za tip tečaja predpisano veljavnost, se ta samodejno upošteva.
 
+!!! info "Samo aktivno delujoči zaposleni"
+    Pri obvestilih o **usposabljanjih** in **zdravniških pregledih** sistem vključi samo zaposlene z delovnim statusom **Aktiven** (zaposleni na bolniškem, porodniškem in drugih odsotnostih so izpuščeni). Zaposleni brez opravljenega pregleda oz. usposabljanja so v obvestilu vključeni samo, če je v pravilu omogočena možnost vključitve zapisov **brez pregleda**.
+
 ---
 
 ## 2. Obveščanje zaposlenih (eUsposabljanje / eTest)

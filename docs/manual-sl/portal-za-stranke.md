@@ -82,10 +82,10 @@ Glavni meni (na levi strani) se stranki prilagaja glede na zgoraj dodeljene prav
 Centralni arhiv vseh uradnih dokumentov (Zapisniki usposabljanj, preizkusi opreme, EKO/VZD meritve, Požarna varnost, Ocene tveganja). Dokumenti so razvrščeni po logičnih zavihkih. Stranka si tukaj lahko prenese (prenos PDF) ali ogleda veljavne dokumente.
 
 ### Pregled veljavnosti (Periodika)
-Analitični modul, ki stranki omogoča vpogled v datume potekov. Z rdečo barvo so jasno označene postavke (oprema, usposabljanja, zdravniški pregledi), ki so jim roki že potekli ali pa so pred potekom.
+Analitični modul, ki stranki omogoča vpogled v datume potekov. Z rdečo barvo so jasno označene postavke (oprema, usposabljanja, zdravniški pregledi), ki so jim roki že potekli ali pa so pred potekom. Pri usposabljanjih in zdravniških pregledih lahko stranka filtrira po **delovnem statusu** zaposlenih (npr. samo aktivno delujoči); zaposleni brez opravljenega pregleda so prikazani z oznako **Ni pregledov**.
 
 ### Zaposleni in Delovna mesta
-Seznam vseh aktivnih delavcev v podjetju stranke. Če ima stranka pravico za urejanje, lahko sama skrbi za ažurnost svojega kadrovskega seznama (dodaja nove delavce, ureja osebne podatke) ter pregleduje, katera delovna mesta zasedajo.
+Seznam vseh aktivnih delavcev v podjetju stranke. Če ima stranka pravico za urejanje, lahko sama skrbi za ažurnost svojega kadrovskega seznama (dodaja nove delavce, ureja osebne podatke in **delovni status**) ter pregleduje, katera delovna mesta zasedajo.
 
 ### Delovna oprema
 Evidenca strojev in naprav. Uporabniki lahko pregledujejo tehnične podatke opreme, prenesejo navodila za uporabo in preverjajo statuse zadnjih pregledov.

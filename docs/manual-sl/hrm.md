@@ -77,7 +77,7 @@ Vrste odsotnosti upravljate v **Šifrantih** (meni → Seznami → Vrste odsotno
 
 | Nastavitev | Opis |
 |------------|------|
-| **Koda in naziv** | Enolična koda (npr. ANNUAL, SICK). |
+| **Koda in naziv** | Enolična koda (npr. ANNUAL, SICK, MATERNITY). |
 | **Dni na leto** | Privzeto letno število dni. |
 | **Zahteva potrditev** | Ali zahtevek te vrste potrebuje odobritev nadrejenega. |
 | **Prenos v novo leto** | Ali se neizrabljeni dnevi prenašajo v naslednje leto. |
@@ -118,6 +118,25 @@ Sistem pri vnosu preveri:
 
 !!! tip "Polovični dan"
     Za enodnevno odsotnost lahko označite **polovični dan** – od kvote se odšteje 0,5 dneva.
+
+### Povezava z delovnim statusom zaposlenega
+
+Potrjene odsotnosti se neposredno povezujejo z **delovnim statusom** zaposlenega (modul [Zaposleni](zaposleni.md)):
+
+| Vrsta odsotnosti (koda) | Delovni status |
+|---|---|
+| SICK | Bolniški dopust |
+| MATERNITY | Porodniški dopust |
+| PARENTAL | Starševski dopust |
+| EDUCATION / STUDY | Izobraževalni dopust |
+| UNPAID | Neplačani dopust |
+
+- Ko je zahtevek **potrjen** in odsotnost zajema današnji dan, sistem samodejno nastavi ustrezen delovni status zaposlenega.
+- Ob **zavrnitvi** zahtevka se status vrne na **Aktiven** — samo če ga je nastavila prav ta vrsta odsotnosti.
+- Letni dopust (ANNUAL), prazniki in ostale vrste odsotnosti **ne vplivajo** na delovni status.
+- Status se **ne vrne samodejno** po preteku zadnjega dneva odsotnosti — po vrnitvi zaposlenega ga ročno popravite na Aktiven v obrazcu zaposlenega.
+
+Delovni status se uporablja pri pregledih veljavnosti (Analitika → Periodika) in e-poštnih opomnikih: zaposleni med odsotnostjo tam niso vključeni.
 
 ### Priloge
 
