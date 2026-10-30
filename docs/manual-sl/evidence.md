@@ -134,6 +134,21 @@ V filtrirni vrstici tabele so na voljo filtri:
 | **Status** | Čakajoče in posamezne ocene (1–6). Prikaže samo napotnice z dodeljenim izvajalcem |
 | **Izvajalec medicine dela** | Filtriranje po ustanovi |
 | **Zdravnik** | Filtriranje po posameznem zdravniku |
+| **Ustreznost ZD** | *Neustrezno* — zadnji pregled ne ustreza periodiki trenutnega delovnega mesta; *Ustrezno* — ni odstopanja |
+
+### Ustreznost ZD glede na trenutno delovno mesto
+
+Pri **zadnjem opravljenem pregledu** zaposlenega sistem preveri, ali spričevalo ustreza trenutnemu delovnemu mestu:
+
+- **Menjava delovnega mesta** — zaposleni se premakne na delovno mesto z drugo (običajno krajšo) periodiko pregledov (npr. kovačnica 26 m → žerjavovodja 12 m)
+- **Sprememba periodike delovnega mesta** — periodika trenutnega DM se skrajša glede na tisto, po kateri je bil izdan zadnji pregled
+
+Če nova periodika zahteva zgodnejši pregled, kot ga pokriva obstoječe spričevalo, se v stolpcu **Ustreznost ZD** prikaže rdeča značka **Neustrezno ZD (X m)**. Ob prehodu z miško so izpisane podrobnosti: menjava DM, sprememba periodike, datum veljavnosti in zahtevani datum pregleda.
+
+!!! note "Rok zdravnika ima prednost"
+    Če je zdravnik pri oceni 2 določil **rok naslednjega pregleda**, se kot veljavnost upošteva ta rok. Neustreznost se ugotovi samo, če zahteva novega DM preseže tudi doktorjev rok.
+
+Značka se prikaže samo pri **zadnjem** opravljenem pregledu zaposlenega — starejši pregledi niso označeni. Staro spričevalo je zakonito še vedno veljavno za staro delovno mesto; značka opozarja, da **ne ustreza trenutnemu delovnemu mestu**.
 
 ---
 
