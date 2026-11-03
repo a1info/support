@@ -27,15 +27,18 @@ Pravilo pove sistemu **kaj** obveščati (dogodki), **komu** (prejemniki) in **k
 | **Periodično** | Sistem redno (dnevno/tedensko/mesečno) preveri izbrane evidence in pošlje en skupen e-poštni pregled vseh iztekov. |
 | **Dogodkovno** | Pošlje se takoj, ko se v sistemu zgodi določen poslovni dogodek (npr. dokument čaka na odobritev, nova CRM naloga). Urnik ne velja. |
 
-Periodičnih in dogodkovnih obvestil **ni mogoče mešati v enem pravilu** – ob izbiri dogodka iz druge skupine se izbira samodejno preklopi.
+Periodičnih in dogodkovnih obvestil **ni mogoče mešati v enem pravilu**. Vrsto izberete na vrhu obrazca (**periodično** ali **dogodkovno**); obrazec nato prikaže samo dogodke in polja izbrane vrste. Ob preklopu vrste se izbrani dogodki počistijo.
+
+Za novo pravilo uporabite gumba **Novo periodično pravilo** ali **Novo dogodkovno pravilo** – obrazec se odpre že v pravi vrsti.
 
 ### Polja pravila
 
 | Polje | Opis |
 |-------|------|
+| **Vrsta** | Periodično ali dogodkovno; določa, kateri dogodki in polja so na voljo. |
 | **Naziv** | Samodejno se predlaga iz stranke in izbranih dogodkov; lahko ga spremenite. |
 | **Stranka** | Stranka, na katero se pravilo nanaša. |
-| **Dogodki** | Ena ali več kategorij, ki jih pravilo pokriva (npr. veljavnost delovne opreme + meritve). Pri periodičnih so na voljo dodatni filtri (npr. vključi zapise brez datuma pregleda). |
+| **Dogodki** | Ena ali več kategorij izbrane vrste (pri periodičnem npr. veljavnost delovne opreme + meritve; pri dogodkovnem npr. odobritev dokumenta). Pri periodičnih so na voljo dodatni filtri (npr. vključi zapise brez datuma pregleda). |
 | **Urnik** | Pogostost (dnevno / tedensko / mesečno), dan in ura pošiljanja, pri mesečnih tudi ponavljanje na več mesecev. |
 | **Obdobje** | *Relativno*: koliko dni pred potekom in po poteku zajame pregled. *Naslednji mesec*: pregled zajame celoten naslednji mesec. |
 | **Zadeva** | Neobvezna; če je prazna, se uporabi privzeta zadeva. |
@@ -55,12 +58,14 @@ Poleg vpisa e-poštnih naslovov (ločenih z vejico ali novo vrstico) lahko dodat
 
 Pri reševanju se vsi prejemniki združijo; neveljavni ali podvojeni naslovi so izpuščeni, neaktivni prejemniki pa preskočeni.
 
+Pri dogodkih z oznako **osebno** (npr. e-vabilo, odločitev o dopustu, opomnik za e-test) je prejemnik določen ob dogodku. Za pravilo, ki vsebuje samo takšne dogodke, prejemnikov ni treba vpisati.
+
 !!! tip "Pošlji zdaj"
     Pri periodičnem pravilu lahko z gumbom **Pošlji zdaj** pošljete pregled takoj (testno ali izjemoma), ne da bi to vplivalo na redni urnik – redno periodično pošiljanje se kljub temu izvede po urniku.
 
 ### Stranke brez pravila
 
-Nad seznamom pravil je obvestilo s številom **strank brez pravila** in hitrim izbirnikom, s katerim za izbrano stranko takoj odprete nov obrazec s predizbrano stranko.
+Nad seznamom pravil je obvestilo s številom **strank brez pravila** in hitrim izbirnikom. Izberite vrsto pravila in stranko, nato kliknite **Novo pravilo**; obrazec se odpre s predizbrano stranko in vrsto.
 
 !!! info "Zamujeno pošiljanje (catch-up)"
     Če urnik ob načrtovani uri ni tekel (npr. strežnik nedosegljiv), sistem periodično obvestilo nadoknadi **na kasnejši dan istega tedna oz. meseca**. Vsako pravilo se v enem obdobju pošlje **največ enkrat** (zaščita pred podvojenimi sporočili). Če ob pošiljanju ni podatkov, se obdobje ne zaključi – sistem kasneje v obdobju znova preveri.
@@ -72,9 +77,9 @@ Nad seznamom pravil je obvestilo s številom **strank brez pravila** in hitrim i
 
 ## 2. Dogodkovna obvestila
 
-Dogodkovno pravilo deluje kot **stikalo**: ko je za dogodek aktivno pravilo, sistem ob dogodku pošlje e-pošto prejemnikom pravila in pošiljanje zabeleži v dnevnik. Ko pravila ni, velja prejšnje obnašanje sistema (nekateri dogodki pošljejo obvestilo neposredno, drugi ne pošljejo ničesar).
+Dogodkovno pravilo deluje kot **stikalo**: ko je za dogodek aktivno pravilo, sistem ob dogodku pošlje e-pošto prejemnikom pravila in pošiljanje zabeleži v dnevnik. Ko pravila ni, velja prejšnje obnašanje sistema (nekateri dogodki pošljejo obvestilo neposredno, drugi ne pošljejo ničesar). Neposredna pošiljanja se **ne zabeležijo v dnevnik** – za popoln dnevnik mora za dogodek obstajati aktivno pravilo.
 
-Osebna obvestila (odločitev o dopustu, sprememba faze kandidata, opomnik za e-test ...) so vedno poslana **osebi, ki jo določa poslovni dogodek** – pravilo jih ne preusmeri na druge prejemnike, temveč samo vklopi pošiljanje in vodi evidenco.
+Osebna obvestila (odločitev o dopustu, sprememba faze kandidata, opomnik za e-test ...) so vedno poslana **osebi, ki jo določa poslovni dogodek** – pravilo jih ne preusmeri na druge prejemnike. V obrazcu so označena z **osebno**; za pravilo samo s takšnimi dogodki prejemnikov ni treba vpisati.
 
 Razpoložljivi dogodki:
 
@@ -100,7 +105,7 @@ Ko ustvarite nov tečaj z **e-testom** in obkljukate pošiljanje e-pošte, siste
 - uporabniško ime,
 - geslo za prijavo.
 
-Če za dogodek **e-vabilo** obstaja aktivno pravilo, se pošiljanje izvede in zabeleži prek tega pravila (vsebina in prejemnik ostaneta enaka).
+Če za dogodek **e-vabilo** obstaja aktivno pravilo, se pošiljanje izvede in zabeleži prek tega pravila (vsebina in prejemnik ostaneta enaka). Brez pravila se vabilo pošlje neposredno in se **ne prikaže v dnevniku**. Za evidentiranje zadošča aktivno dogodkovno pravilo z dogodkom **E-vabilo s pristopnimi podatki**; prejemnikov ni treba vpisati.
 
 ### Opomniki pred iztekom e-testa
 
