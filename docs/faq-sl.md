@@ -69,6 +69,23 @@ Podatke lahko izvozite v različnih formatih (PDF, Excel, CSV):
 3. Izberite želeni format
 4. Potrdite izvoz
 
+## Mobilna aplikacija (PWA)
+
+### Kako namestim mobilno aplikacijo?
+Mobilna aplikacija Optima Prevent je PWA in se namesti iz brskalnika. Na Androidu odprite naslov svoje namestitve v Chromu in izberite **Namesti aplikacijo** ali **Dodaj na začetni zaslon**. Na iPhonu/iPadu odprite naslov v Safariju in izberite **Deli → Dodaj na začetni zaslon**. Podrobna navodila so v [priročniku za mobilno aplikacijo](manual-mobile-sl.md).
+
+### Ali obstaja APK ali aplikacija v Google Play?
+Ne. Mobilna aplikacija je PWA in ne potrebuje APK-ja, trgovine Google Play ali App Store. Namesti se neposredno iz brskalnika in se posodablja skupaj s spletnim sistemom.
+
+### Zakaj ne vidim možnosti »Namesti aplikacijo«?
+Povezavo odprite neposredno v Chromu (Android) ali Safariju (iOS), ne v predogledu druge aplikacije ali zasebnem načinu brskalnika. Če možnosti še vedno ni, uporabite **Dodaj na začetni zaslon**.
+
+### Ali mobilna aplikacija deluje brez internetne povezave?
+Ne. Aplikacijo lahko odprete, vendar za prijavo, nalaganje podatkov in shranjevanje kontrol potrebujete povezavo s strežnikom. Podatki se ne shranjujejo v čakalno vrsto za kasnejšo sinhronizacijo.
+
+### Ali NFC deluje na iPhonu?
+Ne. Web NFC je podprt predvsem v Chromu na Androidu. Na iPhonu/iPadu uporabite QR kodo zaposlenega ali ročni vnos.
+
 ## Modul VZD
 
 ### Kako dodam novo oceno tveganja?

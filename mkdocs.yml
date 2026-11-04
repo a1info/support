@@ -109,6 +109,8 @@ nav:
       - Sistem obveščanja: manual-sl/sistem-obvescanja.md
       - Urejanje predlog: manual-sl/urejanje-podlog.md
       - Legenda spremenljivk: manual-sl/variables-sl.md
+    - Mobilna aplikacija (PWA): manual-mobile-sl.md
+    - API in integracije: manual-api.md
   - Pogosta vprašanja (FAQ): faq-sl.md
   - Podpora:
     - Prijavi napako: https://github.com/a1info/support/issues/new?template=bug_report.yml

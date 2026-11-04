@@ -25,6 +25,9 @@ Optima Prevent je blagovna znamka podjetja A1 Informatika d.o.o. in je registrir
 
 Vmesnik je odziven (responsive) in se prilagaja mobilnim napravam. Za popoln prikaz in učinkovito delo priporočamo zaslone z najmanj 1024×768. Vmesniki prikazujejo veliko informacij, zato je večja površina zaslona prednost.
 
+!!! info "Mobilna aplikacija (PWA)"
+    Za terensko delo je na voljo namenski mobilni vmesnik na naslovu `/mobile`, ki ga namestite kot PWA. Glejte [priročnik za mobilno aplikacijo](manual-mobile-sl.md).
+
 ### Prijava v sistem
 
 Za dostop potrebujete IP ali domeno strežnika, kjer je nameščena aplikacija. Prvi prikaz ob obisku je prijavna stran. Prijava: e-poštni naslov in geslo. Po prijavi je uporabnik preusmerjen na nadzorno ploščo (Dashboard), prilagojeno tipu uporabnika.

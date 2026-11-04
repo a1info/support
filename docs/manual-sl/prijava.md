@@ -7,6 +7,9 @@ Uporabniški vmesnik aplikacije Optima Prevent je **odziven (responsiven)** in s
 !!! tip "Odzivni vmesnik"
     Čeprav je aplikacija dostopna na mobilnih napravah, je za udobno vsakodnevno delo (vnos podatkov, pregledovanje seznamov, izpolnjevanje obrazcev) priporočena uporaba namiznega računalnika ali prenosnika z ločljivostjo vsaj **1024 × 768**.
 
+!!! info "Mobilna aplikacija (PWA)"
+    Za terensko delo uporabite namenski mobilni vmesnik na naslovu `/mobile`, ki ga lahko namestite kot PWA. Navodila za namestitev, QR/NFC delo in e-teste so v [priročniku za mobilno aplikacijo](../manual-mobile-sl.md).
+
 ---
 
 ## Prijava v sistem
@@ -14,6 +17,8 @@ Uporabniški vmesnik aplikacije Optima Prevent je **odziven (responsiven)** in s
 ### Dostop do aplikacije
 
 Za dostop do aplikacije Optima Prevent v naslovno vrstico brskalnika vpišite **IP-naslov ali domensko ime strežnika**, na katerem je aplikacija nameščena. Ob prvem obisku vas sistem samodejno preusmeri na stran za prijavo.
+
+Za mobilno aplikacijo uporabite naslov `https://<strežnik>/mobile` in ne korenske strani spletnega sistema. Podrobnosti so v [priročniku za mobilno aplikacijo](../manual-mobile-sl.md).
 
 ### Obrazec za prijavo
 
@@ -37,6 +42,7 @@ Kadarkoli med delom v aplikaciji se na nadzorno ploščo vrnete s klikom na logo
 
     - **Stranke (zunanji uporabniki):** prijava poteka prek naslova `/mod-cust`
     - **Uporabniki e-testa:** prijava poteka prek naslova `/mod-etest`
+    - **Mobilna aplikacija (PWA):** vstopna stran je `/mobile`, e-test prijava pa `/mobile/etest/login`
 
     Standardni interni uporabniki se prijavljajo prek glavnega prijavnega naslova.
 

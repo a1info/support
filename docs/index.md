@@ -6,8 +6,8 @@
   <div class="op-cta">
     <a class="md-button" href="#podpora">Potrebujem podporo</a>
     <a class="md-button" href="manual-sl/prijava/">Priročnik - Splet</a>
-    <a class="md-button md-button--secondary" href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a>
-    <a class="md-button md-button--secondary" href="manual-api/">API Integracije</a>
+    <a class="md-button md-button--secondary" href="manual-mobile-sl/">Priročnik - Mobilna aplikacija (PWA)</a>
+    <a class="md-button md-button--secondary" href="manual-api/">API in integracije</a>
   </div>
 </div>
 
@@ -160,10 +160,10 @@ Optima Prevent omogoča tudi dostop za uporabnike strank, ki lahko pregledujejo 
     <h3>Uradni Priročniki</h3>
     <p>Odgovori na najpogostejša vprašanja in uradna navodila za module.</p>
     <ul>
-      <li><a href="manual-sl/uvod/">Priročnik - Spletni sistem</a></li>
-      <li><a href="manual-mobile-sl/">Priročnik - Mobilna Aplikacija</a></li>
-      <li><a href="manual-api/">Priročnik - API Integracije</a></li>
-      <li><a href="manual/faq/">FAQ in reševanje težav</a></li>
+      <li><a href="manual-sl/prijava/">Priročnik - Spletni sistem</a></li>
+      <li><a href="manual-mobile-sl/">Priročnik - Mobilna aplikacija (PWA)</a></li>
+      <li><a href="manual-api/">Priročnik - API in integracije</a></li>
+      <li><a href="faq-sl/">FAQ in reševanje težav</a></li>
       <li>Kontakt za podporo: <a href="mailto:svetovanje@optima-prevent.eu">svetovanje@optima-prevent.eu</a></li>
     </ul>
   </div>
