@@ -89,6 +89,7 @@ Poročilo prikazuje število in strukturo opravljenih aktivnosti v izbranem obdo
 | **Datum do** | Končni datum obdobja. |
 | **Stranka** | Neobvezno – omeji rezultate na določeno stranko. |
 | **Uporabnik** | Neobvezno – omeji rezultate na aktivnosti, ki jih je opravil določen uporabnik. |
+| **Skupina usposabljanj** | Neobvezno – omeji usposabljanja na izbrano skupino tipov usposabljanj. |
 
 Kliknite **Najdi** za prikaz poročila.
 
@@ -104,7 +105,7 @@ Kliknite **Najdi** za prikaz poročila.
 | **VPP – Gasilniki** | Pregledi ročnih gasilnikov |
 | **VPP – APZ** | Pregledi sistemov aktivne požarne zaščite |
 
-Pod diagramom so **podrobne tabele** za vsako kategorijo z zapisi, ki vključujejo stranko, tip, datum, veljavnost in izvajalca.
+Pod diagramom so **podrobne tabele** za vsako kategorijo z zapisi, ki vključujejo stranko, tip, datum, veljavnost in izvajalca. Stolpec **Usposabljanja** prikazuje skupno število udeležb, razdeljen pa je na temnejše segmente po skupinah tipov usposabljanj.
 
 !!! info "Tiskanje"
     Poročilo realizacije je optimizirano za tisk. Kliknite **Natisni** za pošiljanje poročila na tiskalnik ali shranitev kot PDF.

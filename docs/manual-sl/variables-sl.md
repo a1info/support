@@ -751,6 +751,7 @@ Tabela prikazuje usposabljanja, veljavna na `${onDate}`.
 | `${rowEduNrRep}` | Številka zapisnika |
 | `${rowEduName}` | Naziv usposabljanja |
 | `${rowEduType}` | Tip usposabljanja |
+| `${rowEduGroup}` | Skupina tipov usposabljanja |
 | `${rowEduBU}` | Poslovna enota |
 
 ### Pregledi delovne opreme — `${rowGdevNr}`
@@ -933,6 +934,7 @@ Predloge tipa `repy`. Podprta so letna, mesečna in obdobna poročila. Konec obd
 |---------------|-------|
 | `${rowCourseDate}` | Datum začetka |
 | `${rowCourseType}` | Tip tečaja |
+| `${rowCourseGroup}` | Skupina tipov usposabljanja |
 | `${rowCourseLoc}` | Lokacija |
 | `${rowCourseNrRep}` | Številka zapisnika |
 | `${rowCourseCnt}` | Število udeležencev |
@@ -948,6 +950,7 @@ Predloge tipa `repy`. Podprta so letna, mesečna in obdobna poročila. Konec obd
 | `${rowCourseAttWplace}` | Delovno mesto |
 | `${rowCourseAttBu}` | Poslovna enota |
 | `${rowCourseAttType}` | Tip usposabljanja |
+| `${rowCourseAttGroup}` | Skupina tipov usposabljanja |
 | `${rowCourseAttDate}` | Datum začetka |
 | `${rowCourseAttDateP}` | Datum praktičnega dela |
 | `${rowCourseAttPass}` | Opravil (DA/NE) |
@@ -1047,8 +1050,8 @@ Potekli zdravniški pregledi:
 
 | Blok | Spremenljivke |
 |------|---------------|
-| `${rowEduDate}` | `${rowEduNrPers}`, `${rowEduDate}`, `${rowEduNrRep}`, `${rowEduLname}`, `${rowEduType}` |
-| `${rowEduDateVPP}` | `${rowEduNrPersVPP}`, `${rowEduDateVPP}`, `${rowEduNrRepVPP}`, `${rowEduLnameVPP}`, `${rowEduTypeVPP}` |
+| `${rowEduDate}` | `${rowEduNrPers}`, `${rowEduDate}`, `${rowEduNrRep}`, `${rowEduLname}`, `${rowEduType}`, `${rowEduGroup}` |
+| `${rowEduDateVPP}` | `${rowEduNrPersVPP}`, `${rowEduDateVPP}`, `${rowEduNrRepVPP}`, `${rowEduLnameVPP}`, `${rowEduTypeVPP}`, `${rowEduGroupVPP}` |
 | `${rowNrGdev}` | `${rowNrDevGdev}`, `${rowDateGdev}`, `${rowNrGdev}`, `${rowLnameGdev}`, `${rowTypeGdev}` |
 | `${rowNameRas}` | `${rowDateRas}`, `${rowNameRas}`, `${rowLnameRas}` |
 | `${rowNameRassl}` | `${rowWpnameRassl}`, `${rowDateRassl}`, `${rowNameRassl}`, `${rowLnameRassl}` |
