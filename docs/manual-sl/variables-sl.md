@@ -707,116 +707,423 @@ Tabela 4 – Ukrepi, Korak 4 (cloneRow `${rowUkrCnt}`):
 
 ---
 
-## Kartica stranke (povzetek) — CustomercardController
+## Kartica stranke (stanje na dan) — CustomerSnapshotReportController
 
-Posamezne:
+Predloga tipa `card`. Generator uporablja datum **`${onDate}`**; vsi razdelki se filtrirajo na stanje na ta dan. Vrstice brez datumskega snapshota se ne izpišejo.
 
-- Sistem: `${sysName}`, `${sysAddress}`, `${sysCity}`
-- Stranka: `${cName}`, `${cNameFull}`, `${cAddress}`, `${cZip}`, `${cCity}`
-- Kontakti: `${cTel}`, `${cMail}`, `${cContact}`
-- Poslovna enota: `${locName}`, `${locAddress}`, `${locZip}`, `${locCity}`
-- Ostalo: `${cPersResp}`, `${cTaxNr}`, `${cRegId}`, `${cBusCode}`, `${cBusCodeName}`
+!!! info "Kaj pomeni »na dan«"
+    RASS, VPP dokumenti, VPP vaje evakuacije in Recot se vključijo, če je njihov datum evidence (`date_rep`, `date_create`, `date_test`) enak ali starejši od `${onDate}`. Prikazani so tudi zapisi, katerih veljavnost je na ta dan že potekla; datum veljavnosti ostane v tabeli. VPP odgovorne osebe nimajo datumskega snapshota in se ne izpišejo.
 
-Bloki:
+### Skupne spremenljivke
 
-- `${cloneRecot}` … `${/cloneRecot}` — kategorije “recot”
-  - Posamezne: `${recotCatName}`
-  - Tabela `${rowRecotName}`:
-    - `${rowRecotCnt}`, `${rowRecotName}`, `${rowRecotBU}`, `${rowRecotMntValid}`, `${rowRecotDate}`, `${rowRecotDesc}`, `${rowRecotResult}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${sysName}` | Naziv podjetja |
+| `${sysAddress}` | Naslov podjetja |
+| `${sysCity}` | Mesto podjetja |
+| `${onDate}` | Datum stanja (dd.mm.yyyy) |
+| `${cName}` | Naziv stranke |
+| `${cNameFull}` | Polni naziv stranke |
+| `${cAddress}` | Naslov sedeža |
+| `${cZip}` | Poštna številka |
+| `${cCity}` | Mesto |
+| `${cTel}` | Telefon glavnega kontakta |
+| `${cMail}` | E-pošta glavnega kontakta |
+| `${cContact}` | Ime in priimek glavnega kontakta |
+| `${cPersResp}` | Odgovorna oseba stranke |
+| `${cTaxNr}` | Davčna številka |
+| `${cRegId}` | Registrska številka |
+| `${cBusCode}` | Šifra dejavnosti |
+| `${cBusCodeName}` | Naziv dejavnosti |
+| `${locName}`, `${locAddress}`, `${locZip}`, `${locCity}` | Podatki poslovne enote, če je izbrana |
 
-Tabele:
+### Usposabljanja — `${rowEduDateStart}`
 
-- Usposabljanja (veljavnost):
-  - `${rowEduDateStart}`:
-    - `${rowEduCnt}`, `${rowEduNrPers}`, `${rowEduDateStart}`, `${rowEduDateEnd}`, `${rowEduMntValid}`, `${rowEduNrRep}`, `${rowEduName}`, `${rowEduType}`, `${rowEduBU}`
+Tabela prikazuje usposabljanja, veljavna na `${onDate}`.
 
-- Pregledi delovne opreme (skupine):
-  - `${rowGdevNr}`:
-    - `${rowGdevCnt}`, `${rowGdevNrDev}`, `${rowGdevDate}`, `${rowGdevDateValid}`, `${rowGdevNr}`, `${rowGdevBU}`, `${rowGdevType}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowEduCnt}` | Zaporedna številka |
+| `${rowEduNrPers}` | Število udeležencev |
+| `${rowEduDateStart}` | Datum začetka |
+| `${rowEduDateEnd}` | Datum poteka |
+| `${rowEduMntValid}` | Veljavnost v mesecih |
+| `${rowEduNrRep}` | Številka zapisnika |
+| `${rowEduName}` | Naziv usposabljanja |
+| `${rowEduType}` | Tip usposabljanja |
+| `${rowEduBU}` | Poslovna enota |
 
-- Meritve:
-  - `${rowMesNr}`:
-    - `${rowMesCnt}`, `${rowMesDate}`, `${rowMesDateEnd}`, `${rowMesMntValid}`, `${rowMesNr}`, `${rowMesBU}`, `${rowMesName}`, `${rowMesType}`
+### Pregledi delovne opreme — `${rowGdevNr}`
 
-- RASS skupine:
-  - `${rowRasName}`:
-    - `${rowRasCnt}`, `${rowRasDate}`, `${rowRasNr}`, `${rowRasName}`, `${rowRasBU}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowGdevCnt}` | Zaporedna številka |
+| `${rowGdevNrDev}` | Število naprav v skupini |
+| `${rowGdevDate}` | Datum pregleda |
+| `${rowGdevDateValid}` | Datum veljavnosti |
+| `${rowGdevNr}` | Številka zapisnika |
+| `${rowGdevBU}` | Poslovna enota |
+| `${rowGdevType}` | Tip pregleda |
 
-- VPP evakuacije:
-  - `${rowVppEvacDate}`:
-    - `${rowVppEvacCnt}`, `${rowVppEvacName}`, `${rowVppEvacDate}`, `${rowVppEvacDateValid}`, `${rowVppEvacObj}`, `${rowVppEvacLoc}`
+### Meritve — `${rowMesNr}`
 
-- VPP odgovorne osebe:
-  - `${rowVppRespName}`:
-    - `${rowVppRespCnt}`, `${rowVppRespName}`, `${rowVppRespDepart}`, `${rowVppRespShift}`, `${rowVppRespBU}`, `${rowVppRespObj}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowMesCnt}` | Zaporedna številka |
+| `${rowMesDate}` | Datum meritve |
+| `${rowMesDateEnd}` | Datum veljavnosti |
+| `${rowMesMntValid}` | Veljavnost v mesecih |
+| `${rowMesNr}` | Številka zapisnika |
+| `${rowMesBU}` | Poslovna enota |
+| `${rowMesName}` | Vrsta meritve |
+| `${rowMesType}` | Tip meritve |
 
-- VPP dokumenti:
-  - `${rowVppDocName}`:
-    - `${rowVppDocCnt}`, `${rowVppDocName}`, `${rowVppDocCatName}`, `${rowVppDocDate}`, `${rowVppDocObj}`, `${rowVppDocMntValid}`
+### RASS skupine — `${rowRasName}`
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowRasCnt}` | Zaporedna številka |
+| `${rowRasDate}` | Datum ocene tveganja |
+| `${rowRasNr}` | Številka zapisnika |
+| `${rowRasName}` | Naziv / revizija |
+| `${rowRasBU}` | Poslovna enota |
+
+### VPP vaje evakuacije — `${rowVppEvacDate}`
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowVppEvacCnt}` | Zaporedna številka |
+| `${rowVppEvacObj}` | VPP objekt |
+| `${rowVppEvacName}` | Naziv vaje / zapisnik |
+| `${rowVppEvacLoc}` | Lokacija vaje |
+| `${rowVppEvacDate}` | Datum vaje |
+| `${rowVppEvacDateValid}` | Datum poteka |
+
+### VPP dokumenti — `${rowVppDocName}`
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowVppDocCnt}` | Zaporedna številka |
+| `${rowVppDocObj}` | VPP objekt |
+| `${rowVppDocName}` | Naziv dokumenta |
+| `${rowVppDocCatName}` | Kategorija dokumenta |
+| `${rowVppDocDate}` | Datum dokumenta |
+| `${rowVppDocMntValid}` | Veljavnost v mesecih |
+
+### Ostale evidence (Recot) — `${cloneRecot}` … `${/cloneRecot}`
+
+Blok se ponovi za vsako izbrano kategorijo evidence.
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${recotCatName}` | Naziv kategorije |
+| `${rowRecotCnt}` | Zaporedna številka |
+| `${rowRecotName}` | Naziv / revizija |
+| `${rowRecotBU}` | Poslovna enota |
+| `${rowRecotMntValid}` | Veljavnost v mesecih |
+| `${rowRecotDate}` | Datum dokumenta |
+| `${rowRecotDesc}` | Opis |
+| `${rowRecotResult}` | Rezultat |
+
+### VPP odgovorne osebe — neuporabljeno
+
+`${rowVppRespCnt}`, `${rowVppRespObj}`, `${rowVppRespName}`, `${rowVppRespDepart}`, `${rowVppRespShift}`, `${rowVppRespBU}` so še lahko v starih predlogah, vendar jih generator kartice ne polni. Ker tabela `vppresp` nima datumskega snapshota, se vrstica odstrani; naslov razdelka v predlogi ostane prazen.
+
+### Kartica »Zaposleni in oprema na dan« — predloga 158
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${onDate}` | Datum stanja |
+| `${cName}`, `${cAddress}`, `${cZip}`, `${cCity}`, `${cTaxNr}` | Podatki stranke |
+| `${nDevices}` | Število naprav, veljavnih na dan |
+| `${nEmployees}` | Število aktivnih zaposlenih na dan |
+| `${rowDevCnt}` | Zaporedna številka naprave |
+| `${rowDevName}` | Naziv naprave |
+| `${rowDevType}` | Tip pregleda |
+| `${rowDevBU}` | Poslovna enota |
+| `${rowDevDate}` | Datum pregleda |
+| `${rowDevDateValid}` | Veljavno do |
+| `${rowDevNr}` | Številka zapisnika |
+| `${rowEmpCnt}` | Zaporedna številka zaposlenega |
+| `${rowEmpName}` | Ime in priimek |
+| `${rowEmpDepart}` | Oddelek |
+| `${rowEmpPos}` | Delovno mesto |
+| `${rowEmpDateEmp}` | Datum zaposlitve |
+| `${rowEmpTel}` | Telefon |
 
 ---
 
-## Letno poročilo za stranke (obvestilo) — ReportcustnoticeController
+## Periodično poročilo za stranke — CustomerPeriodReportController
 
-Posamezne:
+Predloge tipa `repy`. Podprta so letna, mesečna in obdobna poročila. Konec obdobja (`${cPeriodEnd}`) je mejnik za izračune in za vsebine, vezane na datum.
 
-- Lokacija ali stranka (glava): `${locName}`, `${locAddress}`, `${locZip}`, `${locCity}`
-- Stranka (glava): `${cName}`, `${cAddress}`, `${cZip}`, `${cCity}`
-- Kontakt in identifikacija:
-  - `${cContact}` Odgovorna oseba (glavni kontakt ali fallback na customer.contact)
-  - `${cTaxNr}`, `${cRegId}`, `${cBusCode}`, `${cBusCodeName}`
-  - `${nrProg}` Program(i) usposabljanja (če obstajajo; več programov ločenih z vejico)
-  - `${cPersResp}`, `${cPersMed}` (iz RASS)
+!!! info "Zapadla VZD/VPP usposabljanja"
+    Predloga prikaže vse aktivne zaposlene po obratih. Upošteva najnovejše usposabljanje, katerega teoretični začetek in praktični del sta do `${cPeriodEnd}`; prihodnji tečaji se ne upoštevajo. `${rowRok}` je prejšnji od `${rowVzdTeor}` in `${rowVzdPrakt}`.
 
-Tabele — usposabljanja (v letu):
+### Skupne in obdobne spremenljivke
 
-- `${rowEduDate}`:
-  - `${rowEduNrPers}`, `${rowEduDate}`, `${rowEduNrRep}`, `${rowEduLname}`, `${rowEduType}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${cName}`, `${cAddress}`, `${cCity}` | Podatki stranke |
+| `${cTaxNr}`, `${cRegId}`, `${cBusCodeName}` | Davčna številka, registrska številka, dejavnost |
+| `${cPersResp}`, `${cPersMed}` | Odgovorna oseba in pooblaščeni zdravnik iz RASS |
+| `${cYear}` | Leto (pri obdobju prazno) |
+| `${cMonth}` | Mesec (samo mesečno poročilo) |
+| `${cPeriod}` | Leto, mesec ali datumsko obdobje |
+| `${cPeriodPrep}` | Predlog »za leto«, »za mesec« ali »za obdobje« |
+| `${cPeriodTitle}` | Naslov, npr. LETNO POROČILO |
+| `${cPeriodType}` | »letno poročilo«, »mesečno poročilo« ali »poročilo« |
+| `${cPeriodIn}` | »v letu …«, »v mesecu …« ali »v obdobju …« |
+| `${cPeriodAcc}` | »LETO …«, »MESEC …« ali »OBDOBJE …« |
+| `${cPeriodStart}` | Začetek obdobja |
+| `${cPeriodEnd}` | Konec obdobja |
+| `${cDatePrint}` | Datum izpisa |
 
-Tabele — usposabljanja za VPP (v letu):
+### Pregledi delovne opreme
 
-- `${rowEduDateVPP}`:
-  - `${rowEduNrPersVPP}`, `${rowEduDateVPP}`, `${rowEduNrRepVPP}`, `${rowEduLnameVPP}`, `${rowEduTypeVPP}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowDevInspBuName}` | Obrat / poslovna enota |
+| `${rowDevInspPPCnt}` | Število preventivnih pregledov |
+| `${rowDevInspPPCert}` | Število izdanih potrdil za preventivne preglede |
+| `${rowDevInspKPCnt}` | Število kontrolnih / prvih pregledov |
+| `${rowDevInspKPCert}` | Število izdanih potrdil za kontrolne / prve preglede |
+| `${cDevInspCnt}` | Skupaj pregledanih naprav |
+| `${cDevCertCnt}` | Skupaj izdanih potrdil |
 
-Tabele — usposabljanja s potekom do konca naslednjega leta:
+### Delovna oprema, ki ne izpolnjuje pogojev
 
-- `${rowEduDateExpP}`:
-  - `${rowEduNrPersP}`, `${rowEduDateP}`, `${rowEduDateExpP}`, `${rowEduNrRepP}`, `${rowEduLnameP}`, `${rowEduTypeP}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowDevNoncCode}` | Šifra |
+| `${rowDevNoncName}` | Naziv opreme |
+| `${rowDevNoncSerial}` | Tovarniška številka |
+| `${rowDevNoncNrDev}` | Številka stroja |
+| `${rowDevNoncManuf}` | Proizvajalec |
+| `${rowDevNoncModel}` | Tip / model |
+| `${rowDevNoncDate}` | Datum pregleda |
+| `${rowDevNoncCert}` | Številka zapisnika |
+| `${rowDevNoncPass}` | Rezultat pregleda |
+| `${rowDevNoncDateValid}` | Datum naslednjega pregleda |
+| `${rowDevNoncNote}` | Opombe |
+| `${rowDevNoncLoc}` | Lokacija |
+| `${cDevNoncCnt}` | Število neskladnih naprav |
 
-Tabele — pregledi delovne opreme (v letu):
+### Meritve
 
-- `${rowNrGdev}`:
-  - `${rowNrDevGdev}`, `${rowDateGdev}`, `${rowNrGdev}`, `${rowLnameGdev}`, `${rowTypeGdev}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowDateMes}` | Datum meritve |
+| `${rowTypeMes}` | Vrsta meritve |
+| `${rowLnameMes}` | Poslovna enota |
+| `${rowNrMes}` | Številka zapisnika |
+| `${rowValidMes}` | Veljavnost v mesecih |
 
-Tabele — pregledi delovne opreme s potekom do konca naslednjega leta:
+### Usposabljanja po obratih
 
-- `${rowNrGdevP}`:
-  - `${rowNrDevGdevP}`, `${rowDateGdevP}`, `${rowDateExpGdevP}`, `${rowNrGdevP}`, `${rowLnameGdevP}`, `${rowTypeGdevP}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowEduBuName}` | Obrat / poslovna enota |
+| `${rowEduBuTeorCnt}` | Število udeležencev — teorija |
+| `${rowEduBuPraktCnt}` | Število udeležencev — praksa |
 
-Tabele — meritve (v letu):
+### Tečaji v obdobju
 
-- `${rowNrMes}`:
-  - `${rowDateMes}`, `${rowValidMes}`, `${rowNrMes}`, `${rowLnameMes}`, `${rowTypeMes}`, `${rowTypeCheckMes}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowCourseDate}` | Datum začetka |
+| `${rowCourseType}` | Tip tečaja |
+| `${rowCourseLoc}` | Lokacija |
+| `${rowCourseNrRep}` | Številka zapisnika |
+| `${rowCourseCnt}` | Število udeležencev |
+| `${rowCoursePraktCnt}` | Število udeležencev praktičnega dela |
+| `${cCourseCnt}` | Število tečajev v obdobju |
 
-Tabele — meritve s potekom do konca naslednjega leta:
+### Udeleženci tečajev
 
-- `${rowNrMesP}`:
-  - `${rowDateMesP}`, `${rowDateExpMesP}`, `${rowValidMesP}`, `${rowNrMesP}`, `${rowLnameMesP}`, `${rowTypeMesP}`, `${rowTypeCheckMesP}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowCourseAttName}` | Ime in priimek |
+| `${rowCourseAttBirth}` | Datum rojstva |
+| `${rowCourseAttWplace}` | Delovno mesto |
+| `${rowCourseAttBu}` | Poslovna enota |
+| `${rowCourseAttType}` | Tip usposabljanja |
+| `${rowCourseAttDate}` | Datum začetka |
+| `${rowCourseAttDateP}` | Datum praktičnega dela |
+| `${rowCourseAttPass}` | Opravil (DA/NE) |
+| `${rowCourseAttDateValid}` | Datum veljavnosti |
+| `${cCourseAttCnt}` | Število udeležencev |
 
-Tabele — RASS skupine:
+### Funkcionalno znanje
 
-- `${rowNameRas}`:
-  - `${rowDateRas}`, `${rowNrRas}`, `${rowNameRas}`, `${rowLnameRas}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowFuncKnowName}` | Tip usposabljanja |
+| `${rowFuncKnowCnt}` | Število zaposlenih z veljavnim usposabljanjem |
 
-Tabele — VPP dokumenti:
+### Zaposleni brez veljavnega VZD/VPP usposabljanja
 
-- `${rowDocName}`:
-  - `${rowDocName}`, `${rowDocType}`, `${rowDocDate}`, `${rowDocSo}`, `${rowDocBu}`, `${rowDocLoc}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowTinpName}` | Ime in priimek |
+| `${rowTinpBirth}` | Datum rojstva |
+| `${rowTinpCode}` | Šifra BVD |
+| `${rowTinpCost}` | Šifra DM |
+| `${rowTinpWplace}` | Delovno mesto |
+| `${rowTinpBu}` | Poslovna enota |
+| `${rowTinpMnt}` | Veljavnost v mesecih |
+| `${rowTinpDateTeor}` | Veljavnost teorije |
+| `${rowTinpDatePrakt}` | Veljavnost prakse |
+| `${cTinpCnt}` | Število zaposlenih brez veljavnega usposabljanja |
 
-Tabele — VPP evakuacije:
+### Poškodbe pri delu
 
-- `${rowEvacBu}`:
-  - `${rowEvacDate}`, `${rowEvacBu}`, `${rowEvacLoc}`
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowAccidentDate}` | Datum poškodbe |
+| `${rowAccidentReg}` | Registrska številka |
+| `${rowAccidentEmp}` | Šifra zaposlenega |
+| `${rowAccidentName}` | Ime in priimek |
+| `${rowAccidentBirth}` | Datum rojstva |
+| `${rowAccidentWplace}` | Delovno mesto |
+| `${rowAccidentBu}` | Poslovna enota |
+| `${rowAccidentLoc}` | Lokacija |
+| `${rowAccidentInjury}` | Vrsta poškodbe |
+| `${rowAccidentCause}` | Vzrok |
+| `${rowAccidentManner}` | Način nastanka |
+| `${rowAccidentBody}` | Poškodovani del telesa |
+| `${rowAccidentDevice}` | Naprava / sredstvo |
+| `${rowAccidentDesc}` | Opis |
+| `${cAccidentCnt}` | Število poškodb |
+
+### Zdravniški pregledi
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowMedicDate}` | Datum pregleda |
+| `${rowMedicType}` | Vrsta pregleda |
+| `${rowMedicReason}` | Razlog |
+| `${rowMedicName}` | Ime in priimek |
+| `${rowMedicBirth}` | Datum rojstva |
+| `${rowMedicCode}` | Šifra |
+| `${rowMedicCost}` | Stroškovno mesto |
+| `${rowMedicWplace}` | Delovno mesto |
+| `${rowMedicBu}` | Poslovna enota |
+| `${rowMedicMnt}` | Veljavnost v mesecih |
+| `${rowMedicDateValid}` | Datum veljavnosti |
+| `${cMedicCnt}` | Število pregledov |
+
+Potekli zdravniški pregledi:
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowMedicExpType}` | Vrsta pregleda |
+| `${rowMedicExpReason}` | Razlog |
+| `${rowMedicExpName}` | Ime in priimek |
+| `${rowMedicExpBirth}` | Datum rojstva |
+| `${rowMedicExpCode}` | Šifra |
+| `${rowMedicExpCost}` | Stroškovno mesto |
+| `${rowMedicExpWplace}` | Delovno mesto |
+| `${rowMedicExpBu}` | Poslovna enota |
+| `${rowMedicExpDateExam}` | Datum pregleda |
+| `${rowMedicExpDateValid}` | Datum veljavnosti |
+| `${cMedicExpCnt}` | Število poteklih pregledov |
+
+### VPP dokumenti in vaje evakuacije
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowDocName}` | Naziv dokumenta |
+| `${rowDocType}` | Tip dokumenta |
+| `${rowVppDocDate}` | Datum dokumenta |
+| `${rowDocBu}` | Objekt / poslovna enota |
+| `${rowDocLoc}` | Lokacija |
+| `${rowEvacName}` | Naziv vaje / zapisnik |
+| `${rowEvacDate}` | Datum vaje |
+| `${rowEvacLoc}` | VPP objekt |
+| `${rowEvacBu}` | Lokacija / poslovna enota |
+
+### Drugi podprti bloki periodičnih predlog
+
+| Blok | Spremenljivke |
+|------|---------------|
+| `${rowEduDate}` | `${rowEduNrPers}`, `${rowEduDate}`, `${rowEduNrRep}`, `${rowEduLname}`, `${rowEduType}` |
+| `${rowEduDateVPP}` | `${rowEduNrPersVPP}`, `${rowEduDateVPP}`, `${rowEduNrRepVPP}`, `${rowEduLnameVPP}`, `${rowEduTypeVPP}` |
+| `${rowNrGdev}` | `${rowNrDevGdev}`, `${rowDateGdev}`, `${rowNrGdev}`, `${rowLnameGdev}`, `${rowTypeGdev}` |
+| `${rowNameRas}` | `${rowDateRas}`, `${rowNameRas}`, `${rowLnameRas}` |
+| `${rowNameRassl}` | `${rowWpnameRassl}`, `${rowDateRassl}`, `${rowNameRassl}`, `${rowLnameRassl}` |
+
+### Posebne periodične predloge
+
+#### Poškodbe pri delu — `sij-poskodbe` in `ostali-poskodbe`
+
+Blok `${blockAccBu}` … `${/blockAccBu}` se ponovi za vsak obrat.
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowAccBuName}` | Naziv obrata |
+| `${rowAccBuCnt}` | Število zapisov v obratu |
+| `${rowAccidentNr}` | Zaporedna številka |
+| `${rowAccidentReg}` | Registrska številka |
+| `${rowAccidentEmp}` | Šifra zaposlenega |
+| `${rowAccidentName}` | Ime in priimek |
+| `${rowAccidentBirth}` | Datum rojstva |
+| `${rowAccidentWplace}` | Delovno mesto |
+| `${rowAccidentDate}` | Datum poškodbe |
+| `${rowAccidentCause}` | Vzrok |
+| `${rowAccidentManner}` | Način nastanka |
+| `${rowAccidentInjury}` | Vrsta poškodbe |
+| `${rowAccidentBody}` | Poškodovani del telesa |
+| `${rowAccidentDesc}` | Opis (v predlogi `sij-poskodbe` je na voljo tudi `${rowAccidentDescRow}`) |
+| `${cName}` | Stranka |
+| `${cAccidentCnt}` | Število poškodb |
+| `${cPeriodStart}`, `${cPeriodEnd}` | Meje obdobja |
+| `${cDatePrint}` | Datum izpisa |
+
+#### Zapadla delovna oprema po podjetjih — `Zapadla delovna oprema po podjetjih`
+
+Blok `${blockAccBu}` … `${/blockAccBu}` se ponovi za vsak obrat.
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowAccBuName}` | Naziv obrata |
+| `${rowDevNr}` | Zaporedna številka |
+| `${rowDevBvd}` | Šifra BVD |
+| `${rowDevName}` | Naziv opreme |
+| `${rowDevFactoryNr}` | Tovarniška številka |
+| `${rowDevMachineNr}` | Številka stroja |
+| `${rowDevManufacturer}` | Proizvajalec |
+| `${rowDevDate}` | Datum pregleda |
+| `${rowDevReportNo}` | Številka zapisnika |
+| `${rowDevStatus}` | Status |
+| `${rowDevNextDate}` | Naslednji pregled |
+| `${rowDevResult}` | Rezultat |
+| `${rowDevLocation}` | Lokacija |
+| `${cName}` | Stranka |
+| `${cPeriodStart}`, `${cPeriodEnd}` | Meje obdobja |
+| `${cDatePrint}` | Datum izpisa |
+
+#### Zapadla VZD/VPP usposabljanja — `Zapadla VZD VPP usposabljanja`
+
+Blok `${blockAccBu}` … `${/blockAccBu}` se ponovi za vsak obrat.
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `${rowAccBuName}` | Naziv obrata |
+| `${rowAccBuCnt}` | Število zaposlenih v obratu |
+| `${rowTrainingNr}` | Zaporedna številka |
+| `${rowName}` | Ime in priimek |
+| `${rowDateBirth}` | Datum rojstva |
+| `${rowBvd}` | Šifra BVD |
+| `${rowDm}` | Šifra DM |
+| `${rowSm}` | Šifra SM |
+| `${rowWorkPlace}` | Delovno mesto |
+| `${rowRok}` | Prejšnji od datumov veljavnosti teorije in prakse |
+| `${rowVzdTeor}` | Veljavnost teoretičnega dela |
+| `${rowVzdPrakt}` | Veljavnost praktičnega dela |
+| `${cName}` | Stranka |
+| `${cPeriodStart}`, `${cPeriodEnd}` | Meje obdobja |
+| `${cDatePrint}` | Datum izpisa |
 
 ---
 

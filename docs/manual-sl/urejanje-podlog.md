@@ -76,6 +76,11 @@ Podprti tipi dokumentov:
 | **delovna oprema** | Zapisniki pregledov delovne opreme, certifikati |
 | **meritve** | Poročila o meritvah (hrup, osvetljenost, kemikalije …) |
 | **ocena tveganja** | Dokumenti ocene tveganja po delovnih mestih |
+| **kartica stranke** (`card`) | Kartica stanja stranke na izbrani dan |
+| **periodično poročilo** (`repy`) | Letno, mesečno ali obdobno poročilo za stranko |
+
+!!! info "Poročila za stranke"
+    Predlogi tipov `card` in `repy` se izbereta na zaslonu **Analitika → Poročila za stranke**. Seznam njunih spremenljivk je v [Legendi spremenljivk](variables-sl.md).
 
 ### Vrste spremenljivk
 

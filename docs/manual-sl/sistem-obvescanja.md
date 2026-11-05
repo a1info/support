@@ -65,7 +65,7 @@ Pri dogodkih z oznako **osebno** (npr. e-vabilo, odločitev o dopustu, opomnik z
 
 ### Stranke brez pravila
 
-Nad seznamom pravil je obvestilo s številom **strank brez pravila** in hitrim izbirnikom. Izberite vrsto pravila in stranko, nato kliknite **Novo pravilo**; obrazec se odpre s predizbrano stranko in vrsto.
+Zavihek **Brez pravil** prikazuje stranke, ki nimajo nobenega pravila. V zavihku je iskalnik, pri vsaki stranki pa gumba **Periodično** in **Dogodkovno**, ki odpreta nov obrazec s predizbrano stranko in vrsto. Število strank je prikazano na zavihku, na zavihku **Pravila** pa je hitra povezava do seznama.
 
 !!! info "Zamujeno pošiljanje (catch-up)"
     Če urnik ob načrtovani uri ni tekel (npr. strežnik nedosegljiv), sistem periodično obvestilo nadoknadi **na kasnejši dan istega tedna oz. meseca**. Vsako pravilo se v enem obdobju pošlje **največ enkrat** (zaščita pred podvojenimi sporočili). Če ob pošiljanju ni podatkov, se obdobje ne zaključi – sistem kasneje v obdobju znova preveri.

@@ -110,6 +110,7 @@ Sistem Optima Prevent vključuje naslednje glavne module:
       <li>Pregled realizacije</li>
       <li>Izdani dokumenti</li>
       <li>Poročila po dejavnosti</li>
+      <li>Poročila za stranke</li>
     </ul>
   </div>
   <div class="op-card">

@@ -190,6 +190,17 @@ V spustnem seznamu predlog je predloga, ki je bila **zadnjič uporabljena** za t
 
 ---
 
+## Poročilo o zapadlih VZD/VPP usposabljanjih
+
+Poročilo je del zaslona **Analitika → Poročila za stranke** (profil **Periodično poročilo**, predloga **Zapadla VZD VPP usposabljanja**).
+
+- Prikaže vse aktivne zaposlene po obratih.
+- Konec izbranega obdobja je mejnik: upošteva se najnovejše usposabljanje, katerega teoretični začetek in praktični del sta bila opravljena do tega datuma. Prihodnji tečaji se ne upoštevajo.
+- `Rok usp. VZD/VPP` je prejšnji od datumov veljavnosti teoretičnega in praktičnega dela.
+- Zaposleni brez usposabljanja so prikazani s praznimi datumi.
+
+Spremenljivke predloge so opisane v [Legendi spremenljivk](variables-sl.md).
+
 ## Oddaljeno usposabljanje (E-test)
 
 E-test omogoča zaposlenim, da usposabljanje in preverjanje znanja opravijo na daljavo – iz pisarne, doma ali s terena.

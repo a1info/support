@@ -204,41 +204,62 @@ Na dnu tabele so prikazane **vsote** za vse dejavnosti skupaj.
 
 ---
 
-## Letno poročilo za stranko
+## Poročila za stranke
 
-Modul omogoča generiranje prilagojenega dokumenta Word (**DOCX**) z letnim povzetkom vseh aktivnosti za izbrano stranko.
+Zaslon združuje dve vrsti DOCX poročil za izbrano stranko:
+
+- **Kartica stranke** – stanje na izbrani dan (snapshot).
+- **Periodično poročilo** – letno, mesečno ali obdobno poročilo o opravljenih aktivnostih in veljavnostih.
 
 ### Dostop
 
-**Analitika → Letno poročilo za stranko**
+**Analitika → Poročila za stranke**
 
-### Obrazec za iskanje
+Stari povezavi `/report/customercard` in `/report/custreport/index` se samodejno preusmerita na nov zaslon.
+
+### Obrazec za izbiro
 
 | Polje | Opis |
 |-------|------|
-| **Stranka** | Izberite stranko, za katero se pripravi poročilo. |
-| **Leto** | Leto, za katerega se podatki zberejo in združijo. |
-| **Poslovna enota** | Neobvezno – omejite poročilo na določeno PE stranke. |
-| **Predloga za izpis** | Izberite Wordovo predlogo, ki določa strukturo, glavo, pisavo in razporeditev vsebine. |
+| **Stranka** | Stranka, za katero se pripravi poročilo. |
+| **Skrbnik** | Neobvezno omeji seznam strank na skrbnika. |
+| **Vrsta poročila** | **Kartica stranke (na dan)** ali **Poročilo stranki (Period)**. |
+| **Poslovna enota** | Neobvezno omeji poročilo na izbrano PE. |
+| **Predloga za izpis** | Prikažejo se samo predloge, ki ustrezajo izbrani vrsti poročila. |
+| **Na dan** | Samo kartica stranke; datum stanja, privzeto današnji dan. |
+| **Vključi ostale evidence** | Samo kartica stranke; izberite kategorije evidenc, ki jih želite dodati. |
+| **Period** | Samo periodično poročilo: **Letno**, **Mesečno** ali **Obdobje**. |
+| **Leto / Mesec / Datum od–do** | Glede na izbrano obdobje. |
 
-Kliknite **Ustvari poročilo**. Datoteka DOCX se samodejno prenese na vaš računalnik in **se ne shrani v sistem**.
+Po izbiri kliknite **Ustvari poročilo**. Datoteka DOCX se prenese na računalnik in se ne shrani v sistem.
 
-### Vsebina poročila
+### Kartica stranke (stanje na dan)
 
-Generirani dokument vključuje:
+Kartica prikazuje stanje na datum **Na dan**:
 
-| Razdelek | Vsebina |
-|----------|---------|
-| **Podatki o stranki** | Naziv, naslov, kontaktna oseba, davčna in matična številka, šifra dejavnosti. |
-| **Usposabljanja** | Izvedena usposabljanja z datumom, številko zapisnika, številom udeležencev, lokacijo in tipom. |
-| **Delovna oprema** | Pregledane skupine z datumom, zapisnikom, lokacijo, tipom pregleda in številom kosov. |
-| **Meritve** | Meritve okolja in elektro z veljavnostjo, zapisnikom, lokacijo in tipom meritve. |
-| **Ocene tveganj** | Skupini RASS ocene tveganj s ključnimi ugotovitvami. |
-| **Požarna varnost** | Dokumenti VPP in evidence vaj evakuacije. |
-| **Prihodnji poteki** | Pregled aktivnosti, ki potečejo v naslednjem letu *(odvisno od predloge)*. |
+- usposabljanja, katerih veljavnost na ta dan še traja,
+- preglede delovne opreme in meritve, veljavne na ta dan,
+- RASS skupine, VPP dokumente, VPP vaje evakuacije in ostale evidence (Recot), ki so bili izdani ali izvedeni na ta dan ali prej.
 
-!!! info "Predloge za izpis"
-    Natančna postavitev, izbrani razdelki in oblikovanje so odvisni od **izbrane predloge**. Predloge pripravi in vzdržuje administrator sistema. Kontaktirajte skrbnika, če pogrešate določeno vsebino v poročilu.
+Pri RASS/VPP/Recot se upošteva datum evidence (`date_rep`, `date_test`, `date_create`), ne datum veljavnosti. Zato so v izpisu lahko tudi evidence, ki so na izbrani dan že potekle; njihov datum veljavnosti je viden v tabeli. Evidence brez datumskega snapshota (VPP odgovorne osebe) se v kartici ne izpišejo.
 
-!!! tip
-    Letno poročilo je primerno za letne sestanke z naročnikom ali kot priložek k pogodbi o storitvah.
+### Periodično poročilo
+
+Periodično poročilo je namenjeno letnemu, mesečnemu ali obdobnemu pregledu opravljenih aktivnosti. Konec izbranega obdobja je hkrati mejnik za izračune:
+
+- RASS, RASSL, VPP dokumenti in VPP vaje evakuacije se upoštevajo le, če so z datumom znotraj izbranega obdobja.
+- Poročilo **Zapadla VZD/VPP usposabljanja** prikaže vse aktivne zaposlene po obratih. Upošteva najnovejše usposabljanje, katerega teoretični začetek in praktični del sta bila opravljena do konca obdobja; prihodnji tečaji se ne upoštevajo.
+- `Rok usp. VZD/VPP` je prejšnji od datumov veljavnosti teoretičnega in praktičnega dela.
+
+### Predloge
+
+| Predloga | Vrsta | Namen |
+|----------|-------|-------|
+| `ccard` | Kartica stranke | Celovita kartica stranke: usposabljanja, oprema, meritve, RASS, VPP, Recot. |
+| `zaposl opreme na dan` | Kartica stranke | Stanje naprav in zaposlenih na izbrani dan. |
+| `letno por - bvd` | Periodično | Letno/periodično poročilo o opravljenih aktivnostih. |
+| `sij-poskodbe`, `ostali-poskodbe` | Periodično | Poročilo o poškodbah pri delu. |
+| `Zapadla delovna oprema po podjetjih` | Periodično | Pregled delovne opreme, ki zapade v izbranem obdobju. |
+| `Zapadla VZD VPP usposabljanja` | Periodično | Pregled zapadlih VZD/VPP usposabljanj po zaposlenih in obratih. |
+
+Natančna vsebina je odvisna od predloge; spremenljivke so opisane v [Legendi spremenljivk](variables-sl.md).
