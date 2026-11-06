@@ -5,6 +5,7 @@
 Uporabniški vmesnik aplikacije Optima Prevent je razdeljen na več ključnih navigacijskih področij:
 
 - **Glavni levi meni** – vsebuje funkcionalne sklope v obliki padajočih menijev (npr. Zaposleni, Delovna oprema, Usposabljanje, Evidence idr.). Meni je vedno dosegljiv na levi strani zaslona.
+- **Meni ERP** – podmeni je razporejen: **Ponudbe → Finance → Pogodbe → Storitve → Cenik po strankah**.
 - **Zgornji uporabniški meni** – desno zgoraj se nahajajo ikone za obvestila (zvonček), interna sporočila (ovojnica), meni profila in odjava.
 - **Izbirnik aktivne stranke** – nahaja se v zgornjem desnem delu zaslona in je **ključen za delovanje aplikacije**.
 

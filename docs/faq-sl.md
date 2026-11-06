@@ -173,6 +173,26 @@ Za pripravo letnega poročila:
 4. Generirajte poročilo v obliki tabele ali grafa
 5. Izvozite v PDF ali Excel za nadaljnjo uporabo
 
+## Dokumentni tok in Finance
+
+### Kje vidim potrjene zapisnike?
+Potrjeni zapisniki so prikazani v **ERP → Finance**. Privzeto so prikazani samo potrjeni dokumenti; s filtrom **Prikaži vse dokumente** lahko prikažete tudi osnutke in dokumente v potrjevanju.
+
+### Zakaj zapisnika ne vidim v Finance?
+- Zapisnik je še v osnutku ali v potrjevanju — vklopite filter **Prikaži vse dokumente**.
+- Za stranko je nastavljen dokumentni tok, zapisnik pa še ni bil poslan v potrditev.
+- Zapisnik je zavrnjen ali v popravku — najprej ga je treba popraviti in ponovno poslati.
+- Če za stranko ni aktivnega toka, bi moral biti zapisnik samodejno potrjen; osvežite stran in preverite nastavitve.
+
+### Ali se zapisnik samodejno potrdi?
+Da, če za stranko in modul ni aktivnega dokumentnega toka. Če je tok nastavljen, je treba zapisnik poslati v potrditev in počakati na odločitev potrjevalcev.
+
+### Ali komentarji blokirajo potrditev?
+Ne. Potrjevalec lahko dokument potrdi tudi ob odprtih komentarjih. Komentarji so vidni v Finance, status pa je **Odprto / Narejeno / Preklicano**.
+
+### Ali Finance izdaja račune?
+V trenutni različici ne. Finance prikazuje potrjene dokumente in omogoča označevanje statusa **Odprto / Narejeno / Preklicano**. Izdelava računov je predvidena v naslednji fazi.
+
 ## Podpora in nadgradnje
 
 ### Kako prijavim težavo v programu?

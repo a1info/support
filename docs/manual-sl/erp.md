@@ -1,21 +1,24 @@
-# ERP (Upravljanje ponudb, pogodb in storitev)
+# ERP (Upravljanje ponudb, pogodb, storitev in financ)
 
-Modul **ERP** je namenjen centraliziranemu vodenju prodajnih aktivnosti. Omogoča upravljanje šifranta storitev, pripravo in izdajanje ponudb, vodenje dolgoročnih pogodb s strankami ter spremljanje obračunskih obdobij.
+Modul **ERP** je namenjen centraliziranemu vodenju prodajnih aktivnosti. Omogoča upravljanje šifranta storitev, pripravo in izdajanje ponudb, vodenje dolgoročnih pogodb s strankami ter spremljanje obračunskih obdobij in pregled potrjenih dokumentov v modulu **Finance**.
 
 ---
 
 ## Pregled modula
 
-ERP modul združuje naslednje sklope, ki med seboj sodelujejo pri pripravi prodajne dokumentacije:
+ERP modul združuje naslednje sklope, ki med seboj sodelujejo pri pripravi prodajne in finančne dokumentacije:
 
+- **Ponudbe:** priprava ponudb z izvozom v Word (Docx) in Excel.
+- **Finance:** skupni pregled potrjenih dokumentov iz usposabljanja, delovne opreme in ERP.
+- **Pogodbe:** evidenca naročniških razmerij z obračunskimi obdobji, priponkami ter izvozom v Excel.
 - **Storitve (šifrant):** osnovna baza storitev in produktov.
 - **Cenik po strankah:** posebne cene in popusti storitev za posamezne stranke.
-- **Ponudbe:** priprava ponudb z izvozom v Word (Docx) in Excel.
-- **Pogodbe:** evidenca naročniških razmerij z obračunskimi obdobji, priponkami ter izvozom v Excel.
 
 ### Dostop in pravice
 
 **Glavni meni → ERP**
+
+Podmeni je razporejen: **Ponudbe → Finance → Pogodbe → Storitve → Cenik po strankah**.
 
 Vidnost posameznih sklopov modula je odvisna od dodeljenih pravic:
 
@@ -24,8 +27,9 @@ Vidnost posameznih sklopov modula je odvisna od dodeljenih pravic:
 | `view_erp_service` / `manage_erp_service` | Storitve (šifrant) |
 | `view_erp_offer` / `manage_erp_offer` | Ponudbe in cenik po strankah |
 | `view_erp_contract` / `manage_erp_contract` | Pogodbe |
+| `view_erp_finance` / `manage_erp_finance` | Finance – potrjeni dokumenti |
 
-Pravice se dodeljujejo prek vlog uporabnikov (glejte poglavje *Uporabniki in pravice*). Modul ERP je vključen v licenčna paketa **1** in **9** (glejte poglavje *Sistemske nastavitve*).
+Pravice za Finance niso del privzetih pravic uporabnika/operaterja; privzeto jih imata **admin** in **superadmin**. Dodelite jih finančni vlogi. Pravice se dodeljujejo prek vlog uporabnikov (glejte poglavje *Uporabniki in pravice*). Modul ERP je vključen v licenčna paketa **1** in **9** (glejte poglavje *Sistemske nastavitve*).
 
 ---
 
@@ -101,7 +105,7 @@ Ponudbo lahko povežete z delovnimi nalogami v modulu **CRM**:
 
 ### Dokumentni tok
 
-Ponudbe lahko vključite v **dokumentni tok potrjevanja** (pošiljanje v potrditev, potrjevanje, zavrnitev, vrnitev v popravek). Možnost se prikaže, ko ima stranka nastavljen potek za modul ERP – glejte poglavje *Dokumentni tok in potrjevanje*.
+Ponudbe lahko vključite v **dokumentni tok potrjevanja** (pošiljanje v potrditev, potrjevanje, zavrnitev, vrnitev v popravek). Možnost se prikaže, ko ima stranka nastavljen potek za modul ERP – glejte poglavje *Dokumentni tok in potrjevanje*. Potrjena ponudba se prikaže v **ERP → Finance**. Če stranka nima aktivnega toka, se ponudba samodejno potrdi.
 
 ---
 
@@ -156,7 +160,27 @@ Pri vsaki pogodbi lahko naložite poljubno število datotek (do 20 MB na datotek
 
 ### Dokumentni tok
 
-Tudi pogodbe lahko vključite v dokumentni tok potrjevanja (enako kot ponudbe).
+Tudi pogodbe lahko vključite v dokumentni tok potrjevanja (enako kot ponudbe). Potrjena pogodba se prikaže v **ERP → Finance**; brez aktivnega toka se samodejno potrdi.
+
+---
+
+## Finance
+
+**Glavni meni → ERP → Finance**
+
+Finance je skupni pregled dokumentov, potrjenih v dokumentnem toku. Prikazuje dokumente iz modulov **Usposabljanje**, **Delovna oprema** in **ERP** (ponudbe, pogodbe).
+
+- Privzeto so prikazani samo **potrjeni dokumenti**.
+- Filter **Prikaži vse dokumente** je privzeto **izklopljen**. Ko ga vklopite, se prikažejo tudi osnutki, dokumenti v potrjevanju in zavrnjeni dokumenti.
+- Iskanje po številki dokumenta, nazivu, izvorni kodi ali stranki; filtri po modulu in statusu financ.
+- Klik na dokument odpre podrobnosti z zavihki **Vsebina dokumenta**, **Komentarji** in **Dokumentni tok**.
+- Prikazano je **število pregledov** (delovna oprema), **število udeležencev** (usposabljanje) oziroma **število postavk** (ERP).
+- Statusi financ: **Odprto**, **Narejeno**, **Preklicano**.
+- Dokumenti, potrjeni brez aktivnega dokumentnega toka, so označeni z **Samodejno potrjeno**.
+- Izdelava računov v tej različici še ni vključena; Finance je pregled potrjenih dokumentov in njihovega statusa.
+
+!!! tip "Povezava z dokumentnim tokom"
+    Za nastavitev potrjevalcev, samodejno potrjevanje in komentarje glejte poglavje [Dokumentni tok in potrjevanje](dokumentni-tok.md).
 
 ---
 
@@ -178,5 +202,5 @@ Cena iz cenika se **samodejno uporabi** ob izbiri storitve na ponudbi ali pogodb
 
 - **Številčenje:** zaporedne številke ponudb in pogodb se upravljajo v *Sistemu številčenja* (vrsti **ERP Ponudbe** in **ERP Pogodbe**). Določite lahko začetno številko in številčenje po letih.
 - **Word predloge:** predloge za ponudbe pripravite v *Urejanje predlog* (vrsta predloge `offer`); razpoložljive spremenljivke so opisane v poglavju *Legenda spremenljivk*.
-- **Dokumentni tok:** potek potrjevanja za posamezno stranko nastavite na strani *Dokumentni tok* (modul `ERP`).
-- **Pravice:** dostop do sklopov modula se ureja prek vlog uporabnikov (pravice `view_erp_*` / `manage_erp_*`).
+- **Dokumentni tok:** potek potrjevanja za posamezno stranko nastavite na strani *Dokumentni tok* (modul `ERP`). Če tok ni aktiven, se dokumenti samodejno potrdijo in prikažejo v Finance.
+- **Pravice:** dostop do sklopov modula se ureja prek vlog uporabnikov (pravice `view_erp_*` / `manage_erp_*`). Za Finance sta namenjeni `view_erp_finance` in `manage_erp_finance`.

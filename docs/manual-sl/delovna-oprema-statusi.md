@@ -23,6 +23,13 @@ Oprema se iz evidence izloči **samo** z datumom odpisa (`mdeviceobj.date_decom`
 Oprema s statusom NE, V popravilu ali Pogrešano tako ostane vidna v aktivnem seznamu
 in se upošteva v skupnem številu opreme.
 
+### Potrjevanje in Finance
+
+- Ob shranitvi zapisnika sistem ustvari dokument. Če ima stranka za modul **Delovna oprema** aktiven dokumentni tok, je dokument v osnutku in ga je treba poslati v potrditev.
+- Če aktivnega toka ni, se dokument **samodejno potrdi**.
+- Potrjen dokument se prikaže v **ERP → Finance**, kjer so vidni vsi pregledi, datumi, statusi in število pregledov.
+- Komentarji na posamezen kos opreme so vidni tudi v Finance; status komentarja je **Odprto / Narejeno / Preklicano**.
+
 ### Tehnična izvedba
 
 - `mdevice.status` – vrednost statusa (`pass`, `fail`, `repair`, `missing`).

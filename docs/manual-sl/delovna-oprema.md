@@ -124,6 +124,13 @@ Postopek:
 
 V spustnem seznamu predlog je predloga, ki je bila **zadnjič uporabljena** za ta zapisnik, označena s kljukico ✓. Ko je PDF za stranko ustvarjen, se na njegovem mestu prikažeta ikoni za prenos in brisanje. Podrobnejši opis je v poglavju [Urejanje predlog → Generiranje dokumentov iz seznamov](urejanje-podlog.md).
 
+### Potrjevanje in Finance
+
+- Ob shranitvi zapisnika sistem ustvari dokument. Če ima stranka za modul **Delovna oprema** aktiven dokumentni tok, je dokument v osnutku in ga je treba poslati v potrditev.
+- Če aktivnega toka ni, se dokument **samodejno potrdi**.
+- Potrjen dokument se prikaže v **ERP → Finance**, kjer so vidni vsi pregledi, datumi, statusi in število pregledov.
+- Komentarji na posamezen kos opreme so vidni tudi v Finance; status komentarja je **Odprto / Narejeno / Preklicano**.
+
 !!! info "Avtomatično oštevilčenje"
     Če je oštevilčenje konfigurirano za tip pregleda, zapisnik ob shranitvi samodejno dobi zaporedno številko (npr. ZAP-DO-2024-042).
 
