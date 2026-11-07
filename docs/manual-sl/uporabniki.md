@@ -58,20 +58,31 @@ Nov uporabnik se doda s klikom na gumb **Dodaj** (+) v seznamu sistemskih uporab
 | **Poslovna enota** | — | Poslovna enota matične družbe, ki ji uporabnik pripada. |
 | **Dodeljene stranke** | 🔒 samo za ogled | Seznam strank, dodeljenih temu uporabniku kot skrbniku (ne urejate tukaj). |
 
+!!! info "Osebni koledar"
+    Ob ustvaritvi uporabnika sistem samodejno ustvari njegov **osebni koledar** (ime uporabnika) in ga nastavi kot lastnika. Koledar je viden v **CRM → Koledarji**, kjer ga lahko uporabnik deli z drugimi uporabniki ali skupinami.
+
 !!! warning "E-pošta kot uporabniško ime"
     E-poštni naslov je hkrati uporabniško ime za prijavo. Po prvi shranitvi ga **ni mogoče spremeniti** – v primeru napake morate ustvariti novega uporabnika.
 
 ---
 
-### Brisanje sistemskega uporabnika
+### Arhiviranje in brisanje uporabnika
 
-Sistem pred brisanjem avtomatično preveri, ali je uporabnik povezan s katerim koli zapisom (pregledi, usposabljanja, naročila, ocene tveganj ipd.).
+**Arhiviraj** (priporočeno):
 
-- **Zapisi obstajajo** → brisanje ni dovoljeno. Uporabnika lahko le **deaktivirate** (odznačite polje *Aktivno*).
-- **Ni povezanih zapisov** → sistem izbriše uporabnika in vse njegove povezave: dodeljene vloge, dodeljene stranke in shranjene podpise.
+- uporabniku se onemogoči prijava, prekinejo se aktivne seje in žetoni,
+- naloge, koledarji in zgodovina ostanejo nespremenjeni,
+- uporabnika lahko kadar koli **obnovite**; obnovitev ga ponovno aktivira.
 
-!!! danger "Deaktivacija namesto brisanja"
-    V večini primerov priporočamo deaktivacijo namesto brisanja. Deaktiviran uporabnik ostane v zgodovini zapisov, kar je pomembno za revizijsko sled.
+**Izbriši trajno**:
+
+- sistem pred brisanjem preveri, ali je uporabnik povezan z zapisi;
+- če je, je treba izbrati **novega izvajalca** – nanj se prenesejo naloge in drugi zapisi;
+- osebni koledarji izbrisanega uporabnika se **izbrišejo** skupaj z dovoljenji; naloge, ki so bile v njih, ostanejo pri novem izvajalcu brez koledarja;
+- izbrišejo se še seje, žetoni, vloge in shranjena slika podpisa.
+
+!!! danger "Arhivirajte namesto brisanja"
+    Arhiviranje ohrani revizijsko sled in omogoča obnovitev. Trajno brisanje je namenjeno testnim ali napačno ustvarjenim računom.
 
 ---
 
@@ -155,10 +166,4 @@ Sistem uporablja podroben sistem dovoljenj, ki se dodeljujejo prek skupin (vlog)
 
 ## Brisanje uporabnika
 
-| Pogoj | Dejanje |
-|-------|---------|
-| Uporabnik **je** povezan z zapisi (pregledi, usposabljanja, naročila …) | Brisanje ni dovoljeno. Uporabnika **deaktivirajte**. |
-| Uporabnik **ni** povezan z nobenim zapisom | Sistem izbriše uporabnika in vse povezave: vloge, dodeljene stranke, shranjene podpise. |
-
-!!! warning "Kdaj izbrisati, kdaj deaktivirati?"
-    Priporočamo **deaktivacijo** v vsakem primeru, ko uporabnik ne bo več aktivno delal v sistemu, a so njegovi zapisi (poročila, pregledi) del revizijske sledi. Pravo brisanje je namenjeno samo za testne ali napačno ustvarjene račune brez kakršnih koli zapisov.
+Postopek arhiviranja in trajnega brisanja je opisan v razdelku **Arhiviranje in brisanje uporabnika** zgoraj.

@@ -63,7 +63,7 @@ Takoj po uspešni prijavi je stranki prikazana **Nadzorna plošča**, ki ponuja 
 
 ### Elementi nadzorne plošče:
 1. **Statistični števci:** Hiter prikaz skupnega števila dokumentov, delovne opreme, zaposlenih in opravljenih zdravniških pregledov.
-2. **Koledar naročil in realizacije:** Vizualni prikaz naročenega in opravljenega dela.
+2. **Koledar naročil in realizacije:** Vizualni prikaz naročenega in opravljenega dela za to stranko. Prikazani so datumi in ure; dogodki so **samo za branje**. Zunanji (ICS) koledarji se v portalu ne prikazujejo.
 3. **Analitika (Mesečni povzetek):** Grafikon, ki prikazuje opravljena dela in izvedene preglede po mesecih.
 
 ### Zadnji dogodki
