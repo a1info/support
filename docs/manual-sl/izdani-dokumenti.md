@@ -99,9 +99,14 @@ Vsaka vrstica predstavlja eno datoteko oziroma različico dokumenta.
 
 - Stara tabela `docissue` je opuščena. Ob nadgradnji se obstoječe datoteke prenesejo v novo evidenco `document_files`.
 - Migracija se izvede samodejno ob nadgradnji na različico **5.312** oziroma ob zagonu `php artisan migrate`.
+- Migracija je varna za ponovni zagon: že prenesene vrstice se prepoznajo po starem ID-ju in se ne podvojijo.
 - Če fizična datoteka iz stare evidence ne obstaja, se v novo tabelo **ne vnese**; v dnevniku ostane opozorilo.
+- Če posamezne vrstice ni mogoče pretvoriti, se zabeleži v dnevnik, nadgradnja pa se nadaljuje. Preverite `storage/logs/laravel.log`, če po nadgradnji opazite manjkajoče dokumente.
 - Izvorne datoteke, ki so še prisotne v `public/eMreports`, se prenesejo skupaj z osnovnimi podatki dokumenta, stranke in različice.
 - Za varnost naj bodo datoteke v produkciji zaščitene pred neposrednim javnim dostopom; aplikacija uporablja nadzorovane povezave za stranke in interno osebje.
+
+!!! warning "Če se nadgradnja ustavi pri migraciji"
+    Pri različici 5.312 je migracija prilagojena tako, da posamezna neveljavna vrstica ne prekine celotne transakcije. Po namestitvi posodobljene različice znova zaženite nadgradnjo oziroma `php artisan migrate --force`. Če je prišlo do delnega prenosa, se migracija nadaljuje brez podvajanja. Pri nadgradnji prek spletnega vmesnika naj bo `max_execution_time` nastavljen na vsaj 1800 sekund; za velike migracije je zanesljivejši zagon `php artisan migrate --force` v ukazni vrstici.
 
 ---
 
