@@ -122,6 +122,19 @@ Finance prikazuje dokumente, ki so potrjeni in pripravljeni za finančno obdelav
 
 ---
 
+## Izdani dokumenti in različice
+
+Vsi ustvarjeni dokumenti so zbrani v pregledu **Poročila → Izdani dokumenti**. Tam lahko pooblaščeni uporabniki:
+
+- iščejo po dokumentu, stranki, prejemniku, vrsti, statusu, formatu in datumu;
+- pregledajo aktivne različice ali vklopijo **Vse različice** za zgodovino;
+- prenesejo PDF/DOCX, izberejo aktivno različico in naložijo novo različico;
+- objavijo ali umaknejo dokument za stranko.
+
+Za stranko se objavi samo **potrjena, aktivna PDF datoteka**. DOCX ostane intern in se v portalu za stranke ne prikazuje. Podrobnosti so v poglavju [Izdani dokumenti in različice](izdani-dokumenti.md).
+
+---
+
 ## Številčenje dokumentov
 
 - Usposabljanje: `leto-številka_zapisnika-EDU` (npr. `2026-32-EDU`).
@@ -157,6 +170,12 @@ Ne. Potrjevalec lahko dokument potrdi tudi ob odprtih komentarjih. Pripombe osta
 ### Ali Finance izda račun?
 V trenutni različici ne. Finance prikazuje potrjene dokumente in omogoča označevanje statusa (**Odprto / Narejeno / Preklicano**). Izdelava računov je predvidena v naslednji fazi.
 
+### Kje najdem izdane dokumente in različice?
+V **Poročila → Izdani dokumenti** so prikazani vsi ustvarjeni dokumenti, aktivne različice in status objave. Podrobnosti so v poglavju [Izdani dokumenti in različice](izdani-dokumenti.md).
+
+### Zakaj dokumenta ne vidim v portalu za stranko?
+Portal prikaže samo **potrjene, aktivne PDF** datoteke, ki so označene kot **Vidno stranki**. Dokument mora biti potrjen, datoteka PDF, različica aktivna, uporabnik stranke pa mora imeti dostop do dokumentov. DOCX se v portal ne objavi.
+
 ### Kdo lahko vidi Finance?
 Uporabniki z dovoljenjem `view_erp_finance` ali administratorji. Za urejanje statusa financ je potrebno dovoljenje `manage_erp_finance` (ali vloga **admin**/**superadmin**).
 
@@ -164,7 +183,9 @@ Uporabniki z dovoljenjem `view_erp_finance` ali administratorji. Za urejanje sta
 
 ## Tehnične opombe
 
-- Dokumenti se hranijo v tabeli **`document`** (ednina).
+- Dokumenti se hranijo v tabeli **`document`** (ednina), datoteke in različice pa v tabeli **`document_files`**.
+- Stara tabela `docissue` je opuščena. Ob nadgradnji se obstoječe datoteke prenesejo v `document_files`; datoteke, ki na strežniku ne obstajajo, se ne prenesejo.
+- Za stranko so vidne samo potrjene, aktivne **PDF** datoteke. DOCX je intern format.
 - Potrditve so v tabeli **`document_approvals`**; glavna povezava na dokument je `document_id`.
 - Izvorne tabele (`educoursegrp`, `mdevicegrp`, `erp_offer`, `erp_contract`) nimajo več lastnega polja `approval_status`; status je samo na dokumentu.
 - Komentarji uporabljajo obstoječo tabelo `comment`:

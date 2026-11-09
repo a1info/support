@@ -2,7 +2,7 @@
 
 Optima Prevent vključuje namensko spletno aplikacijo (portal) za vaše stranke. Strankam omogoča neposreden in transparenten vpogled v njihovo stanje varnosti in zdravja pri delu, prenose dokumentov ter samostojno urejanje določenih evidenc.
 
-Ker je portal neposredno povezan z glavno bazo podatkov, so vsi dokumenti in spremembe, ki jih ustvarite, stranki vidni takoj.
+Ker je portal neposredno povezan z glavno bazo podatkov, so objavljene spremembe in dokumenti stranki vidni takoj po potrditvi in objavi. Dokumenti, ki niso potrjeni ali niso objavljeni, v portalu niso prikazani.
 
 Portalni uporabniki so **ločeni od sistemskih uporabnikov**. Za interne račune, skupine in dovoljenja glejte poglavje [Uporabniki](uporabniki.md).
 
@@ -79,7 +79,7 @@ Za splošna pravila obveščanja, e-poštne opomnike, e-test sporočila in diagn
 Glavni meni (na levi strani) se stranki prilagaja glede na zgoraj dodeljene pravice. Moduli, do katerih stranka nima dostopa, v meniju niso prikazani.
 
 ### Dokumenti
-Centralni arhiv vseh uradnih dokumentov (Zapisniki usposabljanj, preizkusi opreme, EKO/VZD meritve, Požarna varnost, Ocene tveganja). Dokumenti so razvrščeni po logičnih zavihkih. Stranka si tukaj lahko prenese (prenos PDF) ali ogleda veljavne dokumente.
+Centralni arhiv vseh uradnih dokumentov (Zapisniki usposabljanj, preizkusi opreme, EKO/VZD meritve, Požarna varnost, Ocene tveganja). Dokumenti so razvrščeni po logičnih zavihkih. Stranka vidi samo **potrjene, aktivne PDF** dokumente, ki jih je izdajatelj označil kot **Vidno stranki**, in jih lahko prenese prek zaščitene povezave portala. Datoteke DOCX se v portal ne objavijo, ker so namenjene internemu urejanju; za stranko se uporablja PDF.
 
 ### Pregled veljavnosti (Periodika)
 Analitični modul, ki stranki omogoča vpogled v datume potekov. Z rdečo barvo so jasno označene postavke (oprema, usposabljanja, zdravniški pregledi), ki so jim roki že potekli ali pa so pred potekom. Pri usposabljanjih in zdravniških pregledih lahko stranka filtrira po **delovnem statusu** zaposlenih (npr. samo aktivno delujoči); zaposleni brez opravljenega pregleda so prikazani z oznako **Ni pregledov**.

@@ -182,6 +182,9 @@ Finance je skupni pregled dokumentov, potrjenih v dokumentnem toku. Prikazuje do
 !!! tip "Povezava z dokumentnim tokom"
     Za nastavitev potrjevalcev, samodejno potrjevanje in komentarje glejte poglavje [Dokumentni tok in potrjevanje](dokumentni-tok.md).
 
+!!! info "Izdane datoteke"
+    Za pregled PDF/DOCX datotek, različic in objave stranki uporabite **Poročila → Izdani dokumenti**. Za stranko se objavijo samo potrjene, aktivne PDF datoteke; DOCX ostane intern. Podrobnosti so v poglavju [Izdani dokumenti in različice](izdani-dokumenti.md).
+
 ---
 
 ## Cenik po strankah {: #cenik }
