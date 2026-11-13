@@ -11,6 +11,7 @@
 - **Pregled obeh vrst povezav:** [Sinhronizacija – kako deluje](manual-sl/sinhronizacija-pregled.md).
 - **Povezovanje med namestitvami Optima Prevent:** uporabite [Partner Sync](manual-sl/sinhronizacija.md).
 - **Povezava z Business Central:** glejte [ERP Sync](manual-sl/erp-sinhronizacija.md).
+- **Izmenjava napotnic in izvidov z izvajalcem medicine dela:** glejte [Medic Exchange](manual-sl/medic-exchange.md).
 - **Druge integracije:** obrnite se na podporo Optima Prevent za dogovor o načinu povezave.
 
 !!! note "Zakaj je API umaknjen?"
