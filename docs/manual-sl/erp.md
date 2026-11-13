@@ -2,6 +2,10 @@
 
 Modul **ERP** je namenjen centraliziranemu vodenju prodajnih aktivnosti. Omogoča upravljanje šifranta storitev, pripravo in izdajanje ponudb, vodenje dolgoročnih pogodb s strankami ter spremljanje obračunskih obdobij in pregled potrjenih dokumentov v modulu **Finance**.
 
+!!! note "Povezava z Business Central"
+    Za samodejni prenos sprejetih ponudb in aktivnih pogodb v Business Central
+    glejte [ERP – Sinhronizacija z Business Central](erp-sinhronizacija.md).
+
 ---
 
 ## Pregled modula

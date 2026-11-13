@@ -8,7 +8,9 @@
 ## Kaj uporabiti
 
 - **Mobilna aplikacija:** namestite jo iz brskalnika in uporabite vmesnik `/mobile`. Glejte [navodila za mobilno aplikacijo](manual-mobile-sl.md).
-- **Povezovanje med namestitvami Optima Prevent:** uporabite [sinhronizacijo](manual-sl/sinhronizacija.md).
+- **Pregled obeh vrst povezav:** [Sinhronizacija – kako deluje](manual-sl/sinhronizacija-pregled.md).
+- **Povezovanje med namestitvami Optima Prevent:** uporabite [Partner Sync](manual-sl/sinhronizacija.md).
+- **Povezava z Business Central:** glejte [ERP Sync](manual-sl/erp-sinhronizacija.md).
 - **Druge integracije:** obrnite se na podporo Optima Prevent za dogovor o načinu povezave.
 
 !!! note "Zakaj je API umaknjen?"
