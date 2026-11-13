@@ -1,26 +1,69 @@
-# Sinhronizacija med namestitvami
+# Partner Sync – sinhronizacija med namestitvami
 
-**Dostop:** Sistem → Sinhronizacija
+**Dostop:** Sistem → Sinhronizacija (`/mod-partner/manage`)
 
-Sinhronizacija omogoča povezovanje dveh ali več namestitev programa Optima Prevent. Uporablja se predvsem za sodelovanje z **zunanjimi izvajalci EHS storitev** (druga podjetja), ki za vaše stranke izvajajo usposabljanja, preglede delovne opreme in meritve delovnega okolja.
+**Pravice:** superadmin, admin ali oper.
+
+Partner Sync povezuje dve namestitvi programa Optima Prevent. Uporablja se za
+sodelovanje z **zunanjimi izvajalci EHS storitev**, ki za vaše stranke izvajajo
+usposabljanja, preglede delovne opreme in meritve delovnega okolja.
+
+!!! note "Partner Sync ni ERP sinhronizacija"
+    Partner Sync je namenjen izmenjavi operativnih EHS podatkov med dvema
+    namestitvama Optima Prevent. Za povezavo z Business Central uporabite
+    [ERP – Sinhronizacija z Business Central](erp-sinhronizacija.md).
+
+---
+
+## Kaj se prenaša
+
+Vsaka namestitev je hkrati pošiljatelj in prejemnik. Podatki se izmenjujejo
+neposredno med namestitvama, brez skupnega strežnika.
+
+| Smer | Kaj se prenaša | Primer |
+|---|---|---|
+| **Lastnik podatkov → partner** | matični podatki: lokacije, tipična delovna mesta, delovna mesta, zaposleni, delovna oprema | Izvajalec pri vnosu dela izbira med vašimi zaposlenimi in opremo |
+| **Partner → lastnik podatkov** | operacije: tečaji in udeleženci, pregledi opreme, EKO meritve | Izvajalec vnese opravljeno delo; zapis se pojavi pri vas |
+
+**Stranke se ne sinhronizirajo.** Obe namestitvi morata imeti isto stranko
+vneseno vsaka na svoji strani. Ujemanje poteka po **davčni številki** (`s_tax`).
+
+Vsak zapis ima skupni **UUID**, ki ga obe strani uporabljata kot identiteto.
+Davčna številka pove, h kateri stranki zapis spada; UUID pa prepreči podvajanje
+zapisa pri ponovnem prenosu.
+
+### Podprte storitve
+
+Dodelitve trenutno podpirajo tri vrste storitev:
+
+| Koda | Storitev |
+|---|---|
+| `educourse` | Usposabljanje |
+| `mdevice` | Pregledi delovne opreme |
+| `measure` | EKO meritve |
+
+Ocene tveganj in požarna varnost v tej različici niso vključene v Partner Sync.
 
 ---
 
 ## Kako deluje
 
-Namestitvi si podatke izmenjujeta **neposredno (P2P)** preko varnega API‑ja. Vsaka namestitev je hkrati pošiljatelj in prejemnik:
+```text
+sprememba zapisa
+  → observer
+  → odhodna pošta (integration_outbox)
+  → urnik / čakalna vrsta
+  → podpisan POST na partnerja
+  → partnerjev API /api/partner/v1/*
+  → potrditev ali napaka
+```
 
-| Smer | Kaj se prenaša | Primer |
-|------|----------------|--------|
-| **Lastnik podatkov → partner** | matični podatki: poslovne enote, tipična delovna mesta, zaposleni, delovna oprema | Vaša namestitev pošlje podatke stranke zunanjemu izvajalcu, da lahko izbira zaposlene in opremo pri vnosu dela |
-| **Partner → lastnik podatkov** | operacije: tečaji in udeleženci, pregledi opreme, EKO meritve | Izvajalec vnese opravljeno delo v svoji namestitvi; zapisi se samodejno pojavijo pri vas |
+Vsaka sprememba se najprej zapiše v **odhodno pošto**. Pošiljanje izvaja
+`PublishPartnerSync`, ki ga zažene urnik. Če je nastavljena čakalna vrsta, mora
+teči tudi `queue:work`; sicer sporočila ostanejo v čakalni vrsti.
 
-**Stranke se ne sinhronizirajo.** Namestitvi morata imeti isto stranko (isti davčni številki) vneseno vsaka na svoji strani — po davčni številki se namreč izvaja ujemanje pri prenosu.
-
-Obseg prenosa določajo **dodelitve**: vrstica *stranka × partner × storitev × veljavnost*. Partner lahko za določeno stranko prejema in pošilja le tiste vrste podatkov, za katere ima aktivno dodelitev.
-
-!!! note "Podprte storitve"
-    Trenutno so podprte storitve **Usposabljanje**, **Pregledi delovne opreme** in **EKO meritve**. Ocene tveganj in požarna varnost so pripravljene, vendar še niso vključene v prenos.
+Prejeta sporočila se zapišejo v **nabiralnik** (`integration_inbox`) in se
+obdelajo samo enkrat za posamezno povezavo.
 
 ---
 
@@ -28,109 +71,276 @@ Obseg prenosa določajo **dodelitve**: vrstica *stranka × partner × storitev �
 
 Na vrhu strani Sinhronizacija je stikalo **Omogoči sinhronizacijo**:
 
-- **Izklopljeno** (privzeto): spremembe se ne beležijo in nič se ne pošilja.
-- **Vklopljeno**: ob vsaki spremembi podatkov se ustvarijo sporočila za prenos, urnik pa jih samodejno dostavi.
+- **Izklopljeno** (privzeto): opazovalci sprememb niso aktivni; nove spremembe
+  podatkov se ne beležijo in ne pošiljajo.
+- **Vklopljeno**: ob spremembah podatkov se ustvarijo sporočila v odhodni
+  pošti; urnik jih dostavi partnerju.
 
-Stanje stikala se hrani v podatkovni bazi, zato preživi brisanje predpomnilnika in nadgradnje. Po nadgradnji programa vedno preverite, da je stikalo vklopljeno.
+Stikalo se hrani v tabeli `system` (`sync_enabled`) in preživi brisanje
+predpomnilnika ter nadgradnje. Po nadgradnji preverite, da je še vklopljeno.
+
+!!! warning "Stikalo ne blokira prejema"
+    Glavno stikalo ureja **pošiljanje**. Prejem preverjata HMAC podpis in
+    aktivna partnerska povezava. Priporočamo, da je stikalo vklopljeno na obeh
+    straneh, da se spremembe tudi beležijo.
+
+### Brez partnerja ni pošiljanja
+
+Če ni aktivne partnerske povezave z `Base URL`, `API ključem` in `API
+skrivnostjo`:
+
+- opazovalci se ne registrirajo;
+- `PublishPartnerSync` se ne izvaja;
+- `SyncService` ne ustvari nove odhodne pošte;
+- `HistoricalSyncJob` se ustavi tudi pri ročnem zagonu.
+
+Dodelitve so posebnost: ob shranjevanju se vpišejo v odhodno pošto, dostavijo
+pa se šele, ko so izpolnjeni pogoji za pošiljanje.
 
 ---
 
 ## 1. Partnerji
 
-Partner je namestitev programa, s katero sinhronizirate. **Partnerja je treba definirati na obeh straneh** z enakima vrednostma **API ključa** in **API skrivnosti**:
+Partner je druga namestitev programa Optima Prevent. **Partnerja je treba
+definirati na obeh straneh** z enakima **API ključem** in **API skrivnostjo**.
 
-1. V zavihku **Partnerji** kliknite *Dodaj novega partnerja*.
-2. Vnesite naziv, kodo in **Base URL** nasprotne namestitve (npr. `https://demo.optima-prevent.eu`).
-3. Z gumbom *Generiraj* ustvarite ključ in skrivnost ter **enaki vrednosti vnesite tudi na drugi namestitvi** (partner z obrnjenim URL‑jem).
-4. Označite *Aktivno* in shranite.
+1. Odprite zavihek **Partnerji** in kliknite *Dodaj novega partnerja*.
+2. Vnesite naziv, kodo in **Base URL** nasprotne namestitve.
+3. Vnesite kontaktno e-pošto (neobvezno).
+4. Kliknite *Generiraj* za nov API ključ in skrivnost.
+5. Enaki vrednosti vnesite na drugi namestitvi.
+6. Označite *Aktivno* in shranite.
 
-!!! warning "Enak ključ na obeh straneh"
-    Ključ in skrivnost sta poverilnici, s katerima se namestitvi prepoznata. Če se na prejemni strani ne ujemata, prenos vrne napako **401 Unauthorized**.
+**Base URL je koren namestitve**, na primer `https://demo.optima-prevent.eu`.
+Sistem sam doda pot `/api/partner/v1/...`; ne vnašajte je v Base URL.
 
-**Preverjanje povezave:** ob vsakem partnerju je gumb z ikono vtiča. Preveri, ali je na nasprotni strani definiran aktiven partner z enakim ključem. Uporabite ga **pred** ustvarjanjem dodelitev.
+API skrivnost je v bazi shranjena šifrirano in se pri kasnejšem urejanju ne
+prikaže. Ob generiranju jo shranite na varno mesto in vnesite na obeh straneh.
+Če polje pri urejanju pustite prazno, obstoječa skrivnost ostane nespremenjena.
+
+### Preverjanje povezave
+
+Ob partnerju je gumb za preverjanje povezave. Sistem pošlje podpisan
+`POST /api/partner/v1/ping`.
+
+- **200 OK**: na drugi strani obstaja aktiven partner z enakim ključem in
+  veljavno skrivnostjo.
+- **401**: napačen ključ/skrivnost, neaktiven partner ali preveliko odstopanje
+  ure.
+- **Druga napaka**: preverite Base URL, omrežno dostopnost in dnevnik na obeh
+  straneh.
+
+Preverjanje povezave ne prenaša poslovnih podatkov; preveri samo prijavo.
+
+Partnerja z aktivnimi dodelitvami ni mogoče izbrisati. Ob brisanju se odstranijo
+še neposlana sporočila v odhodni pošti.
 
 ---
 
 ## 2. Dodelitve
 
-Dodelitev pove, **kateri partner, za katero stranko in katere storitve** ima dostop:
+Dodelitev pove, **kateri partner, za katero stranko in katere storitve** ima
+dostop.
 
-1. V zavihku **Dodelitve** izberite **stranko**, **partnerja** in **storitve** (Ctrl/CMD za več izbir).
-2. Vnesite **začetek** veljavnosti in shranite.
+1. Odprite zavihek **Dodelitve**.
+2. Izberite **stranko**, **partnerja** in eno ali več **storitev**.
+3. Vnesite **začetek veljavnosti** in shranite.
 
-Ob shranitvi se dodelitev samodejno prenese na partnerjevo namestitev (zrcalna vrstica). V tabeli spodaj vidite vse dodelitve in njihov status (**AKTIVNO** / **ZAKLJUČENO**).
+Ob shranitvi:
 
-- **Zaključi** — ročno prekinete veljavnost; partner takoj preneha prejemati podatke te stranke in njegovi zapisi se zavrnejo z napako *assignment_missing*.
-- Novo shranjevanje iste kombinacije stare dodelitve samodejno zaključi in ustvari nove.
+- se prejšnje aktivne dodelitve za isto kombinacijo zaključijo z začetkom nove
+  dodelitve;
+- se ustvari nova dodelitev;
+- se partnerju pošlje dogodek `syn.assignment.changed`.
 
-!!! tip "Kje ustvariti dodelitev?"
-    Dodelitve ustvarjate **samo na strani lastnika podatkov**. Na partnerjevi namestitvi se pojavijo samodejno; tam jih ne vnašajte ročno.
+Partner dodelitve ne vnaša ročno; prejme jih z vaše strani. Če partner prejme
+zapis za storitev brez aktivne dodelitve, ga zavrne z napako
+**409 assignment_missing**.
+
+### Zaključitev dodelitve
+
+Z gumbom **Zaključi** dodelitev takoj preneha veljati. Partnerju se pošlje
+dogodek `syn.assignment.line.ended`; novih zapisov za to storitev ne sprejema
+več. Že preneseni zapisi se ne izbrišejo.
+
+Statusi v tabeli:
+
+| Status | Pomen |
+|---|---|
+| **AKTIVNO** | Dodelitev velja. |
+| **ZAKLJUČENO** | Dodelitev ne velja več. |
 
 ---
 
 ## 3. Zgodovinska sinhronizacija
 
-Uporablja se za **enkratni prenos vseh obstoječih zapisov** (npr. ob prvi povezavi):
+Zgodovinska sinhronizacija se uporablja za **enkratni prenos obstoječih
+zapisov**, na primer ob prvi povezavi.
 
-1. Zavihek **Zgodovinska sinhronizacija**.
-2. Izberite partnerja in **stranko** (privzeta izbira je lastno podjetje — pazite, da izberete pravo stranko).
-3. Izberite entiteto (ali *Vse entitete*) in velikost serije ter kliknite *Začni*.
+1. Odprite zavihek **Zgodovinska sinhronizacija**.
+2. Izberite partnerja.
+3. Izberite stranko. Če je ne izberete, se uporabi lastno podjetje.
+4. Izberite entiteto ali **Vse entitete**.
+5. Nastavite velikost serije (10–500; višje vrednosti se omejijo na 500).
+6. Kliknite **Začni**.
 
-Prenos poteka v serijah po vrstnem redu, ki zagotavlja odvisnosti (najprej poslovne enote, nato oprema in zaposleni …). Potek vidite v tabeli zgodovine.
+Potek in napake so vidni v tabeli **Zgodovina sinhronizacij**. Prenos poteka v
+serijah in po vrstnem redu odvisnosti:
 
-!!! warning "Zgodovinsko sinhronizacijo poganjajte na strani, ki ima podatke"
-    Če jo zaženete na prazni (partnerski) namestitvi, se prenesejo njeni — torej prazni — podatki. Matične podatke lastnik podatkov pošilja partnerju; operacije partner pošilja lastniku.
+```text
+lokacije → tipična delovna mesta → delovna mesta → zaposleni
+→ delovna oprema → pregledi → meritve
+→ tipi usposabljanj → tečaji → udeleženci
+```
+
+!!! warning "Zaženite na strani, ki ima podatke"
+    Matične podatke pošilja lastnik podatkov. Če zgodovinsko sinhronizacijo
+    zaženete na prazni partnerski namestitvi, se prenesejo prazni podatki.
+
+Dodelitve se ne prenašajo v sklopu **Vse entitete**; pošiljajo se ob
+shranjevanju oziroma zaključitvi dodelitve.
 
 ---
 
-## 4. Samodejni prenos (po začetni sinhronizaciji)
+## 4. Samodejni prenos
 
-Po uspešni začetni sinhronizaciji vse nadaljnje spremembe potujejo samodejno:
+Po začetni sinhronizaciji se spremembe prenašajo samodejno:
 
-- **Spremembe in brisanja** zapisov (zaposleni, oprema, tečaji, pregledi, meritve …) sistem zazna in pripravi sporočilo v *odhodni pošti*.
-- **Urnik** (cron) sporočila dostavi vsako minuto:
+- **Ustvarjanje, urejanje in brisanje** zaposlenih, opreme, tečajev, pregledov
+  in meritev se zapiše v odhodno pošto.
+- **Urnik** zažene dostavo vsako minuto. Primer crontaba:
 
+  ```cron
+  * * * * * cd /var/www/html/op5 && php artisan schedule:run >> /dev/null 2>&1
   ```
-  * * * * * sudo -u www-data php /var/www/html/op5/artisan schedule:run >> /dev/null 2>&1
-  ```
 
-- Ob napaki (nedosegljiv strežnik, manjkajoči podatek) sporočilo ostane v čakalni vrsti in se **samodejno ponovi** s postopnim podaljševanjem intervala.
-- Prejeta sporočila so vidna v **nabiralniku** (Recent Inbox), poslana pa v **odhodni pošti** (Recent Outbox) na obeh straneh.
+- Če uporabljate čakalno vrsto, mora teči tudi delavec čakalne vrste
+  (`php artisan queue:work`).
+- Pri prehodnih napakah (nedosegljiv strežnik, HTTP 5xx, HTTP 429) se sporočilo
+  ponovi z zamikom. Po več neuspehih se označi kot **failed**.
+- Pri HTTP 4xx (razen 409) se sporočilo ne ponavlja; napaka je treba najprej
+  odpraviti.
 
 !!! note "Brisanje prek množičnih akcij"
-    Tudi brisanje prek množičnih akcij (bulk) v tabelah se prenese — pod pogojem, da je glavno stikalo vklopljeno.
+    Tudi brisanje prek množičnih akcij se prenese, če je glavno stikalo
+    vklopljeno in obstaja aktivna dodelitev.
 
 ---
 
-## Izvor operacij
+## Nadzor in dnevniki
 
-Zapisi, ki so prispeli od partnerja, so v seznamih označeni z **značko z imenom partnerja** (tečaji, pregledi opreme, meritve). Lokalno ustvarjeni zapisi nimajo značke.
+V uporabniškem vmesniku so na voljo:
 
-V seznamih je na voljo filter **Izvor** (posamezen partner ali *Lastni zapisi*), s katerim hitro ločite svoje delo od dela zunanjih izvajalcev.
+- seznam partnerjev in preverjanje povezave,
+- dodelitve in njihovi statusi,
+- zgodovinske sinhronizacije in njihov potek.
 
----
+**Nabiralnik in odhodna pošta trenutno nimata ločenega zaslona.** Za
+diagnostiko se uporabljajo dnevniki in podatkovne tabele:
 
-## Beleženje
+| Tabela | Namen |
+|---|---|
+| `integration_outbox` | odhodna sporočila in status dostave |
+| `integration_inbox` | prejeta sporočila in idempotentna obdelava |
+| `integration_runs` | povzetki izvajanj |
+| `integration_errors` | napake pri pošiljanju in prejemu |
+| `partner_assignment_lines` | dodelitve strank in storitev |
+| `partner_historical_sync` | potek zgodovinskih prenosov |
 
-Vse dogajanje se zapisuje v dnevnik `storage/logs/sync.log` na obeh namestitvah. Pri odkrivanju težav vedno preverite dnevnik **obeh** strani: pošiljatelj beleži *sending/delivered/failed*, prejemnik pa *received/applied*.
+Dnevnik je `storage/logs/sync.log`. Pri težavi preverite **oba** strežnika:
+pošiljatelj beleži pošiljanje in dostavo, prejemnik pa prejem in obdelavo.
 
 ---
 
 ## Pogoste težave
 
 | Napaka | Pomen | Rešitev |
-|--------|-------|---------|
-| **401 Unauthorized** | Partner na prejemni strani ni definiran, ni aktiven ali ima drug ključ | Preverite partnerja na prejemni strani; uporabite *Preveri povezavo* |
-| **409 customer_not_found** | Davčna številka stranke se na prejemni strani ne ujema | Vnesite enako davčno številko v obe namestitvi |
-| **409 assignment_missing** | Za stranko/storitev ni aktivne dodelitve (ali še ni prispela) | Počakajte na dostavo dodelitve; preverite status v zavihku Dodelitve |
-| **422 validation failed** | Različici programa na obeh straneh se ne ujemata | Nadgradite obe namestitvi na isto verzijo |
-| **master switch off** | Sinhronizacija je izklopljena | Vklopite glavno stikalo na obeh namestitvah |
-| Sporočila ostajajo **PENDING** | Urnik ne teče ali stikalo je izklopljeno | Preverite cron vrstico in stikalo; ročno zaženite `php artisan schedule:run` |
+|---|---|---|
+| **401 Unauthorized** | Manjka ali ni veljaven HMAC podpis; partner ni aktiven; napačen ključ/skrivnost; prestar časovni žig | Preverite partnerja in poverilnice na obeh straneh ter uro strežnika. |
+| **401 Signature expired** | Razlika med strežnikoma je večja od 5 minut | Nastavite NTP oziroma sinhronizacijo ure. |
+| **409 customer_not_found** | Davčna številka stranke se na prejemni strani ne ujema | Vnesite enako davčno številko v obe namestitvi. |
+| **409 assignment_missing** | Za stranko in storitev ni aktivne dodelitve | Preverite dodelitev, začetek veljavnosti in ali je dodelitev prispela. |
+| **409 in_progress** | Isto sporočilo se že obdeluje | Pošiljatelj naj počaka in poskusi znova. |
+| **422 validation failed** | Podatki ne ustrezajo pričakovani obliki | Preverite dnevnik prejemnika in uskladite različici programa. |
+| **429 Too Many Requests** | Prejemnik omejuje število zahtev | Sporočilo se ponovi z zamikom; preverite obremenitev. |
+| **500 server_error** | Napaka pri obdelavi na prejemniku | Preverite `sync.log` na prejemni strani. |
+| Sporočila ostajajo **PENDING** | Urnik ne teče, čakalna vrsta ne teče, stikalo je izklopljeno ali partner ni aktiven | Preverite cron, `queue:work`, stikalo in partnerjeve poverilnice. |
 
 ---
 
 ## Varnost
 
-- Vsako sporočilo je podpisano z **HMAC‑SHA256** in časovnim žigom (veljavnost 5 minut); sporočila brez veljavnega podpisa se zavrnejo.
-- Prejemnik sprejema sporočila le od **aktivnih** partnerjev s pravilnim ključem.
-- Obseg podatkov omejujejo dodelitve: partner prejme le podatke strank, za katere ima aktivno dodelitev, in lahko pošilja le storitve iz dodelitve.
+- Vsako sporočilo je podpisano z **HMAC-SHA256**.
+- Podpis pokriva metodo, pot, časovni žig in **točno telo zahteve**.
+- Časovni žig velja **5 minut** v obe smeri.
+- Prejemnik sprejema samo sporočila aktivnega partnerja z veljavnim ključem in
+  skrivnostjo.
+- API skrivnost je šifrirana; v dnevnikih in na zaslonu se ne prikazuje.
+- Ne pošiljajte zdravniških izvidov, diagnoz ali drugih občutljivih osebnih
+  podatkov, ki jih partner ne potrebuje.
+
+### Tehnična oblika podpisa
+
+Za podporo in integracije:
+
+```text
+Authorization: hmac key="<api_key>",sig="<base64>",ts=<unix>
+```
+
+Podpisano besedilo je:
+
+```text
+UPPERCASE_METHOD
+PATH
+TIMESTAMP
+RAW_BODY
+```
+
+Pri tem je `PATH` pot, na primer `/api/partner/v1/wp/upsert`. Podpis je
+`base64(HMAC-SHA256(canonical, api_secret))`. Telesa po podpisu ne kodirajte
+ponovno.
+
+### API končne točke
+
+Vse poti so pod `/api/partner/v1`:
+
+```text
+POST ping
+POST custlocation/upsert       POST custlocation/delete
+POST mdeviceobj/upsert         POST mdeviceobj/delete
+POST mdevice/upsert            POST mdevice/delete
+POST wp/upsert                 POST wp/delete
+POST wpemp/upsert              POST wpemp/delete
+POST custemployee/upsert       POST custemployee/delete
+POST edutype/upsert            POST edutype/delete
+POST educourse/upsert          POST educourse/delete
+POST eduattendee/upsert        POST eduattendee/delete
+POST assignment/upsert         POST assignment/close
+POST measure/upsert            POST measure/delete
+```
+
+Prejem je idempotenten glede na kombinacijo `(connection_id, message_uuid)`.
+Če je sporočilo že uspešno obdelano, prejemnik vrne **200** in ga ne obdela
+ponovno.
+
+---
+
+## Trenutne omejitve
+
+- Vmesnik pokriva partnerje, dodelitve in zgodovinsko sinhronizacijo; ločen
+  zaslon za nabiralnik/odhodno pošto še ni na voljo.
+- Podprte so tri storitve: usposabljanje, pregledi delovne opreme in EKO
+  meritve.
+- Stranke se ne sinhronizirajo; potrebna je enaka davčna številka na obeh
+  straneh.
+- Pred produkcijsko uporabo preverite celoten tok na testnih podatkih: povezavo,
+  dodelitev, eno spremembo, brisanje in zgodovinski prenos.
+
+---
+
+## Povezana dokumentacija
+
+- [Sinhronizacija – pregled](sinhronizacija-pregled.md)
+- [ERP – Ponudbe, pogodbe in finance](erp.md)
+- [ERP – Sinhronizacija z Business Central](erp-sinhronizacija.md)
+- [Sistemske nastavitve](sistemske-nastavitve.md)
