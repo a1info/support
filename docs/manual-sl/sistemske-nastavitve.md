@@ -2,7 +2,7 @@
 
 **Dostop:** Sistem → Nastavitve
 
-V tem razdelku upravljate osnovne podatke podjetja, aktivacijo modulov, nastavitve za pošiljanje e‑pošte, nadgradnjo sistema in digitalno podpisovanje dokumentov.
+V tem razdelku upravljate osnovne podatke podjetja, aktivacijo modulov, nastavitve za pošiljanje e‑pošte in e‑poštne predloge, nadgradnjo sistema in digitalno podpisovanje dokumentov.
 
 ---
 
@@ -35,52 +35,78 @@ Tabela prikazuje vse poslovne enote matične družbe. Vsaka enota ima svoje ime,
 !!! note "Opomba"
     Dodajanje in brisanje poslovnih enot je omejeno, kadar je sistem aktivno povezan z osrednjo licenčno storitvijo in obstaja lastniška stranka. Poslovne enote se navezujejo na obveščanje in poročila po enotah.
 
-### E-poštna konfiguracija (SMTP)
+## E-poštni računi
 
-**Dostop:** Sistem → Nastavitve → zavihek Podjetje → razdelek Email Configuration
+**Dostop:** Sistem → Nastavitve → zavihek **E-poštni računi**
 
-Sistem Optima Prevent uporablja storitev **MailerSend** kot privzeti pošiljatelj za vsa sistemska obvestila (opomniki o poteku veljavnosti, e-test vabila, periodična poročila). MailerSend je vgrajen v sistem in **ne zahteva dodatne konfiguracije** – pošiljanje deluje takoj po namestitvi.
+E-poštni računi so ločeni od osnovnih podatkov podjetja. V zavihku **Podjetje** ni več polj SMTP; vsa pošiljanja se nastavijo tukaj. Vsak račun določa pošiljatelja, način pošiljanja, naslov za odgovore in privzeto identiteto.
 
-**Kako deluje privzeto pošiljanje:**
+Sistem za samodejno pošto uporabi **privzeti aktivni SMTP račun**. Brez aktivnega SMTP računa se samodejna pošta ne pošilja: periodična in dogodkovna obvestila ter e-test vabila in opomniki se preskočijo, ročni gumb **Pošlji zdaj** pa prikaže opozorilo.
 
-- Vsa sporočila se pošiljajo preko varnega SMTP strežnika `smtp.mailersend.net` (TLS, vrata 587).
-- **Pošiljatelj (From):** sporočila se pošiljajo iz domene `@aena.si`, ki je verificirana pri MailerSend. Če imate v polju *Mail Username* vpisan e-poštni naslov na domeni `@aena.si`, se ta uporabi kot pošiljatelj. V nasprotnem primeru se uporabi `noreply@aena.si`.
-- **Prikazno ime (From Name):** nastavite v polju *Mail From Name* (privzeto: ime podjetja).
-- **Naslov za odgovor (Reply-To):** nastavite v polju *Reply-To*. Če je prazno, sistem uporabi *Mail Username* ali *E-pošto podjetja* (v tem vrstnem redu). Prejemniki bodo ob kliku na »Odgovori« pisali na ta naslov.
+### Upravljanje računov
 
-!!! tip "Brezplačno in pripravljeno za uporabo"
-    MailerSend omogoča do **3.000 brezplačnih sporočil na mesec**, kar zadostuje za večino manjših in srednjih podjetij. Za večji obseg sporočil lahko nadgradite na plačljiv paket. Več informacij na [mailersend.com](https://www.mailersend.com/).
+- **Dodaj račun** – odpre obrazec za nov pošiljateljski račun.
+- **Uredi** – spremenite podatke obstoječega računa. Prazno polje za geslo ali API ključ ohrani obstoječo skrivnost.
+- **Privzeto** – račun postane privzeti pošiljatelj. Privzet je lahko samo eden; račun mora biti aktiven in vrste SMTP.
+- **Test** – pošlje testno sporočilo; prejemnik je privzeto prijavljeni uporabnik, naslov pa lahko spremenite. Ob uspehu sta prikazana tudi dejanski **From** in **Reply-To**.
+- **Izbriši** – računa ni mogoče izbrisati, če je edini; ob brisanju privzetega računa sistem izbere naslednji aktivni SMTP račun.
+- **Aktiven** – neaktivni račun se ne uporablja za pošiljanje.
+- **Privzet** – privzeti račun se uporabi, kadar za posamezni scenarij ni drugega pravila.
 
-### Lastni SMTP strežnik (opcijsko)
+Administratorji lahko račune dodajajo in urejajo. Samo **superadmin** lahko s gumbom **Pokaži** razkrije shranjeno geslo ali API ključ.
 
-Če želite za pošiljanje uporabiti **svoj lastni SMTP strežnik** (namesto privzetega MailerSend), v spustnem meniju **SMTP Mailer** izberite `SMTP` in vnesite podatke svojega strežnika.
+### Polja računa
 
-!!! warning "Opozorilo glede MS Office 365 in Gmail (Google Workspace)"
-    Glavni ponudniki poslovne e-pošte (kot sta **Microsoft Office 365** in **Google Workspace / Gmail**) zaradi strogih varnostnih politik (onemogočanje t.i. "Basic Authentication", obvezna dvostopenjska avtentikacija - 2FA) **pogosto ne dovoljujejo neposrednega pošiljanja e-pošte** preko preprostega SMTP protokola ali pa zahtevajo zapleteno nastavljanje posebnih aplikacijskih gesel. Uporaba teh ponudnikov za sistemsko pošiljanje ni priporočljiva.
+| Polje | Opis |
+|-------|------|
+| **Ime računa** | Naziv, ki ga vidijo skrbniki (npr. *Splošni pošiljatelj*). |
+| **Koda** | Kratka enolična oznaka; če je prazna, se ustvari iz imena. |
+| **Način pošiljanja** | `SMTP` za dejansko pošiljanje. `MailerSend API` je za zdaj samo shranjevanje ključa za prihodnjo uporabo. |
+| **Strežnik (host)** | Naslov SMTP strežnika; privzeto `smtp.mailersend.net`. |
+| **Vrata** | Privzeto `587` za TLS; `465` za SSL. |
+| **Šifriranje** | `TLS`, `SSL` ali brez. |
+| **Uporabniško ime** | Uporabniško ime za SMTP prijavo. |
+| **Geslo** | SMTP geslo. Shranjeno je šifrirano; ob urejanju ga prazno polje ne spremeni. |
+| **MailerSend API ključ** | Neobvezno za prihodnje API pošiljanje; shranjeno je šifrirano. |
+| **Pošiljatelj (e-pošta)** | Naslov v polju From. Domena mora biti verificirana pri ponudniku pošte. |
+| **Ime pošiljatelja** | Prikazno ime pošiljatelja. |
+| **Odgovori na** | Naslov Reply-To; če je prazen, se uporabi pošiljateljev naslov. |
+| **Povratna pot** | Neobvezna povratna pot (Return-Path). |
+| **Dnevna omejitev** | Informativna nastavitev (privzeto 30). Trenutna različica je še ne uporablja za samodejno blokiranje pošiljanja. |
+| **Aktiven** | Vklopi ali izklopi račun. |
+| **Privzet** | Označi privzeti račun. |
 
-**Primeri SMTP nastavitev za pogoste ponudnike:**
+### MailerSend in lastni SMTP
 
-| Ponudnik | Mail Host | Port | Encryption |
-|----------|-----------|------|------------|
-| MailerSend (privzeto) | `smtp.mailersend.net` | `587` | `tls` |
-| Brevo (Sendinblue) | `smtp-relay.brevo.com` | `587` | `tls` |
-| Lastno gostovanje (cPanel) | `mail.vasadomena.si` | `587` | `tls` |
+Privzete vrednosti za MailerSend so:
 
-**Polja v obrazcu:**
+| Ponudnik | Strežnik | Vrata | Šifriranje |
+|----------|----------|-------|------------|
+| MailerSend | `smtp.mailersend.net` | `587` | `tls` |
+| Lastni SMTP (cPanel) | `mail.vasadomena.si` | `587` | `tls` |
+| Brevo | `smtp-relay.brevo.com` | `587` | `tls` |
 
-| Polje | Opis | Primer vrednosti |
-|-------|------|-----------------|
-| **SMTP Mailer** | Izbira pošiljatelja | `MailerSend` (privzeto) ali `SMTP` (lastni strežnik) |
-| **Mail Host** | Naslov SMTP strežnika | `mail.vasadomena.si` (samo pri `SMTP`) |
-| **Mail Port** | Vrata strežnika | `587` (TLS) ali `465` (SSL) |
-| **Mail Encryption** | Vrsta šifriranja | `tls` ali `ssl` |
-| **Mail Username** | Uporabniško ime za SMTP prijavo | `obvestila@podjetje.si` |
-| **Mail Password** | Geslo za SMTP račun | Vaše SMTP ali API geslo |
-| **Mail From Name** | Prikazno ime pošiljatelja | `Optima Prevent Sistem` |
-| **Reply-To** | E-poštni naslov za odgovore | `info@vas-podjetje.si` |
+Za pošiljanje iz druge domene dodajte ločen račun in domeno najprej verificirajte pri ponudniku. Naslov v polju **Pošiljatelj** mora biti dovoljen za ta račun; sistema ne omejujemo na vnaprej določeno domeno.
 
-!!! note "Opomba"
-    Ko izberete `SMTP`, se polja za gostitelja, vrata, šifriranje, uporabniško ime in geslo odklenejo za vnos. Ob preklopu nazaj na `MailerSend` se ta polja samodejno počistijo, sistem pa uporabi vgrajene nastavitve MailerSend.
+!!! warning "MailerSend API še ni aktiven"
+    Polje **MailerSend API ključ** je pripravljeno za kasnejšo integracijo, vendar API pošiljanje v tej različici ni omogočeno. Račun z načinom `MailerSend API` ne more biti privzet in testno pošiljanje ne bo uspelo. Za produkcijsko pošiljanje uporabite `SMTP`.
+
+!!! warning "Microsoft 365 in Google Workspace"
+    Ponudniki poslovne e-pošte zaradi omejitev osnovne avtentikacije in 2FA pogosto ne dovoljujejo neposrednega SMTP pošiljanja. Za sistemsko pošto uporabite namenski SMTP ali MailerSend.
+
+### Scenariji in privzeti račun
+
+Sistem ima rezervirane scenarije pošiljanja: `system`, `transactional`, `campaign`, `etest`, `notification`, `invoice`, `support` in `test`. Ob nadgradnji so vsi scenariji vezani na privzeti račun; upravljanje posameznih scenarijev v uporabniškem vmesniku še ni na voljo.
+
+### Varnost in razkritje skrivnosti
+
+Geslo SMTP in API ključ sta shranjena z reverzibilnim šifriranjem, ker ju SMTP oziroma API potrebuje za dejansko prijavo. Enosmerni hash (na primer bcrypt) za to ni primeren, ker bi onemogočil pošiljanje. Skrivnosti se ne izpisujejo v dnevnikih; razkrije jih lahko samo superadmin.
+
+## E-poštne predloge
+
+Vsebino e-poštnih sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloge ne določajo pošiljateljskega računa – ta je vedno izbran v **E-poštni računi** – določajo pa zadevo, telo in jezik sporočila.
+
+Podrobnosti o poljih, spremenljivkah in predogledu so v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
 
 ---
 

@@ -79,6 +79,8 @@ Obvezni in ključni podatki:
 
 V razdelku »Moduli« upravljate izbirne sistemske module in vnašate pridobite licence.
 
+E-poštne račune (SMTP, pošiljatelj, Reply-To) upravljate v zavihku **E-poštni računi**, vsebino sporočil pa v **Sistem → Predloge → E-poštne predloge**. Starih SMTP polj v zavihku Podjetje ni več.
+
 ### Nastavitve modulov in matrika ocenjevanja tveganj
 V razdelku za konfiguracijo modulov (gumb nastavitve pri aktivnem modulu) lahko skrbniki prilagodijo delovanje posameznih sklopov aplikacije. 
 Pri modulu **Ocene tveganj (Rass)** je omogočena konfiguracija **dinamične formule za izračun tveganja**.
@@ -661,14 +663,14 @@ Komunikacija je interna in zunanja.
 
 - Interna: med uporabniki sistema (tudi uporabniki stranke) v realnem času; olajša usklajevanje in delo na projektih. Podpira transparentno obveščanje skrbnikov strank o spremembah.
 
-- Zunanja: prek šifrirane e-pošte. Kako bi se omogočilo pošiljanje obvestil prek e-maila je potrebno kofigurirati email strežnik za pošiljanje v sistemskih nastavitvah.
-Konfiguracija e-mail obveščanja za posamezne stranke je dostopna na Nastavitve -> Obveščanje. Na ekranu lahko nastavite tip obveščanja in dan v mesecu za pošiljanje mailov.
+- Zunanja: prek e-pošte. Pošiljanje omogoči aktiven SMTP račun v **Sistem → Nastavitve → E-poštni računi**.
+Pravila in urnik obveščanja za posamezne stranke so dostopni v **Sistem → Obveščanje**. Vsebino sporočil urejate v **Sistem → Predloge → E-poštne predloge**.
 
-## Urejanje podlog za izpis
+## Urejanje predlog (dokumenti, obrazci in e-pošta)
 
 ### Predloge FORMS
 
-Dostop: Nastavitve → Predloge FORM
+Dostop: Sistem → Predloge → zavihek **FORMS**
 
 Za netipične preglede (npr. kontrolni pregledi, vaje evakuacije). Elementi:
 - naslov, podnaslov, naslov tabele, besedilo,
@@ -688,8 +690,14 @@ Vrste spremenljivk:
 - Tabelarne spremenljivke (vrstične),
 - Blok spremenljivke (ponavljajoči se paragrafi, lahko vsebujejo posamezne ali tabelarne spremenljivke).
 
-Dostop: Nastavitve → Urejanje predlog
+Dostop: Sistem → Predloge → zavihek **DOCX**
 
 Pri dodajanju podloge določite ime, tip, zaporedno številko in DOCX datoteko.  
-Tipi: usposabljanje, delovna oprema, meritve, ocena tveganja.  
+Tipi: usposabljanje, delovna oprema, meritve, ocena tveganja.
 Če je na voljo več podlog istega tipa, se privzeto uporablja podloga z najnižjo zaporedno številko (možno spremeniti pri vnosu storitve).
+
+### E-poštne predloge
+
+Dostop: **Sistem → Predloge → zavihek E-poštne predloge**
+
+Predloge določajo zadevo in telo e-pošte; pošiljatelj in Reply-To se nastavita v **E-poštnih računih**. Predloge so vezane na modul in dogodek ter se uporabljajo za obvestila, e-test in CRM kampanje. Podrobnosti so v poglavju [Urejanje predlog → E-poštne predloge](manual-sl/urejanje-podlog.md#e-postne-predloge).

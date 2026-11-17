@@ -1,13 +1,14 @@
-# Urejanje predlog za izpis
+# Urejanje predlog (dokumenti, obrazci in e-pošta)
 
 ## Pregled
 
-Sistem OP5 podpira dve vrsti predlog za generiranje tiskovin in obrazcev:
+Sistem OP5 podpira tri vrste predlog za dokumente, obrazce in e-pošto:
 
 | Vrsta predloge | Opis | Primeri uporabe |
 |----------------|------|-----------------|
 | **FORMS** | Interaktivni obrazci za vnos podatkov na terenu | Nestandardni pregledi, vaje evakuacije, kontrolne liste |
 | **DOCX** | Predloge za tiskane dokumente (potrdila, zapisniki) | Potrdila o usposabljanju, zapisniki pregledov, poročila |
+| **E-poštne predloge** | Zadeva in telo e-poštnih sporočil | Opomniki, e-test vabila, obvestila in kampanje |
 
 Predloge določajo postavitev, vsebino in obliko izpisanih dokumentov. Vsaka predloga je vezana na določen tip dokumenta in se ob generiranju samodejno napolni z dejanskimi podatki iz baze.
 
@@ -15,7 +16,7 @@ Predloge določajo postavitev, vsebino in obliko izpisanih dokumentov. Vsaka pre
 
 ## Predloge FORMS
 
-**Dostop:** Nastavitve → Predloge FORM
+**Dostop:** Sistem → Predloge → zavihek **FORMS**
 
 ### Namen
 
@@ -60,9 +61,75 @@ Izvajalec pregleda za stranko: ${cCustomer}, ${cAddress}
 
 ---
 
+## E-poštne predloge
+
+**Dostop:** Sistem → Predloge → zavihek **E-poštne predloge**
+
+E-poštne predloge določajo **zadevo in telo** sporočila. Pošiljateljski račun, naslov From in Reply-To niso del predloge – ti podatki se določijo v [E-poštnih računih](sistemske-nastavitve.md#e-postni-racuni).
+
+Predloge uporabljajo samodejna obvestila, e-test vabila in opomniki ter CRM kampanje. Brez aktivnega SMTP računa se sporočila ne pošljejo, tudi če je predloga aktivna.
+
+### Moduli predlog
+
+| Modul | Uporaba |
+|-------|---------|
+| **Kampanje** | E-poštne kampanje v CRM; predlogo izberete na kampanji. |
+| **E-test / izobraževanja** | Vabila in opomniki za e-učenje. |
+| **Veljavnosti** | Periodična poročila o potekih. |
+| **HRM** | Dopust, kandidati in druga kadrovska obvestila. |
+| **Dokumentni tok** | Zahteve in odločitve pri odobritvah. |
+| **CRM** | Naloge in dogodki v CRM. |
+| **Medicina dela** | Napotitve in izvidi. |
+| **ERP** | Obvestila, povezana s ponudbami in financami. |
+| **Sistem** | Varnostne kopije, sinhronizacija in sistemska opozorila. |
+
+### Polja predloge
+
+| Polje | Opis |
+|-------|------|
+| **Koda** | Enolična oznaka predloge; priporočena je kratka oznaka, npr. `etest_invite_sl`. |
+| **Jezik** | Slovenščina ali angleščina. Sistem izbere jezik glede na jezik aplikacije, sicer slovenščino. |
+| **Dogodek** | Koda dogodka, na katerega se predloga veže (npr. `etest.invite`, `etest.expiring`, `crm.task_created`). Pri kampanjah je dogodek prazen. |
+| **Naziv** | Naziv za skrbnike; ni del poslanega sporočila. |
+| **Zadeva** | Zadeva e-pošte. |
+| **Nadomestna zadeva (A/B)** | Neobvezna druga zadeva za poznejše A/B preizkuse. |
+| **Telo (tekst)** | Besedilna različica sporočila; priporočena je za zanesljivo dostavo. |
+| **Telo (HTML)** | Neobvezna obogatena različica. Če je prazna, se uporabi besedilna različica. |
+| **Opombe** | Interne opombe, ki se ne pošljejo. |
+| **Aktivna** | Neaktivna predloga se ne uporabi; sistem uporabi privzeto vsebino, če ta obstaja. |
+
+### Spremenljivke
+
+Spremenljivke vstavite v dvojnih zavitih oklepajih, na primer `{{sender_name}}`. Med pošiljanjem jih sistem zamenja z dejanskimi podatki.
+
+| Spremenljivka | Pomen |
+|---------------|-------|
+| `{{sender_name}}` | Ime pošiljatelja oziroma prijavljenega uporabnika. |
+| `{{phone}}`, `{{email}}`, `{{website}}` | Kontaktni podatki podjetja. |
+| `{{date}}`, `{{time}}` | Datum in čas pošiljanja. |
+| `{{first_name}}`, `{{last_name}}`, `{{company}}` | Podatki prejemnika oziroma osebe. |
+| `{{syscompany}}`, `{{sysaddress}}`, `{{sysemail}}`, `{{systel}}`, `{{sysweb}}` | Podatki sistemskega podjetja. |
+| `{{course}}`, `{{username}}`, `{{password}}`, `{{link}}` | Podatki e-testa (samo modul E-test). |
+| `{{expiry_date}}`, `{{days_left}}` | Rok veljavnosti in število preostalih dni (e-test). |
+| `{{previous_subject}}` | Zadeva prejšnjega sporočila (kampanje). |
+
+Razpoložljive spremenljivke so prikazane tudi pod poljem **Telo (tekst)**; uporabite jih lahko s klikom oziroma ročnim vnosom.
+
+### Predogled in upravljanje
+
+1. Odprite **Sistem → Predloge → E-poštne predloge**.
+2. Izberite modul in predlogo s seznama ali kliknite **Dodaj** za novo predlogo.
+3. Izpolnite polja in po potrebi kliknite **Predogled** – prikazani so zamenljivi deli s primerom za izbrani modul.
+4. Shranite predlogo. Izbrišete jo lahko z ikono koša; predloga, ki jo uporablja kampanja, najprej preverite.
+
+!!! note "Predloga ne določa pošiljatelja"
+    Če želite spremeniti From, Reply-To ali strežnik, uredite [E-poštni račun](sistemske-nastavitve.md#e-postni-racuni). Predloga določa samo vsebino sporočila.
+
+---
+
 ## Predloge DOCX
 
-**Dostop:** Nastavitve → Urejanje predlog
+**Dostop:** Sistem → Predloge → zavihek **DOCX**
 
 ### Namen
 
@@ -133,7 +200,7 @@ Kjer je `<code>` koda lastnega polja, definirana v nastavitvah.
 
 ### Dodajanje nove predloge
 
-1. Odprite **Nastavitve → Urejanje predlog**
+1. Odprite **Sistem → Predloge → zavihek DOCX**
 2. Kliknite gumb **Dodaj**
 3. Izpolnite polja:
 

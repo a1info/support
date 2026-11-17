@@ -8,11 +8,12 @@ Sistem Optima Prevent omogoča napredno avtomatizirano obveščanje strank in za
 
 Vsa pošiljanja se beležijo v dnevniku, kjer vidite status vsakega sporočila (poslano / napaka) in razlog napake.
 
-!!! warning "Predpogoj: Nastavitev poštnega strežnika"
-    Za uspešno delovanje celotnega sistema obveščanja mora biti predhodno pravilno nastavljena e-pošta.
-    Navodila za nastavitev najdete v poglavju [Sistemske nastavitve](sistemske-nastavitve.md#e-postna-konfiguracija-smtp).
+!!! warning "Predpogoj: aktiven e-poštni račun"
+    Za uspešno delovanje obveščanja mora biti v **Sistem → Nastavitve → E-poštni računi** nastavljen vsaj en aktiven SMTP račun.
+    Brez njega se periodična in dogodkovna obvestila ter e-test vabila in opomniki **ne pošljejo**; opravila se preskočijo, v dnevniku pa ni novih pošiljanj.
+    Navodila so v poglavju [Sistemske nastavitve → E-poštni računi](sistemske-nastavitve.md#e-postni-racuni).
 
-**Dostop:** Nastavitve → Obveščanje (zavihek **Pravila** in zavihek **Dnevnik**).
+**Dostop:** Sistem → Obveščanje (zavihek **Pravila** in zavihek **Dnevnik**).
 
 ---
 
@@ -111,11 +112,28 @@ Ko ustvarite nov tečaj z **e-testom** in obkljukate pošiljanje e-pošte, siste
 
 Sistem nekaj dni pred iztekom roka za reševanje **samodejno pošlje opomnik** zaposlenemu, ki testa še ni rešil.
 
+!!! note "Brez e-poštnega računa"
+    Če v **Sistem → Nastavitve → E-poštni računi** ni aktivnega SMTP računa, se e-test vabila in opomniki ne pošljejo. Opravilo se preskoči; ko račun znova aktivirate, se pošiljanje nadaljuje ob naslednjem izvajanju.
+
 ---
 
-## 4. Dnevnik pošiljanja in ponovni poskusi
+## 4. E-poštne predloge
 
-Zavihek **Dnevnik** v Nastavitve → Obveščanje prikazuje zadnja poslana sporočila s statusom vsakega pošiljanja:
+Vsebino sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloga določa zadevo, telo in jezik; pošiljatelj, naslov From in Reply-To vedno pridejo iz [e-poštnega računa](sistemske-nastavitve.md#e-postni-racuni).
+
+- Predloga se izbere glede na modul in kodo dogodka (npr. `etest.invite`, `etest.expiring`, `docflow.approval_requested`).
+- Za kampanje se predloga izbere na posamezni CRM kampanji.
+- Če aktivne predloge ni, sistem uporabi privzeto vsebino, kjer ta obstaja; sicer sporočila ne sestavi.
+- Neaktivna predloga se ne uporabi.
+- Brez aktivnega SMTP računa se tudi pravilno sestavljena predloga ne pošlje.
+
+Podrobnosti o poljih, spremenljivkah in predogledu so v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
+
+---
+
+## 5. Dnevnik pošiljanja in ponovni poskusi
+
+Zavihek **Dnevnik** v Sistem → Obveščanje prikazuje zadnja poslana sporočila s statusom vsakega pošiljanja:
 
 | Status | Pomen |
 |--------|-------|
@@ -127,12 +145,9 @@ Zavihek **Dnevnik** v Nastavitve → Obveščanje prikazuje zadnja poslana sporo
 
 Zgodovina pošiljanja se hrani **60 dni**, nato se samodejno izbriše.
 
-!!! note "Kam so šli stari e-mail dnevniki?"
-    Zavihek *Email log* v Dnevniku dejavnosti je zamenjal novi dnevnik obveščanja, ki prikazuje status po sporočilu in po prejemniku.
-
 ---
 
-## 5. Obvestila v aplikaciji (za prijavljene uporabnike)
+## 6. Obvestila v aplikaciji (za prijavljene uporabnike)
 
 Prijavljeni uporabniki dobijo pomembna obvestila tudi v aplikaciji, ne le po e-pošti.
 
