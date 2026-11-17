@@ -122,7 +122,7 @@ Sistem nekaj dni pred iztekom roka za reševanje **samodejno pošlje opomnik** z
 Vsebino sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloga določa zadevo, telo in jezik; pošiljatelj, naslov From in Reply-To vedno pridejo iz [e-poštnega računa](sistemske-nastavitve.md#e-postni-racuni).
 
 - Predloga se izbere glede na modul in kodo dogodka (npr. `etest.invite`, `etest.expiring`, `docflow.approval_requested`).
-- Za kampanje se predloga izbere na posamezni CRM kampanji.
+- Za kampanje se predloga izbere na posamezni CRM kampanji; potek priprave in pošiljanja je opisan v poglavju [CRM → Kampanje](crm.md#kampanje).
 - Če aktivne predloge ni, sistem uporabi privzeto vsebino, kjer ta obstaja; sicer sporočila ne sestavi.
 - Neaktivna predloga se ne uporabi.
 - Brez aktivnega SMTP računa se tudi pravilno sestavljena predloga ne pošlje.

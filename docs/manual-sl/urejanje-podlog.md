@@ -89,7 +89,7 @@ Predloge uporabljajo samodejna obvestila, e-test vabila in opomniki ter CRM kamp
 |-------|------|
 | **Koda** | Enolična oznaka predloge; priporočena je kratka oznaka, npr. `etest_invite_sl`. |
 | **Jezik** | Slovenščina ali angleščina. Sistem izbere jezik glede na jezik aplikacije, sicer slovenščino. |
-| **Dogodek** | Koda dogodka, na katerega se predloga veže (npr. `etest.invite`, `etest.expiring`, `crm.task_created`). Pri kampanjah je dogodek prazen. |
+| **Dogodek** | Koda dogodka iz sistemskega kataloga, na katerega se predloga veže (npr. `etest.invite`, `etest.expiring`, `crm.task_created`). Začetek vnosa prikaže predloge z opisi; prazno polje pomeni splošno predlogo. Pri kampanjah polje ni prikazano. |
 | **Naziv** | Naziv za skrbnike; ni del poslanega sporočila. |
 | **Zadeva** | Zadeva e-pošte. |
 | **Nadomestna zadeva (A/B)** | Neobvezna druga zadeva za poznejše A/B preizkuse. |
@@ -97,6 +97,9 @@ Predloge uporabljajo samodejna obvestila, e-test vabila in opomniki ter CRM kamp
 | **Telo (HTML)** | Neobvezna obogatena različica. Če je prazna, se uporabi besedilna različica. |
 | **Opombe** | Interne opombe, ki se ne pošljejo. |
 | **Aktivna** | Neaktivna predloga se ne uporabi; sistem uporabi privzeto vsebino, če ta obstaja. |
+
+!!! info "Kako izberem dogodek"
+    V polje **Dogodek** vnesite kodo iz sistemskega kataloga. Ko začnete tipkati, se prikažejo razpoložljive kode z opisom; prazno polje pomeni splošno predlogo. Če koda ni v katalogu, je shranjevanje zavrnjeno. Za kampanje izberite modul **Kampanje**; polje Dogodek je pri njih skrito, ker predlogo izbere kampanja.
 
 ### Spremenljivke
 
@@ -112,6 +115,7 @@ Spremenljivke vstavite v dvojnih zavitih oklepajih, na primer `{{sender_name}}`.
 | `{{course}}`, `{{username}}`, `{{password}}`, `{{link}}` | Podatki e-testa (samo modul E-test). |
 | `{{expiry_date}}`, `{{days_left}}` | Rok veljavnosti in število preostalih dni (e-test). |
 | `{{previous_subject}}` | Zadeva prejšnjega sporočila (kampanje). |
+| `{{unsubscribe_url}}` | Povezava za odjavo. Pri kampanjah jo sistem doda samodejno, če je v sporočilu ni. |
 
 Razpoložljive spremenljivke so prikazane tudi pod poljem **Telo (tekst)**; uporabite jih lahko s klikom oziroma ročnim vnosom.
 
@@ -121,6 +125,9 @@ Razpoložljive spremenljivke so prikazane tudi pod poljem **Telo (tekst)**; upor
 2. Izberite modul in predlogo s seznama ali kliknite **Dodaj** za novo predlogo.
 3. Izpolnite polja in po potrebi kliknite **Predogled** – prikazani so zamenljivi deli s primerom za izbrani modul.
 4. Shranite predlogo. Izbrišete jo lahko z ikono koša; predloga, ki jo uporablja kampanja, najprej preverite.
+
+!!! tip "Kampanjske predloge"
+    Za kampanje izberite modul **Kampanje**. Predlogo nato izberete v koraku **Predloga** pri posamezni kampanji. Dogodek ni potreben, povezava za odjavo pa se doda samodejno, tudi če v predlogi ni `{{unsubscribe_url}}`.
 
 !!! note "Predloga ne določa pošiljatelja"
     Če želite spremeniti From, Reply-To ali strežnik, uredite [E-poštni račun](sistemske-nastavitve.md#e-postni-racuni). Predloga določa samo vsebino sporočila.

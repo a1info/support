@@ -1,6 +1,6 @@
-# CRM (Organizacija nalog in projektov)
+# CRM (Naloge, kampanje in prospekti)
 
-Modul **CRM** omogoča pregled in organizacijo dela z naročniki prek skupnega koledarja, projektov in nalog.
+Modul **CRM** omogoča pregled in organizacijo dela z naročniki prek skupnega koledarja, projektov in nalog ter vodenje prospektov in e-poštnih kampanj.
 
 ---
 
@@ -12,6 +12,8 @@ CRM modul je osrednje mesto za upravljanje delovnih nalog, projektov in komunika
 
 **Glavni meni → CRM**
 
+V meniju CRM so **Naloge**, **Projekti**, **Kontakti**, **Časovnica**, **Interakcije**, **Kampanje**, **Prospekti** in **Koledarji**.
+
 ### Ključne funkcionalnosti
 
 - Vizualni pregled nalog v mesecu in tednu, z urami dogodkov
@@ -22,6 +24,11 @@ CRM modul je osrednje mesto za upravljanje delovnih nalog, projektov in komunika
 - Sledenje statusom nalog
 - Izpis delovnih nalogov (PDF)
 - Samodejno generiranje periodičnih opomnikov
+- Ločen seznam prospektov z uvozom, segmentacijo in sledenjem soglasja
+- E-poštne kampanje za stranke, kontakte in prospekte
+- Preverjanje pred pošiljanjem, pošiljanje v paketih in sledenje odzivom
+- Beleženje telefonskih klicev in samodejno ustvarjanje nalog za nadaljnje stike
+- Globalni seznam odjav in blokad prejemnikov
 
 ---
 
@@ -180,6 +187,237 @@ Projekt združuje naloge, datoteke in komentarje v enotnem kronološkem pogledu.
 
 !!! tip
     Projekte uporabite za večje naročniške pogodbe ali ponavljajoče se sklope del, kjer želite vse naloge, dokumentacijo in komunikacijo hraniti na enem mestu.
+
+---
+
+## Prospekti
+
+**Dostop:** CRM → Prospekti
+
+Prospekt je potencialna stranka, ki še ni v šifrantu strank. Prospekte vodite ločeno od strank in kontaktov, nato pa jih uporabite kot občinstvo v kampanji. Ko prospekt postane stranka, njegov status ročno označite kot **Pretvorjen**.
+
+### Seznam in urejanje
+
+- Seznam prikazuje naziv, kontaktno osebo, e-pošto, segment in status.
+- **Nov prospekt** odpre obrazec v desnem stranskem oknu; klik na obstoječi zapis odpre urejanje.
+- Iskalnik išče po nazivu, e-pošti in davčni številki, filter po statusu pa zoži seznam.
+- Gumba **Uredi** in **Izbriši** sta na koncu vsake vrstice.
+
+### Polja prospekta
+
+| Polje | Opis |
+|-------|------|
+| **Naziv** | Obvezno ime podjetja ali osebe. |
+| **Tip** | Vrsta prospekta (npr. podjetje, samostojni podjetnik). |
+| **Segment** | Tržni ali interni segment za razvrščanje. |
+| **Prioriteta** | Prioriteta obdelave (npr. A, B, C). |
+| **Davčna številka** | Davčna številka; uporablja se tudi za prepoznavanje dvojnikov pri uvozu. |
+| **SKD** | Šifra dejavnosti. |
+| **Naslov**, **Pošta**, **Kraj**, **Regija** | Naslov in geografska razvrstitev. |
+| **Kontaktna oseba** | Oseba, s katero komunicirate. |
+| **E-pošta** | Naslov za kampanje; shrani se v malih črkah. |
+| **Telefon** | Telefon za klicanje. |
+| **Zaposleni** | Število zaposlenih. |
+| **Prihodek** | Letni prihodek. |
+| **Vir** | Kako ste prospekt pridobili (npr. sejem, priporočilo, splet). |
+| **Pravna podlaga** | Pravna podlaga za obdelavo oziroma komunikacijo. |
+| **Vir soglasja** | Kje in kako je bilo soglasje pridobljeno. |
+| **Datum soglasja** | Datum pridobitve soglasja. |
+| **Status** | Trenutna faza obdelave. |
+| **Opomba** | Interna opomba. |
+
+### Statusi prospekta
+
+| Status | Pomen |
+|--------|-------|
+| **Nov** | Prospekt je vnesen in še ni bil obdelan. |
+| **Kontaktiran** | Prvi stik je bil opravljen. |
+| **Kvalificiran** | Prospekt je primeren za nadaljnjo obravnavo. |
+| **Pretvorjen** | Prospekt je postal stranka. |
+| **Blokiran** | Prospekta ne kontaktirajte. |
+| **Odjavljen** | Oseba se je odjavila od e-poštnih sporočil. |
+
+!!! warning "Soglasje in pravna podlaga"
+    Pred pošiljanjem kampanje preverite, da imate za prospekte ustrezno pravno podlago oziroma soglasje. Preflight opozori na prejemnike brez zabeležene pravne podlage, vendar ne nadomesti vaše presoje.
+
+### Uvoz prospektov
+
+V kartici **Uvozi prospekte** lahko naložite datoteko **CSV**, **XLSX** ali **XLS**. Za lažji začetek uporabite povezavo **Prenesi primer CSV**.
+
+- **Obvezna glava:** `naziv`.
+- **Priporočene glave:** `e-posta`, `davcna`, `segment`, `prioriteta`, `regija`.
+- **Podprte dodatne glave:** `tip`, `skd`, `naslov`, `posta`, `kraj`, `kontaktna_oseba`, `telefon`, `zaposleni`, `prihodek`, `vir`, `opomba`, `pravna_podlaga`, `vir_soglasja`, `datum_soglasja`.
+- **Preizkus** prebere datoteko in prikaže rezultat, ne da bi karkoli shranil. Za dejanski uvoz počistite kljukico **Preizkus** in kliknite **Uvozi**.
+- Podvojeni zapisi se prepoznajo po **davčni številki ali e-pošti**. Prazna polja v datoteki ne prepišejo obstoječih podatkov.
+- Po uvozu so prikazani števci **Prebrano**, **Ustvarjeno**, **Posodobljeno** in **Izpuščeno** ter morebitne napake po vrsticah.
+
+---
+
+## Kampanje
+
+**Dostop:** CRM → Kampanje
+
+Kampanje omogočajo pošiljanje e-poštnih sporočil strankam, kontaktom ali prospektom ter sledenje odzivom. Zavihek **Predloge** vodi do e-poštnih predlog, zavihek **Odjave** pa do globalnega seznama naslovov, ki jim ne pošiljate. Predloge in spremenljivke so opisane v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
+
+Seznam kampanj prikazuje naziv, namen, status, število prejemnikov, predlogo in datum nastanka. Klik na naziv odpre podrobni pogled, ikona svinčnika pa urejanje.
+
+### Priprava kampanje
+
+Kampanjo ustvarite z gumbom **+** na seznamu kampanj. Obrazec je razdeljen na tri korake:
+
+1. **Predloga**
+2. **Občinstvo**
+3. **Povzetek**
+
+#### 1. Predloga
+
+| Polje | Opis |
+|-------|------|
+| **Naziv** | Interno ime kampanje; prikazano je na seznamu in v opravilih. |
+| **Namen** | Oznaka vala kampanje: prvi, drugi, tretji val ali drugo. Ne vpliva na vsebino sporočila. |
+| **Predloga** | E-poštna predloga iz modula **Kampanje**. Če je ni, jo najprej ustvarite v zavihku **Predloge**. |
+| **Poštni račun** | Račun, s katerega se pošilja. Prazno pomeni privzeti kampanjski oziroma sistemski račun. |
+| **Izvajalec** | Uporabnik, ki mu sistem dodeli naloge za nadaljnje klice. Prazno pomeni ustvarjalca kampanje. |
+| **Dnevna omejitev** | Največje število sporočil na dan za to kampanjo. Upošteva se tudi omejitev izbranega poštnega računa. |
+| **Od e-pošte**, **Ime pošiljatelja**, **Odgovori na** | Neobvezne vrednosti, ki preglasijo podatke poštnega računa. |
+
+#### 2. Občinstvo
+
+Izberite **vir občinstva**:
+
+- **Stranke in kontakti** – obstoječe aktivne stranke in njihovi kontaktni naslovi.
+- **Prospekti** – zapisi iz zavihka **Prospekti**; pretvorjeni, blokirani in odjavljeni prospekti niso vključeni.
+
+Pri viru **Stranke in kontakti**:
+
+| Filter | Opis |
+|--------|------|
+| **Kategorije strank** | Če ni izbrana nobena, so vključene vse aktivne stranke. |
+| **Kategorije kontaktov** | Dodaten, neobvezen filter po kategoriji kontakta. |
+
+Pri obeh virih:
+
+| Filter | Opis |
+|--------|------|
+| **Poštne številke (predpone)** | Na primer `1000, 2000`; prazno pomeni vse. |
+| **SKD predpone** | Na primer `58., 49.`; prazno pomeni vse. |
+
+Pri viru **Prospekti** so na voljo še:
+
+| Filter | Opis |
+|--------|------|
+| **Samo s telefonom** | Vključi le prospekte z vpisanim telefonom. |
+| **Segmenti** | Seznam segmentov, ločen z vejico. |
+| **Prioritete** | Seznam prioritet, ločen z vejico. |
+| **Regije** | Seznam regij, ločen z vejico. |
+| **Zaposleni od / do** | Spodnja in zgornja meja števila zaposlenih. |
+| **Prihodek od / do** | Spodnja in zgornja meja letnega prihodka. |
+
+Sproti se izračunava **število prejemnikov**. Šteje unikatne e-poštne naslove; blokirani kontakti in odjave so izključeni, neveljavne naslove pa sistem izloči pri pošiljanju.
+
+#### 3. Povzetek
+
+Preglejte naziv, predlogo, vir občinstva, filtre in število prejemnikov. S klikom **Shrani** se kampanja shrani kot **Osnutek**.
+
+### Generiranje prejemnikov
+
+Po shranjevanju kampanje odprite njen podrobni pogled in kliknite **Generiraj prejemce**.
+
+- Sistem iz trenutnega občinstva ustvari **posnetek prejemnikov** in jih doda v kampanjo.
+- Če postopek ponovite, se dodajo le novi naslovi; obstoječi prejemniki in njihovi statusi ostanejo.
+- Ko so prejemniki ustvarjeni, sprememba filtrov občinstva **ne spremeni** obstoječega seznama. Nove prejemnike dodajte s ponovnim generiranjem.
+- Seznam prejemnikov lahko izvozite v **CSV**.
+
+### Preflight – preverjanje pred pošiljanjem
+
+Gumb **Preflight** preveri, ali je kampanja pripravljena za pošiljanje. Preverjanje ne pošlje nobenega sporočila.
+
+Preveri:
+
+- ali je na voljo aktiven SMTP poštni račun,
+- ali ima kampanja predlogo in ali je predloga aktivna ter neprazna,
+- ali so prejemniki generirani,
+- ali je kampanja odobrena,
+- ali imajo prospekti zabeleženo pravno podlago,
+- koliko sporočil je bilo danes že poslanih glede na dnevno omejitev kampanje in računa.
+
+Napake preprečijo odobritev; opozorila (na primer manjkajoča pravna podlaga ali dosežena dnevna omejitev) so prikazana, vendar same po sebi ne blokirajo odobritve.
+
+### Odobritev in pošiljanje
+
+Po uspešnem preflightu lahko **administrator ali superadmin** klikne **Odobri pošiljanje**. Šele s tem se kampanja lahko pošlje prek aplikacije.
+
+- **Pošlji paket** doda v čakalno vrsto naslednji paket prejemnikov.
+- Pošiljanje poteka v paketih; dnevna omejitev kampanje in poštnega računa se upošteva skupaj.
+- Med pošiljanjem je na voljo **Pavza**; z naslednjim **Pošlji paket** se pošiljanje nadaljuje.
+- Ko ni več prejemnikov v čakanju ali z napako, sistem kampanjo zaključi.
+- Brez aktivnega SMTP računa se kampanja ne pošlje, tudi če je odobrena.
+
+### Statusi kampanje
+
+| Status | Pomen |
+|--------|-------|
+| **Osnutek** | Kampanja je shranjena, prejemniki še niso pripravljeni. |
+| **Pripravljena** | Prejemniki so generirani; kampanja čaka na odobritev ali pošiljanje. |
+| **Ročno pošiljanje** | Uporabnik je prejemnike označil kot ročno poslane; kampanja je v ročnem sledenju. |
+| **Pošiljanje** | Pošiljanje je v teku. |
+| **Zaustavljena** | Pošiljanje je začasno ustavljeno. |
+| **Zaključena** | Vsi čakajoči prejemniki so obdelani. |
+
+### Sledenje prejemnikom
+
+V pregledu kampanje lahko filtrirate po statusu, iščete po prejemnikih in označite več vrstic. Statusi prejemnikov so:
+
+| Status | Pomen |
+|--------|-------|
+| **V čakanju** | Prejemnik še ni bil obdelan. |
+| **Poslano** | Sporočilo je bilo poslano. |
+| **Odgovoril** | Prejemnik je odgovoril. |
+| **Ni odgovora** | Klica ali sporočila ni bilo mogoče zaključiti. |
+| **Klik** | Zabeležen je bil klik (če ga ponudnik posreduje). |
+| **Zavrnjeno** | Sporočilo je bilo zavrnjeno (bounce). |
+| **Odjava** | Prejemnik se je odjavil. |
+| **Napaka** | Pošiljanje ni uspelo. |
+| **Izpuščeno** | Prejemnik je bil izključen (blokada, odjava, neveljaven naslov). |
+
+Množične akcije:
+
+- **Označi kot poslano** – ustvari odhodno interakcijo in nalogo za nadaljnji klic.
+- **Odgovoril** – zabeleži odgovor.
+- **Ni odgovora** – označi neuspešen stik.
+- **Odjava** – doda naslov na seznam odjav in posodobi prejemnike.
+- **Ne kontaktirati** – trajna ali časovno omejena blokada izbranih kontaktov; po izteku datuma se kontakt samodejno vrne v občinstvo.
+
+### Klicanje prejemnikov
+
+Ob prejemniku kliknite ikono **telefona**. V obrazcu za klic izberite izid in po potrebi vnesite datum naslednjega klica ter opombo.
+
+| Izid | Učinek |
+|------|--------|
+| **Dosežen** | Zabeleži uspešen stik. |
+| **Brez odgovora** | Prejemnik dobi status **Ni odgovora**. |
+| **Pokliči kasneje** | Ustvari oziroma posodobi nalogo za naslednji klic. |
+| **Dogovorjen sestanek** | Zabeleži dogovorjen sestanek in ustvari nalogo. |
+| **Ni relevantno** | Prejemnik se izključi iz nadaljnje obravnave. |
+| **Pridobljeno** | Zabeleži pridobljeno stranko oziroma posel. |
+| **Izgubljeno** | Zabeleži izgubljen posel. |
+
+Klici se zabeležijo v interakcijah; za **Pokliči kasneje** in **Dogovorjen sestanek** sistem ustvari nalogo v osebnem koledarju izvajalca.
+
+### Odjave in blokade
+
+Vsako kampanjsko sporočilo vsebuje povezavo za odjavo. Če je predloga ne vsebuje, jo sistem doda samodejno.
+
+- Klik na povezavo odpre javno stran za potrditev odjave; prijava ni potrebna.
+- Po potrditvi se naslov doda na globalni seznam **Odjave**, vsi prejemniki s tem naslovom pa dobijo status **Odjavljen**.
+- Na zavihku **Odjave** lahko naslove dodate tudi ročno (razlog: odjava, zavrnjeno, ročno, pritožba) in jih po potrebi izbrišete.
+- Odjava velja za vse prihodnje kampanje; za ponovno privolitev je treba naslov odstraniti s seznama odjav in urediti status prospekta oziroma kontakta.
+
+!!! info "Samodejne posodobitve"
+    Če je na poštnem računu nastavljen MailerSend webhook, sistem samodejno obdela odjavo, trdi bounce in pritožbo. Mehki bounce se zabeleži, vendar naslova ne doda na trajni seznam odjav.
+
+!!! warning "Pred pošiljanjem"
+    Preverite poštni račun, aktivno predlogo, generirane prejemnike in pravno podlago. Za pošiljanje kampanj je potreben aktiven SMTP račun; glejte [Sistemske nastavitve → E-poštni računi](sistemske-nastavitve.md#e-postni-racuni).
 
 ---
 

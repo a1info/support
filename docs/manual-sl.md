@@ -254,9 +254,9 @@ Dostop: glavni meni → Zaposleni
 - Če obstaja zgodovina, brisanje ni možno; zapis se deaktivira (možna ponovna aktivacija).
 - Preko modula zaposlenih lahko hitro ustvarite IT uporabniški račun in ga z enim klikom povežete z evidenco (omogoča avtomatsko sinhronizacijo podatkov in dostop do HR orodij).
 
-## CRM (organizacija nalog)
+## CRM (naloge, kampanje in prospekti)
 
-CRM modul omogoča pregled in organizacijo dela z naročniki (koledar, projekti, naloge).
+CRM modul omogoča pregled in organizacijo dela z naročniki (koledar, projekti, naloge, prospekti in kampanje).
 
 ### Naloge
 
@@ -296,6 +296,16 @@ Projekt združuje naloge, datoteke in komentarje v kronološko organiziran zaboj
 ### Delovni nalog
 
 Na seznamu nalog lahko izpišete delovne naloge (PDF) kot potrdilo o opravljenem delu (vključno s prostorom za podpis stranke). Oblika je prilagodljiva.
+
+### Prospekti in kampanje
+
+V meniju CRM sta tudi **Prospekti** in **Kampanje**:
+
+- **Prospekti** so potencialne stranke, ločene od šifranta strank. Vnesete jih ročno ali uvozite iz CSV/XLSX; sistem prepozna dvojnike po davčni številki ali e-pošti. Za vsakega prospekta lahko zabeležite segment, prioriteto, pravno podlago in soglasje.
+- **Kampanje** pripravite v treh korakih: predloga, občinstvo (stranke in kontakti ali prospekti) in povzetek. Po generiranju prejemnikov zaženite **Preflight**, nato pa pooblaščeni uporabnik kampanjo odobri in pošlje v paketih.
+- Sledenje vključuje odgovore, telefonske klice, blokade in odjave; povezava za odjavo se v kampanjska sporočila doda samodejno.
+
+Podrobna navodila so v poglavju [CRM – Naloge, kampanje in prospekti](manual-sl/crm.md#kampanje).
 
 ## HRM (Upravljanje kadrov in odsotnosti)
 

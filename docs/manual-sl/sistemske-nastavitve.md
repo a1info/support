@@ -72,7 +72,7 @@ Administratorji lahko račune dodajajo in urejajo. Samo **superadmin** lahko s g
 | **Ime pošiljatelja** | Prikazno ime pošiljatelja. |
 | **Odgovori na** | Naslov Reply-To; če je prazen, se uporabi pošiljateljev naslov. |
 | **Povratna pot** | Neobvezna povratna pot (Return-Path). |
-| **Dnevna omejitev** | Informativna nastavitev (privzeto 30). Trenutna različica je še ne uporablja za samodejno blokiranje pošiljanja. |
+| **Dnevna omejitev** | Zgornja meja dnevnega pošiljanja (privzeto 30). Uporablja se pri CRM kampanjah; preflight upošteva nižjo od omejitve kampanje in tega računa. |
 | **Aktiven** | Vklopi ali izklopi račun. |
 | **Privzet** | Označi privzeti račun. |
 
@@ -96,7 +96,7 @@ Za pošiljanje iz druge domene dodajte ločen račun in domeno najprej verificir
 
 ### Scenariji in privzeti račun
 
-Sistem ima rezervirane scenarije pošiljanja: `system`, `transactional`, `campaign`, `etest`, `notification`, `invoice`, `support` in `test`. Ob nadgradnji so vsi scenariji vezani na privzeti račun; upravljanje posameznih scenarijev v uporabniškem vmesniku še ni na voljo.
+Sistem ima rezervirane scenarije pošiljanja: `system`, `transactional`, `campaign`, `etest`, `notification`, `invoice`, `support` in `test`. Ob nadgradnji so vsi scenariji vezani na privzeti račun; upravljanje posameznih scenarijev v uporabniškem vmesniku še ni na voljo. Pri posamezni CRM kampanji lahko izberete drug poštni račun; če ga ne izberete, se uporabi scenarij `campaign` oziroma privzeti račun.
 
 ### Varnost in razkritje skrivnosti
 
@@ -104,7 +104,7 @@ Geslo SMTP in API ključ sta shranjena z reverzibilnim šifriranjem, ker ju SMTP
 
 ## E-poštne predloge
 
-Vsebino e-poštnih sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloge ne določajo pošiljateljskega računa – ta je vedno izbran v **E-poštni računi** – določajo pa zadevo, telo in jezik sporočila.
+Vsebino e-poštnih sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloge ne določajo pošiljateljskega računa – ta je vedno izbran v **E-poštni računi** – določajo pa zadevo, telo in jezik sporočila. Kampanje uporabljajo predloge iz modula **Kampanje** in izbrani poštni račun; potek pošiljanja je opisan v poglavju [CRM → Kampanje](crm.md#kampanje).
 
 Podrobnosti o poljih, spremenljivkah in predogledu so v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
 
