@@ -35,6 +35,7 @@ Modul Delovna oprema zagotavlja celovito evidenco strojev, naprav in orodij ter 
 | **Proizvajalec** | — | Ime proizvajalca ali dobavitelja. |
 | **Slike** | — | Ena ali več fotografij opreme (JPG, PNG). |
 | **Datum odpisa** | — | Datum, ko oprema ni več v aktivni uporabi. Oprema ostane v evidenci za zgodovinsko sledenje. |
+| **Pregled – Velja (mes)** | — | Privzeta periodika pregleda v mesecih. Uporabi se pri novem pregledu in kot začetna vrednost v skupnem pregledu; posamezni pregled jo lahko spremeni. |
 
 ### Ogled posameznega kosa opreme
 
@@ -61,10 +62,23 @@ Na detajlnem pogledu opreme so razpoložljive naslednje informacije in operacije
 | **Stranka** | ✅ | Stranka, pri kateri se pregled izvaja. |
 | **Mikro lokacija** | — | Natančna lokacija znotraj objekta (npr. hala A, 1. nadstropje). |
 | **Datum pregleda** | ✅ | Datum izvedbe pregleda. |
-| **Veljavnost (leta)** | — | Rok veljavnosti pregleda. Sistem samodejno izračuna datum izteka. |
+| **Veljavnost (mesecev)** | — | Rok veljavnosti pregleda v mesecih. Sistem samodejno izračuna datum izteka. Pri posameznem kosu se privzame periodika iz evidence opreme. |
 | **Uporabnik / Naslov** | — | Odgovorna oseba ali naslov uporabnika opreme. |
 | **Ustreza** | ✅ | Rezultat pregleda: **Da** (ustreza) ali **Ne** (ne ustreza). |
 | **Oprema** | ✅ | Izbor enega kosa opreme iz tabele (en pregled = ena enota opreme). |
+
+### Skupni pregled več kosov opreme
+
+Za hkratno ustvarjanje pregledov za več kosov opreme:
+
+1. Na seznamu **Delovna oprema → Seznam delovne opreme** označite želene kose.
+2. Odprite **Skupne akcije → Skupni pregled**.
+3. Preverite datum pregleda in po potrebi vnesite skupno veljavnost v polje **Pregled – Velja (mes)**.
+4. V tabeli izbranih kosov lahko stolpec **Velja (mes)** uredite za vsak kos posebej.
+
+Vsak kos ima v stolpcu **Velja (mes)** privzeto vrednost iz svoje evidence opreme (polje **Pregled – Velja (mes)**). Če oprema nima določene periodike, sistem uporabi **36 mesecev**. Zgornje polje **Pregled – Velja (mes)** je neobvezno: če vanj vnesete vrednost, se ta prenese na vse izbrane kose, posamezne vrednosti pa lahko nato še spremenite.
+
+Ob shranjevanju se za vsak izbrani kos ustvari ločen pregled z lastno veljavnostjo in izračunanim datumom izteka. Ni treba vnaprej izbrati enotne veljavnosti za celoten zapisnik.
 
 ### Tipi pregledov
 
@@ -85,7 +99,7 @@ Preizkusi po meri se prikažejo kot dodatna polja na obrazcu pregleda za ustrezn
 ### Kopiranje prejšnjega pregleda
 
 !!! tip "Prihranek časa s kopiranjem"
-    Če je rezultat pregleda enak ali podoben prejšnjemu (npr. periodični pregled brez sprememb), uporabite funkcijo **Kopiraj pregled**. Sistem prekopira vse vrednosti prejšnjega pregleda – spremenite samo datum in morebitna odstopanja.
+    Če je rezultat pregleda enak ali podoben prejšnjemu (npr. periodični pregled brez sprememb), uporabite funkcijo **Kopiraj pregled**. Sistem prekopira vsebino prejšnjega pregleda, nastavi datum pregleda na današnji dan in znova izračuna datum veljavnosti. Spremenite samo morebitna odstopanja.
 
 ---
 

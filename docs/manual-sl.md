@@ -52,7 +52,7 @@ Parametri filtriranja so prikazani nad seznami.
 Seznami z več podatki omogočajo skupne akcije nad izbranimi vrsticami. Izbor vrstice z označitvenim poljem na desni strani; za izbor vseh vrstic označite polje v glavi tabele. Po izboru določite akcijo nad tabelo.
 
 Vmesniki s skupnimi akcijami:
-- seznam delovne opreme — brisanje, kaskadno brisanje (briše tudi preglede), skupni pregled (za preglede z enakimi parametri), brisanje zgodovine sprememb,
+- seznam delovne opreme — brisanje, kaskadno brisanje (briše tudi preglede), skupni pregled (veljavnost se privzame iz posamezne opreme in jo je mogoče urediti), brisanje zgodovine sprememb,
 - seznam pregledov — brisanje,
 - seznam zaposlenih — brisanje, brisanje zgodovine sprememb,
 - seznam usposabljanj — brisanje.

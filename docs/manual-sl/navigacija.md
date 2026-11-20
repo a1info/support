@@ -67,7 +67,7 @@ Pregledni seznami podpirajo **skupne akcije**, s katerimi lahko hkrati obdelate 
 
 - **Brisanje** – trajno odstrani izbrane zapise.
 - **Kaskadno brisanje** – odstrani delovno opremo skupaj z vsemi njenimi pregledi in evidencami.
-- **Skupni pregled** – ustvari skupen pregled za vso izbrano delovno opremo z enakimi parametri naenkrat.
+- **Skupni pregled** – ustvari posamezne preglede za vso izbrano delovno opremo hkrati. Veljavnost se privzame iz vsakega kosa opreme in jo je mogoče urediti pri posameznem kosu ali za vse izbrane skupaj.
 - **Brisanje zgodovine sprememb** – odstrani audit log za izbrane zapise (glejte razdelek spodaj).
 
 !!! danger "Kaskadno brisanje je nepovraten postopek"
