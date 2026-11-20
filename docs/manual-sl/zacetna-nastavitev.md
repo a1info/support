@@ -33,6 +33,9 @@ Pred prvo produkcijsko uporabo preverite, da je za vse ključne vrste dokumentov
 !!! tip "Prilagoditev"
     Nastavitve številčenja prilagodite pred prvim izdanim dokumentom. Naknadno popravljanje zaporednih številk zahteva poseg v bazo.
 
+!!! note "ERP in CRM številčenje"
+    Ponudbe, pogodbe, projekti in delovni nalogi se številčijo samodejno v svojih modulih in jih v **Sistemu številčenja** ne nastavljate. Ponudbe in pogodbe dobijo številko ob shranjevanju, projekti in delovni nalogi pa v CRM.
+
 Podrobna referenca za parametre, tipe dokumentov in delovanje števcev je v poglavju [Sistemske nastavitve](sistemske-nastavitve.md#stevilcenje-dokumentov).
 
 ---

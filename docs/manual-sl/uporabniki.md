@@ -153,7 +153,7 @@ Sistem uporablja podroben sistem dovoljenj, ki se dodeljujejo prek skupin (vlog)
 | `view_rass` | Ogled ocen tveganj |
 | `view_rassl` | Ogled ocen tveganj TDM |
 | `view_sdev` | Ogled tehnične varnosti (naprave) |
-| `view_erp_finance` | Ogled modula Finance – potrjeni dokumenti |
+| `view_erp_finance` | Ogled modula Finance – dokumenti, projekti in naloge |
 | `manage_erp_finance` | Upravljanje statusa financ (Odprto / Narejeno / Preklicano) |
 
 !!! note "Pravice za Finance"

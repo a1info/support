@@ -102,12 +102,13 @@ Dokument, potrjen brez aktivnega toka, je v stanju **Potrjeno** in ima dodatno o
 
 ---
 
-## Finance — pregled potrjenih dokumentov
+## Finance — pregled dokumentov in delovnih nalogov
 
 **Dostop:** [ERP → Finance](erp.md#finance)
 
-Finance prikazuje dokumente, ki so potrjeni in pripravljeni za finančno obdelavo.
+Finance prikazuje dokumente, ki so potrjeni in pripravljeni za finančno obdelavo, ter ločen pregled projektov in delovnih nalogov.
 
+- Zavihek **Projekti in naloge** prikazuje vse projekte in delovne naloge (DN) po statusu; podrobnosti so v poglavju [ERP → Finance](erp.md#projekti-in-naloge).
 - Privzeto so prikazani **samo potrjeni dokumenti**.
 - Filter **Prikaži vse dokumente** je privzeto **izklopljen**. Ko ga vklopite, se prikažejo tudi osnutki, dokumenti v potrjevanju in zavrnjeni dokumenti.
 - Filtrirate lahko po modulu in statusu financ; iščete po številki dokumenta, nazivu, izvorni kodi ali stranki.
@@ -118,7 +119,7 @@ Finance prikazuje dokumente, ki so potrjeni in pripravljeni za finančno obdelav
 - Prikazano je tudi **število pregledov** (delovna oprema), **število udeležencev** (usposabljanje) oziroma **število postavk** (ERP).
 - Statusi financ so **Odprto**, **Narejeno** in **Preklicano**.
 - Dokumenti, potrjeni brez aktivnega toka, imajo oznako **Samodejno potrjeno**.
-- **Izdelava računov v tej različici še ni vključena** — Finance je pregled potrjenih dokumentov in njihovega statusa.
+- **Izdelava računov v tej različici še ni vključena** — Finance je pregled potrjenih dokumentov ter projektov in delovnih nalogov.
 
 ---
 
@@ -168,7 +169,7 @@ Trenutno je povezan z moduli **Delovna oprema**, **Usposabljanje** in **ERP** (p
 Ne. Potrjevalec lahko dokument potrdi tudi ob odprtih komentarjih. Pripombe ostanejo vidne v Finance.
 
 ### Ali Finance izda račun?
-V trenutni različici ne. Finance prikazuje potrjene dokumente in omogoča označevanje statusa (**Odprto / Narejeno / Preklicano**). Izdelava računov je predvidena v naslednji fazi.
+V trenutni različici ne. Finance prikazuje potrjene dokumente ter ločen pregled projektov in delovnih nalogov; omogoča označevanje statusa (**Odprto / Narejeno / Preklicano**). Izdelava računov je predvidena v naslednji fazi.
 
 ### Kje najdem izdane dokumente in različice?
 V **Poročila → Izdani dokumenti** so prikazani vsi ustvarjeni dokumenti, aktivne različice in status objave. Podrobnosti so v poglavju [Izdani dokumenti in različice](izdani-dokumenti.md).

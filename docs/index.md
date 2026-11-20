@@ -104,11 +104,11 @@ Sistem Optima Prevent vključuje naslednje glavne module:
   </div>
   <div class="op-card">
     <h3>ERP in Finance</h3>
-    <p>Ponudbe, pogodbe in pregled potrjenih dokumentov za finančno obdelavo.</p>
+    <p>Ponudbe, pogodbe in pregled dokumentov, projektov ter delovnih nalogov za finančno obdelavo.</p>
     <ul>
       <li>Storitve in cenik po strankah</li>
       <li>Ponudbe in pogodbe</li>
-      <li>Finance – potrjeni dokumenti</li>
+      <li>Finance – dokumenti, projekti in naloge</li>
       <li>Pregled za finančno obdelavo</li>
     </ul>
   </div>

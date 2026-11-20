@@ -212,6 +212,9 @@ Digitalno podpisani dokumenti so prepoznavni po:
 
 Modul za samodejno številčenje omogoča definiranje pravil oštevilčevanja za vsako vrsto dokumenta posebej. To je referenčno mesto za nastavitev števcev, ki jih pred prvo produkcijsko uporabo samo preverite še v okviru [začetne nastavitve](zacetna-nastavitev.md#avtomaticno-stevilcenje-dokumentov).
 
+!!! note "ERP in CRM številčenje"
+    Ponudbe, pogodbe, projekti in delovni nalogi se številčijo samodejno v svojih modulih in niso del tega seznama. Ponudbe in pogodbe dobijo `PON-YYYY-NNNNN` oziroma `POG-YYYY-NNNNN` ob shranjevanju, projekti `PR-YYYY-NNNNN`, delovni nalogi pa `DN-YYYY-NNNNN` v CRM.
+
 ### Parametri oštevilčevanja
 
 | Parameter | Opis |
@@ -223,9 +226,14 @@ Modul za samodejno številčenje omogoča definiranje pravil oštevilčevanja za
 
 ### Dokumenti s samodejnim številčenjem
 
-- Zapisniki usposabljanj
-- Potrdila o usposabljanju
+- Delovna oprema in certifikati delovne opreme
 - Zapisniki pregledov delovne opreme
-- Certifikati delovne opreme
-- Ocene tveganja
+- Zapisniki pregledov varnostne opreme
+- Skupine tečajev in potrdila udeležencev
 - Meritve
+- Dokumenti ocen tveganj
+- Pregledi SAPZ
+- Zapisniki VPP pregledov
+- Evakuacijske vaje
+
+V seznamu so samo števci, ki jih moduli dejansko uporabljajo. Opuščeni števci so odstranjeni iz sistema.

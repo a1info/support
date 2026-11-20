@@ -1,6 +1,6 @@
 # ERP (Upravljanje ponudb, pogodb, storitev in financ)
 
-Modul **ERP** je namenjen centraliziranemu vodenju prodajnih aktivnosti. Omogoča upravljanje šifranta storitev, pripravo in izdajanje ponudb, vodenje dolgoročnih pogodb s strankami ter spremljanje obračunskih obdobij in pregled potrjenih dokumentov v modulu **Finance**.
+Modul **ERP** je namenjen centraliziranemu vodenju prodajnih aktivnosti. Omogoča upravljanje šifranta storitev, pripravo in izdajanje ponudb, vodenje dolgoročnih pogodb s strankami ter spremljanje obračunskih obdobij in pregled dokumentov, projektov in delovnih nalogov v modulu **Finance**.
 
 !!! note "Povezava z Business Central"
     Za samodejni prenos sprejetih ponudb in aktivnih pogodb v Business Central
@@ -13,7 +13,7 @@ Modul **ERP** je namenjen centraliziranemu vodenju prodajnih aktivnosti. Omogoč
 ERP modul združuje naslednje sklope, ki med seboj sodelujejo pri pripravi prodajne in finančne dokumentacije:
 
 - **Ponudbe:** priprava ponudb z izvozom v Word (Docx) in Excel.
-- **Finance:** skupni pregled potrjenih dokumentov iz usposabljanja, delovne opreme in ERP.
+- **Finance:** skupni pregled potrjenih dokumentov iz usposabljanja, delovne opreme in ERP ter pregled projektov in delovnih nalogov po statusu.
 - **Pogodbe:** evidenca naročniških razmerij z obračunskimi obdobji, priponkami ter izvozom v Excel.
 - **Storitve (šifrant):** osnovna baza storitev in produktov.
 - **Cenik po strankah:** posebne cene in popusti storitev za posamezne stranke.
@@ -31,7 +31,7 @@ Vidnost posameznih sklopov modula je odvisna od dodeljenih pravic:
 | `view_erp_service` / `manage_erp_service` | Storitve (šifrant) |
 | `view_erp_offer` / `manage_erp_offer` | Ponudbe in cenik po strankah |
 | `view_erp_contract` / `manage_erp_contract` | Pogodbe |
-| `view_erp_finance` / `manage_erp_finance` | Finance – potrjeni dokumenti |
+| `view_erp_finance` / `manage_erp_finance` | Finance – dokumenti, projekti in naloge |
 
 Pravice za Finance niso del privzetih pravic uporabnika/operaterja; privzeto jih imata **admin** in **superadmin**. Dodelite jih finančni vlogi. Pravice se dodeljujejo prek vlog uporabnikov (glejte poglavje *Uporabniki in pravice*). Modul ERP je vključen v licenčna paketa **1** in **9** (glejte poglavje *Sistemske nastavitve*).
 
@@ -63,7 +63,7 @@ Preden začnete z ustvarjanjem ponudb in pogodb, uredite šifrant storitev. To o
 
 | Podatek | Opis |
 |---------|------|
-| **Številka ponudbe** | Sistem samodejno predlaga številko v obliki `PON-LLLL-NNNNN` (npr. `PON-2026-00001`) iz sistema številčenja; številko lahko ročno spremenite. |
+| **Številka ponudbe** | Ob shranjevanju sistem dodeli številko v obliki `PON-YYYY-NNNNN` (npr. `PON-2026-00001`). Če polje pustite prazno, se številka dodeli samodejno; lahko vnesete tudi svojo. Številka je enolična. |
 | **Stranka** | Izbira naročnika iz baze strank. |
 | **Posl. enota** | Izbrana poslovna enota stranke (uporabi se tudi na Word dokumentu). |
 | **Datumi** | Datum izdaje in datum veljavnosti ponudbe. |
@@ -98,8 +98,8 @@ Status ponudbe spreminjate z gumbi ob trenutnem statusu. Sistem dovoljuje le pre
 
 Ponudbo lahko povežete z delovnimi nalogami v modulu **CRM**:
 
-- **Ustvari nalogo** — gumb v glavi obrazca ponudbe ali ikona naloge na seznamu ponudb odpre okno za novo nalogo. Stranka, naziv in povezava na ponudbo se izpolnijo samodejno.
-- **Povezane naloge** — na dnu obrazca ponudbe je seznam nalog, povezanih s ponudbo (naziv, termin, izvajalec, status); nalogo odprete in uredite z ikono svinčnika.
+- **Ustvari nalogo** — gumb v glavi obrazca ponudbe ali ikona naloge na seznamu ponudb odpre okno za novo nalogo. Stranka, naziv in povezava na ponudbo se izpolnijo samodejno; naloga je privzeto označena kot **delovni nalog (DN)**.
+- **Povezane naloge** — na dnu obrazca ponudbe je seznam nalog, povezanih s ponudbo (naziv, številka DN, termin, izvajalec, status); nalogo odprete in uredite z ikono svinčnika.
 - Ob **brisanju ponudbe** se naloge ne izbrišejo — povezava na ponudbo se samo odstrani.
 
 ### Izvoz ponudbe
@@ -119,7 +119,7 @@ Ponudbe lahko vključite v **dokumentni tok potrjevanja** (pošiljanje v potrdit
 
 | Polje | Opis |
 |-------|------|
-| **Številka** | Sistem predlaga številko v obliki `POG-LLLL-NNNNN` (npr. `POG-2026-00001`); lahko jo spremenite. |
+| **Številka** | Ob shranjevanju sistem dodeli številko v obliki `POG-YYYY-NNNNN` (npr. `POG-2026-00001`). Če polje pustite prazno, se številka dodeli samodejno; lahko vnesete tudi svojo. Številka je enolična. |
 | **Stranka / Posl. enota** | Naročnik in izbrana poslovna enota. |
 | **Naziv** | Ime ali predmet pogodbe (obvezno polje). |
 | **Obdobje (obračunski cikel)** | Kako pogosto se storitev izvaja/zaračunava: **Mesečno, Letno, Ostalo**. |
@@ -172,7 +172,12 @@ Tudi pogodbe lahko vključite v dokumentni tok potrjevanja (enako kot ponudbe). 
 
 **Glavni meni → ERP → Finance**
 
-Finance je skupni pregled dokumentov, potrjenih v dokumentnem toku. Prikazuje dokumente iz modulov **Usposabljanje**, **Delovna oprema** in **ERP** (ponudbe, pogodbe).
+Finance je skupni pregled dokumentov in delovnih nalogov. Sestavljen je iz dveh zavihkov:
+
+- **Dokumenti** — potrjeni dokumenti iz modulov **Usposabljanje**, **Delovna oprema** in **ERP** (ponudbe, pogodbe).
+- **Projekti in naloge** — pregled projektov in delovnih nalogov po statusu.
+
+### Dokumenti
 
 - Privzeto so prikazani samo **potrjeni dokumenti**.
 - Filter **Prikaži vse dokumente** je privzeto **izklopljen**. Ko ga vklopite, se prikažejo tudi osnutki, dokumenti v potrjevanju in zavrnjeni dokumenti.
@@ -181,7 +186,28 @@ Finance je skupni pregled dokumentov, potrjenih v dokumentnem toku. Prikazuje do
 - Prikazano je **število pregledov** (delovna oprema), **število udeležencev** (usposabljanje) oziroma **število postavk** (ERP).
 - Statusi financ: **Odprto**, **Narejeno**, **Preklicano**.
 - Dokumenti, potrjeni brez aktivnega dokumentnega toka, so označeni z **Samodejno potrjeno**.
-- Izdelava računov v tej različici še ni vključena; Finance je pregled potrjenih dokumentov in njihovega statusa.
+- Izdelava računov v tej različici še ni vključena; Finance je pregled potrjenih dokumentov ter projektov in delovnih nalogov.
+
+### Projekti in naloge
+
+Zavihek prikazuje dve tabeli:
+
+- **Projekti** — vsi projekti ne glede na status; prikazani so številka projekta, naziv, stranka, skrbnik, status, zaključek, odstotek dokončanja in status financ.
+- **Naloge** — samo **delovni nalogi (DN)**, ne pa tudi običajne naloge in opomniki. Prikazani so številka DN, naziv, projekt, stranka, izvajalec, status, zaključek in status financ.
+
+Filtri in prikaz:
+
+- **Status** — Vsi statusi, Planirano, Odprto, Končano, Preklicano. Izbrani status velja za obe tabeli.
+- **Status v financah** — Odprto, Narejeno, Preklicano.
+- **Iskanje** — po številki projekta/DN, nazivu, stranki, projektu ali opisu.
+- Gumbi s števci pri statusih seštejejo projekte in delovne naloge. Vsaka tabela ima svoj seznam in ločeno številčenje strani.
+- **Obstoječe naloge niso samodejno označene kot delovni nalogi.** Če jih želite prikazati tukaj, jih v CRM odprite, obkljukajte **Delovni nalog (DN)** in shranite.
+
+Finančne akcije:
+
+- Gumbi **Označi kot zaključeno**, **Prekliči** in **Ponovno odpri** so na voljo samo uporabnikom s pravico `manage_erp_finance`.
+- Akcije so prikazane samo pri **končanih nalogah** oziroma pri projektih s statusom **Končano** ali **100 % dokončanjem**; preklicani zapisi ter planirani in odprti projekti brez 100 % dokončanja so v tem pogledu samo za branje.
+- Označitev projekta v financah hkrati posodobi status financ pri vseh njegovih nalogah.
 
 !!! tip "Povezava z dokumentnim tokom"
     Za nastavitev potrjevalcev, samodejno potrjevanje in komentarje glejte poglavje [Dokumentni tok in potrjevanje](dokumentni-tok.md).
@@ -207,7 +233,7 @@ Cena iz cenika se **samodejno uporabi** ob izbiri storitve na ponudbi ali pogodb
 
 ## Nastavitve
 
-- **Številčenje:** zaporedne številke ponudb in pogodb se upravljajo v *Sistemu številčenja* (vrsti **ERP Ponudbe** in **ERP Pogodbe**). Določite lahko začetno številko in številčenje po letih.
+- **Številčenje:** ponudbe in pogodbe dobijo številko samodejno ob shranjevanju (`PON-YYYY-NNNNN`, `POG-YYYY-NNNNN`). V *Sistemu številčenja* jih ne upravljate več. Projekti in delovni nalogi se številčijo v CRM (`PR-YYYY-NNNNN`, `DN-YYYY-NNNNN`).
 - **Word predloge:** predloge za ponudbe pripravite v *Urejanje predlog* (vrsta predloge `offer`); razpoložljive spremenljivke so opisane v poglavju *Legenda spremenljivk*.
 - **Dokumentni tok:** potek potrjevanja za posamezno stranko nastavite na strani *Dokumentni tok* (modul `ERP`). Če tok ni aktiven, se dokumenti samodejno potrdijo in prikažejo v Finance.
 - **Pravice:** dostop do sklopov modula se ureja prek vlog uporabnikov (pravice `view_erp_*` / `manage_erp_*`). Za Finance sta namenjeni `view_erp_finance` in `manage_erp_finance`.

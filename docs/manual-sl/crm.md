@@ -22,6 +22,8 @@ V meniju CRM so **Naloge**, **Projekti**, **Kontakti**, **Časovnica**, **Intera
 - Barvno ločevanje: projekt (ozadje) in izvajalec (leva črta)
 - Naročnina na koledar (ICS) za Google Koledar in Outlook
 - Sledenje statusom nalog
+- Samodejno številčenje projektov (`PR-YYYY-NNNNN`) in delovnih nalogov (`DN-YYYY-NNNNN`)
+- Ločevanje delovnih nalogov od običajnih opravil in opomnikov
 - Izpis delovnih nalogov (PDF)
 - Samodejno generiranje periodičnih opomnikov
 - Ločen seznam prospektov z uvozom, segmentacijo in sledenjem soglasja
@@ -56,9 +58,11 @@ Naloga je osnovna delovna enota v modulu CRM.
 | Polje | Opis |
 |-------|------|
 | **Naziv** | Kratek opis naloge ali naročila. |
+| **Št. delovnega naloga (DN)** | Samodejno dodeljena številka delovnega naloga v obliki `DN-YYYY-NNNNN` (npr. `DN-2026-00001`). Prikazana je pri nalogah z dodeljeno številko DN; običajne naloge brez DN je nimajo. |
+| **Delovni nalog (DN)** | Kljukica, ki nalogo označi kot delovni nalog. Samo take naloge dobijo številko DN in se prikažejo v pregledu **ERP → Finance → Projekti in naloge**. |
 | **Začetek** | Datum in ura začetka naloge. |
 | **Konec** | Datum in ura zaključka naloge. |
-| **Status** | Trenutno stanje naloge (npr. Odprt, V teku, Zaključen). |
+| **Status** | Trenutno stanje naloge: **Planirano**, **Odprto**, **Končano** ali **Preklicano**. |
 | **Dodeljen uporabnik** | Izvajalec naloge. |
 | **Stranka** | Naročnik, za katerega se naloga izvaja. |
 | **Koledar / Projekt** | Razvrstitev v ustrezni koledar ali projekt. |
@@ -74,6 +78,20 @@ Naloga je lahko povezana s ponudbo iz modula **ERP**:
 - Nalogo ustvarite neposredno **iz ponudbe** z gumbom *Ustvari nalogo* (glejte poglavje *ERP — Ponudbe in pogodbe*); sistem samodejno poveže nalogo s ponudbo ter predizpolni stranko in naziv naloge.
 - Povezava je vidna v obrazcu naloge (**Povezan objekt** s povezavo na ponudbo).
 - Na seznamu nalog se pod nazivom naloge izpiše modra značka s **številko ponudbe**; klik nanjo odpre ponudbo.
+
+### Delovni nalog in številčenje (DN)
+
+Naloga je lahko običajno opravilo/opomnik ali **delovni nalog**.
+
+- Kljukica **Delovni nalog (DN)** je privzeto vključena, če nalogo ustvarite iz **projekta**, **ponudbe** ali ko dodate **storitve**.
+- Ob shranjevanju sistem dodeli številko `DN-YYYY-NNNNN` (npr. `DN-2026-00001`); `YYYY` je leto nastanka, `NNNNN` pa petmestno zaporedje. Številka je enolična in se po dodelitvi ne spreminja.
+- Naloge, ki niso označene kot delovni nalog, ob ustvarjanju ne dobijo številke DN in se ne prikažejo v pregledu **ERP → Finance → Projekti in naloge**.
+- Obstoječe naloge niso samodejno označene. Če jih želite vključiti med delovne naloge, jih odprite, obkljukajte **Delovni nalog (DN)** in shranite.
+- Številka DN je prikazana v obrazcu naloge, na seznamu nalog, v povezanih nalogah pri ponudbi in v Excel izvozu.
+- Če kljukico pozneje odstranite, naloga obdrži že dodeljeno številko, vendar se umakne iz finančnega pregleda delovnih nalogov.
+
+!!! info "Ponovitve"
+    Vsaka ponovitev delovnega naloga dobi svojo številko DN. Serija in posamezne ponovitve so tako ločeno sledljive.
 
 ---
 
@@ -117,7 +135,7 @@ Naloge so razvrščene v koledarje. Vsak koledar ima **lastnika**, **barvo** in 
 
 ### Iskanje in filtri
 
-- **Iskalno polje** nad seznamom išče po nazivu naloge, stranki in lokaciji.
+- **Iskalno polje** nad seznamom išče po nazivu naloge, številki DN, stranki in lokaciji.
 - **Filtri** (uporabnik, koledar, status) so v zgornji vrstici; izbrani filtri so prikazani kot **čipi**, ki jih odstranite s klikom na ×.
 - **Počisti filtre** vrne privzeti pogled (vsi uporabniki, vsi statusi).
 - **Mesečni/tedenski pogled**: dogodke lahko **premaknete** (sprememba datuma) ali **raztegnete** (sprememba konca); spremembe se shranijo takoj.
@@ -169,6 +187,33 @@ Projekt združuje naloge, datoteke in komentarje v enotnem kronološkem pogledu.
 ### Dostop
 
 **CRM → Projekti → Ogled**
+
+### Številka projekta
+
+Vsak projekt ob shranjevanju dobi številko `PR-YYYY-NNNNN` (npr. `PR-2026-00001`); `YYYY` je leto nastanka, `NNNNN` pa petmestno zaporedje. Številka je enolična in je prikazana v glavi projekta ter na seznamu projektov. Ustvarjenih številk ni mogoče spreminjati.
+
+### Podatki o projektu
+
+| Podatek | Opis |
+|---------|------|
+| **Št. projekta** | Samodejno dodeljena številka `PR-YYYY-NNNNN`. |
+| **Naziv** | Ime projekta. |
+| **Stranka** | Naročnik projekta. |
+| **Skrbnik** | Oseba ali vloga, odgovorna za projekt; dodeli se prek ikone **Dovoljenja**. |
+| **Status** | **Planirano**, **Odprto**, **Končano** ali **Preklicano**. |
+| **Začetek / konec** | Načrtovani časovni okvir projekta. |
+| **Odstotek dokončanja** | Napredek projekta od 0 do 100 %. |
+| **Opis** | Dodatne informacije o projektu. |
+
+### Seznam projektov in filtri
+
+Na seznamu **CRM → Projekti** lahko kombinirate naslednje filtre:
+
+- **Status projekta** – Planirano, Odprto, Končano, Preklicano.
+- **Skrbnik** – uporabnik ali vloga, vključno z možnostjo **Brez skrbnika**.
+- **Podjetje** – stranka, ki ji projekt pripada.
+
+Filtri se med seboj kombinirajo. Iskalnik išče po nazivu in številki projekta. Filtre in iskanje upošteva tudi Excel izvoz, ki vsebuje številko projekta.
 
 ### Struktura projekta
 
@@ -423,7 +468,7 @@ Vsako kampanjsko sporočilo vsebuje povezavo za odjavo. Če je predloga ne vsebu
 
 ## Delovni nalog
 
-Delovni nalog je tiskani (PDF) dokument, ki potrjuje opravljeno delo pri stranki.
+Delovni nalog je tiskani (PDF) dokument, ki potrjuje opravljeno delo pri stranki. Priporočamo ga za naloge, označene kot **delovni nalog (DN)**.
 
 ### Generiranje
 
@@ -433,6 +478,7 @@ Na **seznamu nalog** ali znotraj posamezne naloge kliknite ikono za **tisk delov
 
 - Glava z nazivom, naslovom, registrsko številko, e-pošto, spletno stranjo in logotipom vašega podjetja (iz nastavitev podjetja — stranka s kategorijo *OWN*)
 - Podatki o stranki in naslovu
+- Številka delovnega naloga (DN), če je nalogi dodeljena; sicer interna številka naloge
 - Datum in čas opravljenega dela
 - Opis opravljenih storitev
 - Ime izvajalca
