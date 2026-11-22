@@ -2,7 +2,7 @@
 
 ## Pregled modula
 
-Modul **EKO meritve** omogoča evidentiranje in upravljanje meritev delovnega okolja ter okoljevarstvenih meritev. Rezultati meritev se navezujejo na ocene tveganj in module požarne varnosti.
+Modul **EKO meritve** omogoča evidentiranje in upravljanje meritev delovnega okolja ter okoljevarstvenih meritev. Rezultati meritev so podlaga za oceno tveganja.
 
 **Dostop:** Glavni meni → EKO meritve
 
@@ -96,13 +96,25 @@ V spustnem seznamu predlog je predloga, ki je bila **zadnjič uporabljena** za t
 
 ---
 
-## Povezava s požarno varnostjo
+## Merilna mesta
 
-Meritve za **strelovod** in **elektro naprave** so neposredno povezane z modulom **Požarna varnost**.
+Zavihek **Merilna mesta** v obrazcu meritve prikaže merilnike, izvajalce in trajanje posameznih meritev. Vsako merilno mesto je vezano na meritev in omogoča sledljivost, s katero opremo je bila vrednost izmerjena.
 
-!!! info "Potek povezave"
-    1. Meritve strelovoda in elektroinstalacij se vnesejo v modul EKO meritve.
-    2. Pri vnosu objekta v modulu **Požarna varnost** izberete obstoječo meritev iz padajočega seznama.
-    3. Rezultati meritve so vidni v **obeh modulih** — v EKO meritvah in v kartici objekta požarne varnosti.
+---
 
-Ta integracija prepreči podvajanje podatkov in zagotavlja enotni vir informacij o stanju inštalacij.
+## Toplotno udobje: PMV in PPD
+
+Pri meritvah toplote (toplotno udobje) sistem iz vnesenih vrednosti izračuna kazalnika toplotnega udobja:
+
+| Kazalnik | Pomen |
+|---|---|
+| **PMV** | Predicted Mean Vote — povprečna ocena občutka toplote na lestvici od −3 (hladno) do +3 (vroče). |
+| **PPD** | Predicted Percentage of Dissatisfied — odstotek oseb, ki bi bile s takimi pogoji nezadovoljne. |
+
+Vhodni podatki so temperatura zraka in okolice, relativna vlaga, hitrost gibanja zraka ter metabolizem in obleka (MET, CLO). Izračunane vrednosti se prikažejo v meritvi in v poročilu.
+
+---
+
+## Poročilo o meritvi
+
+Poročilo se ustvari iz seznama meritev: v stolpcu **PDF** izberete predlogo in dokument se pripravi ter shrani k meritvi. Poročilo vsebuje izmerjene vrednosti, merilna mesta in izračunane PMV/PPD.

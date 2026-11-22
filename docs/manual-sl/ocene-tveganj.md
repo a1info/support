@@ -1,10 +1,27 @@
 # Ocene tveganj
 
-Ocena tveganja je **osrednji dokument varnostnih politik stranke**. Nanjo se navezujejo usposabljanja, meritve delovnega okolja, osebna varovalna oprema, zdravniški pregledi, evidence nevarnih snovi in pregledi delovne opreme.
+Ocena tveganja je **osrednji dokument varnostnih politik stranke** in mora biti pripravljena **pisno** (ZVZD-1, 17. člen). Nanjo se navezujejo usposabljanja, meritve delovnega okolja, osebna varovalna oprema, zdravniški pregledi, evidence nevarnih snovi in pregledi delovne opreme.
 
-Sistem omogoča pripravo ocen po tipičnih delovnih mestih (TDM) z uporabo **prilagodljive dinamične matrike**, katere formulo nastavi skrbnik v konfiguraciji modula.
+Sistem omogoča pripravo ocen z uporabo **prilagodljive dinamične matrike**, katere formulo nastavi skrbnik v konfiguraciji modula.
 
 **Dostop:** Glavni meni → Ocene tveganj
+
+---
+
+## Obseg ocene
+
+Pri vsaki oceni polje **Ocena se izvaja za** določi, na kaj se ocena nanaša:
+
+| Obseg | Kdaj ga uporabite |
+|---|---|
+| **TDM** | Ocena za tipično delovno mesto — skupino delavcev z enakimi nalogami in izpostavljenostmi. |
+| **Delovno mesto** | Ocena za konkretno delovno mesto pri stranki, ko se izpostavljenosti razlikujejo od TDM. |
+| **Opravilo** | Ocena za posamezno opravilo oziroma delovni proces (npr. vzdrževalna dela, čiščenje). |
+
+Ista matrika tveganj se uporabi v vseh treh primerih — razlikuje se le predmet ocene.
+
+!!! tip "Dokument OTV"
+    Dokument OTV se ne ustvarja v obrazcu ocene, ampak iz **zapisnikov OTV** (Ocene tveganj → Zapisniki). V stolpcu PDF izberete predlogo in dokument se pripravi ter shrani k zapisniku.
 
 ---
 

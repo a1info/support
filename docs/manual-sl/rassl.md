@@ -1,5 +1,7 @@
 # Ocene telesnih obremenitev (RASSL)
 
+Ocena poteka po **šestih kategorijah** telesnih obremenitev. Spodaj sta podrobneje opisani kategoriji B in C.
+
 ## Pregled modula
 
 Modul **RASSL** (Ocene telesnih obremenitev) omogoča sistematično ocenjevanje ergonomskih obremenitev delavcev na delovnih mestih. Dopolnjuje modul **Ocene tveganj** z namensko ergonomsko analizo telesnih obremenitev.
