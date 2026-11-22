@@ -63,6 +63,29 @@ Tipi tečajev so šifranti, ki določajo, kako se usposabljanja kategorizirajo i
 !!! info "Veljavnost se po dodanih udeležencih zaklene"
     Ko ima tečaj že dodane udeležence (ali je zaključen), je polje **Veljavnost** na obrazcu tečaja samo za branje. Veljavnost se takrat ureja na posameznem udeležencu v seznamu udeležencev.
 
+### Zavihek eUsposabljanje
+
+Zavihek **eUsposabljanje** omogoči oddaljeno izobraževanje za ta tečaj:
+
+| Polje | Pomen |
+|---|---|
+| **Vprašalnik za eUsposabljanje** | Izbira vprašalnika (e-testa). Če je izbrano *Onemogočeno*, je e-izobraževanje izklopljeno. |
+| **eUsposabljanje velja (dni)** | Koliko dni velja dostop udeleženca do e-izobraževanja. |
+| **Časovna omejitev (minuta)** | Najdaljši čas za reševanje vprašalnika. |
+| **e-mail poročanje – pristopni podatki** | Ali sistem udeležencem pošlje dostopne podatke po e-pošti. |
+
+### Seznam udeležencev
+
+**Dostop:** obrazec tečaja → **Uredi seznam udelež.**
+
+Seznam prikaže zaposlenega, delovno mesto, TDM, poslovno enoto, veljavnost, datum poteka, praktični del, uspešnost in številko potrdila.
+
+| Dejanje | Pomen |
+|---|---|
+| **Vnesi datum za vse** | Vsem udeležencem hkrati vpiše isti datum. |
+| **Počisti datume** | Počisti vnesene datume. |
+| **Ustvari zapisnik** | Iz urejenega seznama pripravi zapisnik o usposabljanju. |
+
 ### Dodajanje udeležencev
 
 Po vnosu osnovnih podatkov tečaja dodate udeležence iz tabele zaposlenih:
