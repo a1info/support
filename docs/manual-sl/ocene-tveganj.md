@@ -20,6 +20,12 @@ Pri vsaki oceni polje **Ocena se izvaja za** določi, na kaj se ocena nanaša:
 
 Ista matrika tveganj se uporabi v vseh treh primerih — razlikuje se le predmet ocene.
 
+## Metoda ocenjevanja
+
+Privzeta metoda je **AUVA**: stopnja tveganja je zmnožek verjetnosti in posledic (formula `a*b`), rezultat pa se razvrsti v razrede tveganja.
+
+Skrbnik lahko v **konfiguraciji modula RASS** (Sistem → konfiguracija modula) vnese **lastno formulo**. Sistem podpira tudi tretjo spremenljivko — pogostost (`c`) — če jo formula uporabi. Barve in razredi se prilagodijo izračunu.
+
 !!! tip "Dokument OTV"
     Dokument OTV se ne ustvarja v obrazcu ocene, ampak iz **zapisnikov OTV** (Ocene tveganj → Zapisniki). V stolpcu PDF izberete predlogo in dokument se pripravi ter shrani k zapisniku.
 

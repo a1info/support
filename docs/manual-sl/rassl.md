@@ -1,6 +1,6 @@
 # Ocene telesnih obremenitev (RASSL)
 
-Ocena poteka po **šestih kategorijah** telesnih obremenitev. Spodaj sta podrobneje opisani kategoriji B in C.
+Ocena poteka po **šestih kategorijah** telesnih obremenitev. Za vsako kategorijo se izvede **presejalni test (B)**, po potrebi pa še podrobna **ocena MKK (C)**.
 
 ## Pregled modula
 
