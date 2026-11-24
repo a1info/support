@@ -30,6 +30,7 @@ Tipi tečajev so šifranti, ki določajo, kako se usposabljanja kategorizirajo i
 | Nastavitev | Opis |
 |-----------|------|
 | **Naziv tipa** | Opisno ime (npr. VPP, VZD, VPP ODG, Požarna varnost). |
+| **Skupina tipov** | Tipi iste skupine (npr. »VZD in VPP GRP«) se lahko združijo v en zapisnik; vsak tip ob tem ohrani svojo veljavnost. Tip brez skupine je samostojen (en tečaj = en zapisnik). |
 | **Ločeno številčenje** | Če je aktivno, tečaji tega tipa dobijo svojo neodvisno zaporedno številko. |
 | **Privzete priloge** | Dokumenti, ki se samodejno priložijo vsakemu tečaju tega tipa. |
 | **Zakonske podlage** | Sklici na predpise, ki se izpišejo v poročilih in potrdilih. |
@@ -166,7 +167,7 @@ V tabeli izobraževanj je za vsako **uspešno opravljeno** usposabljanje na volj
 
 **Dostop:** Usposabljanje → Zapisniki
 
-Zapisnik je sestavni dokument, ki združuje enega ali več tečajev različnih tipov v en koheziven zapis.
+Zapisnik je sestavni dokument, ki združuje enega ali več tečajev **iste skupine tipov** (npr. VZD in VPP) v en koheziven zapis.
 
 ### Ustvarjanje zapisnika
 
@@ -185,6 +186,17 @@ Postopek:
 | **Program(i) usposabljanja** | Izbira enega ali več programov (glej poglavje spodaj). |
 | **Ure, odgovorna oseba, mentor** | Podatki, ki se izpišejo v zapisniku in potrdilih. |
 | **Tečaji** | Označite tečaje, ki jih zapisnik zajema. |
+
+### Združeni zapisnik (VZD + VPP)
+
+Ko izbrani tečaji pripadajo isti **skupini tipov**, se pod seznamom tečajev prikaže obrazec **Dodaj tečaj** in gumb **Kopiraj udeležence**:
+
+- **Dodaj tečaj** – spustni seznam ponudi samo tipe iz iste skupine; vnesete tip, datum in veljavnost (meseci). Ure in lokacija se prevzamejo iz zapisnika, novi tečaj se samodejno označi kot izbran.
+- **Kopiraj udeležence** – prikaže se, ko sta izbrana vsaj dva tečaja in ima eden od njiju udeležence; gumb prikaže smer kopiranja, npr. `VPP (3) → VZD`, potrditev pa celoten opis. Udeležence iz tečaja z največ udeleženci prepiše v preostale izbrane tečaje. Vsak udeleženec dobi veljavnost po pravilu svojega tipa (delovno dovoljenje → tečaj → privzeto 24 mesecev).
+- Če izbrani tečaj pripada tipu **brez skupine**, obrazec ni prikazan – zapisnik vsebuje en sam tečaj.
+- Mešani izbor (tečaji iz različnih skupin) sistem označi z rdečim opozorilom; novi tečaji takrat niso na voljo.
+
+Rezultat je **en zapisnik za oba tečaja**, veljavnosti pa se vodijo ločeno po tipu (npr. VZD 60 mesecev, VPP 36 mesecev) – vsak udeleženec ima v evidenci svoj rok za vsak tip.
 
 ### Program(i) usposabljanja
 

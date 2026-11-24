@@ -347,7 +347,7 @@ Sistem omogoča samodejno sinhronizacijo državnih praznikov (Slovenija), kar za
 Modul je večplasten: usposabljanja, zapisniki, udeleženci, e-test.
 
 - Seznam tečajev: Usposabljanje → Seznam tečajev
-- Zapisniki: Usposabljanje → Zapisniki (združujejo več tečajev različnih tipov)
+- Zapisniki: Usposabljanje → Zapisniki (združujejo več tečajev iste skupine tipov, npr. VZD in VPP)
 
 ### Tipi tečajev
 
@@ -355,6 +355,7 @@ Dostop: Usposabljanje → Tipi tečajev
 
 Določite:
 - tip (VPP, VZD, VPP ODG ...),
+- skupina tipov (npr. »VZD in VPP GRP« – tipi iste skupine se lahko združijo v en zapisnik),
 - ločeno številčenje,
 - priloge,
 - zakonske podlage itd.
@@ -372,6 +373,8 @@ Vnos:
 
 Nato dodate udeležence (zaposlene). Uporabite hitri filter v tabeli zaposlenih.  
 Opomba: Naknadno dodajanje ali brisanje udeležencev iz tečaja ni dovoljeno.
+
+Ko ima tečaj udeležence, je na obrazcu tečaja (in na seznamu udeležencev) na voljo gumb **Zapisnik** – odpre zapisnik, ki mu tečaj pripada, ali pripravi nov zapisnik s predizbranim tečajem.
 
 ### Oddaljeno usposabljanje
 

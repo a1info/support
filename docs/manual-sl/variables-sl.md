@@ -233,7 +233,14 @@ Tabele — edinstven seznam delavcev:
   - `${rowNameUn}` Ime in priimek
   - `${rowDateBirthUn}` Datum rojstva
   - `${rowWorkPlaceUn}` Delovno mesto
-  - `${rowDatePractUn}` Datum praktičnega dela
+  - `${rowDateStartUn}` Datum teoretičnega dela (1. tečaj delavca)
+  - `${rowDatePractUn}` Datum praktičnega dela (1. tečaj delavca)
+  - `${rowMntValidUn}` Veljavnost v mesecih (1. tečaj delavca)
+  - `${rowDateValidUn}` Datum veljavnosti (1. tečaj delavca)
+  - `${rowDateStartUn2}` Datum teoretičnega dela (2. tečaj delavca; prazno, če ga ni)
+  - `${rowDatePractUn2}` Datum praktičnega dela (2. tečaj delavca; prazno, če ga ni)
+  - `${rowMntValidUn2}` Veljavnost v mesecih (2. tečaj delavca; prazno, če ga ni)
+  - `${rowDateValidUn2}` Datum veljavnosti (2. tečaj delavca; prazno, če ga ni)
   - `${rowEdutypeUn}` Tip(i) usposabljanja (več tipov ločenih z vejico)
 
 Tabele — seznam delavcev:
@@ -243,6 +250,7 @@ Tabele — seznam delavcev:
   - `${rowName}` Ime in priimek
   - `${rowDateBirth}` Datum rojstva
   - `${rowWorkPlace}` Delovno mesto
+  - `${rowDateStart}` Datum teoretičnega dela
   - `${rowDatePract}` Datum praktičnega dela
   - `${rowNrRep}` Številka potrdila
   - `${rowEdutype}` Tip usposabljanja
@@ -291,6 +299,9 @@ Tabele — seznam tečajev v zapisniku:
   - `${rowEdulstEdutype}` Tip usposabljanja
   - `${rowEdulstEdudesc}` Opis tipa usposabljanja
   - `${rowEdulstMntValid}` Veljavnost udeležencev (meseci)
+  - `${rowEdulstDateStart}` Datum teoretičnega dela (najzgodnejši v skupini)
+  - `${rowEdulstDatePract}` Datum praktičnega dela (najzgodnejši v skupini)
+  - `${rowEdulstDateValid}` Datum veljavnosti (najzgodnejši v skupini)
 
 Bloki:
 
