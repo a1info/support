@@ -913,7 +913,7 @@ Predloge tipa `repy`. Podprta so letna, mesečna in obdobna poročila. Konec obd
 | `${rowDevNoncCode}` | Šifra |
 | `${rowDevNoncName}` | Naziv opreme |
 | `${rowDevNoncSerial}` | Tovarniška številka |
-| `${rowDevNoncNrDev}` | Številka stroja |
+| `${rowDevNoncNrDev}` | Inventarna številka |
 | `${rowDevNoncManuf}` | Proizvajalec |
 | `${rowDevNoncModel}` | Tip / model |
 | `${rowDevNoncDate}` | Datum pregleda |
