@@ -40,6 +40,7 @@ Posamezne:
 - `${cBusCode}` Šifra dejavnosti (SKD)
 - `${cBusCodeName}` Naziv dejavnosti
 - `${cContact}` Odgovorna oseba stranke (glavni kontakt)
+- `${cUserAssignName}` Skrbnik stranke (ime in priimek)
 - `${locContact}` Odgovorna oseba poslovne enote (PE)
 
 Posamezne — poslovna enota (PE):
@@ -742,6 +743,7 @@ Predloga tipa `card`. Generator uporablja datum **`${onDate}`**; vsi razdelki se
 | `${cMail}` | E-pošta glavnega kontakta |
 | `${cContact}` | Ime in priimek glavnega kontakta |
 | `${cPersResp}` | Odgovorna oseba stranke |
+| `${cUserAssignName}` | Skrbnik stranke (ime in priimek) |
 | `${cTaxNr}` | Davčna številka |
 | `${cRegId}` | Registrska številka |
 | `${cBusCode}` | Šifra dejavnosti |
@@ -879,6 +881,7 @@ Predloge tipa `repy`. Podprta so letna, mesečna in obdobna poročila. Konec obd
 | `${cName}`, `${cAddress}`, `${cCity}` | Podatki stranke |
 | `${cTaxNr}`, `${cRegId}`, `${cBusCodeName}` | Davčna številka, registrska številka, dejavnost |
 | `${cPersResp}`, `${cPersMed}` | Odgovorna oseba in pooblaščeni zdravnik iz RASS |
+| `${cUserAssignName}` | Skrbnik stranke (ime in priimek) |
 | `${cYear}` | Leto (pri obdobju prazno) |
 | `${cMonth}` | Mesec (samo mesečno poročilo) |
 | `${cPeriod}` | Leto, mesec ali datumsko obdobje |
@@ -1102,7 +1105,8 @@ Blok `${blockAccBu}` … `${/blockAccBu}` se ponovi za vsak obrat.
 |---------------|-------|
 | `${rowAccBuName}` | Naziv obrata |
 | `${rowDevNr}` | Zaporedna številka |
-| `${rowDevBvd}` | Šifra BVD |
+| `${rowDevNrInv}` | Inventarna številka |
+| `${rowDevInternalCode}` | Interna koda / BVD številka |
 | `${rowDevName}` | Naziv opreme |
 | `${rowDevFactoryNr}` | Tovarniška številka |
 | `${rowDevMachineNr}` | Številka stroja |
@@ -1116,6 +1120,8 @@ Blok `${blockAccBu}` … `${/blockAccBu}` se ponovi za vsak obrat.
 | `${cName}` | Stranka |
 | `${cPeriodStart}`, `${cPeriodEnd}` | Meje obdobja |
 | `${cDatePrint}` | Datum izpisa |
+
+`${rowDevBvd}` ostaja samo kot zastareli alias za `${rowDevNrInv}` (inventarna številka).
 
 #### Zapadla VZD/VPP usposabljanja — `Zapadla VZD VPP usposabljanja`
 

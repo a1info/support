@@ -263,4 +263,4 @@ Periodično poročilo je namenjeno letnemu, mesečnemu ali obdobnemu pregledu op
 | `Zapadla delovna oprema po podjetjih` | Periodično | Pregled delovne opreme, ki zapade v izbranem obdobju. |
 | `Zapadla VZD VPP usposabljanja` | Periodično | Pregled zapadlih VZD/VPP usposabljanj po zaposlenih in obratih. |
 
-Natančna vsebina je odvisna od predloge; spremenljivke so opisane v [Legendi spremenljivk](variables-sl.md).
+Natančna vsebina je odvisna od predloge; spremenljivke so opisane v [Legendi spremenljivk](variables-sl.md). V vseh predlogah za poročila za stranke je na voljo `${cUserAssignName}` – ime in priimek skrbnika stranke.
