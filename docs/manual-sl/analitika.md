@@ -54,7 +54,7 @@ Rezultati so organizirani v zavihke glede na izbrane tipe veljavnosti. Vsak zavi
 
 ### Koledarski pogled
 
-Kliknite gumb **Prikaži koledar** v zgornjem desnem kotu za prikaz periodičnih nalog v obliki barvno označenega mesečnega/tedenskega koledarja.
+Kliknite gumb **Prikaži koledar** (ikona očesa) v zgornjem desnem kotu za prikaz periodičnih nalog v obliki barvno označenega mesečnega/tedenskega koledarja. Ko je koledar odprt, gumb prikazuje **Skrij koledar** in ga skrije; skriti koledar ne vpliva na podatke ali filtre.
 
 Sistem centralno bdi nad vsemi roki (pregledi opreme, usposabljanja, meritve). Periodiko lahko pregledujete v obliki seznama ali **koledarskega pogleda**, kjer so tipi operacij barvno ločeni:
 
@@ -70,6 +70,17 @@ Sistem centralno bdi nad vsemi roki (pregledi opreme, usposabljanja, meritve). P
 
 !!! tip
     ICS izvoz je koristen za sinhronizacijo rokov veljavnosti z osebnimi ali skupinskimi koledarji zunaj sistema.
+
+### Ustvarjanje CRM naloge iz veljavnosti
+
+V koledarju veljavnosti lahko iz posamezne pojavitve ustvarite CRM nalogo:
+
+1. Kliknite ikono **i** pri pojavitvi.
+2. Izberite **Dodaj nalogo**.
+3. V obrazcu preverite predizpolnjene podatke (stranka, začetek, naziv, lokacija) in izberite izvajalca, projekt ter storitve.
+4. Shranite nalogo.
+
+Naloga se shrani v privzeti CRM koledar in je samostojna; periodična evidenca ostane nespremenjena. Če za isto pojavitev že obstaja aktivna CRM naloga, sistem ne ustvari dvojnika.
 
 ---
 

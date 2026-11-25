@@ -104,7 +104,7 @@ Geslo SMTP in API ključ sta shranjena z reverzibilnim šifriranjem, ker ju SMTP
 
 ## E-poštne predloge
 
-Vsebino e-poštnih sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloge ne določajo pošiljateljskega računa – ta je vedno izbran v **E-poštni računi** – določajo pa zadevo, telo in jezik sporočila. Kampanje uporabljajo predloge iz modula **Kampanje** in izbrani poštni račun; potek pošiljanja je opisan v poglavju [CRM → Kampanje](crm.md#kampanje).
+Vsebino e-poštnih sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloge ne določajo pošiljateljskega računa – ta je vedno izbran v **E-poštni računi** – določajo pa zadevo in telo sporočila. Kampanje uporabljajo predloge iz modula **Kampanje** in izbrani poštni račun; potek pošiljanja je opisan v poglavju [CRM → Kampanje](crm.md#kampanje).
 
 Podrobnosti o poljih, spremenljivkah in predogledu so v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
 

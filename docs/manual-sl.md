@@ -264,6 +264,7 @@ CRM modul omogoča pregled in organizacijo dela z naročniki (koledar, projekti,
 - Administratorji vidijo vse naloge in jih razporejajo med uporabnike.
 - Navadni uporabniki vidijo svoje naloge.
 - Odprte naloge so vidne na uporabniškem Dashboardu.
+- Naloge se lahko ponavljajo; pri izklopu ponavljanja sistem po potrditvi izbriše prihodnje načrtovane pojavitve.
 
 Parametri naloge:
 - naziv,
@@ -272,6 +273,8 @@ Parametri naloge:
 - dodeljen uporabnik,
 - stranka,
 - koledar/projekt,
+- opis in ugotovitev,
+- ponavljanje,
 - seznam storitev in odgovornih oseb.
 
 Seznam storitev urejajo administratorji (Nastavitve → Storitve).
@@ -283,6 +286,7 @@ Seznam storitev urejajo administratorji (Nastavitve → Storitve).
 - Koledar periodike se generira samodejno in se posodablja ob vnosu operacij z veljavnostjo (tečaji, pregledi).
 - Koledar periodike priporočamo uporabljati samo za branje.
 - Za urejanje nalog uporabite koledar naročil in ostale ročno dodane koledarje.
+- Koledar prikažete ali skrijete z gumbom **Prikaži/Skrij koledar**; z desnim klikom na nalogo jo premaknete v drug koledar (**Premakni v ...**).
 
 Dodajanje koledarja: izberite možnost »Dodaj koledar«.
 
@@ -686,12 +690,18 @@ Pravila in urnik obveščanja za posamezne stranke so dostopni v **Sistem → Ob
 Dostop: Sistem → Predloge → zavihek **FORMS**
 
 Za netipične preglede (npr. kontrolni pregledi, vaje evakuacije). Elementi:
-- naslov, podnaslov, naslov tabele, besedilo,
+- naslov, podnaslov, besedilo, potrditveno besedilo,
 - polje za vnos (input),
-- potrditveno polje (checkbox), dvojno potrditveno polje (da/ne),
-- SQL koda.
+- potrditveno polje, dvojno potrditveno polje (da/ne),
+- slika, podpis, ločilo, prelom strani.
 
-V tekstu elementov lahko uporabite spremenljivke, npr. `cCustomer`, `cAddress`.
+V tekstu elementov lahko uporabite spremenljivke, npr. `${cName}`, `${cAddress}`; v urejevalniku elementa jih najdete v razdelku **Zamenljivke** in jih vstavite s klikom.
+
+### Predloge PDF
+
+Dostop: Sistem → Predloge → zavihek **PDF predloge**
+
+Urejajo videz sistemsko generiranih PDF poročil (npr. Poročilo o veljavnosti): glavo z logotipom in besedilom, izbor in vrstni red stolpcev za vsako poročilo posebej ter statična besedila nad ali pod tabelo. Postavitev in podatke še vedno pripravi program. Podrobnosti so v poglavju [Urejanje predlog → Predloge PDF](manual-sl/urejanje-podlog.md#predloge-pdf).
 
 ### Predloge DOCX
 
@@ -713,4 +723,4 @@ Tipi: usposabljanje, delovna oprema, meritve, ocena tveganja.
 
 Dostop: **Sistem → Predloge → zavihek E-poštne predloge**
 
-Predloge določajo zadevo in telo e-pošte; pošiljatelj in Reply-To se nastavita v **E-poštnih računih**. Predloge so vezane na modul in dogodek ter se uporabljajo za obvestila, e-test in CRM kampanje. Podrobnosti so v poglavju [Urejanje predlog → E-poštne predloge](manual-sl/urejanje-podlog.md#e-postne-predloge).
+Predloge določajo zadevo in telo e-pošte; pošiljatelj in Reply-To se nastavita v **E-poštnih računih**. Predloge so vezane na modul in dogodek ter se uporabljajo za obvestila, e-test in CRM kampanje. Spremenljivke se vnašajo v obliki `${firstName}` in so na voljo pod poljem telesa. Podrobnosti so v poglavju [Urejanje predlog → E-poštne predloge](manual-sl/urejanje-podlog.md#e-postne-predloge).

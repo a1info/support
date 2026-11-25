@@ -17,11 +17,15 @@ V meniju CRM so **Naloge**, **Projekti**, **Kontakti**, **Časovnica**, **Intera
 ### Ključne funkcionalnosti
 
 - Vizualni pregled nalog v mesecu in tednu, z urami dogodkov
+- Prikaz ali skrivanje koledarja z gumbom **Prikaži/Skrij koledar**
+- Premikanje naloge v drug koledar z desnim klikom (**Premakni v ...**)
 - Osebni, skupni in deljeni koledarji ter zunanji (ICS) koledarji
 - Iskanje in filtriranje nalog po uporabniku, koledarju in statusu
 - Barvno ločevanje: projekt (ozadje) in izvajalec (leva črta)
 - Naročnina na koledar (ICS) za Google Koledar in Outlook
 - Sledenje statusom nalog
+- Ponavljanje nalog (dnevno, tedensko, mesečno, letno) s samodejnim ustvarjanjem prihodnjih pojavitev
+- Brisanje naloge neposredno iz obrazca naloge
 - Samodejno številčenje projektov (`PR-YYYY-NNNNN`) in delovnih nalogov (`DN-YYYY-NNNNN`)
 - Ločevanje delovnih nalogov od običajnih opravil in opomnikov
 - Izpis delovnih nalogov (PDF)
@@ -43,6 +47,25 @@ Naloga je osnovna delovna enota v modulu CRM.
 - Naloge so prikazane v **koledarskem pogledu** (mesec/teden) in kot seznam.
 - Odprte naloge so vidne tudi na **uporabniškem Dashboardu** (začetni strani).
 
+### Seznam nalog
+
+Seznam je zasnovan tako, da so najpomembnejši podatki vidni brez odpiranja naloge:
+
+| Stolpec | Vsebina |
+|---------|---------|
+| **Datum** | Začetek in konec naloge. |
+| **Naloga** | Naziv, ikona pomembnosti in ponavljanja ter značke koledarja, delovnega naloga in ponudbe. |
+| **Stranka** | Stranka in lokacija izvedbe. |
+| **Izvajalec** | Dodeljeni uporabnik in storitve z odgovornimi osebami. |
+| **Status** | Barvna značka statusa. |
+| **Opis** | Polje **Opis** (`descr`) – dodatne informacije o nalogi. |
+| **Ugotovitev** | Polje **Ugotovitev** (`result`) – rezultat oziroma ugotovitev opravljene naloge. |
+| **Podpis** | Podpis stranke oziroma gumb za podpis. |
+| **Dejanja** | Izvoz DOCX, urejanje in brisanje. |
+
+!!! info "Opis in Ugotovitev sta ločeni polji"
+    **Opis** in **Ugotovitev** se v obrazcu in seznamu prikazujeta ločeno. Besedilo, vneseno v polje **Ugotovitev**, se ne prepiše v **Opis** in obratno.
+
 ### Pravice
 
 | Vloga | Vidnost in urejanje nalog |
@@ -63,9 +86,12 @@ Naloga je osnovna delovna enota v modulu CRM.
 | **Začetek** | Datum in ura začetka naloge. |
 | **Konec** | Datum in ura zaključka naloge. |
 | **Status** | Trenutno stanje naloge: **Planirano**, **Odprto**, **Končano** ali **Preklicano**. |
+| **Opis** | Dodatne informacije o nalogi. |
+| **Ugotovitev** | Rezultat oziroma ugotovitev po opravljeni nalogi. |
 | **Dodeljen uporabnik** | Izvajalec naloge. |
 | **Stranka** | Naročnik, za katerega se naloga izvaja. |
 | **Koledar / Projekt** | Razvrstitev v ustrezni koledar ali projekt. |
+| **Ponavljanje** | Pravilo ponavljanja; prikazano je samo pri korenski nalogi serije. |
 | **Seznam storitev in odgovornih oseb** | Podrobnejši opis storitev, ki jih naloga vključuje, ter odgovorne osebe. |
 
 !!! info "Upravljanje storitev"
@@ -92,6 +118,38 @@ Naloga je lahko običajno opravilo/opomnik ali **delovni nalog**.
 
 !!! info "Ponovitve"
     Vsaka ponovitev delovnega naloga dobi svojo številko DN. Serija in posamezne ponovitve so tako ločeno sledljive.
+
+### Ponavljanje nalog
+
+Nalogo lahko spremenite v ponavljajočo se serijo v obrazcu naloge z vklopom **Ponavljaj**. Možnosti so:
+
+| Nastavitev | Opis |
+|------------|------|
+| **Ponavljaj** | Vklopi ali izklopi ponavljanje. Prikazano je samo pri korenski nalogi serije, ne pri posamezni generirani pojavitvi. |
+| **Interval in frekvenca** | Dnevno, tedensko, mesečno ali letno; interval pove, vsakih koliko enot se ponovi. |
+| **Dnevi** | Pri tedenskem ponavljanju izberite enega ali več dni v tednu. |
+| **Konec** | **Nikoli**, **na datum** ali **po določenem številu ponovitev**. |
+| **Predogled** | Prikaže naslednje pojavitve pred shranjevanjem. |
+
+Kako deluje:
+
+- Sistem ob shranjevanju ustvari prihodnje pojavitve kot **samostojne naloge**, povezane s korensko nalogo serije.
+- Prihodnje pojavitve se sproti dopolnjujejo do približno **60 dni vnaprej**.
+- Vsaka pojavitev ima svoj datum, status in morebitno številko DN; spremembe storitev in projekta se prenesejo iz korenske naloge.
+- Če uredite posamezno pojavitev, spremenite samo to pojavitev. Za spremembo celotne serije uporabite **Uredi ponavljanje**.
+- Sprememba pravila ponavljanja **zamenja prihodnje načrtovane pojavitve**; pretekle, odprte, končane in preklicane ostanejo.
+- Ko izklopite **Ponavljaj** in shranite ter obstajajo prihodnje načrtovane pojavitve, sistem prikaže potrditev s številom teh pojavitev. Po potrditvi izbriše samo **prihodnje načrtovane** pojavitve; pretekle, odprte, končane in preklicane ostanejo.
+
+!!! warning "Brisanje prihodnjih pojavitev"
+    Izklop ponavljanja ne izbriše celotne zgodovine serije. Če želite izbrisati tudi korensko nalogo, uporabite **Izbriši nalogo** v obrazcu; takrat se izbrišejo korenska naloga in prihodnje načrtovane pojavitve.
+
+### Brisanje naloge
+
+V obrazcu obstoječe naloge je spodaj levo gumb **Izbriši nalogo**. Pred brisanjem sistem zahteva potrditev.
+
+- Pri korenski ponavljajoči se nalogi se izbrišejo korenska naloga in prihodnje načrtovane pojavitve; pretekle, odprte, končane in preklicane ostanejo.
+- Pri posamezni generirani pojavitvi se izbriše samo ta pojavitev, serija pa se nadaljuje.
+- Gumb ni prikazan pri novi nalogi, ki še ni shranjena.
 
 ---
 
@@ -132,6 +190,23 @@ Naloge so razvrščene v koledarje. Vsak koledar ima **lastnika**, **barvo** in 
 - **Leva črta** = barva izvajalca (generirana iz uporabnikovega ID-ja).
 - **Pika pred imenom** v seznamu nalog = barva izvajalca.
 - Naloge brez projekta imajo nevtralno ozadje, tako da je izvajalec še vedno razviden.
+
+### Prikaz in skrivanje koledarja
+
+Nad koledarjem je gumb z ikono očesa:
+
+- ko je koledar viden, gumb prikazuje **Skrij koledar**;
+- ko je koledar skrit, gumb prikazuje **Prikaži koledar**.
+
+Skrit koledar ne vpliva na podatke ali filtre; spremeni se samo prikaz.
+
+### Premikanje naloge v drug koledar
+
+Z **desnim klikom** na nalogo v koledarju odprete meni **Premakni v ...** in izberete ciljni koledar.
+
+- Meni je na voljo samo za naloge, ki jih smete urejati, in ne za zunanje (ICS) dogodke.
+- Pri ponavljajoči se korenski nalogi se v izbrani koledar premaknejo tudi prihodnje načrtovane pojavitve.
+- Superadmin vidi vse koledarje; administratorji in navadni uporabniki vidijo skupne koledarje in koledarje, za katere imajo dovoljenje. Zato so v seznamu lahko tudi osebni koledarji uporabnikov, ki so poimenovani po njihovih imenih.
 
 ### Iskanje in filtri
 
@@ -177,6 +252,8 @@ Zunanji dogodki:
 ### Periodika in veljavnosti
 
 Opomniki iz evidenc z veljavnostjo (usposabljanja, pregledi, meritve) **niso** del koledarjev CRM. Prikazujejo se v ločenem pregledu **Poročila → Veljavnosti** in so namenjeni samo branju. Ne urejajte jih ročno – ob naslednji posodobitvi se prepišejo.
+
+V koledarju veljavnosti lahko iz posamezne pojavitve ustvarite CRM nalogo: kliknite ikono **i** in izberite **Dodaj nalogo**. Obrazec se predizpolni s stranko, začetkom, nazivom in lokacijo; izberete lahko izvajalca, projekt in storitve. Naloga se shrani v privzeti CRM koledar, periodična evidenca pa ostane nespremenjena. Če za pojavitev že obstaja aktivna CRM naloga, sistem ne ustvari dvojnika.
 
 ---
 

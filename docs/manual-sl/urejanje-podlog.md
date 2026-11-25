@@ -2,11 +2,12 @@
 
 ## Pregled
 
-Sistem OP5 podpira tri vrste predlog za dokumente, obrazce in e-pošto:
+Sistem OP5 podpira štiri vrste predlog za dokumente, obrazce in e-pošto:
 
 | Vrsta predloge | Opis | Primeri uporabe |
 |----------------|------|-----------------|
 | **FORMS** | Interaktivni obrazci za vnos podatkov na terenu | Nestandardni pregledi, vaje evakuacije, kontrolne liste |
+| **PDF** | Nastavitve videza sistemsko generiranih PDF poročil | Poročilo o veljavnosti, glava z logotipom, izbor stolpcev |
 | **DOCX** | Predloge za tiskane dokumente (potrdila, zapisniki) | Potrdila o usposabljanju, zapisniki pregledov, poročila |
 | **E-poštne predloge** | Zadeva in telo e-poštnih sporočil | Opomniki, e-test vabila, obvestila in kampanje |
 
@@ -35,29 +36,41 @@ Pri urejanju predloge FORM dodajate elemente iz nabora razpoložljivih tipov:
 |---------|-----|------|
 | **Naslov** | Prikaz | Glavni naslov obrazca ali razdelka |
 | **Podnaslov** | Prikaz | Podrejeni naslov / opis razdelka |
-| **Naslov tabele** | Prikaz | Glava tabele za tabelarni prikaz |
 | **Besedilo** | Prikaz | Statično besedilo (navodila, opisi) |
-| **Polje za vnos (input)** | Vnos | Besedilno vnosno polje za prosti vnos |
-| **Potrditveno polje (checkbox)** | Vnos | Eno potrditveno polje (označeno / neoznačeno) |
+| **Potrditveno besedilo** | Prikaz | Besedilo s potrditvenim kvadratkom za potrditev |
+| **Polje za vnos** | Vnos | Besedilno vnosno polje za prosti vnos |
+| **Potrditveno polje (da)** | Vnos | Eno potrditveno polje (označeno / neoznačeno) |
 | **Dvojno potrditveno polje (da/ne)** | Vnos | Par polj Da / Ne za binarno izbiro |
-| **SQL koda** | Dinamično | Dinamični prikaz podatkov iz baze na podlagi SQL poizvedbe |
+| **Slika** | Vnos | Nalaganje slike z izbiro širine |
+| **Podpis** | Vnos | Podpis s prstom oziroma miško |
+| **Ločilo** | Prikaz | Vodoravna črta med vsebinskimi sklopi |
+| **Prelom strani** | Prikaz | Začne novo stran PDF izpisa |
 
 ### Spremenljivke v besedilu elementov
 
-V besedilu elementov obrazca lahko uporabite naslednje vgrajene spremenljivke:
+V besedilu elementov obrazca lahko uporabite vgrajene spremenljivke. V urejevalniku elementa je pod poljem **Tekst elementa** razdelek **Zamenljivke** – klik na spremenljivko jo vstavi na mesto kazalke.
 
 | Spremenljivka | Opis |
 |---------------|------|
-| `cCustomer` | Polno ime stranke |
-| `cAddress` | Naslov stranke |
+| `${cName}` | Naziv stranke |
+| `${cAddress}`, `${cZip}`, `${cCity}` | Naslov, poštna številka in kraj stranke |
+| `${cBusCode}`, `${cBusCodeName}` | Šifra in naziv poslovne enote |
+| `${cTax}` | Davčna številka stranke |
+| `${locName}`, `${locAddress}`, `${locZip}`, `${locCity}` | Podatki lokacije oziroma objekta |
+| `${uName}`, `${acron}`, `${expTitle}` | Izvajalec, akronim in naziv delovnega mesta |
+| `${name}` | Naziv objekta pregleda |
+| `${dateTest}` | Datum pregleda |
+| `${mntValid}` | Trajanje veljavnosti (meseci) |
+| `${descr}` | Opis |
+| `${result}` | Rezultat pregleda |
 
 **Primer uporabe:**
 ```
-Izvajalec pregleda za stranko: ${cCustomer}, ${cAddress}
+Izvajalec pregleda za stranko: ${cName}, ${cAddress}
 ```
 
 !!! tip "Nasvet"
-    Element tipa **SQL koda** je namenjen naprednim uporabnikom. Poizvedba mora vračati podatke, ki so smiselni v kontekstu obrazca. Za pomoč pri oblikovanju SQL poizvedb se obrnite na ekipo Optima Prevent.
+    Spremenljivke se vnesejo v besedilo elementa in se ob izpolnjevanju obrazca zamenjajo s podatki izbrane stranke oziroma objekta. Če v seznamu **Zamenljivke** katere ni, jo lahko vnesete ročno – neznane spremenljivke ostanejo v izpisu nespremenjene.
 
 ---
 
@@ -88,7 +101,6 @@ Predloge uporabljajo samodejna obvestila, e-test vabila in opomniki ter CRM kamp
 | Polje | Opis |
 |-------|------|
 | **Koda** | Enolična oznaka predloge; priporočena je kratka oznaka, npr. `etest_invite_sl`. |
-| **Jezik** | Slovenščina ali angleščina. Sistem izbere jezik glede na jezik aplikacije, sicer slovenščino. |
 | **Dogodek** | Koda dogodka iz sistemskega kataloga, na katerega se predloga veže (npr. `etest.invite`, `etest.expiring`, `crm.task_created`). Začetek vnosa prikaže predloge z opisi; prazno polje pomeni splošno predlogo. Pri kampanjah polje ni prikazano. |
 | **Naziv** | Naziv za skrbnike; ni del poslanega sporočila. |
 | **Zadeva** | Zadeva e-pošte. |
@@ -98,26 +110,30 @@ Predloge uporabljajo samodejna obvestila, e-test vabila in opomniki ter CRM kamp
 | **Opombe** | Interne opombe, ki se ne pošljejo. |
 | **Aktivna** | Neaktivna predloga se ne uporabi; sistem uporabi privzeto vsebino, če ta obstaja. |
 
+!!! info "Jezik predloge"
+    Predloga nima več ločenega polja za jezik. Sporočilo se sestavi v jeziku aplikacije oziroma uporabnika; prevod vsebine dodate tako, da za posamezni jezik ustvarite ločeno predlogo z isto kodo.
+
 !!! info "Kako izberem dogodek"
     V polje **Dogodek** vnesite kodo iz sistemskega kataloga. Ko začnete tipkati, se prikažejo razpoložljive kode z opisom; prazno polje pomeni splošno predlogo. Če koda ni v katalogu, je shranjevanje zavrnjeno. Za kampanje izberite modul **Kampanje**; polje Dogodek je pri njih skrito, ker predlogo izbere kampanja.
 
 ### Spremenljivke
 
-Spremenljivke vstavite v dvojnih zavitih oklepajih, na primer `{{sender_name}}`. Med pošiljanjem jih sistem zamenja z dejanskimi podatki.
+Spremenljivke vstavite v obliki `${imeSpremenljivke}`, na primer `${firstName}`. Med pošiljanjem jih sistem zamenja z dejanskimi podatki; neznane spremenljivke ostanejo vidne, da napako opazite.
+
+Pod poljem **Telo (tekst)** je razdelek **Zamenljivke** – klik na spremenljivko jo vstavi na mesto kazalke v trenutno izbrano polje.
 
 | Spremenljivka | Pomen |
 |---------------|-------|
-| `{{sender_name}}` | Ime pošiljatelja oziroma prijavljenega uporabnika. |
-| `{{phone}}`, `{{email}}`, `{{website}}` | Kontaktni podatki podjetja. |
-| `{{date}}`, `{{time}}` | Datum in čas pošiljanja. |
-| `{{first_name}}`, `{{last_name}}`, `{{company}}` | Podatki prejemnika oziroma osebe. |
-| `{{syscompany}}`, `{{sysaddress}}`, `{{sysemail}}`, `{{systel}}`, `{{sysweb}}` | Podatki sistemskega podjetja. |
-| `{{course}}`, `{{username}}`, `{{password}}`, `{{link}}` | Podatki e-testa (samo modul E-test). |
-| `{{expiry_date}}`, `{{days_left}}` | Rok veljavnosti in število preostalih dni (e-test). |
-| `{{previous_subject}}` | Zadeva prejšnjega sporočila (kampanje). |
-| `{{unsubscribe_url}}` | Povezava za odjavo. Pri kampanjah jo sistem doda samodejno, če je v sporočilu ni. |
-
-Razpoložljive spremenljivke so prikazane tudi pod poljem **Telo (tekst)**; uporabite jih lahko s klikom oziroma ročnim vnosom.
+| `${senderName}` | Ime pošiljatelja oziroma prijavljenega uporabnika. |
+| `${phone}`, `${email}`, `${website}` | Kontaktni podatki podjetja. |
+| `${date}`, `${time}` | Datum in čas pošiljanja. |
+| `${firstName}`, `${lastName}` | Ime in priimek prejemnika. |
+| `${cName}` | Podjetje prejemnika. |
+| `${sysCompany}`, `${sysAddress}`, `${sysEmail}`, `${sysTel}`, `${sysWeb}`, `${sysLogo}` | Podatki sistemskega podjetja. |
+| `${course}`, `${username}`, `${password}`, `${link}` | Podatki e-testa (samo modul E-test). |
+| `${expiryDate}`, `${daysLeft}` | Rok veljavnosti in število preostalih dni (e-test). |
+| `${previousSubject}` | Zadeva prejšnjega sporočila (kampanje). |
+| `${unsubscribeUrl}` | Povezava za odjavo. Pri kampanjah jo sistem doda samodejno, če je v sporočilu ni. |
 
 ### Predogled in upravljanje
 
@@ -127,7 +143,7 @@ Razpoložljive spremenljivke so prikazane tudi pod poljem **Telo (tekst)**; upor
 4. Shranite predlogo. Izbrišete jo lahko z ikono koša; predloga, ki jo uporablja kampanja, najprej preverite.
 
 !!! tip "Kampanjske predloge"
-    Za kampanje izberite modul **Kampanje**. Predlogo nato izberete v koraku **Predloga** pri posamezni kampanji. Dogodek ni potreben, povezava za odjavo pa se doda samodejno, tudi če v predlogi ni `{{unsubscribe_url}}`.
+    Za kampanje izberite modul **Kampanje**. Predlogo nato izberete v koraku **Predloga** pri posamezni kampanji. Dogodek ni potreben, povezava za odjavo pa se doda samodejno, tudi če v predlogi ni `${unsubscribeUrl}`.
 
 !!! note "Predloga ne določa pošiljatelja"
     Če želite spremeniti From, Reply-To ali strežnik, uredite [E-poštni račun](sistemske-nastavitve.md#e-postni-racuni). Predloga določa samo vsebino sporočila.
@@ -255,6 +271,58 @@ Ko je dokument za stranko enkrat ustvarjen, se na njegovem mestu prikažeta ikon
 
 !!! warning "Pozor"
     Zamenjava DOCX datoteke pri obstoječi predlogi vpliva na vse **prihodnje** generacije dokumentov. Že generirani dokumenti ostanejo nespremenjeni.
+
+---
+
+## Predloge PDF
+
+**Dostop:** Sistem → Predloge → zavihek **PDF predloge**
+
+### Namen
+
+Predloge PDF urejajo **videz sistemsko generiranih PDF poročil** – na primer Poročila o veljavnosti. Same postavitve in podatkov ne spreminjajo: poročilo še vedno sestavi program, predloga pa določi, kaj je v glavi, kateri stolpci se izpišejo in katera besedila so nad ali pod tabelo.
+
+Primerne so za:
+
+- glavo z lastnim logotipom in besedilom (naziv, naslov, davčna številka),
+- izbor in vrstni red stolpcev po posameznem poročilu,
+- opombe, pravne navedbe ali pojasnila nad oziroma pod tabelo.
+
+### Kaj lahko urejate
+
+| Razdelek | Kaj določa |
+|----------|------------|
+| **Glava dokumenta** | Logotip (lasten ali logotip podjetja) in besedilo v glavi. |
+| **Stolpci** | Za vsako poročilo posebej: kateri stolpci so vidni in v kakšnem vrstnem redu. |
+| **Statična besedila** | Neobvezna besedila nad ali pod tabelo. |
+| **Aktivna** | Neaktivna predloga se ne uporabi; izpiše se privzeta oblika. |
+| **Različica** | Vsak shran poveča številko različice (sledljivost sprememb). |
+
+Razdelek **Stolpci** ima gumbe s poročili (npr. *Tečaji za zaposlene*, *Pregledi delovne opreme*, *Zdravniški pregledi*) – stolpci se nastavljajo za vsako poročilo posebej. Skriti stolpec se v PDF ne izpiše, vrstni red pa določa vrstni red v tabeli.
+
+### Spremenljivke
+
+Spremenljivke so v obliki `${imeSpremenljivke}`. V razdelku **Zamenljivke** pod ustreznim poljem klik na spremenljivko vstavi na mesto kazalke.
+
+| Spremenljivka | Kje velja | Pomen |
+|---------------|-----------|-------|
+| `${sysCompany}` | glava | Naziv podjetja |
+| `${sysAddress}` | glava | Naslov podjetja |
+| `${sysTel}`, `${sysEmail}`, `${sysWeb}` | glava | Kontaktni podatki |
+| `${sysTax}` | glava | Davčna številka |
+| `${title}` | besedila | Naziv poročila |
+| `${date}` | besedila | Datum izpisa |
+| `${period}` | besedila | Izbrano obdobje (če je nastavljeno) |
+
+### Predogled
+
+V seznamu predlog kliknite ikono **PDF** – odpre se predogled s tremi vzorčnimi vrsticami. Predogled uporabi **shranjene** nastavitve, zato ga odprite po shranjevanju.
+
+### Pravila
+
+- Brez shranjene predloge se uporabi **privzeta oblika** poročila.
+- Izbris predloge vrne privzeto obliko; že izpisani PDF dokumenti ostanejo nespremenjeni.
+- Sprememba vpliva samo na **nove** izpise.
 
 ---
 
