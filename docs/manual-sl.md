@@ -561,9 +561,12 @@ Evidence v okviru objekta:
 - strelovodi in elektro naprave (povezano z modulom EKO/VZD meritve),
 - odgovorne osebe za PV,
 - hidrantni list,
+- pregledi gasilnikov in hidrantov ter zapisniki VPP pregledov (tristopenjski rezultat kontrolnih postavk: ustreza / delno ustreza / ne ustreza; podrobnosti v [Požarna varnost](manual-sl/pozarna-varnost.md#pregledi-gasilnikov-in-hidrantov)),
 - seznam požarov in eksplozij.
 
 Izvoz evidenc v PDF je na voljo na seznamih. Evidenco usposabljanja za začetne požare/evakuacijo lahko povežete z glavnim modulom usposabljanja (izbira tipa tečaja v vnosu objekta).
+
+Za preglede gasilnikov in hidrantov uporabite **Požarna varnost → Zapisniki**: izberite proste preglede, jih povežite v skupni zapisnik ter izvozite v PDF ali DOCX. Predloga je lahko ločena za gasilnike, ločena za hidrante ali skupna.
 
 ## Evidence
 

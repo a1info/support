@@ -147,6 +147,19 @@ Za vodenje evidence gasilnikov:
 4. Dodajte posamezne gasilnike ali uvozite CSV datoteko
 5. Vodite evidence pregledov in servisiranja
 
+### Kaj pomeni rezultat »delno ustreza«?
+Pri podrobnem pregledu gasilnika ali hidranta lahko posamezno kontrolno postavko označite kot **Ustreza**, **Delno ustreza** ali **Ne ustreza**. »Delno ustreza« pomeni, da postavka ni popolnoma ustrezna, vendar še ni popolna neustreznost. Opomba z opisom odstopanja je priporočena, ni pa obvezna. Skupni rezultat pregleda se vpiše ločeno.
+
+### Kako pripravim zapisnik o pregledu gasilnikov in hidrantov?
+1. Odprite **Požarna varnost → Zapisniki**.
+2. Kliknite **Dodaj zapisnik**.
+3. Izberite stranko, poslovno enoto, objekt in datum.
+4. Označite preglede gasilnikov in/ali hidrantov.
+5. Vnesite izvajalce ter shranite zapisnik.
+6. V seznamu zapisnikov uporabite ikono **PDF** ali **DOCX** za izvoz.
+
+Podrobnosti so v poglavju [Požarna varnost](manual-sl/pozarna-varnost.md#pregledi-gasilnikov-in-hidrantov).
+
 ### Kako dokumentiram vaje evakuacije?
 Za dokumentiranje vaj evakuacije:
 1. Odprite modul "Požarna varnost → Seznam objektov"

@@ -75,6 +75,71 @@ Ko odprete posamezni objekt, imate na voljo naslednje zavihke z evidencami:
 
 ---
 
+## Pregledi gasilnikov in hidrantov
+
+Pregledi se vnašajo na posameznem gasilniku ali hidrantu, skupni zapisnik pa se pripravi v **Požarna varnost → Zapisniki**.
+
+### Pregled gasilnika
+
+1. Odprite objekt in zavihek **Ročni gasilniki**.
+2. Odprite posamezni gasilnik in kliknite **Dodaj pregled**.
+3. Izberite vrsto pregleda, datum, skupni rezultat, veljavnost in izvajalca.
+4. Za podroben vnos vklopite **Podroben pregled**.
+5. Pri vsaki kontrolni postavki izberite rezultat in po potrebi vnesite vrednost ter opombo.
+6. Shranite pregled.
+
+### Pregled hidranta
+
+1. Odprite objekt in zavihek **Hidrantni list**.
+2. Odprite hidrant in kliknite **Dodaj pregled**.
+3. Izberite vrsto pregleda:
+   - **Redni letni pregled** – redni pregled hidranta;
+   - **Preizkus hidrantnega omrežja** – prikažejo se polja za **tlak** in **pretok**.
+4. Vnesite datum, skupni rezultat, veljavnost in izvajalca.
+5. Po potrebi vklopite **Podroben pregled** in izpolnite kontrolne postavke.
+6. Shranite pregled.
+
+!!! info "Tlak in pretok"
+    Polji za tlak in pretok se prikažeta samo pri vrsti pregleda **Preizkus hidrantnega omrežja**. Pri rednem pregledu hidranta se ne shranjujeta.
+
+### Rezultat kontrolne postavke
+
+Kontrolne postavke imajo tri možne rezultate:
+
+| Rezultat | Pomen |
+|---|---|
+| **Ustreza** | Postavka je brez ugotovljene pomanjkljivosti. |
+| **Delno ustreza** | Postavka je delno ustrezna; priporočena je opomba z opisom odstopanja. Opomba ni obvezna. |
+| **Ne ustreza** | Postavka ni ustrezna. |
+| **—** | Postavka še ni ocenjena. |
+
+Skupni rezultat pregleda (**Ustreza / Ne ustreza**) se vpiše ločeno. Status **Delno ustreza** je namenjen posamezni kontrolni postavki in se prikaže v podrobnem pregledu ter v zapisniku.
+
+### Zapisnik VPP pregledov
+
+1. Odprite **Požarna varnost → Zapisniki**.
+2. Kliknite **Dodaj zapisnik**.
+3. Izberite stranko, poslovno enoto in objekt.
+4. Vnesite datum ter oznako/številko zapisnika.
+5. Označite preglede gasilnikov in hidrantov, ki jih želite vključiti v zapisnik. Izbirate lahko samo proste preglede ali preglede, ki že pripadajo temu zapisniku.
+6. Vnesite izvajalce in morebitne časovne intervale.
+7. Shranite zapisnik.
+
+V seznamu zapisnikov sta na voljo izvoz v **PDF** in **DOCX**. Predloga lahko vsebuje samo gasilnike, samo hidrante ali oboje; izbrani pregledi določajo vsebino.
+
+Zapisnik lahko vsebuje:
+
+- povzetek pregleda in število naprav,
+- ločene tabele gasilnikov in hidrantov,
+- potrdili za gasilnike in hidrante,
+- podroben prikaz vsake naprave z vsemi kontrolnimi postavkami,
+- ugotovitve, ukrepe in podpise.
+
+!!! tip "Ločeni ali skupni zapisniki"
+    Za ločen zapisnik uporabite predlogo, ki vsebuje samo blok gasilnikov ali samo blok hidrantov. Za skupni zapisnik uporabite predlogo z obema blokoma; vsak tip pregleda se izpiše v svojem razdelku.
+
+---
+
 ## Tipi APZ
 
 Preden dodate sisteme aktivne požarne zaščite k objektu, morate definirati tipe APZ.

@@ -85,7 +85,7 @@ Seznam prikaže zaposlenega, delovno mesto, TDM, poslovno enoto, veljavnost, dat
 |---|---|
 | **Vnesi datum za vse** | Vsem udeležencem hkrati vpiše isti datum. |
 | **Počisti datume** | Počisti vnesene datume. |
-| **Ustvari zapisnik** | Iz urejenega seznama pripravi zapisnik o usposabljanju. |
+| **Zaključi tečaj** | Zaključi tečaj: dodeli številke potrdil, označi uspešnost in izračuna veljavnost. Gumb **Zapisnik** se prikaže šele po zaključitvi. |
 
 ### Dodajanje udeležencev
 
@@ -106,6 +106,13 @@ V seznamu udeležencev je na voljo stolpec **Velja (mes)**, v katerem lahko za v
 
 !!! danger "Udeleženci so zaklenjeni po shranitvi"
     Ko je tečaj enkrat shranjen, **dodajanje ali odstranjevanje udeležencev ni več mogoče**. Preden shranite, natančno preverite seznam. Če je prišlo do napake, morate ustvariti nov tečaj.
+
+### Zaključitev tečaja in prehod na zapisnik
+
+1. Na seznamu udeležencev kliknite **Zaključi tečaj** (zahteva potrditev).
+2. Sistem dodeli **številke potrdil**, označi udeležence kot **uspešne** (pri e-testu ostanejo negativni do opravljenega testa) in izračuna **veljavnost**.
+3. Zaslon se preklopi v pogled zaključenega tečaja; prikaže se gumb **Zapisnik**, ki odpre nov ali obstoječi zapisnik s tem tečajem.
+4. Tečajev z **e-testom** ali **pošiljanjem e-pošte** sistem ne zaključi samodejno – zaključiti jih je treba ročno, ker se ob zaključitvi pošljejo vabila.
 
 ---
 
@@ -161,6 +168,9 @@ V tabeli izobraževanj je za vsako **uspešno opravljeno** usposabljanje na volj
 - Potrdilo vsebuje podatke delavca ob izvedbi usposabljanja (zgodovinski podatki) in podatke zapisnika.
 - Če ima organizacija nastavljeno digitalno podpisovanje, je potrdilo tudi digitalno podpisano.
 
+!!! info "Združen zapisnik (VZD + VPP)"
+    Pri zapisniku z več tečaji sistem izda **eno potrdilo na udeleženca** – potrdilo zajema vse njegove tečaje v tem zapisniku, ne enega na tečaj.
+
 ---
 
 ## Zapisniki usposabljanj
@@ -194,7 +204,9 @@ Ko izbrani tečaji pripadajo isti **skupini tipov**, se pod seznamom tečajev pr
 - **Dodaj tečaj** – spustni seznam ponudi samo tipe iz iste skupine; vnesete tip, datum in veljavnost (meseci). Ure in lokacija se prevzamejo iz zapisnika, novi tečaj se samodejno označi kot izbran.
 - **Kopiraj udeležence** – prikaže se, ko sta izbrana vsaj dva tečaja in ima eden od njiju udeležence; gumb prikaže smer kopiranja, npr. `VPP (3) → VZD`, potrditev pa celoten opis. Udeležence iz tečaja z največ udeleženci prepiše v preostale izbrane tečaje. Vsak udeleženec dobi veljavnost po pravilu svojega tipa (delovno dovoljenje → tečaj → privzeto 24 mesecev).
 - Če izbrani tečaj pripada tipu **brez skupine**, obrazec ni prikazan – zapisnik vsebuje en sam tečaj.
-- Mešani izbor (tečaji iz različnih skupin) sistem označi z rdečim opozorilom; novi tečaji takrat niso na voljo.
+- Mešani izbor (tečaji iz različnih skupin) sistem označi z rdečim opozorilom, ob shranjevanju pa ga zavrne.
+- **Ob shranitvi zapisnika** se vsi preprosti tečaji v njem **samodejno zaključijo** (številke potrdil, uspešnost, veljavnost), tako da ni treba vsakega tečaja zaključiti posebej.
+- Tečaj z **e-testom** ali **pošiljanjem e-pošte** ostane odprt (ob zaključitvi se pošljejo vabila), zato tak tečaj ne more biti v zapisniku z več tečaji – sistem prikaže opozorilo in onemogoči dodajanje ter kopiranje udeležencev.
 
 Rezultat je **en zapisnik za oba tečaja**, veljavnosti pa se vodijo ločeno po tipu (npr. VZD 60 mesecev, VPP 36 mesecev) – vsak udeleženec ima v evidenci svoj rok za vsak tip.
 

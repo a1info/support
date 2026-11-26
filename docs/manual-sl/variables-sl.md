@@ -243,6 +243,8 @@ Tabele — edinstven seznam delavcev:
   - `${rowMntValidUn2}` Veljavnost v mesecih (2. tečaj delavca; prazno, če ga ni)
   - `${rowDateValidUn2}` Datum veljavnosti (2. tečaj delavca; prazno, če ga ni)
   - `${rowEdutypeUn}` Tip(i) usposabljanja (več tipov ločenih z vejico)
+  - `${rowResUn}` Uspešnost delavca (DA, če je opravil vsaj enega od tečajev v zapisniku)
+  - `${rowNrRepUn}` Številka potrdila (prvi tečaj delavca v zapisniku)
 
 Tabele — seznam delavcev:
 
