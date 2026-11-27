@@ -82,6 +82,9 @@ E-poštne predloge določajo **zadevo in telo** sporočila. Pošiljateljski rač
 
 Predloge uporabljajo samodejna obvestila, e-test vabila in opomniki ter CRM kampanje. Brez aktivnega SMTP računa se sporočila ne pošljejo, tudi če je predloga aktivna.
 
+!!! info "Glava kampanjskega sporočila"
+    Pri CRM kampanjah glavo sporočila (logotip, naziv, slogan, naslov in kontaktni podatki) določa **znamka e-pošte**, izbrana na kampanji. Znamke upravljate v **Seznami → Znamke e-pošte**. Predloga določa zadevo in telo sporočila, ne pa pošiljateljskega računa ali znamke.
+
 ### Moduli predlog
 
 | Modul | Uporaba |
@@ -129,11 +132,20 @@ Pod poljem **Telo (tekst)** je razdelek **Zamenljivke** – klik na spremenljivk
 | `${date}`, `${time}` | Datum in čas pošiljanja. |
 | `${firstName}`, `${lastName}` | Ime in priimek prejemnika. |
 | `${cName}` | Podjetje prejemnika. |
-| `${sysCompany}`, `${sysAddress}`, `${sysEmail}`, `${sysTel}`, `${sysWeb}`, `${sysLogo}` | Podatki sistemskega podjetja. |
-| `${course}`, `${username}`, `${password}`, `${link}` | Podatki e-testa (samo modul E-test). |
+| `${sysCompany}`, `${sysTagline}`, `${sysAddress}`, `${sysEmail}`, `${sysTel}`, `${sysWeb}`, `${sysLogo}`, `${sysTax}` | Podatki izbrane znamke e-pošte pri kampanji; sicer podatki sistemskega podjetja. |
+| `${course}`, `${courseStart}`, `${courseEnd}`, `${username}`, `${password}`, `${link}` | Podatki e-testa (samo modul E-test); začetek in konec tečaja oziroma potek e-testa. |
 | `${expiryDate}`, `${daysLeft}` | Rok veljavnosti in število preostalih dni (e-test). |
 | `${previousSubject}` | Zadeva prejšnjega sporočila (kampanje). |
 | `${unsubscribeUrl}` | Povezava za odjavo. Pri kampanjah jo sistem doda samodejno, če je v sporočilu ni. |
+
+### Glava e-pošte in znamke
+
+Skupna glava e-pošte prikaže logotip, naziv, slogan ter naslov in kontaktne podatke znamke. Za kampanje se uporabi znamka, izbrana na kampanji oziroma privzeta znamka; za ostala sporočila se uporabi sistemska oziroma lastniška identiteta podjetja.
+
+- Znamke dodajate in urejate v **Seznami → Znamke e-pošte**.
+- Na kampanji je znamka izbrana v koraku **Predloga**.
+- Predogled predloge v **Sistem → Predloge** uporabi sistemsko identiteto, ne izbrane kampanjske znamke; končno sporočilo kampanje uporabi izbrano znamko.
+- Slogan je neobvezno polje znamke e-pošte in se prikaže pod nazivom; če je prazno, se vrstica ne prikaže.
 
 ### Predogled in upravljanje
 

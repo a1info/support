@@ -306,7 +306,7 @@ Na seznamu nalog lahko izpišete delovne naloge (PDF) kot potrdilo o opravljenem
 V meniju CRM sta tudi **Prospekti** in **Kampanje**:
 
 - **Prospekti** so potencialne stranke, ločene od šifranta strank. Vnesete jih ročno ali uvozite iz CSV/XLSX; sistem prepozna dvojnike po davčni številki ali e-pošti. Za vsakega prospekta lahko zabeležite segment, prioriteto, pravno podlago in soglasje.
-- **Kampanje** pripravite v treh korakih: predloga, občinstvo (stranke in kontakti ali prospekti) in povzetek. Po generiranju prejemnikov zaženite **Preflight**, nato pa pooblaščeni uporabnik kampanjo odobri in pošlje v paketih.
+- **Kampanje** pripravite v treh korakih: predloga, občinstvo (stranke in kontakti ali prospekti) in povzetek. V koraku Predloga izberete tudi **znamko e-pošte**, ki določa glavo sporočila. Po generiranju prejemnikov zaženite **Preflight**, nato pa pooblaščeni uporabnik kampanjo odobri in pošlje v paketih. Po pavzi kampanja ne nadaljuje samodejno; najprej kliknite **Nadaljuj pošiljanje**. Sprememba občinstva ali drugih vsebinskih nastavitev po odobritvi zahteva novo odobritev.
 - Sledenje vključuje odgovore, telefonske klice, blokade in odjave; povezava za odjavo se v kampanjska sporočila doda samodejno.
 
 Podrobna navodila so v poglavju [CRM – Naloge, kampanje in prospekti](manual-sl/crm.md#kampanje).
@@ -726,4 +726,4 @@ Tipi: usposabljanje, delovna oprema, meritve, ocena tveganja.
 
 Dostop: **Sistem → Predloge → zavihek E-poštne predloge**
 
-Predloge določajo zadevo in telo e-pošte; pošiljatelj in Reply-To se nastavita v **E-poštnih računih**. Predloge so vezane na modul in dogodek ter se uporabljajo za obvestila, e-test in CRM kampanje. Spremenljivke se vnašajo v obliki `${firstName}` in so na voljo pod poljem telesa. Podrobnosti so v poglavju [Urejanje predlog → E-poštne predloge](manual-sl/urejanje-podlog.md#e-postne-predloge).
+Predloge določajo zadevo in telo e-pošte; pošiljatelj in Reply-To se nastavita v **E-poštnih računih**. Predloge so vezane na modul in dogodek ter se uporabljajo za obvestila, e-test in CRM kampanje. Spremenljivke se vnašajo v obliki `${firstName}` in so na voljo pod poljem telesa. Pri kampanjah glavo sporočila določa izbrana **znamka e-pošte** (**Seznami → Znamke e-pošte**), ne predloga. Podrobnosti so v poglavju [Urejanje predlog → E-poštne predloge](manual-sl/urejanje-podlog.md#e-postne-predloge).

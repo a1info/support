@@ -8,6 +8,9 @@ V tem razdelku upravljate osnovne podatke podjetja, aktivacijo modulov, nastavit
 
 ## Podjetje (Company)
 
+!!! note "Vir podatkov o podjetju"
+    Ko je v aplikaciji določena lastniška stranka (OWN), se naziv, davčna številka in naslov v dokumentih ter glavi e-pošte berejo iz te stranke in njene glavne poslovne enote. V zavihku **Podjetje** so zato ta polja samo za branje; urejate jih v **Stranke → lastniška stranka**. Zavihek ostaja namenjen telefonu, e-pošti, spletni strani, odgovorni osebi, logotipu in podpisu.
+
 ### Osnovni podatki
 
 | Polje | Opis |
@@ -107,6 +110,12 @@ Geslo SMTP in API ključ sta shranjena z reverzibilnim šifriranjem, ker ju SMTP
 Vsebino e-poštnih sporočil urejate v **Sistem → Predloge → E-poštne predloge**. Predloge ne določajo pošiljateljskega računa – ta je vedno izbran v **E-poštni računi** – določajo pa zadevo in telo sporočila. Kampanje uporabljajo predloge iz modula **Kampanje** in izbrani poštni račun; potek pošiljanja je opisan v poglavju [CRM → Kampanje](crm.md#kampanje).
 
 Podrobnosti o poljih, spremenljivkah in predogledu so v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
+
+## Znamke e-pošte
+
+**Dostop:** Seznami → Znamke e-pošte
+
+Znamka e-pošte določa logotip, naziv, slogan, naslov in kontaktne podatke v skupni glavi kampanjskih sporočil. Ustvarite lahko več znamk, eno označite kot privzeto, na posamezni kampanji pa izberete aktivno znamko. Podrobnosti in polja so opisana v [CRM → Znamke e-pošte](crm.md#znamke-e-poste).
 
 ---
 

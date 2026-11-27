@@ -32,6 +32,7 @@ V meniju CRM so **Naloge**, **Projekti**, **Kontakti**, **Časovnica**, **Intera
 - Samodejno generiranje periodičnih opomnikov
 - Ločen seznam prospektov z uvozom, segmentacijo in sledenjem soglasja
 - E-poštne kampanje za stranke, kontakte in prospekte
+- Izbira znamke e-pošte za posamezno kampanjo (logotip, naziv, slogan, naslov in kontaktni podatki)
 - Preverjanje pred pošiljanjem, pošiljanje v paketih in sledenje odzivom
 - Beleženje telefonskih klicev in samodejno ustvarjanje nalog za nadaljnje stike
 - Globalni seznam odjav in blokad prejemnikov
@@ -381,6 +382,9 @@ V kartici **Uvozi prospekte** lahko naložite datoteko **CSV**, **XLSX** ali **X
 
 Kampanje omogočajo pošiljanje e-poštnih sporočil strankam, kontaktom ali prospektom ter sledenje odzivom. Zavihek **Predloge** vodi do e-poštnih predlog, zavihek **Odjave** pa do globalnega seznama naslovov, ki jim ne pošiljate. Predloge in spremenljivke so opisane v poglavju [Urejanje predlog → E-poštne predloge](urejanje-podlog.md#e-postne-predloge).
 
+!!! info "Znamke e-pošte"
+    Glavo kampanjskega sporočila (logotip, naziv, slogan, naslov in kontaktni podatki) določa izbrana **znamka e-pošte**. Znamke upravljate v **Seznami → Znamke e-pošte**, na posamezni kampanji pa izberete eno izmed aktivnih znamk. Če ne izberete nobene, se uporabi privzeta znamka.
+
 Seznam kampanj prikazuje naziv, namen, status, število prejemnikov, predlogo in datum nastanka. Klik na naziv odpre podrobni pogled, ikona svinčnika pa urejanje.
 
 ### Priprava kampanje
@@ -399,6 +403,7 @@ Kampanjo ustvarite z gumbom **+** na seznamu kampanj. Obrazec je razdeljen na tr
 | **Namen** | Oznaka vala kampanje: prvi, drugi, tretji val ali drugo. Ne vpliva na vsebino sporočila. |
 | **Predloga** | E-poštna predloga iz modula **Kampanje**. Če je ni, jo najprej ustvarite v zavihku **Predloge**. |
 | **Poštni račun** | Račun, s katerega se pošilja. Prazno pomeni privzeti kampanjski oziroma sistemski račun. |
+| **Znamka e-pošte** | Znamka, katere logotip, naziv, slogan, naslov in kontaktni podatki se prikažejo v glavi sporočila. Prazno pomeni privzeto znamko. |
 | **Izvajalec** | Uporabnik, ki mu sistem dodeli naloge za nadaljnje klice. Prazno pomeni ustvarjalca kampanje. |
 | **Dnevna omejitev** | Največje število sporočil na dan za to kampanjo. Upošteva se tudi omejitev izbranega poštnega računa. |
 | **Od e-pošte**, **Ime pošiljatelja**, **Odgovori na** | Neobvezne vrednosti, ki preglasijo podatke poštnega računa. |
@@ -446,8 +451,10 @@ Preglejte naziv, predlogo, vir občinstva, filtre in število prejemnikov. S kli
 Po shranjevanju kampanje odprite njen podrobni pogled in kliknite **Generiraj prejemce**.
 
 - Sistem iz trenutnega občinstva ustvari **posnetek prejemnikov** in jih doda v kampanjo.
-- Če postopek ponovite, se dodajo le novi naslovi; obstoječi prejemniki in njihovi statusi ostanejo.
-- Ko so prejemniki ustvarjeni, sprememba filtrov občinstva **ne spremeni** obstoječega seznama. Nove prejemnike dodajte s ponovnim generiranjem.
+- Če občinstvo spremenite, je treba prejemnike znova generirati; preflight do takrat pošiljanje blokira.
+- Ob ponovnem generiranju se prejemniki, ki niso več v občinstvu in še niso bili poslani, označijo kot **Izpuščeno**; naslovi, ki se vrnejo v občinstvo, se znova aktivirajo.
+- Že poslani in odgovorjeni prejemniki ostanejo nespremenjeni.
+- Sprememba občinstva prekliče odobritev kampanje; kampanjo je treba znova odobriti.
 - Seznam prejemnikov lahko izvozite v **CSV**.
 
 ### Preflight – preverjanje pred pošiljanjem
@@ -458,6 +465,8 @@ Preveri:
 
 - ali je na voljo aktiven SMTP poštni račun,
 - ali ima kampanja predlogo in ali je predloga aktivna ter neprazna,
+- ali je izbrana znamka e-pošte aktivna,
+- ali se občinstvo ujema z generiranim seznamom prejemnikov (sicer je treba prejemnike znova generirati),
 - ali so prejemniki generirani,
 - ali je kampanja odobrena,
 - ali imajo prospekti zabeleženo pravno podlago,
@@ -469,9 +478,10 @@ Napake preprečijo odobritev; opozorila (na primer manjkajoča pravna podlaga al
 
 Po uspešnem preflightu lahko **administrator ali superadmin** klikne **Odobri pošiljanje**. Šele s tem se kampanja lahko pošlje prek aplikacije.
 
+- Sprememba predloge, občinstva, poštnega računa, pošiljatelja, znamke e-pošte ali naslovov **Od e-pošte**, **Ime pošiljatelja** in **Odgovori na** po odobritvi prekliče odobritev. Preflight in odobritev je treba ponoviti.
 - **Pošlji paket** doda v čakalno vrsto naslednji paket prejemnikov.
 - Pošiljanje poteka v paketih; dnevna omejitev kampanje in poštnega računa se upošteva skupaj.
-- Med pošiljanjem je na voljo **Pavza**; z naslednjim **Pošlji paket** se pošiljanje nadaljuje.
+- Med pošiljanjem je na voljo **Pavza**. Zaustavljena kampanja se ne nadaljuje samodejno; kliknite **Nadaljuj pošiljanje**, nato znova **Pošlji paket**.
 - Ko ni več prejemnikov v čakanju ali z napako, sistem kampanjo zaključi.
 - Brez aktivnega SMTP računa se kampanja ne pošlje, tudi če je odobrena.
 
@@ -483,8 +493,30 @@ Po uspešnem preflightu lahko **administrator ali superadmin** klikne **Odobri p
 | **Pripravljena** | Prejemniki so generirani; kampanja čaka na odobritev ali pošiljanje. |
 | **Ročno pošiljanje** | Uporabnik je prejemnike označil kot ročno poslane; kampanja je v ročnem sledenju. |
 | **Pošiljanje** | Pošiljanje je v teku. |
-| **Zaustavljena** | Pošiljanje je začasno ustavljeno. |
+| **Zaustavljena** | Pošiljanje je začasno ustavljeno. Nadaljujete ga ročno z **Nadaljuj pošiljanje**. |
 | **Zaključena** | Vsi čakajoči prejemniki so obdelani. |
+
+### Znamke e-pošte
+
+**Dostop:** Seznami → Znamke e-pošte (samo administratorji in superadmini)
+
+Znamka e-pošte določa videz skupne glave kampanjskih sporočil. Na posamezni kampanji izberete znamko v koraku **Predloga**; če izbira ostane prazna, se uporabi privzeta znamka. Izbira znamke ne vpliva na poštni račun ali naslov pošiljatelja.
+
+| Polje | Opis |
+|-------|------|
+| **Naziv** | Interni naziv znamke za izbiro na kampanji. |
+| **Koda** | Neobvezna enolična oznaka znamke. |
+| **Podjetje** | Naziv, prikazan v glavi e-pošte. |
+| **Slogan** | Neobvezna kratka vrstica pod nazivom, npr. *Varnost na enem mestu*. |
+| **Naslov**, **Poštna številka**, **Kraj** | Naslov v glavi e-pošte. |
+| **Telefon**, **E-pošta**, **Web** | Kontaktni podatki v glavi e-pošte. |
+| **Davčna številka** | Podatek za spremenljivko `${sysTax}`. |
+| **Logotip** | Slika, prikazana levo v glavi e-pošte. |
+| **Privzeto** | Znamka, ki se uporabi, kadar kampanja nima izbrane znamke. |
+| **Aktivno** | Neaktivna znamka ni na voljo za izbiro na kampanji. |
+
+!!! note "Glava e-pošte"
+    Skupna glava prikaže logotip, naziv, slogan ter naslov in kontaktne podatke znamke. Slogan je neobvezno polje znamke; če je prazen, se vrstica ne prikaže.
 
 ### Sledenje prejemnikom
 
